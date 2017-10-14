@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "E:/C++/OpenGL/libraries/glad/src/glad.c" "E:/C++/OpenGL/build/CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.obj"
+  "E:/C++/Engine/libraries/glad/src/glad.c" "E:/C++/Engine/build/CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -17,8 +17,10 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../libraries/assimp/include"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "E:/C++/OpenGL/source/main.cpp" "E:/C++/OpenGL/build/CMakeFiles/techdemo.dir/source/main.cpp.obj"
-  "E:/C++/OpenGL/source/stb_image.cpp" "E:/C++/OpenGL/build/CMakeFiles/techdemo.dir/source/stb_image.cpp.obj"
+  "E:/C++/Engine/source/Mesh.cpp" "E:/C++/Engine/build/CMakeFiles/techdemo.dir/source/Mesh.cpp.obj"
+  "E:/C++/Engine/source/Model.cpp" "E:/C++/Engine/build/CMakeFiles/techdemo.dir/source/Model.cpp.obj"
+  "E:/C++/Engine/source/main.cpp" "E:/C++/Engine/build/CMakeFiles/techdemo.dir/source/main.cpp.obj"
+  "E:/C++/Engine/source/stb_image.cpp" "E:/C++/Engine/build/CMakeFiles/techdemo.dir/source/stb_image.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

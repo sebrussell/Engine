@@ -21,7 +21,7 @@ class Model
 {
     public:
         /*  Functions   */
-        Model(char *path)
+        Model(std::string path)
         {
             loadModel(path);
         }

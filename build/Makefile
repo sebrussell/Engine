@@ -47,10 +47,10 @@ RM = E:\Compilers\cmake\bin\cmake.exe -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = E:\C++\OpenGL
+CMAKE_SOURCE_DIR = E:\C++\Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = E:\C++\OpenGL\build
+CMAKE_BINARY_DIR = E:\C++\Engine\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\C++\OpenGL\build\CMakeFiles E:\C++\OpenGL\build\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\C++\Engine\build\CMakeFiles E:\C++\Engine\build\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\C++\OpenGL\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\C++\Engine\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -149,6 +149,60 @@ libraries/glad/src/glad.c.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.s
 .PHONY : libraries/glad/src/glad.c.s
 
+source/Mesh.obj: source/Mesh.cpp.obj
+
+.PHONY : source/Mesh.obj
+
+# target to build an object file
+source/Mesh.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Mesh.cpp.obj
+.PHONY : source/Mesh.cpp.obj
+
+source/Mesh.i: source/Mesh.cpp.i
+
+.PHONY : source/Mesh.i
+
+# target to preprocess a source file
+source/Mesh.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Mesh.cpp.i
+.PHONY : source/Mesh.cpp.i
+
+source/Mesh.s: source/Mesh.cpp.s
+
+.PHONY : source/Mesh.s
+
+# target to generate assembly for a file
+source/Mesh.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Mesh.cpp.s
+.PHONY : source/Mesh.cpp.s
+
+source/Model.obj: source/Model.cpp.obj
+
+.PHONY : source/Model.obj
+
+# target to build an object file
+source/Model.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Model.cpp.obj
+.PHONY : source/Model.cpp.obj
+
+source/Model.i: source/Model.cpp.i
+
+.PHONY : source/Model.i
+
+# target to preprocess a source file
+source/Model.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Model.cpp.i
+.PHONY : source/Model.cpp.i
+
+source/Model.s: source/Model.cpp.s
+
+.PHONY : source/Model.s
+
+# target to generate assembly for a file
+source/Model.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Model.cpp.s
+.PHONY : source/Model.cpp.s
+
 source/main.obj: source/main.cpp.obj
 
 .PHONY : source/main.obj
@@ -215,6 +269,12 @@ help:
 	@echo ... libraries/glad/src/glad.obj
 	@echo ... libraries/glad/src/glad.i
 	@echo ... libraries/glad/src/glad.s
+	@echo ... source/Mesh.obj
+	@echo ... source/Mesh.i
+	@echo ... source/Mesh.s
+	@echo ... source/Model.obj
+	@echo ... source/Model.i
+	@echo ... source/Model.s
 	@echo ... source/main.obj
 	@echo ... source/main.i
 	@echo ... source/main.s

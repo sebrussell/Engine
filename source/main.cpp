@@ -1,8 +1,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-//#include "Mesh.h"
-//#include "Model.h"
+#include "Model.h"
 
 #include "Shader.h"
 #include "stb_image.h"
@@ -157,7 +156,7 @@ int main(int argc, char* argv[]) {
 
 	
 	//shaders
-	//Shader ourShader("..//source/shaders/shader.vs", "..//source/shaders/shader.fs");	
+	Shader ourShader("..//source/shaders/shader.vs", "..//source/shaders/shader.fs");	
 	
 	Shader lightingShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs");	
 	
@@ -224,6 +223,9 @@ int main(int argc, char* argv[]) {
 	
 	
 	
+	Model ourModel("..//source/models/nanosuit/nanosuit2.obj");
+	
+	
 	
 	while(!glfwWindowShouldClose(window))
 	{		
@@ -241,6 +243,8 @@ int main(int argc, char* argv[]) {
         // ------
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		
+		
 
         // be sure to activate shader when setting uniforms/drawing objects
         lightingShader.use();
@@ -253,6 +257,7 @@ int main(int argc, char* argv[]) {
            by defining light types as classes and set their values in there, or by using a more efficient uniform approach
            by using 'Uniform buffer objects', but that is something we'll discuss in the 'Advanced GLSL' tutorial.
         */
+		/*
         // directional light
         lightingShader.setVec3("dirLight.direction", glm::vec3(-0.2f, -1.0f, -0.3f));
         lightingShader.setVec3("dirLight.ambient", glm::vec3(0.05f, 0.05f, 0.05f));
@@ -332,6 +337,11 @@ int main(int argc, char* argv[]) {
 
             glDrawArrays(GL_TRIANGLES, 0, 36);
         }
+		
+		*/
+		
+		glm::mat4 projection = glm::perspective(glm::radians(cameraMain.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+        glm::mat4 view = cameraMain.GetViewMatrix();
 
          // also draw the lamp object(s)
          lampShader.use();
@@ -342,12 +352,25 @@ int main(int argc, char* argv[]) {
          glBindVertexArray(lightVAO);
          for (unsigned int i = 0; i < 4; i++)
          {
-             model = glm::mat4();
+             glm::mat4 model = glm::mat4();
              model = glm::translate(model, pointLightPositions[i]);
              model = glm::scale(model, glm::vec3(0.2f)); // Make it a smaller cube
              lampShader.setMat4("model", model);
              glDrawArrays(GL_TRIANGLES, 0, 36);
          }
+		
+		ourShader.use();
+
+        // view/projection transformations
+        
+        ourShader.setMat4("projection", projection);
+        ourShader.setMat4("view", view);
+
+        // render the loaded model
+        //glm::mat4 model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f)); // translate it down so it's at the center of the scene
+        //model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));	// it's a bit too big for our scene, so scale it down
+        //ourShader.setMat4("model", model);
+        ourModel.Draw(ourShader);
 		 
 
 

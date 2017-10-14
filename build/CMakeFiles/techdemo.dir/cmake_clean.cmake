@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/techdemo.dir/source/main.cpp.obj"
   "CMakeFiles/techdemo.dir/source/stb_image.cpp.obj"
   "CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.obj"
+  "CMakeFiles/techdemo.dir/source/Mesh.cpp.obj"
+  "CMakeFiles/techdemo.dir/source/Model.cpp.obj"
   "techdemo.pdb"
   "techdemo.exe"
   "techdemo.exe.manifest"

@@ -20,8 +20,8 @@ add_executable(techdemo
 	source/main.cpp
 	source/stb_image.cpp
 	libraries/glad/src/glad.c
-	#source/Mesh.cpp
-	#source/Model.cpp
+	source/Mesh.cpp
+	source/Model.cpp
 )
 
 target_link_libraries(techdemo assimp glfw3) 
