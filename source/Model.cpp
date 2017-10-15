@@ -11,7 +11,13 @@ void Model::Draw(Shader shader)
 void Model::loadModel(std::string path)
 {
     Assimp::Importer import;
-    const aiScene* scene = import.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);	
+    const aiScene* scene = import.ReadFile(path,
+            aiProcess_GenSmoothNormals |
+            aiProcess_CalcTangentSpace |
+            aiProcess_Triangulate |
+            aiProcess_JoinIdenticalVertices |
+            aiProcess_SortByPType
+            );
 	
 	
 	
@@ -67,11 +73,15 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
             vector.z = mesh->mVertices[i].z;
             vertex.Position = vector;
             // normals
-
-			//vector.x = mesh->mNormals[i].x;
-			//vector.y = mesh->mNormals[i].y;
-			//vector.z = mesh->mNormals[i].z;			
-			vertex.Normal = vector;
+			if(mesh->HasNormals())
+			{
+				vector.x = mesh->mNormals[i].x;
+				vector.y = mesh->mNormals[i].y;
+				vector.z = mesh->mNormals[i].z;			
+				vertex.Normal = vector;
+			}
+			
+			
             
             // texture coordinates		
             if(mesh->mTextureCoords[0]) // does the mesh contain texture coordinates?
@@ -89,23 +99,23 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
 			{
                 vertex.TexCoords = glm::vec2(0.0f, 0.0f);
 			}
-				/*
-				// tangent
-				vector.x = mesh->mTangents[i].x;
-				vector.y = mesh->mTangents[i].y;
-				vector.z = mesh->mTangents[i].z;
-				vertex.Tangent = vector;
-				// bitangent
+
+			
+			vector.x = mesh->mTangents[i].x;
+			vector.y = mesh->mTangents[i].y;
+			vector.z = mesh->mTangents[i].z;
+			vertex.Tangent = vector;
+
+			// tangent
+			
 				
-				vector.x = mesh->mBitangents[i].x;
-				vector.y = mesh->mBitangents[i].y;
-				vector.z = mesh->mBitangents[i].z;
-				vertex.Bitangent = vector;
-				vertices.push_back(vertex);
-				*/
-        }
+			vector.x = mesh->mBitangents[i].x;
+			vector.y = mesh->mBitangents[i].y;
+			vector.z = mesh->mBitangents[i].z;
+			vertex.Bitangent = vector;
+			vertices.push_back(vertex);
 		
-		std::cout << "a" << std::endl;
+        }
 		
         // now wak through each of the mesh's faces (a face is a mesh its triangle) and retrieve the corresponding vertex indices.
         for(unsigned int i = 0; i < mesh->mNumFaces; i++)
@@ -124,8 +134,6 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
         // specular: texture_specularN
         // normal: texture_normalN
 		
-		
-
         // 1. diffuse maps
         std::vector<Texture> diffuseMaps = loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
         textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
