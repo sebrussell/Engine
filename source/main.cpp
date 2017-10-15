@@ -20,7 +20,7 @@
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);  
 void processInput(GLFWwindow *window);
-void loadImage(const char* _location, unsigned int& _texture);
+unsigned int loadTexture(char const * path);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 
@@ -110,6 +110,17 @@ int main(int argc, char* argv[]) {
         glm::vec3(-4.0f,  2.0f, -12.0f),
         glm::vec3( 0.0f,  0.0f, -3.0f)
     };
+	
+	float planeVertices[] = {
+        // positions          // texture Coords (note we set these higher than 1 (together with GL_REPEAT as texture wrapping mode). this will cause the floor texture to repeat)
+         5.0f, -0.5f,  5.0f,  2.0f, 0.0f,
+        -5.0f, -0.5f,  5.0f,  0.0f, 0.0f,
+        -5.0f, -0.5f, -5.0f,  0.0f, 2.0f,
+
+         5.0f, -0.5f,  5.0f,  2.0f, 0.0f,
+        -5.0f, -0.5f, -5.0f,  0.0f, 2.0f,
+         5.0f, -0.5f, -5.0f,  2.0f, 2.0f
+    };
 
 
 
@@ -145,7 +156,15 @@ int main(int argc, char* argv[]) {
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //regular
 	
-	glEnable(GL_DEPTH_TEST);  //alow depth testing 
+	
+	    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
+    glEnable(GL_STENCIL_TEST);
+    glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+    glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
+	glEnable(GL_BLEND);  
+	glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, GL_ONE, GL_ZERO);
+
 	
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);    //hide and capture mouse position
 	
@@ -162,6 +181,7 @@ int main(int argc, char* argv[]) {
 	
 	Shader lampShader("..//source/shaders/lampShader.vs", "..//source/shaders/lampShader.fs");	
 
+	Shader singleColour("..//source/shaders/shader.vs", "..//source/shaders/shaderSingleColour.fs");
 	
 	// set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
@@ -198,33 +218,47 @@ int main(int argc, char* argv[]) {
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);	
 	
+	//plane
+	unsigned int planeVAO, planeVBO;
+    glGenVertexArrays(1, &planeVAO);
+    glGenBuffers(1, &planeVBO);
+    glBindVertexArray(planeVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, planeVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(planeVertices), &planeVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    glBindVertexArray(0);
+	
+	//Model ourModel("..//source/models/nanosuit2/nanosuit.obj");
 	
 	
-	// load and create a texture 
-    // -------------------------
-    //unsigned int texture1, texture2;
 	
-	//loadImage("..//source/textures/container.jpg", texture1);
-	//loadImage("..//source/textures/arrow.jpg", texture2);	
+	//GRASS
 	
-	//ourShader.use();
-	//ourShader.setInt("texture1", 0);
-	//ourShader.setInt("texture2", 1);
+	std::vector<glm::vec3> vegetation;
+	vegetation.push_back(glm::vec3(-1.5f,  0.0f, -0.48f));
+	vegetation.push_back(glm::vec3( 1.5f,  0.0f,  0.51f));
+	vegetation.push_back(glm::vec3( 0.0f,  0.0f,  0.7f));
+	vegetation.push_back(glm::vec3(-0.3f,  0.0f, -2.3f));
+	vegetation.push_back(glm::vec3( 0.5f,  0.0f, -0.6f));
+
+	unsigned int grassTexture = loadTexture("..//source/textures/blending_transparent_window.png");
+	std::cout << "a";
+	unsigned int planeTexture = loadTexture("..//source/textures/arrow.jpg");
 	
-	//projection matrices
+	unsigned int diffuseMap = loadTexture("..//source/textures/container2.png");
 	
-	unsigned int diffuseMap, specularMap;
-	loadImage("..//source/textures/container2.jpg", diffuseMap);
-	loadImage("..//source/textures/container2_specular.jpg", specularMap);
-	
+	ourShader.use();
+	ourShader.setInt("texture1", 0);
+
+
 	lightingShader.use(); 
     lightingShader.setInt("material.diffuse", 0);
 	lightingShader.setInt("material.specular", 1);
-	
-	
-	
-	Model ourModel("..//source/models/nanosuit2/nanosuit.obj");
-	//Model ourModel("..//source/models/teapot.obj");
+
+
 	
 	
 	while(!glfwWindowShouldClose(window))
@@ -242,9 +276,14 @@ int main(int argc, char* argv[]) {
         // render
         // ------
         glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		
-		
+		std::map<float, glm::vec3> sorted;
+        for (unsigned int i = 0; i < vegetation.size(); i++)
+        {
+            float distance = glm::length(cameraMain.Position - vegetation[i]);
+            sorted[distance] = vegetation[i];
+        }
 
         // be sure to activate shader when setting uniforms/drawing objects
         lightingShader.use();
@@ -318,11 +357,11 @@ int main(int argc, char* argv[]) {
         lightingShader.setMat4("model", model);
 
         // bind diffuse map
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, diffuseMap);
+        //glActiveTexture(GL_TEXTURE0);
+        //glBindTexture(GL_TEXTURE_2D, diffuseMap);
         // bind specular map
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(GL_TEXTURE_2D, specularMap);
+        //glActiveTexture(GL_TEXTURE1);
+        //glBindTexture(GL_TEXTURE_2D, specularMap);
 
 		
 		/*
@@ -362,7 +401,7 @@ int main(int argc, char* argv[]) {
          }
 		
         ourShader.use();
-		*/
+		
 
         // view/projection transformations
         projection = glm::perspective(glm::radians(cameraMain.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
@@ -376,8 +415,87 @@ int main(int argc, char* argv[]) {
         model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));	// it's a bit too big for our scene, so scale it down
         lightingShader.setMat4("model", model);
         ourModel.Draw(ourShader);
-		 
+		*/
+		
+		
+		//PLANE
+		ourShader.use();
+        ourShader.setMat4("view", view);
+        ourShader.setMat4("projection", projection);
+		glStencilMask(0x00);
+        // floor
+        glBindVertexArray(planeVAO);
+        glBindTexture(GL_TEXTURE_2D, planeTexture);
+        ourShader.setMat4("model", glm::mat4());
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+		
+		/*
+		//outline a box
+		singleColour.use();
+        model = glm::mat4();
+        view = cameraMain.GetViewMatrix();
+        projection = glm::perspective(glm::radians(cameraMain.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+        singleColour.setMat4("view", view);
+        singleColour.setMat4("projection", projection);
 
+        ourShader.use();
+        ourShader.setMat4("view", view);
+        ourShader.setMat4("projection", projection);
+		
+		
+        glStencilFunc(GL_ALWAYS, 1, 0xFF);
+        glStencilMask(0xFF);
+        // cubes
+		*/
+        glBindVertexArray(VAO);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, diffuseMap);
+        model = glm::translate(model, glm::vec3(-1.0f, 0.0f, -1.0f));
+        ourShader.setMat4("model", model);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+        model = glm::mat4();
+        model = glm::translate(model, glm::vec3(2.0f, 0.0f, 0.0f));
+        ourShader.setMat4("model", model);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+		/*
+        // 2nd. render pass: now draw slightly scaled versions of the objects, this time disabling stencil writing.
+        // Because the stencil buffer is now filled with several 1s. The parts of the buffer that are 1 are not drawn, thus only drawing 
+        // the objects' size differences, making it look like borders.
+        // -----------------------------------------------------------------------------------------------------------------------------
+        glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+        glStencilMask(0x00);
+        glDisable(GL_DEPTH_TEST);
+        singleColour.use();
+        float scale = 1.1;
+        // cubes
+        glBindVertexArray(VAO);
+        glBindTexture(GL_TEXTURE_2D, diffuseMap);
+        model = glm::mat4();
+        model = glm::translate(model, glm::vec3(-1.0f, 0.0f, -1.0f));
+        model = glm::scale(model, glm::vec3(scale, scale, scale));
+        singleColour.setMat4("model", model);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+        model = glm::mat4();
+        model = glm::translate(model, glm::vec3(2.0f, 0.0f, 0.0f));
+        model = glm::scale(model, glm::vec3(scale, scale, scale));
+        singleColour.setMat4("model", model);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glBindVertexArray(0);
+        glStencilMask(0xFF);
+        glEnable(GL_DEPTH_TEST);
+		*/
+		
+		//GRASS
+		glBindVertexArray(VAO);
+		glBindTexture(GL_TEXTURE_2D, grassTexture);  
+       for (std::map<float, glm::vec3>::reverse_iterator it = sorted.rbegin(); it != sorted.rend(); ++it)
+        {
+            model = glm::mat4();
+            model = glm::translate(model, it->second);
+            ourShader.setMat4("model", model);
+            glDrawArrays(GL_TRIANGLES, 0, 6);
+        }
+		
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -394,30 +512,41 @@ int main(int argc, char* argv[]) {
     return 0; 
 }
 
-void loadImage(const char* _location, unsigned int& _texture)
+unsigned int loadTexture(char const * path)
 {
-	int width, height, nrChannels;
-	glGenTextures(1, &_texture);
-    glBindTexture(GL_TEXTURE_2D, _texture); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
-    // set the texture wrapping parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // set texture filtering parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    // load image, create texture and generate mipmaps
-    // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
-    unsigned char *data2 = stbi_load(_location, &width, &height, &nrChannels, 0);
-    if (data2)
+    unsigned int textureID;
+    glGenTextures(1, &textureID);
+
+    int width, height, nrComponents;
+    unsigned char *data = stbi_load(path, &width, &height, &nrComponents, 0);
+    if (data)
     {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data2);
+        GLenum format;
+        if (nrComponents == 1)
+            format = GL_RED;
+        else if (nrComponents == 3)
+            format = GL_RGB;
+        else if (nrComponents == 4)
+            format = GL_RGBA;
+
+        glBindTexture(GL_TEXTURE_2D, textureID);
+        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, format == GL_RGBA ? GL_CLAMP_TO_EDGE : GL_REPEAT); // for this tutorial: use GL_CLAMP_TO_EDGE to prevent semi-transparent borders. Due to interpolation it takes texels from next repeat 
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, format == GL_RGBA ? GL_CLAMP_TO_EDGE : GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+        stbi_image_free(data);
     }
     else
     {
-        std::cout << "Failed to load texture" << std::endl;
+        std::cout << "Texture failed to load at path: " << path << std::endl;
+        stbi_image_free(data);
     }
-    stbi_image_free(data2);
+
+    return textureID;
 }
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
