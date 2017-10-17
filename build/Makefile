@@ -203,6 +203,33 @@ source/Model.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Model.cpp.s
 .PHONY : source/Model.cpp.s
 
+source/OpenGL.obj: source/OpenGL.cpp.obj
+
+.PHONY : source/OpenGL.obj
+
+# target to build an object file
+source/OpenGL.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj
+.PHONY : source/OpenGL.cpp.obj
+
+source/OpenGL.i: source/OpenGL.cpp.i
+
+.PHONY : source/OpenGL.i
+
+# target to preprocess a source file
+source/OpenGL.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/OpenGL.cpp.i
+.PHONY : source/OpenGL.cpp.i
+
+source/OpenGL.s: source/OpenGL.cpp.s
+
+.PHONY : source/OpenGL.s
+
+# target to generate assembly for a file
+source/OpenGL.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/OpenGL.cpp.s
+.PHONY : source/OpenGL.cpp.s
+
 source/main.obj: source/main.cpp.obj
 
 .PHONY : source/main.obj
@@ -275,6 +302,9 @@ help:
 	@echo ... source/Model.obj
 	@echo ... source/Model.i
 	@echo ... source/Model.s
+	@echo ... source/OpenGL.obj
+	@echo ... source/OpenGL.i
+	@echo ... source/OpenGL.s
 	@echo ... source/main.obj
 	@echo ... source/main.i
 	@echo ... source/main.s

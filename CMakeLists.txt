@@ -22,6 +22,7 @@ add_executable(techdemo
 	libraries/glad/src/glad.c
 	source/Mesh.cpp
 	source/Model.cpp
+	source/OpenGL.cpp
 )
 
 target_link_libraries(techdemo assimp glfw3) 

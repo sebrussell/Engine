@@ -3,6 +3,8 @@
 
 #include "Model.h"
 
+#include "OpenGL.h"
+
 #include "Shader.h"
 #include "stb_image.h"
 #include "Camera.h"
@@ -18,17 +20,14 @@
 //#include "GameObject.h"
 //#include "Object.h"
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);  
-void processInput(GLFWwindow *window);
+
+
 unsigned int loadTexture(char const * path);
-void mouse_callback(GLFWwindow* window, double xpos, double ypos);
-void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 
 float deltaTime = 0.0f;	// Time between current frame and last frame
-float lastFrame = 0.0f; // Time of last frame
 
-int SCR_WIDTH = 800;
-int SCR_HEIGHT = 600;
+
+
 
 Camera cameraMain;
 
@@ -122,60 +121,9 @@ int main(int argc, char* argv[]) {
          5.0f, -0.5f, -5.0f,  2.0f, 2.0f
     };
 
-
-
-	//------------------SETUP-------------------------------------------------------------
-    glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	OpenGL openGL;
+	openGL.Setup();
 	
-	#ifdef __APPLE__
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // uncomment this statement to fix compilation on OS X
-	#endif
-	
-	GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
-	if (window == NULL)
-	{
-		std::cout << "Failed to create GLFW window" << std::endl;
-		glfwTerminate();
-		return -1;
-	}
-	glfwMakeContextCurrent(window);
-	
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-	{
-		std::cout << "Failed to initialize GLAD" << std::endl;
-		return -1;
-	}
-	
-	glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
-	
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //regular
-	
-	
-	    glEnable(GL_DEPTH_TEST);
-    glDepthFunc(GL_LESS);
-    glEnable(GL_STENCIL_TEST);
-    glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
-    glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
-	glEnable(GL_BLEND);  
-	glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, GL_ONE, GL_ZERO);
-	glEnable(GL_CULL_FACE); //this SPEEEDS IT UP LOADS - doesnt work with transpare tho
-
-   
-
-	
-	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);    //hide and capture mouse position
-	
-	glfwSetCursorPosCallback(window, mouse_callback);  //register mouse callback function
-	glfwSetScrollCallback(window, scroll_callback);
-	
-	//-------------------------END SETUP ------------------------------------
-
 	
 	//shaders
 	Shader ourShader("..//source/shaders/shader.vs", "..//source/shaders/shader.fs");	
@@ -248,7 +196,7 @@ int main(int argc, char* argv[]) {
 	vegetation.push_back(glm::vec3( 0.5f,  0.0f, -0.6f));
 
 	unsigned int grassTexture = loadTexture("..//source/textures/blending_transparent_window.png");
-	std::cout << "a";
+	
 	unsigned int planeTexture = loadTexture("..//source/textures/arrow.jpg");
 	
 	unsigned int diffuseMap = loadTexture("..//source/textures/container2.png");
@@ -261,25 +209,16 @@ int main(int argc, char* argv[]) {
     lightingShader.setInt("material.diffuse", 0);
 	lightingShader.setInt("material.specular", 1);
 
+	
+	
 
-	
-	
-	while(!glfwWindowShouldClose(window))
+	while(!openGL.CloseWindow())
 	{		
-        // per-frame time logic
-        // --------------------
-        float currentFrame = glfwGetTime();
-        deltaTime = currentFrame - lastFrame;
-        lastFrame = currentFrame;
 
-        // input
-        // -----
-        processInput(window);
+        deltaTime = openGL.deltaTime;
+		openGL.processInput(cameraMain);
 
-        // render
-        // ------
-        glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+        /*
 		
 		std::map<float, glm::vec3> sorted;
         for (unsigned int i = 0; i < vegetation.size(); i++)
@@ -299,7 +238,7 @@ int main(int argc, char* argv[]) {
            by defining light types as classes and set their values in there, or by using a more efficient uniform approach
            by using 'Uniform buffer objects', but that is something we'll discuss in the 'Advanced GLSL' tutorial.
         */
-		
+		/*
         // directional light
         lightingShader.setVec3("dirLight.direction", glm::vec3(-0.2f, -1.0f, -0.3f));
         lightingShader.setVec3("dirLight.ambient", glm::vec3(0.05f, 0.05f, 0.05f));
@@ -350,7 +289,7 @@ int main(int argc, char* argv[]) {
         lightingShader.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(15.0f)));     
 
         // view/projection transformations
-        glm::mat4 projection = glm::perspective(glm::radians(cameraMain.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+        glm::mat4 projection = glm::perspective(glm::radians(cameraMain.Zoom), (float)openGL.GetWindowWidth() / (float)openGL.GetWindowHeight(), 0.1f, 100.0f);
         glm::mat4 view = cameraMain.GetViewMatrix();
         lightingShader.setMat4("projection", projection);
         lightingShader.setMat4("view", view);
@@ -366,8 +305,8 @@ int main(int argc, char* argv[]) {
         //glActiveTexture(GL_TEXTURE1);
         //glBindTexture(GL_TEXTURE_2D, specularMap);
 
+		*/
 		
-		/*
         // render containers
         glBindVertexArray(VAO);
         for (unsigned int i = 0; i < 10; i++)
@@ -381,7 +320,7 @@ int main(int argc, char* argv[]) {
 
             glDrawArrays(GL_TRIANGLES, 0, 36);
         }
-		*/
+		
 		
 		/*
 		projection = glm::perspective(glm::radians(cameraMain.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
@@ -449,7 +388,9 @@ int main(int argc, char* argv[]) {
         glStencilFunc(GL_ALWAYS, 1, 0xFF);
         glStencilMask(0xFF);
         // cubes
-		*/
+		
+		
+		
         glBindVertexArray(VAO);
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, diffuseMap);
@@ -486,7 +427,7 @@ int main(int argc, char* argv[]) {
         glBindVertexArray(0);
         glStencilMask(0xFF);
         glEnable(GL_DEPTH_TEST);
-		*/
+		
 		
 		//GRASS
 		glBindVertexArray(VAO);
@@ -499,11 +440,11 @@ int main(int argc, char* argv[]) {
             glDrawArrays(GL_TRIANGLES, 0, 6);
         }
 		
-
+		*/
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
-        glfwSwapBuffers(window);
-        glfwPollEvents();		  
+        openGL.SwapBuffers();      	
+			  
 	}
 	
 	glBindVertexArray(0);
@@ -552,34 +493,8 @@ unsigned int loadTexture(char const * path)
     return textureID;
 }
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-    glViewport(0, 0, width, height);
-}
 
-void processInput(GLFWwindow *window)
-{
-	float cameraSpeed = 2.5f * deltaTime; // adjust accordingly
-	
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, true);
-	
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        cameraMain.ProcessKeyboard(FORWARD, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        cameraMain.ProcessKeyboard(BACKWARD, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        cameraMain.ProcessKeyboard(LEFT, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        cameraMain.ProcessKeyboard(RIGHT, deltaTime);
-}
 
-void mouse_callback(GLFWwindow* window, double xpos, double ypos)
-{	
-	cameraMain.ProcessMouseMovement(xpos, ypos);
-}
 
-void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
-{
-  cameraMain.ProcessMouseScroll(yoffset);
-}
+
+

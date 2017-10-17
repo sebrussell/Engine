@@ -19,6 +19,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/HP/Desktop/Engine/source/Mesh.cpp" "C:/Users/HP/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Mesh.cpp.obj"
   "C:/Users/HP/Desktop/Engine/source/Model.cpp" "C:/Users/HP/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Model.cpp.obj"
+  "C:/Users/HP/Desktop/Engine/source/OpenGL.cpp" "C:/Users/HP/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj"
   "C:/Users/HP/Desktop/Engine/source/main.cpp" "C:/Users/HP/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/main.cpp.obj"
   "C:/Users/HP/Desktop/Engine/source/stb_image.cpp" "C:/Users/HP/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/stb_image.cpp.obj"
   )
