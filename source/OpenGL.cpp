@@ -41,15 +41,12 @@ int OpenGL::Setup()
 		std::cout << "Failed to initialize GLAD" << std::endl;
 	}
 	
-	
-	
 	glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
-	
-	
 
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //regular
 	
+	m_camera = std::weak_ptr<Camera>();
 	
 	glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
@@ -68,44 +65,61 @@ int OpenGL::Setup()
 	glfwSetErrorCallback(error_callback);
 	
 	
+	
 	std::cout << "OpenGL Setup Completed" << std::endl;
 	return 0;
 	
 	//-------------------------END SETUP ------------------------------------
 }
 
+OpenGL::~OpenGL()
+{
+	glBindVertexArray(0);
+	glfwTerminate();
+}
+
 void OpenGL::SwapBuffers()
 {
 	glfwSwapBuffers(m_window);
 	glfwPollEvents();
-	
+
 	glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 	
 }
 
-bool OpenGL::CloseWindow()
+bool OpenGL::ShouldWindowClose()
 {  
 	float currentFrame = glfwGetTime();
     deltaTime = currentFrame - lastFrame;
     lastFrame = currentFrame;
-	return glfwWindowShouldClose(m_window);
+	return !glfwWindowShouldClose(m_window);
 	
 }
-void OpenGL::processInput(Camera cameraMain)
+void OpenGL::ProcessInput()
 {
 	float cameraSpeed = 2.5f * deltaTime; // adjust accordingly
 	
     if(glfwGetKey(m_window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	{
         glfwSetWindowShouldClose(m_window, true);	
+	}
     if (glfwGetKey(m_window, GLFW_KEY_W) == GLFW_PRESS)
-        cameraMain.ProcessKeyboard(FORWARD, deltaTime);
+	{
+        m_camera.lock()->ProcessKeyboard(FORWARD, deltaTime);
+	}
     if (glfwGetKey(m_window, GLFW_KEY_S) == GLFW_PRESS)
-        cameraMain.ProcessKeyboard(BACKWARD, deltaTime);
+	{
+        m_camera.lock()->ProcessKeyboard(BACKWARD, deltaTime);
+	}
     if (glfwGetKey(m_window, GLFW_KEY_A) == GLFW_PRESS)
-        cameraMain.ProcessKeyboard(LEFT, deltaTime);
+	{
+        m_camera.lock()->ProcessKeyboard(LEFT, deltaTime);
+	}
     if (glfwGetKey(m_window, GLFW_KEY_D) == GLFW_PRESS)
-        cameraMain.ProcessKeyboard(RIGHT, deltaTime);
+	{
+        m_camera.lock()->ProcessKeyboard(RIGHT, deltaTime);
+	}
 }
 
 void OpenGL::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)

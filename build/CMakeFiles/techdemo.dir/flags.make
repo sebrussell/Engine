@@ -9,7 +9,7 @@ C_DEFINES =
 
 C_INCLUDES = @CMakeFiles/techdemo.dir/includes_C.rsp
 
-CXX_FLAGS =  
+CXX_FLAGS = -std=c++11  
 
 CXX_DEFINES = 
 

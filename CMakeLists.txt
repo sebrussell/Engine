@@ -14,7 +14,7 @@ link_directories(
 	${PROJECT_SOURCE_DIR}/libraries/glfw/lib
 )
 
-
+SET(CMAKE_CXX_FLAGS "-std=c++11")
 
 add_executable(techdemo
 	source/main.cpp

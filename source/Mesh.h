@@ -35,6 +35,7 @@ class Mesh {
     public:
 	    /*  Functions  */
         Mesh(std::vector<Vertex> _vertices, std::vector<unsigned int> _indices, std::vector<Texture> _textures);
+		~Mesh();
         void Draw(Shader shader);
         /*  Mesh Data  */
         std::vector<Vertex> vertices;

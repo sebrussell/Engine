@@ -7,14 +7,13 @@
 
 #include "Shader.h"
 #include "stb_image.h"
-#include "Camera.h"
+//#include "Camera.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
 #include <stdio.h>
-#include <iostream>
 #include <math.h>
 
 //#include "GameObject.h"
@@ -29,18 +28,14 @@ float deltaTime = 0.0f;	// Time between current frame and last frame
 
 
 
-Camera cameraMain;
+std::shared_ptr<Camera> cameraMain = std::make_shared<Camera>(Camera());
 
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 int main(int argc, char* argv[]) {	
 
-
 	//GameObject gameObject;
 	
-
-	
-
 	float vertices[] = {
 		// positions          // normals           // texture coords
 		-0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 0.0f,
@@ -123,6 +118,7 @@ int main(int argc, char* argv[]) {
 
 	OpenGL openGL;
 	openGL.Setup();
+	openGL.SetCamera(cameraMain);
 	
 	
 	//shaders
@@ -212,11 +208,11 @@ int main(int argc, char* argv[]) {
 	
 	
 
-	while(!openGL.CloseWindow())
+	while(openGL.ShouldWindowClose())
 	{		
 
         deltaTime = openGL.deltaTime;
-		openGL.processInput(cameraMain);
+		openGL.ProcessInput();
 
         /*
 		
@@ -305,7 +301,7 @@ int main(int argc, char* argv[]) {
         //glActiveTexture(GL_TEXTURE1);
         //glBindTexture(GL_TEXTURE_2D, specularMap);
 
-		*/
+		
 		
         // render containers
         glBindVertexArray(VAO);
@@ -443,16 +439,10 @@ int main(int argc, char* argv[]) {
 		*/
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
+		
         openGL.SwapBuffers();      	
 			  
-	}
-	
-	glBindVertexArray(0);
-	glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
-	glfwTerminate();
-  
-  
+	}  
     return 0; 
 }
 

@@ -6,7 +6,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include <vector>
-
+#include <iostream>
 
 
 // Default camera values
@@ -45,11 +45,12 @@ class Camera
 		float Zoom;
 		
 		int lastMouseX, lastMouseY;
-		bool firstMouse = true;
+		bool firstMouse;
 		
 	// Constructor with vectors
     Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = m_yaw, float pitch = m_pitch) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(m_speed), MouseSensitivity(m_sensitivity), Zoom(m_zoom)
     {
+		firstMouse = true;
         Position = position;
         WorldUp = up;
         Yaw = yaw;
@@ -92,7 +93,6 @@ class Camera
 		{
             Position += Right * velocity;
 		}
-		
 		Position.y = 0.0f;  //stop flying
     }
 	

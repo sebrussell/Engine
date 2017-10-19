@@ -9,6 +9,12 @@ Mesh::Mesh(std::vector<Vertex> _vertices, std::vector<unsigned int> _indices, st
     setupMesh();
 }
 
+Mesh::~Mesh()
+{
+	glDeleteVertexArrays(1, &VAO);
+    glDeleteBuffers(1, &VBO);
+}
+
 void Mesh::setupMesh()
 {
     glGenVertexArrays(1, &VAO);

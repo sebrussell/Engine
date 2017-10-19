@@ -28,32 +28,32 @@ The CXX compiler identification is GNU, found in "C:/Users/HP/Desktop/Engine/bui
 Determining if the C compiler works passed with the following output:
 Change Dir: C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_696c5/fast"
-C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_696c5.dir\build.make CMakeFiles/cmTC_696c5.dir/build
+Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_d0b5c/fast"
+C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_d0b5c.dir\build.make CMakeFiles/cmTC_d0b5c.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_696c5.dir/testCCompiler.c.obj
-C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe    -o CMakeFiles\cmTC_696c5.dir\testCCompiler.c.obj   -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\CMakeTmp\testCCompiler.c
-Linking C executable cmTC_696c5.exe
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_696c5.dir\link.txt --verbose=1
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_696c5.dir/objects.a
-C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_696c5.dir/objects.a @CMakeFiles\cmTC_696c5.dir\objects1.rsp
-C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_696c5.dir/objects.a -Wl,--no-whole-archive  -o cmTC_696c5.exe -Wl,--out-implib,libcmTC_696c5.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_696c5.dir\linklibs.rsp
+Building C object CMakeFiles/cmTC_d0b5c.dir/testCCompiler.c.obj
+C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe    -o CMakeFiles\cmTC_d0b5c.dir\testCCompiler.c.obj   -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_d0b5c.exe
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_d0b5c.dir\link.txt --verbose=1
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_d0b5c.dir/objects.a
+C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_d0b5c.dir/objects.a @CMakeFiles\cmTC_d0b5c.dir\objects1.rsp
+C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_d0b5c.dir/objects.a -Wl,--no-whole-archive  -o cmTC_d0b5c.exe -Wl,--out-implib,libcmTC_d0b5c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_d0b5c.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_45d63/fast"
-C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_45d63.dir\build.make CMakeFiles/cmTC_45d63.dir/build
+Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_e4152/fast"
+C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_e4152.dir\build.make CMakeFiles/cmTC_e4152.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_45d63.dir/CMakeCCompilerABI.c.obj
-C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe    -o CMakeFiles\cmTC_45d63.dir\CMakeCCompilerABI.c.obj   -c C:\Users\HP\Desktop\Compilers\cmake\share\cmake-3.8\Modules\CMakeCCompilerABI.c
-Linking C executable cmTC_45d63.exe
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_45d63.dir\link.txt --verbose=1
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_45d63.dir/objects.a
-C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_45d63.dir/objects.a @CMakeFiles\cmTC_45d63.dir\objects1.rsp
-C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_45d63.dir/objects.a -Wl,--no-whole-archive  -o cmTC_45d63.exe -Wl,--out-implib,libcmTC_45d63.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+Building C object CMakeFiles/cmTC_e4152.dir/CMakeCCompilerABI.c.obj
+C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe    -o CMakeFiles\cmTC_e4152.dir\CMakeCCompilerABI.c.obj   -c C:\Users\HP\Desktop\Compilers\cmake\share\cmake-3.8\Modules\CMakeCCompilerABI.c
+Linking C executable cmTC_e4152.exe
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_e4152.dir\link.txt --verbose=1
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_e4152.dir/objects.a
+C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_e4152.dir/objects.a @CMakeFiles\cmTC_e4152.dir\objects1.rsp
+C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_e4152.dir/objects.a -Wl,--no-whole-archive  -o cmTC_e4152.exe -Wl,--out-implib,libcmTC_e4152.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
 Using built-in specs.
 COLLECT_GCC=C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe
 COLLECT_LTO_WRAPPER=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/lto-wrapper.exe
@@ -63,8 +63,8 @@ Thread model: posix
 gcc version 4.9.1 (i686-posix-dwarf-rev2, Built by MinGW-W64 project) 
 COMPILER_PATH=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/;C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/;C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/bin/
 LIBRARY_PATH=C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/;C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/;C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib/;C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../lib/;C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/;C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_45d63.exe' '-mtune=generic' '-march=i686'
- C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/collect2.exe -plugin C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/liblto_plugin-0.dll -plugin-opt=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\HP\AppData\Local\Temp\cclQ1BAe.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw491/i686-491-posix-dwarf-rt_v3-rev2/mingw32 -m i386pe -Bdynamic -o cmTC_45d63.exe C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib/crt2.o C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtbegin.o -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1 -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../.. --whole-archive CMakeFiles\cmTC_45d63.dir/objects.a --no-whole-archive --out-implib libcmTC_45d63.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e4152.exe' '-mtune=generic' '-march=i686'
+ C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/collect2.exe -plugin C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/liblto_plugin-0.dll -plugin-opt=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\HP\AppData\Local\Temp\ccbYBzn7.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw491/i686-491-posix-dwarf-rt_v3-rev2/mingw32 -m i386pe -Bdynamic -o cmTC_e4152.exe C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib/crt2.o C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtbegin.o -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1 -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../.. --whole-archive CMakeFiles\cmTC_e4152.dir/objects.a --no-whole-archive --out-implib libcmTC_e4152.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtend.o
 mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
 
 
@@ -72,16 +72,16 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld\.exe|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_45d63/fast"]
-  ignore line: [C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_45d63.dir\build.make CMakeFiles/cmTC_45d63.dir/build]
+  ignore line: [Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_e4152/fast"]
+  ignore line: [C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_e4152.dir\build.make CMakeFiles/cmTC_e4152.dir/build]
   ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_45d63.dir/CMakeCCompilerABI.c.obj]
-  ignore line: [C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe    -o CMakeFiles\cmTC_45d63.dir\CMakeCCompilerABI.c.obj   -c C:\Users\HP\Desktop\Compilers\cmake\share\cmake-3.8\Modules\CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_45d63.exe]
-  ignore line: [C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_45d63.dir\link.txt --verbose=1]
-  ignore line: [C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_45d63.dir/objects.a]
-  ignore line: [C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_45d63.dir/objects.a @CMakeFiles\cmTC_45d63.dir\objects1.rsp]
-  ignore line: [C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_45d63.dir/objects.a -Wl,--no-whole-archive  -o cmTC_45d63.exe -Wl,--out-implib,libcmTC_45d63.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
+  ignore line: [Building C object CMakeFiles/cmTC_e4152.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe    -o CMakeFiles\cmTC_e4152.dir\CMakeCCompilerABI.c.obj   -c C:\Users\HP\Desktop\Compilers\cmake\share\cmake-3.8\Modules\CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_e4152.exe]
+  ignore line: [C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_e4152.dir\link.txt --verbose=1]
+  ignore line: [C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_e4152.dir/objects.a]
+  ignore line: [C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_e4152.dir/objects.a @CMakeFiles\cmTC_e4152.dir\objects1.rsp]
+  ignore line: [C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_e4152.dir/objects.a -Wl,--no-whole-archive  -o cmTC_e4152.exe -Wl,--out-implib,libcmTC_e4152.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe]
   ignore line: [COLLECT_LTO_WRAPPER=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/lto-wrapper.exe]
@@ -98,13 +98,13 @@ Parsed C implicit link information from above output:
   ignore line: [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../lib/]
   ignore line: [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/]
   ignore line: [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_45d63.exe' '-mtune=generic' '-march=i686']
-  link line: [ C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/collect2.exe -plugin C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/liblto_plugin-0.dll -plugin-opt=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\HP\AppData\Local\Temp\cclQ1BAe.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw491/i686-491-posix-dwarf-rt_v3-rev2/mingw32 -m i386pe -Bdynamic -o cmTC_45d63.exe C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib/crt2.o C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtbegin.o -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1 -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../.. --whole-archive CMakeFiles\cmTC_45d63.dir/objects.a --no-whole-archive --out-implib libcmTC_45d63.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtend.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e4152.exe' '-mtune=generic' '-march=i686']
+  link line: [ C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/collect2.exe -plugin C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/liblto_plugin-0.dll -plugin-opt=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\HP\AppData\Local\Temp\ccbYBzn7.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw491/i686-491-posix-dwarf-rt_v3-rev2/mingw32 -m i386pe -Bdynamic -o cmTC_e4152.exe C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib/crt2.o C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtbegin.o -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1 -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../.. --whole-archive CMakeFiles\cmTC_e4152.dir/objects.a --no-whole-archive --out-implib libcmTC_e4152.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtend.o]
     arg [C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
     arg [C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/liblto_plugin-0.dll] ==> ignore
     arg [-plugin-opt=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\HP\AppData\Local\Temp\cclQ1BAe.res] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\HP\AppData\Local\Temp\ccbYBzn7.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
@@ -128,7 +128,7 @@ Parsed C implicit link information from above output:
     arg [i386pe] ==> ignore
     arg [-Bdynamic] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_45d63.exe] ==> ignore
+    arg [cmTC_e4152.exe] ==> ignore
     arg [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib/crt2.o] ==> ignore
     arg [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtbegin.o] ==> ignore
     arg [-LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1] ==> dir [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1]
@@ -138,10 +138,10 @@ Parsed C implicit link information from above output:
     arg [-LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib] ==> dir [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib]
     arg [-LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../..] ==> dir [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../..]
     arg [--whole-archive] ==> ignore
-    arg [CMakeFiles\cmTC_45d63.dir/objects.a] ==> ignore
+    arg [CMakeFiles\cmTC_e4152.dir/objects.a] ==> ignore
     arg [--no-whole-archive] ==> ignore
     arg [--out-implib] ==> ignore
-    arg [libcmTC_45d63.dll.a] ==> ignore
+    arg [libcmTC_e4152.dll.a] ==> ignore
     arg [--major-image-version] ==> ignore
     arg [0] ==> ignore
     arg [--minor-image-version] ==> ignore
@@ -185,16 +185,16 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_81c60/fast"
-C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_81c60.dir\build.make CMakeFiles/cmTC_81c60.dir/build
+Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_695b1/fast"
+C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_695b1.dir\build.make CMakeFiles/cmTC_695b1.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_81c60.dir/feature_tests.c.obj
-C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe   -std=c11 -o CMakeFiles\cmTC_81c60.dir\feature_tests.c.obj   -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\feature_tests.c
-Linking C executable cmTC_81c60.exe
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_81c60.dir\link.txt --verbose=1
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_81c60.dir/objects.a
-C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_81c60.dir/objects.a @CMakeFiles\cmTC_81c60.dir\objects1.rsp
-C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_81c60.dir/objects.a -Wl,--no-whole-archive  -o cmTC_81c60.exe -Wl,--out-implib,libcmTC_81c60.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_81c60.dir\linklibs.rsp
+Building C object CMakeFiles/cmTC_695b1.dir/feature_tests.c.obj
+C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe   -std=c11 -o CMakeFiles\cmTC_695b1.dir\feature_tests.c.obj   -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\feature_tests.c
+Linking C executable cmTC_695b1.exe
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_695b1.dir\link.txt --verbose=1
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_695b1.dir/objects.a
+C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_695b1.dir/objects.a @CMakeFiles\cmTC_695b1.dir\objects1.rsp
+C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_695b1.dir/objects.a -Wl,--no-whole-archive  -o cmTC_695b1.exe -Wl,--out-implib,libcmTC_695b1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_695b1.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
 
 
@@ -207,16 +207,16 @@ mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFi
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_fda05/fast"
-C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_fda05.dir\build.make CMakeFiles/cmTC_fda05.dir/build
+Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_05575/fast"
+C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_05575.dir\build.make CMakeFiles/cmTC_05575.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_fda05.dir/feature_tests.c.obj
-C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe   -std=c99 -o CMakeFiles\cmTC_fda05.dir\feature_tests.c.obj   -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\feature_tests.c
-Linking C executable cmTC_fda05.exe
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_fda05.dir\link.txt --verbose=1
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_fda05.dir/objects.a
-C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_fda05.dir/objects.a @CMakeFiles\cmTC_fda05.dir\objects1.rsp
-C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_fda05.dir/objects.a -Wl,--no-whole-archive  -o cmTC_fda05.exe -Wl,--out-implib,libcmTC_fda05.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_fda05.dir\linklibs.rsp
+Building C object CMakeFiles/cmTC_05575.dir/feature_tests.c.obj
+C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe   -std=c99 -o CMakeFiles\cmTC_05575.dir\feature_tests.c.obj   -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\feature_tests.c
+Linking C executable cmTC_05575.exe
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_05575.dir\link.txt --verbose=1
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_05575.dir/objects.a
+C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_05575.dir/objects.a @CMakeFiles\cmTC_05575.dir\objects1.rsp
+C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_05575.dir/objects.a -Wl,--no-whole-archive  -o cmTC_05575.exe -Wl,--out-implib,libcmTC_05575.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_05575.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
 
 
@@ -229,16 +229,16 @@ mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFi
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_edefb/fast"
-C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_edefb.dir\build.make CMakeFiles/cmTC_edefb.dir/build
+Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_a6869/fast"
+C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_a6869.dir\build.make CMakeFiles/cmTC_a6869.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_edefb.dir/feature_tests.c.obj
-C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe   -std=c90 -o CMakeFiles\cmTC_edefb.dir\feature_tests.c.obj   -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\feature_tests.c
-Linking C executable cmTC_edefb.exe
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_edefb.dir\link.txt --verbose=1
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_edefb.dir/objects.a
-C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_edefb.dir/objects.a @CMakeFiles\cmTC_edefb.dir\objects1.rsp
-C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_edefb.dir/objects.a -Wl,--no-whole-archive  -o cmTC_edefb.exe -Wl,--out-implib,libcmTC_edefb.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_edefb.dir\linklibs.rsp
+Building C object CMakeFiles/cmTC_a6869.dir/feature_tests.c.obj
+C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe   -std=c90 -o CMakeFiles\cmTC_a6869.dir\feature_tests.c.obj   -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\feature_tests.c
+Linking C executable cmTC_a6869.exe
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_a6869.dir\link.txt --verbose=1
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_a6869.dir/objects.a
+C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_a6869.dir/objects.a @CMakeFiles\cmTC_a6869.dir\objects1.rsp
+C:\Users\HP\Desktop\Compilers\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_a6869.dir/objects.a -Wl,--no-whole-archive  -o cmTC_a6869.exe -Wl,--out-implib,libcmTC_a6869.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_a6869.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
 
 
@@ -249,32 +249,32 @@ mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFi
 Determining if the CXX compiler works passed with the following output:
 Change Dir: C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_b421e/fast"
-C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_b421e.dir\build.make CMakeFiles/cmTC_b421e.dir/build
+Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_b3226/fast"
+C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_b3226.dir\build.make CMakeFiles/cmTC_b3226.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_b421e.dir/testCXXCompiler.cxx.obj
-C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe     -o CMakeFiles\cmTC_b421e.dir\testCXXCompiler.cxx.obj -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
-Linking CXX executable cmTC_b421e.exe
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_b421e.dir\link.txt --verbose=1
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_b421e.dir/objects.a
-C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_b421e.dir/objects.a @CMakeFiles\cmTC_b421e.dir\objects1.rsp
-C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_b421e.dir/objects.a -Wl,--no-whole-archive  -o cmTC_b421e.exe -Wl,--out-implib,libcmTC_b421e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_b421e.dir\linklibs.rsp
+Building CXX object CMakeFiles/cmTC_b3226.dir/testCXXCompiler.cxx.obj
+C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe     -o CMakeFiles\cmTC_b3226.dir\testCXXCompiler.cxx.obj -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+Linking CXX executable cmTC_b3226.exe
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_b3226.dir\link.txt --verbose=1
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_b3226.dir/objects.a
+C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_b3226.dir/objects.a @CMakeFiles\cmTC_b3226.dir\objects1.rsp
+C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_b3226.dir/objects.a -Wl,--no-whole-archive  -o cmTC_b3226.exe -Wl,--out-implib,libcmTC_b3226.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_b3226.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_0fb73/fast"
-C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_0fb73.dir\build.make CMakeFiles/cmTC_0fb73.dir/build
+Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_f629e/fast"
+C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_f629e.dir\build.make CMakeFiles/cmTC_f629e.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_0fb73.dir/CMakeCXXCompilerABI.cpp.obj
-C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe     -o CMakeFiles\cmTC_0fb73.dir\CMakeCXXCompilerABI.cpp.obj -c C:\Users\HP\Desktop\Compilers\cmake\share\cmake-3.8\Modules\CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_0fb73.exe
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_0fb73.dir\link.txt --verbose=1
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_0fb73.dir/objects.a
-C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_0fb73.dir/objects.a @CMakeFiles\cmTC_0fb73.dir\objects1.rsp
-C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_0fb73.dir/objects.a -Wl,--no-whole-archive  -o cmTC_0fb73.exe -Wl,--out-implib,libcmTC_0fb73.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+Building CXX object CMakeFiles/cmTC_f629e.dir/CMakeCXXCompilerABI.cpp.obj
+C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe     -o CMakeFiles\cmTC_f629e.dir\CMakeCXXCompilerABI.cpp.obj -c C:\Users\HP\Desktop\Compilers\cmake\share\cmake-3.8\Modules\CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_f629e.exe
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_f629e.dir\link.txt --verbose=1
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_f629e.dir/objects.a
+C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_f629e.dir/objects.a @CMakeFiles\cmTC_f629e.dir\objects1.rsp
+C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_f629e.dir/objects.a -Wl,--no-whole-archive  -o cmTC_f629e.exe -Wl,--out-implib,libcmTC_f629e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
 Using built-in specs.
 COLLECT_GCC=C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe
 COLLECT_LTO_WRAPPER=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/lto-wrapper.exe
@@ -284,8 +284,8 @@ Thread model: posix
 gcc version 4.9.1 (i686-posix-dwarf-rev2, Built by MinGW-W64 project) 
 COMPILER_PATH=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/;C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/;C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/bin/
 LIBRARY_PATH=C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/;C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/;C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib/;C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../lib/;C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/;C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0fb73.exe' '-shared-libgcc' '-mtune=generic' '-march=i686'
- C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/collect2.exe -plugin C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/liblto_plugin-0.dll -plugin-opt=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\HP\AppData\Local\Temp\ccs2CQq9.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw491/i686-491-posix-dwarf-rt_v3-rev2/mingw32 -m i386pe -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_0fb73.exe C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib/crt2.o C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtbegin.o -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1 -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../.. --whole-archive CMakeFiles\cmTC_0fb73.dir/objects.a --no-whole-archive --out-implib libcmTC_0fb73.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f629e.exe' '-shared-libgcc' '-mtune=generic' '-march=i686'
+ C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/collect2.exe -plugin C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/liblto_plugin-0.dll -plugin-opt=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\HP\AppData\Local\Temp\ccEMgqWc.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw491/i686-491-posix-dwarf-rt_v3-rev2/mingw32 -m i386pe -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_f629e.exe C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib/crt2.o C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtbegin.o -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1 -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../.. --whole-archive CMakeFiles\cmTC_f629e.dir/objects.a --no-whole-archive --out-implib libcmTC_f629e.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtend.o
 mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
 
 
@@ -293,16 +293,16 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld\.exe|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_0fb73/fast"]
-  ignore line: [C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_0fb73.dir\build.make CMakeFiles/cmTC_0fb73.dir/build]
+  ignore line: [Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_f629e/fast"]
+  ignore line: [C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_f629e.dir\build.make CMakeFiles/cmTC_f629e.dir/build]
   ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_0fb73.dir/CMakeCXXCompilerABI.cpp.obj]
-  ignore line: [C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe     -o CMakeFiles\cmTC_0fb73.dir\CMakeCXXCompilerABI.cpp.obj -c C:\Users\HP\Desktop\Compilers\cmake\share\cmake-3.8\Modules\CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_0fb73.exe]
-  ignore line: [C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_0fb73.dir\link.txt --verbose=1]
-  ignore line: [C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_0fb73.dir/objects.a]
-  ignore line: [C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_0fb73.dir/objects.a @CMakeFiles\cmTC_0fb73.dir\objects1.rsp]
-  ignore line: [C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_0fb73.dir/objects.a -Wl,--no-whole-archive  -o cmTC_0fb73.exe -Wl,--out-implib,libcmTC_0fb73.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_f629e.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe     -o CMakeFiles\cmTC_f629e.dir\CMakeCXXCompilerABI.cpp.obj -c C:\Users\HP\Desktop\Compilers\cmake\share\cmake-3.8\Modules\CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_f629e.exe]
+  ignore line: [C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_f629e.dir\link.txt --verbose=1]
+  ignore line: [C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_f629e.dir/objects.a]
+  ignore line: [C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_f629e.dir/objects.a @CMakeFiles\cmTC_f629e.dir\objects1.rsp]
+  ignore line: [C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_f629e.dir/objects.a -Wl,--no-whole-archive  -o cmTC_f629e.exe -Wl,--out-implib,libcmTC_f629e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe]
   ignore line: [COLLECT_LTO_WRAPPER=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/lto-wrapper.exe]
@@ -319,13 +319,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../lib/]
   ignore line: [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/]
   ignore line: [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0fb73.exe' '-shared-libgcc' '-mtune=generic' '-march=i686']
-  link line: [ C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/collect2.exe -plugin C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/liblto_plugin-0.dll -plugin-opt=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\HP\AppData\Local\Temp\ccs2CQq9.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw491/i686-491-posix-dwarf-rt_v3-rev2/mingw32 -m i386pe -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_0fb73.exe C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib/crt2.o C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtbegin.o -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1 -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../.. --whole-archive CMakeFiles\cmTC_0fb73.dir/objects.a --no-whole-archive --out-implib libcmTC_0fb73.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtend.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f629e.exe' '-shared-libgcc' '-mtune=generic' '-march=i686']
+  link line: [ C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/collect2.exe -plugin C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/liblto_plugin-0.dll -plugin-opt=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\HP\AppData\Local\Temp\ccEMgqWc.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw491/i686-491-posix-dwarf-rt_v3-rev2/mingw32 -m i386pe -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_f629e.exe C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib/crt2.o C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtbegin.o -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1 -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib -LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../.. --whole-archive CMakeFiles\cmTC_f629e.dir/objects.a --no-whole-archive --out-implib libcmTC_f629e.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtend.o]
     arg [C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
     arg [C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/liblto_plugin-0.dll] ==> ignore
     arg [-plugin-opt=C:/Users/HP/Desktop/Compilers/mingw32/bin/../libexec/gcc/i686-w64-mingw32/4.9.1/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\HP\AppData\Local\Temp\ccs2CQq9.res] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\HP\AppData\Local\Temp\ccEMgqWc.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -353,7 +353,7 @@ Parsed CXX implicit link information from above output:
     arg [-u] ==> ignore
     arg [___deregister_frame_info] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_0fb73.exe] ==> ignore
+    arg [cmTC_f629e.exe] ==> ignore
     arg [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib/../lib/crt2.o] ==> ignore
     arg [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/crtbegin.o] ==> ignore
     arg [-LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1] ==> dir [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1]
@@ -363,10 +363,10 @@ Parsed CXX implicit link information from above output:
     arg [-LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib] ==> dir [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/lib]
     arg [-LC:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../..] ==> dir [C:/Users/HP/Desktop/Compilers/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../..]
     arg [--whole-archive] ==> ignore
-    arg [CMakeFiles\cmTC_0fb73.dir/objects.a] ==> ignore
+    arg [CMakeFiles\cmTC_f629e.dir/objects.a] ==> ignore
     arg [--no-whole-archive] ==> ignore
     arg [--out-implib] ==> ignore
-    arg [libcmTC_0fb73.dll.a] ==> ignore
+    arg [libcmTC_f629e.dll.a] ==> ignore
     arg [--major-image-version] ==> ignore
     arg [0] ==> ignore
     arg [--minor-image-version] ==> ignore
@@ -411,16 +411,16 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_33eec/fast"
-C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_33eec.dir\build.make CMakeFiles/cmTC_33eec.dir/build
+Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_eb12e/fast"
+C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_eb12e.dir\build.make CMakeFiles/cmTC_eb12e.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_33eec.dir/feature_tests.cxx.obj
-C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe    -std=c++14 -o CMakeFiles\cmTC_33eec.dir\feature_tests.cxx.obj -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\feature_tests.cxx
-Linking CXX executable cmTC_33eec.exe
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_33eec.dir\link.txt --verbose=1
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_33eec.dir/objects.a
-C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_33eec.dir/objects.a @CMakeFiles\cmTC_33eec.dir\objects1.rsp
-C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_33eec.dir/objects.a -Wl,--no-whole-archive  -o cmTC_33eec.exe -Wl,--out-implib,libcmTC_33eec.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_33eec.dir\linklibs.rsp
+Building CXX object CMakeFiles/cmTC_eb12e.dir/feature_tests.cxx.obj
+C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe    -std=c++14 -o CMakeFiles\cmTC_eb12e.dir\feature_tests.cxx.obj -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_eb12e.exe
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_eb12e.dir\link.txt --verbose=1
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_eb12e.dir/objects.a
+C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_eb12e.dir/objects.a @CMakeFiles\cmTC_eb12e.dir\objects1.rsp
+C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_eb12e.dir/objects.a -Wl,--no-whole-archive  -o cmTC_eb12e.exe -Wl,--out-implib,libcmTC_eb12e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_eb12e.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
 
 
@@ -486,16 +486,16 @@ mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFi
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_5a0c9/fast"
-C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_5a0c9.dir\build.make CMakeFiles/cmTC_5a0c9.dir/build
+Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_30dce/fast"
+C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_30dce.dir\build.make CMakeFiles/cmTC_30dce.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_5a0c9.dir/feature_tests.cxx.obj
-C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe    -std=c++11 -o CMakeFiles\cmTC_5a0c9.dir\feature_tests.cxx.obj -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\feature_tests.cxx
-Linking CXX executable cmTC_5a0c9.exe
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_5a0c9.dir\link.txt --verbose=1
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_5a0c9.dir/objects.a
-C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_5a0c9.dir/objects.a @CMakeFiles\cmTC_5a0c9.dir\objects1.rsp
-C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_5a0c9.dir/objects.a -Wl,--no-whole-archive  -o cmTC_5a0c9.exe -Wl,--out-implib,libcmTC_5a0c9.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_5a0c9.dir\linklibs.rsp
+Building CXX object CMakeFiles/cmTC_30dce.dir/feature_tests.cxx.obj
+C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe    -std=c++11 -o CMakeFiles\cmTC_30dce.dir\feature_tests.cxx.obj -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_30dce.exe
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_30dce.dir\link.txt --verbose=1
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_30dce.dir/objects.a
+C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_30dce.dir/objects.a @CMakeFiles\cmTC_30dce.dir\objects1.rsp
+C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_30dce.dir/objects.a -Wl,--no-whole-archive  -o cmTC_30dce.exe -Wl,--out-implib,libcmTC_30dce.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_30dce.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
 
 
@@ -561,16 +561,16 @@ mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFi
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_54a96/fast"
-C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_54a96.dir\build.make CMakeFiles/cmTC_54a96.dir/build
+Run Build Command:"C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe" "cmTC_585cd/fast"
+C:/Users/HP/Desktop/Compilers/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_585cd.dir\build.make CMakeFiles/cmTC_585cd.dir/build
 mingw32-make.exe[1]: Entering directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_54a96.dir/feature_tests.cxx.obj
-C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe    -std=c++98 -o CMakeFiles\cmTC_54a96.dir\feature_tests.cxx.obj -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\feature_tests.cxx
-Linking CXX executable cmTC_54a96.exe
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_54a96.dir\link.txt --verbose=1
-C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_54a96.dir/objects.a
-C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_54a96.dir/objects.a @CMakeFiles\cmTC_54a96.dir\objects1.rsp
-C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_54a96.dir/objects.a -Wl,--no-whole-archive  -o cmTC_54a96.exe -Wl,--out-implib,libcmTC_54a96.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_54a96.dir\linklibs.rsp
+Building CXX object CMakeFiles/cmTC_585cd.dir/feature_tests.cxx.obj
+C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe    -std=c++98 -o CMakeFiles\cmTC_585cd.dir\feature_tests.cxx.obj -c C:\Users\HP\Desktop\Engine\build\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_585cd.exe
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_585cd.dir\link.txt --verbose=1
+C:\Users\HP\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f CMakeFiles\cmTC_585cd.dir/objects.a
+C:\Users\HP\Desktop\Compilers\mingw32\bin\ar.exe cr CMakeFiles\cmTC_585cd.dir/objects.a @CMakeFiles\cmTC_585cd.dir\objects1.rsp
+C:\Users\HP\Desktop\Compilers\mingw32\bin\g++.exe      -Wl,--whole-archive CMakeFiles\cmTC_585cd.dir/objects.a -Wl,--no-whole-archive  -o cmTC_585cd.exe -Wl,--out-implib,libcmTC_585cd.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_585cd.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'C:/Users/HP/Desktop/Engine/build/CMakeFiles/CMakeTmp'
 
 
