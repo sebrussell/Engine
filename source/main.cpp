@@ -16,9 +16,8 @@
 #include <stdio.h>
 #include <math.h>
 
-//#include "GameObject.h"
-//#include "Object.h"
-
+#include "GameObject.h"
+#include "Renderer.h"
 
 
 unsigned int loadTexture(char const * path);
@@ -34,7 +33,9 @@ glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 int main(int argc, char* argv[]) {	
 
-	//GameObject gameObject;
+	GameObject gameObject;
+	std::shared_ptr<Renderer> _ren = gameObject.AddComponent<Renderer>();
+	gameObject.Update();
 	
 	float vertices[] = {
 		// positions          // normals           // texture coords

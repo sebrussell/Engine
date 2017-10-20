@@ -149,6 +149,33 @@ libraries/glad/src/glad.c.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.s
 .PHONY : libraries/glad/src/glad.c.s
 
+source/GameObject.obj: source/GameObject.cpp.obj
+
+.PHONY : source/GameObject.obj
+
+# target to build an object file
+source/GameObject.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/GameObject.cpp.obj
+.PHONY : source/GameObject.cpp.obj
+
+source/GameObject.i: source/GameObject.cpp.i
+
+.PHONY : source/GameObject.i
+
+# target to preprocess a source file
+source/GameObject.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/GameObject.cpp.i
+.PHONY : source/GameObject.cpp.i
+
+source/GameObject.s: source/GameObject.cpp.s
+
+.PHONY : source/GameObject.s
+
+# target to generate assembly for a file
+source/GameObject.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/GameObject.cpp.s
+.PHONY : source/GameObject.cpp.s
+
 source/Mesh.obj: source/Mesh.cpp.obj
 
 .PHONY : source/Mesh.obj
@@ -296,6 +323,9 @@ help:
 	@echo ... libraries/glad/src/glad.obj
 	@echo ... libraries/glad/src/glad.i
 	@echo ... libraries/glad/src/glad.s
+	@echo ... source/GameObject.obj
+	@echo ... source/GameObject.i
+	@echo ... source/GameObject.s
 	@echo ... source/Mesh.obj
 	@echo ... source/Mesh.i
 	@echo ... source/Mesh.s

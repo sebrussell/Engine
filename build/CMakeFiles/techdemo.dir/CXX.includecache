@@ -1130,6 +1130,26 @@ vector
 iostream
 -
 
+C:/Users/HP/Desktop/Engine/source/Component.h
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+vector
+-
+memory
+-
+
+C:/Users/HP/Desktop/Engine/source/GameObject.cpp
+GameObject.h
+C:/Users/HP/Desktop/Engine/source/GameObject.h
+
+C:/Users/HP/Desktop/Engine/source/GameObject.h
+Component.h
+C:/Users/HP/Desktop/Engine/source/Component.h
+
 C:/Users/HP/Desktop/Engine/source/Mesh.cpp
 Mesh.h
 C:/Users/HP/Desktop/Engine/source/Mesh.h
@@ -1208,6 +1228,12 @@ iostream
 memory
 -
 
+C:/Users/HP/Desktop/Engine/source/Renderer.h
+iostream
+-
+Component.h
+C:/Users/HP/Desktop/Engine/source/Component.h
+
 C:/Users/HP/Desktop/Engine/source/Shader.h
 glad/glad.h
 -
@@ -1249,6 +1275,10 @@ stdio.h
 -
 math.h
 -
+GameObject.h
+C:/Users/HP/Desktop/Engine/source/GameObject.h
+Renderer.h
+C:/Users/HP/Desktop/Engine/source/Renderer.h
 
 C:/Users/HP/Desktop/Engine/source/stb_image.cpp
 stb_image.h

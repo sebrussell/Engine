@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/techdemo.dir/source/Mesh.cpp.obj"
   "CMakeFiles/techdemo.dir/source/Model.cpp.obj"
   "CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj"
+  "CMakeFiles/techdemo.dir/source/GameObject.cpp.obj"
   "techdemo.pdb"
   "techdemo.exe"
   "techdemo.exe.manifest"

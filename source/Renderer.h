@@ -1,17 +1,19 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 
-#include "Component.h"
+#include <iostream>
 
-class Shader;
+#include "Component.h"
 
 class Renderer : public Component
 {
 	public:
-		virtual void Update();
-		void SetShader(Shader _shader) { m_shader = _shader };
+		//Renderer();
+		//~Renderer();
+		virtual void Update() { std::cout << "I am rendered" << std::endl; }
+		//void SetShader(Shader _shader) { m_shader = _shader };
 	private:
-		Shader m_shader;
+		//Shader m_shader;
 };
 
-#endif RENDERER_H
+#endif 

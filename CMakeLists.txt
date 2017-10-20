@@ -23,6 +23,7 @@ add_executable(techdemo
 	source/Mesh.cpp
 	source/Model.cpp
 	source/OpenGL.cpp
+	source/GameObject.cpp
 )
 
 target_link_libraries(techdemo assimp glfw3) 

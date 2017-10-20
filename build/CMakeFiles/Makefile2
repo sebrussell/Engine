@@ -65,7 +65,7 @@ CMAKE_BINARY_DIR = C:\Users\HP\Desktop\Engine\build
 CMakeFiles/techdemo.dir/all:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/depend
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\HP\Desktop\Engine\build\CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target techdemo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\HP\Desktop\Engine\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target techdemo"
 .PHONY : CMakeFiles/techdemo.dir/all
 
 # Include target in all.
@@ -75,7 +75,7 @@ all: CMakeFiles/techdemo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/techdemo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\Desktop\Engine\build\CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\Desktop\Engine\build\CMakeFiles 8
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/techdemo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\Desktop\Engine\build\CMakeFiles 0
 .PHONY : CMakeFiles/techdemo.dir/rule

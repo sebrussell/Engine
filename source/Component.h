@@ -8,12 +8,12 @@
 #include <vector>
 #include <memory>
 
-class Shader;
-
 class Component
 {
 	public:	
-		virtual void Update();
+		//Component();
+		virtual ~Component() {};
+		virtual void Update() {};
 };
 
 #endif
