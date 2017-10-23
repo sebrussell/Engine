@@ -41,6 +41,7 @@ int OpenGL::Setup()
 		std::cout << "Failed to initialize GLAD" << std::endl;
 	}
 	
+	
 	glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
 
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
@@ -48,15 +49,19 @@ int OpenGL::Setup()
 	
 	m_camera = std::weak_ptr<Camera>();
 	
+	
 	glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
+	
+	
+	/*
     glEnable(GL_STENCIL_TEST);
-    glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+    glStencilFunc(GL_NOTEQUAL, 1, 0xFF);	
     glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
-	glEnable(GL_BLEND);  
+	glEnable(GL_BLEND);  	
 	glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, GL_ONE, GL_ZERO);
-	glEnable(GL_CULL_FACE); //this SPEEEDS IT UP LOADS - doesnt work with transpare tho
-
+	//glEnable(GL_CULL_FACE); //this SPEEEDS IT UP LOADS - doesnt work with transpare tho
+	*/
    
 	glfwSetKeyCallback(m_window, key_callback);
 	glfwSetFramebufferSizeCallback(m_window, framebuffer_size_callback);
@@ -83,9 +88,6 @@ void OpenGL::SwapBuffers()
 	glfwSwapBuffers(m_window);
 	glfwPollEvents();
 
-	glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-	
 }
 
 bool OpenGL::ShouldWindowClose()
@@ -120,6 +122,10 @@ void OpenGL::ProcessInput()
 	{
         m_camera.lock()->ProcessKeyboard(RIGHT, deltaTime);
 	}
+	
+	
+
+	
 }
 
 void OpenGL::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)

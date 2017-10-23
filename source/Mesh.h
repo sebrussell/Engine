@@ -34,14 +34,17 @@ struct Texture {
 class Mesh {
     public:
 	    /*  Functions  */
+		Mesh() {};
         Mesh(std::vector<Vertex> _vertices, std::vector<unsigned int> _indices, std::vector<Texture> _textures);
 		~Mesh();
         void Draw(Shader shader);
+		void MakeCube();
         /*  Mesh Data  */
         std::vector<Vertex> vertices;
         std::vector<unsigned int> indices;
         std::vector<Texture> textures;
-
+		
+	
 
     private:
         /*  Render data  */

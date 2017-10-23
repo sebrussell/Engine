@@ -99,6 +99,7 @@ class Camera
 	    // Processes input received from a mouse input system. Expects the offset value in both the x and y direction.
     void ProcessMouseMovement(float xpos, float ypos, GLboolean constrainPitch = true)
     {
+		std::cout << "Process Mouse" << std::endl;
 		if(firstMouse) // this bool variable is initially set to true
 		{
 			lastMouseX = xpos;

@@ -1,7 +1,7 @@
 #include "Model.h"
 
 void Model::Draw(Shader shader)
-{
+{	
     for(unsigned int i = 0; i < meshes.size(); i++)
 	{
         meshes[i].Draw(shader);
@@ -49,8 +49,13 @@ void Model::processNode(aiNode *node, const aiScene *scene)
     {
         processNode(node->mChildren[i], scene);
     }
-	
-	
+}
+
+void Model::MakeCube()
+{
+	_mesh.MakeCube();
+	meshes.push_back(_mesh);
+	std::cout << "CUBE MADE" << std::endl;
 }
 
 Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
