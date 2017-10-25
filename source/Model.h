@@ -23,6 +23,7 @@ class Model
         /*  Functions   */
         Model(std::string path);
 		void MakeCube();
+		void MakePlane();
         void Draw(Shader shader);	
     private:
         /*  Model Data  */

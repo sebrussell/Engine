@@ -5,10 +5,14 @@ Model::Model(std::string path)
 	switch (path)
 	{
 		case "CUBE":
+			MakeCube();
 			break;
 		case "PLANE":
+			MakeCube();
 			break;
 		default:
+			loadModel(path);
+			break;
 	}
 }
 
@@ -66,6 +70,13 @@ void Model::MakeCube()
 	_mesh.MakeCube();
 	meshes.push_back(_mesh);
 	std::cout << "CUBE MADE" << std::endl;
+}
+
+void Model::MakePlane()
+{
+	_mesh.MakePlane();
+	meshes.push_back(_mesh);
+	std::cout << "PLANE MADE" << std::endl;
 }
 
 Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)

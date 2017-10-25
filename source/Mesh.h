@@ -39,6 +39,7 @@ class Mesh {
 		~Mesh();
         void Draw(Shader shader);
 		void MakeCube();
+		void MakePlane();
         /*  Mesh Data  */
         std::vector<Vertex> vertices;
         std::vector<unsigned int> indices;
@@ -49,6 +50,7 @@ class Mesh {
     private:
         /*  Render data  */
         unsigned int VAO, VBO, EBO;
+		int m_amountOfVertices;
         /*  Functions    */
         void setupMesh();
 };  
