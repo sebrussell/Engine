@@ -21,6 +21,8 @@ enum Type
 {
 	CUBE,
 	PLANE,
+	QUAD,
+	SKYBOX,
 	MODEL
 };
 
@@ -31,8 +33,6 @@ class Model
 		Model(Type _type);
 		Model(Type _type, std::string path);
 
-		void MakeCube();
-		void MakePlane();
         void Draw(Shader shader);	
     private:
         /*  Model Data  */

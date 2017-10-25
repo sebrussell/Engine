@@ -40,6 +40,8 @@ class Mesh {
         void Draw(Shader shader);
 		void MakeCube();
 		void MakePlane();
+		void MakeQuad();
+		void MakeSkybox();
         /*  Mesh Data  */
         std::vector<Vertex> vertices;
         std::vector<unsigned int> indices;

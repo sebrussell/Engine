@@ -23,11 +23,20 @@ void Model::LoadPrimitive(Type _type)
 	switch(_type)
 	{
 		case CUBE:
-			MakeCube();
+			_mesh.MakeCube();
+			meshes.push_back(_mesh);
 			break;
 		case PLANE:
-			MakePlane();
+			_mesh.MakePlane();
+			meshes.push_back(_mesh);
 			break;
+		case QUAD:
+			_mesh.MakeQuad();
+			meshes.push_back(_mesh);
+			break;
+		case SKYBOX:
+			_mesh.MakeSkybox();
+			meshes.push_back(_mesh);
 		default:
 			break;			
 	}
@@ -80,20 +89,6 @@ void Model::processNode(aiNode *node, const aiScene *scene)
     {
         processNode(node->mChildren[i], scene);
     }
-}
-
-void Model::MakeCube()
-{
-	_mesh.MakeCube();
-	meshes.push_back(_mesh);
-	std::cout << "CUBE MADE" << std::endl;
-}
-
-void Model::MakePlane()
-{
-	_mesh.MakePlane();
-	meshes.push_back(_mesh);
-	std::cout << "PLANE MADE" << std::endl;
 }
 
 Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)

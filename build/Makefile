@@ -257,6 +257,33 @@ source/OpenGL.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/OpenGL.cpp.s
 .PHONY : source/OpenGL.cpp.s
 
+source/Skybox.obj: source/Skybox.cpp.obj
+
+.PHONY : source/Skybox.obj
+
+# target to build an object file
+source/Skybox.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Skybox.cpp.obj
+.PHONY : source/Skybox.cpp.obj
+
+source/Skybox.i: source/Skybox.cpp.i
+
+.PHONY : source/Skybox.i
+
+# target to preprocess a source file
+source/Skybox.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Skybox.cpp.i
+.PHONY : source/Skybox.cpp.i
+
+source/Skybox.s: source/Skybox.cpp.s
+
+.PHONY : source/Skybox.s
+
+# target to generate assembly for a file
+source/Skybox.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Skybox.cpp.s
+.PHONY : source/Skybox.cpp.s
+
 source/main.obj: source/main.cpp.obj
 
 .PHONY : source/main.obj
@@ -335,6 +362,9 @@ help:
 	@echo ... source/OpenGL.obj
 	@echo ... source/OpenGL.i
 	@echo ... source/OpenGL.s
+	@echo ... source/Skybox.obj
+	@echo ... source/Skybox.i
+	@echo ... source/Skybox.s
 	@echo ... source/main.obj
 	@echo ... source/main.i
 	@echo ... source/main.s

@@ -24,6 +24,7 @@ add_executable(techdemo
 	source/Model.cpp
 	source/OpenGL.cpp
 	source/GameObject.cpp
+	source/Skybox.cpp
 )
 
 target_link_libraries(techdemo assimp glfw3) 

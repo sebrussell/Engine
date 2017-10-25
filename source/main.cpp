@@ -48,11 +48,14 @@ int main(int argc, char* argv[]) {
 
 	OpenGL openGL;
 	openGL.Setup();
+	openGL.SetupFrameBuffer();
 	openGL.SetCamera(cameraMain);
 	
 	
 	//shaders
 	Shader ourShader("..//source/shaders/shader.vs", "..//source/shaders/shader.fs");	
+	Shader screenShader("..//source/shaders/quadShader.vs", "..//source/shaders/quadShader.fs");
+	Shader skyboxShader("..//source/shaders/skybox.vs", "..//source/shaders/skybox.fs");
 	
 	//Shader lightingShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs");	
 	
@@ -61,6 +64,8 @@ int main(int argc, char* argv[]) {
 	//Shader singleColour("..//source/shaders/shader.vs", "..//source/shaders/shaderSingleColour.fs");
 	
 	Model cube(CUBE);
+	Model quad(QUAD);
+	
 	
 	//Model ourModel("..//source/models/nanosuit2/nanosuit.obj");
 	
@@ -119,6 +124,8 @@ int main(int argc, char* argv[]) {
         deltaTime = openGL.deltaTime;
 		openGL.ProcessInput();
 		
+		openGL.FrameBufferFirstCall();
+		
 		glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		
@@ -132,7 +139,7 @@ int main(int argc, char* argv[]) {
 		ourShader.setMat4("projection", projection);
 	
 		glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, planeTexture);
+        glBindTexture(GL_TEXTURE_2D, diffuseMap);
 		
         for (unsigned int i = 0; i < 10; i++)
         {
@@ -145,6 +152,10 @@ int main(int argc, char* argv[]) {
 
             cube.Draw(ourShader);
         }
+		
+		screenShader.use();
+		openGL.FrameBufferSecondCall();
+		quad.Draw(screenShader);
 		
 		openGL.SwapBuffers(); 
 		 
