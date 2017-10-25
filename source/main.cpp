@@ -60,7 +60,7 @@ int main(int argc, char* argv[]) {
 
 	//Shader singleColour("..//source/shaders/shader.vs", "..//source/shaders/shaderSingleColour.fs");
 	
-	Model cube("PLANE");
+	Model cube(CUBE);
 	
 	//Model ourModel("..//source/models/nanosuit2/nanosuit.obj");
 	

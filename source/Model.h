@@ -17,11 +17,20 @@ class Shader;
 
 #include "Mesh.h"
 
+enum Type
+{
+	CUBE,
+	PLANE,
+	MODEL
+};
+
 class Model 
 {
     public:
         /*  Functions   */
-        Model(std::string path);
+		Model(Type _type);
+		Model(Type _type, std::string path);
+
 		void MakeCube();
 		void MakePlane();
         void Draw(Shader shader);	
@@ -32,7 +41,8 @@ class Model
         std::string directory;
 		Mesh _mesh;
         /*  Functions   */
-        void loadModel(std::string path);
+		void LoadPrimitive(Type _type);
+        void loadModel(std::string path);		
         void processNode(aiNode *node, const aiScene *scene);
         Mesh processMesh(aiMesh *mesh, const aiScene *scene);
         std::vector<Texture> loadMaterialTextures(aiMaterial *mat, aiTextureType type, std::string typeName);

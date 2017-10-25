@@ -1,18 +1,35 @@
 #include "Model.h"
 
-Model::Model(std::string path)
+Model::Model(Type _type)
 {
-	switch (path)
+	LoadPrimitive(_type);
+}
+
+Model::Model(Type _type, std::string path)
+{
+	if(_type == MODEL)
 	{
-		case "CUBE":
+		loadModel(path);
+	}
+	else
+	{
+		LoadPrimitive(_type);
+	}
+	
+}
+
+void Model::LoadPrimitive(Type _type)
+{
+	switch(_type)
+	{
+		case CUBE:
 			MakeCube();
 			break;
-		case "PLANE":
-			MakeCube();
+		case PLANE:
+			MakePlane();
 			break;
 		default:
-			loadModel(path);
-			break;
+			break;			
 	}
 }
 
