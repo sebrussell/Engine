@@ -1,5 +1,17 @@
 #include "Model.h"
 
+Model::Model(std::string path)
+{
+	switch (path)
+	{
+		case "CUBE":
+			break;
+		case "PLANE":
+			break;
+		default:
+	}
+}
+
 void Model::Draw(Shader shader)
 {	
     for(unsigned int i = 0; i < meshes.size(); i++)
@@ -33,8 +45,6 @@ void Model::loadModel(std::string path)
 
 void Model::processNode(aiNode *node, const aiScene *scene)
 {
-	
-	
     // process all the node's meshes (if any)
     for(unsigned int i = 0; i < node->mNumMeshes; i++)
     {

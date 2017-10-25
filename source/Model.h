@@ -21,11 +21,7 @@ class Model
 {
     public:
         /*  Functions   */
-        Model(std::string path)
-        {
-            loadModel(path);
-        }
-		Model() {};
+        Model(std::string path);
 		void MakeCube();
         void Draw(Shader shader);	
     private:
