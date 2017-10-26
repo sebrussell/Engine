@@ -512,7 +512,6 @@ CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/assimp/include/assim
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/assimp/include/assimp/metadata.h
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/assimp/include/assimp/postprocess.h
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/assimp/include/assimp/quaternion.h
-CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/assimp/include/assimp/quaternion.inl
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/assimp/include/assimp/scene.h
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/assimp/include/assimp/texture.h
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/assimp/include/assimp/types.h
@@ -597,6 +596,8 @@ CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/glm/glm/gtc/constant
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/glm/glm/gtc/matrix_transform.hpp
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/glm/glm/gtc/matrix_transform.inl
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/glm/glm/gtc/quaternion.hpp
+CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/glm/glm/gtc/quaternion.inl
+CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/glm/glm/gtc/quaternion_simd.inl
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/glm/glm/gtc/type_ptr.hpp
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/glm/glm/gtc/type_ptr.inl
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/glm/glm/integer.hpp
@@ -771,6 +772,7 @@ CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Model.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/OpenGL.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Renderer.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Shader.h
+CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Skybox.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/main.cpp
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/stb_image.h
 

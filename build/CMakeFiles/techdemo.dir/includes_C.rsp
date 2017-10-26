@@ -1,1 +1,1 @@
--IG:/C++/Engine/libraries/glm -IG:/C++/Engine/libraries/glfw/include -IG:/C++/Engine/libraries/glad/include -IG:/C++/Engine/libraries/assimp/include 
+-IW:/C++/Engine/libraries/glm -IW:/C++/Engine/libraries/glfw/include -IW:/C++/Engine/libraries/glad/include -IW:/C++/Engine/libraries/assimp/include 

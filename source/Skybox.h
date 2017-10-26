@@ -1,8 +1,11 @@
 #ifndef SKYBOX_H
 #define SKYBOX_H
 
-#include "Model.h"
 #include "OpenGL.h"
+#include "Model.h"
+
+#include <memory>
+
 
 class Skybox
 {
@@ -10,8 +13,9 @@ class Skybox
 		Skybox();
 		~Skybox() {};
 		unsigned int loadCubemap();
+		void Draw(Shader shader);
 	private:
-		Model skybox;
+		std::shared_ptr<Model> skybox;
 		std::vector<std::string> faces;
 		unsigned int cubemapTexture;
 };

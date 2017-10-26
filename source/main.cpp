@@ -7,6 +7,8 @@
 
 #include "Shader.h"
 #include "stb_image.h"
+
+#include "Skybox.h"
 //#include "Camera.h"
 
 #include <glm/glm.hpp>
@@ -66,6 +68,9 @@ int main(int argc, char* argv[]) {
 	Model cube(CUBE);
 	Model quad(QUAD);
 	
+	Skybox skybox;
+	skybox.loadCubemap();
+	
 	
 	//Model ourModel("..//source/models/nanosuit2/nanosuit.obj");
 	
@@ -124,12 +129,14 @@ int main(int argc, char* argv[]) {
         deltaTime = openGL.deltaTime;
 		openGL.ProcessInput();
 		
+		
 		openGL.FrameBufferFirstCall();
 		
 		glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		
 		ourShader.use();
+		
 		
         glm::mat4 view;
         glm::mat4 projection;
@@ -153,9 +160,20 @@ int main(int argc, char* argv[]) {
             cube.Draw(ourShader);
         }
 		
+		
+		skyboxShader.use();
+		view = glm::mat4(glm::mat3(cameraMain->GetViewMatrix())); 
+		projection = glm::perspective(glm::radians(45.0f), (float)800 / (float)600, 0.1f, 100.0f);		
+		skyboxShader.setMat4("view", view);
+		skyboxShader.setMat4("projection", projection);
+		skybox.Draw(skyboxShader);
+		
 		screenShader.use();
 		openGL.FrameBufferSecondCall();
 		quad.Draw(screenShader);
+		
+		
+
 		
 		openGL.SwapBuffers(); 
 		 

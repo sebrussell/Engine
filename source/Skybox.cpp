@@ -2,8 +2,7 @@
 
 Skybox::Skybox()
 {
-	Model _temp(SKYBOX);
-	skybox = _temp;
+	skybox = std::shared_ptr<Model>(new Model(SKYBOX));
 	faces.push_back("..//source/textures/skybox/right.jpg");
 	faces.push_back("..//source/textures/skybox/left.jpg");
 	faces.push_back("..//source/textures/skybox/top.jpg");
@@ -11,6 +10,14 @@ Skybox::Skybox()
 	faces.push_back("..//source/textures/skybox/back.jpg");
 	faces.push_back("..//source/textures/skybox/front.jpg");
 	cubemapTexture = loadCubemap();
+}
+
+void Skybox::Draw(Shader shader)
+{
+	glDepthFunc(GL_LEQUAL);
+	glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
+	skybox->Draw(shader);
+	glDepthFunc(GL_LESS);
 }
 
 unsigned int Skybox::loadCubemap()

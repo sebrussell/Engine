@@ -4,7 +4,7 @@
 CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.obj
  ../libraries/glad/include/KHR/khrplatform.h
  ../libraries/glad/include/glad/glad.h
- G:/C++/Engine/libraries/glad/src/glad.c
+ W:/C++/Engine/libraries/glad/src/glad.c
 CMakeFiles/techdemo.dir/source/GameObject.cpp.obj
  ../libraries/glm/glm/common.hpp
  ../libraries/glm/glm/detail/_fixes.hpp
@@ -107,9 +107,9 @@ CMakeFiles/techdemo.dir/source/GameObject.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- G:/C++/Engine/source/Component.h
- G:/C++/Engine/source/GameObject.cpp
- G:/C++/Engine/source/GameObject.h
+ W:/C++/Engine/source/Component.h
+ W:/C++/Engine/source/GameObject.cpp
+ W:/C++/Engine/source/GameObject.h
 CMakeFiles/techdemo.dir/source/Mesh.cpp.obj
  ../libraries/assimp/include/assimp/./Compiler/poppack1.h
  ../libraries/assimp/include/assimp/./Compiler/pushpack1.h
@@ -243,9 +243,9 @@ CMakeFiles/techdemo.dir/source/Mesh.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- G:/C++/Engine/source/Mesh.cpp
- G:/C++/Engine/source/Mesh.h
- G:/C++/Engine/source/Shader.h
+ W:/C++/Engine/source/Mesh.cpp
+ W:/C++/Engine/source/Mesh.h
+ W:/C++/Engine/source/Shader.h
 CMakeFiles/techdemo.dir/source/Model.cpp.obj
  ../libraries/assimp/include/assimp/./Compiler/poppack1.h
  ../libraries/assimp/include/assimp/./Compiler/pushpack1.h
@@ -378,11 +378,11 @@ CMakeFiles/techdemo.dir/source/Model.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- G:/C++/Engine/source/Mesh.h
- G:/C++/Engine/source/Model.cpp
- G:/C++/Engine/source/Model.h
- G:/C++/Engine/source/Shader.h
- G:/C++/Engine/source/stb_image.h
+ W:/C++/Engine/source/Mesh.h
+ W:/C++/Engine/source/Model.cpp
+ W:/C++/Engine/source/Model.h
+ W:/C++/Engine/source/Shader.h
+ W:/C++/Engine/source/stb_image.h
 CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj
  ../libraries/glad/include/KHR/khrplatform.h
  ../libraries/glad/include/glad/glad.h
@@ -488,9 +488,9 @@ CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- G:/C++/Engine/source/Camera.h
- G:/C++/Engine/source/OpenGL.cpp
- G:/C++/Engine/source/OpenGL.h
+ W:/C++/Engine/source/Camera.h
+ W:/C++/Engine/source/OpenGL.cpp
+ W:/C++/Engine/source/OpenGL.h
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj
  ../libraries/assimp/include/assimp/./Compiler/poppack1.h
  ../libraries/assimp/include/assimp/./Compiler/pushpack1.h
@@ -513,7 +513,6 @@ CMakeFiles/techdemo.dir/source/Skybox.cpp.obj
  ../libraries/assimp/include/assimp/metadata.h
  ../libraries/assimp/include/assimp/postprocess.h
  ../libraries/assimp/include/assimp/quaternion.h
- ../libraries/assimp/include/assimp/quaternion.inl
  ../libraries/assimp/include/assimp/scene.h
  ../libraries/assimp/include/assimp/texture.h
  ../libraries/assimp/include/assimp/types.h
@@ -598,6 +597,8 @@ CMakeFiles/techdemo.dir/source/Skybox.cpp.obj
  ../libraries/glm/glm/gtc/matrix_transform.hpp
  ../libraries/glm/glm/gtc/matrix_transform.inl
  ../libraries/glm/glm/gtc/quaternion.hpp
+ ../libraries/glm/glm/gtc/quaternion.inl
+ ../libraries/glm/glm/gtc/quaternion_simd.inl
  ../libraries/glm/glm/gtc/type_ptr.hpp
  ../libraries/glm/glm/gtc/type_ptr.inl
  ../libraries/glm/glm/integer.hpp
@@ -623,14 +624,14 @@ CMakeFiles/techdemo.dir/source/Skybox.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- G:/C++/Engine/source/Camera.h
- G:/C++/Engine/source/Mesh.h
- G:/C++/Engine/source/Model.h
- G:/C++/Engine/source/OpenGL.h
- G:/C++/Engine/source/Shader.h
- G:/C++/Engine/source/Skybox.cpp
- G:/C++/Engine/source/Skybox.h
- G:/C++/Engine/source/stb_image.h
+ W:/C++/Engine/source/Camera.h
+ W:/C++/Engine/source/Mesh.h
+ W:/C++/Engine/source/Model.h
+ W:/C++/Engine/source/OpenGL.h
+ W:/C++/Engine/source/Shader.h
+ W:/C++/Engine/source/Skybox.cpp
+ W:/C++/Engine/source/Skybox.h
+ W:/C++/Engine/source/stb_image.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj
  ../libraries/assimp/include/assimp/./Compiler/poppack1.h
  ../libraries/assimp/include/assimp/./Compiler/pushpack1.h
@@ -764,16 +765,17 @@ CMakeFiles/techdemo.dir/source/main.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- G:/C++/Engine/source/Camera.h
- G:/C++/Engine/source/Component.h
- G:/C++/Engine/source/GameObject.h
- G:/C++/Engine/source/Mesh.h
- G:/C++/Engine/source/Model.h
- G:/C++/Engine/source/OpenGL.h
- G:/C++/Engine/source/Renderer.h
- G:/C++/Engine/source/Shader.h
- G:/C++/Engine/source/main.cpp
- G:/C++/Engine/source/stb_image.h
+ W:/C++/Engine/source/Camera.h
+ W:/C++/Engine/source/Component.h
+ W:/C++/Engine/source/GameObject.h
+ W:/C++/Engine/source/Mesh.h
+ W:/C++/Engine/source/Model.h
+ W:/C++/Engine/source/OpenGL.h
+ W:/C++/Engine/source/Renderer.h
+ W:/C++/Engine/source/Shader.h
+ W:/C++/Engine/source/Skybox.h
+ W:/C++/Engine/source/main.cpp
+ W:/C++/Engine/source/stb_image.h
 CMakeFiles/techdemo.dir/source/stb_image.cpp.obj
- G:/C++/Engine/source/stb_image.cpp
- G:/C++/Engine/source/stb_image.h
+ W:/C++/Engine/source/stb_image.cpp
+ W:/C++/Engine/source/stb_image.h
