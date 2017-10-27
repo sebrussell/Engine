@@ -5,6 +5,14 @@ Model::Model(Type _type)
 	LoadPrimitive(_type);
 }
 
+Model::~Model()
+{
+	for(unsigned int i = 0; i < meshes.size(); i++)
+	{
+        meshes[i].DeleteMesh();
+	}
+}
+
 Model::Model(Type _type, std::string path)
 {
 	if(_type == MODEL)

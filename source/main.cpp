@@ -50,16 +50,16 @@ int main(int argc, char* argv[]) {
 
 	OpenGL openGL;
 	openGL.Setup();
-	//openGL.SetupFrameBuffer();
+	openGL.SetupFrameBuffer();
 	openGL.SetCamera(cameraMain);
 	
 	
 	//shaders
 	Shader ourShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs");	
-	//Shader screenShader("..//source/shaders/postProcShader.vs", "..//source/shaders/postProcShader.fs");
-	//Shader skyboxShader("..//source/shaders/skyboxShader.vs", "..//source/shaders/skyboxShader.fs");
-	//Shader reflectShader("..//source/shaders/reflectShader.vs", "..//source/shaders/reflectShader.fs");
-	//Shader blankScreenShader("..//source/shaders/blankPostShader.vs", "..//source/shaders/blankPostShader.fs");
+	Shader screenShader("..//source/shaders/postProcShader.vs", "..//source/shaders/postProcShader.fs");
+	Shader skyboxShader("..//source/shaders/skyboxShader.vs", "..//source/shaders/skyboxShader.fs");
+	Shader reflectShader("..//source/shaders/reflectShader.vs", "..//source/shaders/reflectShader.fs");
+	Shader blankScreenShader("..//source/shaders/blankPostShader.vs", "..//source/shaders/blankPostShader.fs");
 	
 	//Shader lightingShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs");	
 	
@@ -68,11 +68,11 @@ int main(int argc, char* argv[]) {
 	//Shader singleColour("..//source/shaders/shader.vs", "..//source/shaders/shaderSingleColour.fs");
 	
 	//Model cube(CUBE);
-	//Model quad(QUAD);
-	//Model reflect(REFLECT_CUBE);
+	Model quad(QUAD);
+	Model reflect(REFLECT_CUBE);
 	
-	//Skybox skybox;
-	//skybox.loadCubemap();
+	Skybox skybox;
+	skybox.loadCubemap();
 	
 	
 	Model ourModel(MODEL, "..//source/models/nanosuit2/nanosuit.obj");
@@ -132,18 +132,17 @@ int main(int argc, char* argv[]) {
         deltaTime = openGL.deltaTime;
 		openGL.ProcessInput();
 		
-		//openGL.FrameBufferFirstCall();
+		openGL.FrameBufferFirstCall();
 		
 		glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
-		//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+		
+		glm::mat4 model;
+        glm::mat4 view = cameraMain->GetViewMatrix();
+        glm::mat4 projection = glm::perspective(glm::radians(cameraMain->Zoom), (float)openGL.GetWindowWidth() / (float)openGL.GetWindowHeight(), 0.1f, 100.0f);
 		
 		/*
 		reflectShader.use();
-
-        glm::mat4 model;
-        glm::mat4 view = cameraMain->GetViewMatrix();
-        glm::mat4 projection = glm::perspective(glm::radians(cameraMain->Zoom), (float)openGL.GetWindowWidth() / (float)openGL.GetWindowHeight(), 0.1f, 100.0f);
         reflectShader.setMat4("model", model);
         reflectShader.setMat4("view", view);
         reflectShader.setMat4("projection", projection);
@@ -151,6 +150,14 @@ int main(int argc, char* argv[]) {
         // cubes
         glBindTexture(GL_TEXTURE_CUBE_MAP, skybox.GetSkyboxTexture());
 		reflect.Draw(reflectShader);
+		*/
+		
+				ourShader.use();
+        ourShader.setMat4("projection", projection);
+        ourShader.setMat4("view", view);
+		model = glm::mat4();
+        ourShader.setMat4("model", model);
+        ourModel.Draw(ourShader);
 		
 		skyboxShader.use();
 		view = glm::mat4(glm::mat3(cameraMain->GetViewMatrix())); 
@@ -158,22 +165,14 @@ int main(int argc, char* argv[]) {
 		skyboxShader.setMat4("view", view);
 		skyboxShader.setMat4("projection", projection);
 		skybox.Draw(skyboxShader);
-		*/
 		
-		glm::mat4 model;
-        glm::mat4 view = cameraMain->GetViewMatrix();
-        glm::mat4 projection = glm::perspective(glm::radians(cameraMain->Zoom), (float)openGL.GetWindowWidth() / (float)openGL.GetWindowHeight(), 0.1f, 100.0f);
 		
-		ourShader.use();
-        ourShader.setMat4("projection", projection);
-        ourShader.setMat4("view", view);
-		model = glm::mat4();
-        ourShader.setMat4("model", model);
-        ourModel.Draw(ourShader);
 
-		//blankScreenShader.use();
-		//openGL.FrameBufferSecondCall();
-		//quad.Draw(blankScreenShader);
+		
+
+		blankScreenShader.use();
+		openGL.FrameBufferSecondCall();
+		quad.Draw(blankScreenShader);
 		
 		
 		openGL.SwapBuffers(); 

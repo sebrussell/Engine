@@ -33,7 +33,7 @@ class Model
         /*  Functions   */
 		Model(Type _type);
 		Model(Type _type, std::string path);
-		
+		~Model();
 		bool gammaCorrection;
 
         void Draw(Shader shader);	

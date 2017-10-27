@@ -11,6 +11,11 @@ Mesh::Mesh(std::vector<Vertex> _vertices, std::vector<unsigned int> _indices, st
 
 Mesh::~Mesh()
 {
+
+}
+
+void Mesh::DeleteMesh()
+{
 	glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
 }
@@ -313,7 +318,6 @@ void Mesh::Draw(Shader shader)
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
-
         // always good practice to set everything back to defaults once configured.
         glActiveTexture(GL_TEXTURE0);
 	}
