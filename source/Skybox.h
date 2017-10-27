@@ -14,6 +14,7 @@ class Skybox
 		~Skybox() {};
 		unsigned int loadCubemap();
 		void Draw(Shader shader);
+		unsigned int GetSkyboxTexture() { return cubemapTexture; }
 	private:
 		std::shared_ptr<Model> skybox;
 		std::vector<std::string> faces;

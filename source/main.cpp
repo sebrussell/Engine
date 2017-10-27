@@ -50,14 +50,16 @@ int main(int argc, char* argv[]) {
 
 	OpenGL openGL;
 	openGL.Setup();
-	openGL.SetupFrameBuffer();
+	//openGL.SetupFrameBuffer();
 	openGL.SetCamera(cameraMain);
 	
 	
 	//shaders
-	Shader ourShader("..//source/shaders/shader.vs", "..//source/shaders/shader.fs");	
-	Shader screenShader("..//source/shaders/quadShader.vs", "..//source/shaders/quadShader.fs");
-	Shader skyboxShader("..//source/shaders/skybox.vs", "..//source/shaders/skybox.fs");
+	Shader ourShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs");	
+	//Shader screenShader("..//source/shaders/postProcShader.vs", "..//source/shaders/postProcShader.fs");
+	//Shader skyboxShader("..//source/shaders/skyboxShader.vs", "..//source/shaders/skyboxShader.fs");
+	//Shader reflectShader("..//source/shaders/reflectShader.vs", "..//source/shaders/reflectShader.fs");
+	//Shader blankScreenShader("..//source/shaders/blankPostShader.vs", "..//source/shaders/blankPostShader.fs");
 	
 	//Shader lightingShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs");	
 	
@@ -65,17 +67,18 @@ int main(int argc, char* argv[]) {
 
 	//Shader singleColour("..//source/shaders/shader.vs", "..//source/shaders/shaderSingleColour.fs");
 	
-	Model cube(CUBE);
-	Model quad(QUAD);
+	//Model cube(CUBE);
+	//Model quad(QUAD);
+	//Model reflect(REFLECT_CUBE);
 	
-	Skybox skybox;
-	skybox.loadCubemap();
+	//Skybox skybox;
+	//skybox.loadCubemap();
 	
 	
-	//Model ourModel("..//source/models/nanosuit2/nanosuit.obj");
+	Model ourModel(MODEL, "..//source/models/nanosuit2/nanosuit.obj");
 	
-	unsigned int diffuseMap = loadTexture("..//source/textures/container2.png");
-	unsigned int planeTexture = loadTexture("..//source/textures/arrow.jpg");
+	//unsigned int diffuseMap = loadTexture("..//source/textures/container2.png");
+	//unsigned int planeTexture = loadTexture("..//source/textures/arrow.jpg");
 	
 	//GRASS
 	/*
@@ -129,37 +132,25 @@ int main(int argc, char* argv[]) {
         deltaTime = openGL.deltaTime;
 		openGL.ProcessInput();
 		
-		
-		openGL.FrameBufferFirstCall();
+		//openGL.FrameBufferFirstCall();
 		
 		glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+		//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
-		ourShader.use();
-		
-		
-        glm::mat4 view;
-        glm::mat4 projection;
-		view = cameraMain->GetViewMatrix();
-        projection = glm::perspective(glm::radians(45.0f), (float)800 / (float)600, 0.1f, 100.0f);
-		ourShader.setMat4("view", view);
-		ourShader.setMat4("projection", projection);
-	
-		glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, diffuseMap);
-		
-        for (unsigned int i = 0; i < 10; i++)
-        {
-            // calculate the model matrix for each object and pass it to shader before drawing
-            glm::mat4 model;
-            model = glm::translate(model, cubePositions[i]);
-            float angle = 20.0f * i;
-            model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
-            ourShader.setMat4("model", model);
+		/*
+		reflectShader.use();
 
-            cube.Draw(ourShader);
-        }
-		
+        glm::mat4 model;
+        glm::mat4 view = cameraMain->GetViewMatrix();
+        glm::mat4 projection = glm::perspective(glm::radians(cameraMain->Zoom), (float)openGL.GetWindowWidth() / (float)openGL.GetWindowHeight(), 0.1f, 100.0f);
+        reflectShader.setMat4("model", model);
+        reflectShader.setMat4("view", view);
+        reflectShader.setMat4("projection", projection);
+        reflectShader.setVec3("cameraPos", cameraMain->Position);
+        // cubes
+        glBindTexture(GL_TEXTURE_CUBE_MAP, skybox.GetSkyboxTexture());
+		reflect.Draw(reflectShader);
 		
 		skyboxShader.use();
 		view = glm::mat4(glm::mat3(cameraMain->GetViewMatrix())); 
@@ -167,13 +158,23 @@ int main(int argc, char* argv[]) {
 		skyboxShader.setMat4("view", view);
 		skyboxShader.setMat4("projection", projection);
 		skybox.Draw(skyboxShader);
+		*/
 		
-		screenShader.use();
-		openGL.FrameBufferSecondCall();
-		quad.Draw(screenShader);
+		glm::mat4 model;
+        glm::mat4 view = cameraMain->GetViewMatrix();
+        glm::mat4 projection = glm::perspective(glm::radians(cameraMain->Zoom), (float)openGL.GetWindowWidth() / (float)openGL.GetWindowHeight(), 0.1f, 100.0f);
 		
-		
+		ourShader.use();
+        ourShader.setMat4("projection", projection);
+        ourShader.setMat4("view", view);
+		model = glm::mat4();
+        ourShader.setMat4("model", model);
+        ourModel.Draw(ourShader);
 
+		//blankScreenShader.use();
+		//openGL.FrameBufferSecondCall();
+		//quad.Draw(blankScreenShader);
+		
 		
 		openGL.SwapBuffers(); 
 		 

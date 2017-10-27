@@ -23,6 +23,7 @@ enum Type
 	PLANE,
 	QUAD,
 	SKYBOX,
+	REFLECT_CUBE,
 	MODEL
 };
 
@@ -32,6 +33,8 @@ class Model
         /*  Functions   */
 		Model(Type _type);
 		Model(Type _type, std::string path);
+		
+		bool gammaCorrection;
 
         void Draw(Shader shader);	
     private:

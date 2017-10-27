@@ -42,16 +42,17 @@ class Mesh {
 		void MakePlane();
 		void MakeQuad();
 		void MakeSkybox();
+		void MakeReflectCube();
         /*  Mesh Data  */
         std::vector<Vertex> vertices;
         std::vector<unsigned int> indices;
         std::vector<Texture> textures;
-		
+		unsigned int VAO;
 	
 
     private:
         /*  Render data  */
-        unsigned int VAO, VBO, EBO;
+        unsigned int VBO, EBO;
 		int m_amountOfVertices;
         /*  Functions    */
         void setupMesh();
