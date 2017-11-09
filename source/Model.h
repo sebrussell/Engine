@@ -35,7 +35,7 @@ class Model
 		Model(Type _type, std::string path);
 		~Model();
 		bool gammaCorrection;
-
+		void ChangeTexture(unsigned int texture);
         void Draw(Shader shader);	
     private:
         /*  Model Data  */

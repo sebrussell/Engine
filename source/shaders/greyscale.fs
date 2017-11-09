@@ -14,12 +14,12 @@ void main()
 	//FragColor = vec4(vec3(1.0 - texture(screenTexture, TexCoords)), 1.0);
 
 //GRAYSCALE
-    FragColor = texture(screenTexture, TexCoords);
-    float average = 0.2126 * FragColor.r + 0.7152 * FragColor.g + 0.0722 * FragColor.b;
-    FragColor = vec4(average, average, average, 1.0);
+//    FragColor = texture(screenTexture, TexCoords);
+//    float average = 0.2126 * FragColor.r + 0.7152 * FragColor.g + 0.0722 * FragColor.b;
+//    FragColor = vec4(average, average, average, 1.0);
 
 //KERNEL POST PROCESSING
-	/*
+	
     vec2 offsets[9] = vec2[](
         vec2(-offset,  offset), // top-left
         vec2( 0.0f,    offset), // top-center
@@ -31,16 +31,16 @@ void main()
         vec2( 0.0f,   -offset), // bottom-center
         vec2( offset, -offset)  // bottom-right    
     );
-	*/
+	
 	
 	//SHARPEN
-	/*
+	
     float kernel[9] = float[](
         -1, -1, -1,
         -1,  9, -1,
         -1, -1, -1
     );
-	*/
+	
 	
 	//EDGE DETECTION
 	/*
@@ -59,7 +59,7 @@ void main()
 		1.0 / 16, 2.0 / 16, 1.0 / 16  
 	);
 	*/
-    /*
+    
     vec3 sampleTex[9];
     for(int i = 0; i < 9; i++)
     {
@@ -70,5 +70,5 @@ void main()
         col += sampleTex[i] * kernel[i];
     
     FragColor = vec4(col, 1.0);
-	*/
+	
 }  

@@ -2,8 +2,10 @@
 #define RENDERER_H
 
 #include <iostream>
+#include <memory>
 
 #include "Component.h"
+#include "Shader.h"
 
 class Renderer : public Component
 {

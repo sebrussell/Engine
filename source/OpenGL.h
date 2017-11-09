@@ -30,10 +30,6 @@ class OpenGL
 		void ProcessInput();
 		void SwapBuffers();
 		
-		void SetupFrameBuffer();
-		void FrameBufferFirstCall();
-		void FrameBufferSecondCall();
-		
 		//-------- CALLBACK FUNCTIONS ----------//
 		static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 		static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -51,7 +47,7 @@ class OpenGL
 		int SCR_WIDTH;
 		int SCR_HEIGHT;
 		
-		unsigned int framebuffer, textureColorbuffer, rbo;
+		
 };
 
 #endif

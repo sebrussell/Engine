@@ -328,3 +328,10 @@ void Mesh::Draw(Shader shader)
 	}    
 }  
 
+void Mesh::ChangeTexture(unsigned int texture)
+{
+	for(unsigned int i = 0; i < textures.size(); i++)
+    {
+		textures[i].id = texture;
+	}
+}

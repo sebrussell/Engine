@@ -44,6 +44,7 @@ class Mesh {
 		void MakeQuad();
 		void MakeSkybox();
 		void MakeReflectCube();
+		void ChangeTexture(unsigned int texture);
         /*  Mesh Data  */
         std::vector<Vertex> vertices;
         std::vector<unsigned int> indices;

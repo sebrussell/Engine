@@ -30,6 +30,8 @@ float deltaTime = 0.0f;	// Time between current frame and last frame
 
 
 std::shared_ptr<Camera> cameraMain = std::make_shared<Camera>(Camera());
+std::shared_ptr<Camera> cameraFBO1 = std::make_shared<Camera>(Camera());
+std::shared_ptr<Camera> cameraFBO2 = std::make_shared<Camera>(Camera());
 
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
@@ -50,24 +52,32 @@ int main(int argc, char* argv[]) {
 
 	OpenGL openGL;
 	openGL.Setup();
-	openGL.SetupFrameBuffer();
 	openGL.SetCamera(cameraMain);
 	
+	cameraFBO1->SetupFrameBuffer(openGL.GetWindowWidth(), openGL.GetWindowHeight());
+	cameraFBO2->SetupFrameBuffer(openGL.GetWindowWidth(), openGL.GetWindowHeight());
+	
+
 	
 	//shaders
 	Shader ourShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs");	
+	ourShader.CreateMatrixBuffer();
 	Shader screenShader("..//source/shaders/postProcShader.vs", "..//source/shaders/postProcShader.fs");
+	Shader greyscaleShader("..//source/shaders/postProcShader.vs", "..//source/shaders/greyscale.fs");
+	Shader blurShader("..//source/shaders/postProcShader.vs", "..//source/shaders/blur.fs");
 	Shader skyboxShader("..//source/shaders/skyboxShader.vs", "..//source/shaders/skyboxShader.fs");
 	Shader reflectShader("..//source/shaders/reflectShader.vs", "..//source/shaders/reflectShader.fs");
 	Shader blankScreenShader("..//source/shaders/blankPostShader.vs", "..//source/shaders/blankPostShader.fs");
 	
-	//Shader lightingShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs");	
+	Shader geometryShader("..//source/shaders/geometryShader/geometryShader.vs", "..//source/shaders/geometryShader/geometryShader.fs", "..//source/shaders/geometryShader/geometryShader.gs");
+	
+	Shader lightingShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs");	
 	
 	//Shader lampShader("..//source/shaders/lampShader.vs", "..//source/shaders/lampShader.fs");	
 
 	//Shader singleColour("..//source/shaders/shader.vs", "..//source/shaders/shaderSingleColour.fs");
 	
-	//Model cube(CUBE);
+	Model cube(CUBE);
 	Model quad(QUAD);
 	Model reflect(REFLECT_CUBE);
 	
@@ -77,8 +87,8 @@ int main(int argc, char* argv[]) {
 	
 	Model ourModel(MODEL, "..//source/models/nanosuit2/nanosuit.obj");
 	
-	//unsigned int diffuseMap = loadTexture("..//source/textures/container2.png");
-	//unsigned int planeTexture = loadTexture("..//source/textures/arrow.jpg");
+	unsigned int diffuseMap = loadTexture("..//source/textures/container2.png");
+	unsigned int planeTexture = loadTexture("..//source/textures/arrow.jpg");
 	
 	//GRASS
 	/*
@@ -111,68 +121,100 @@ int main(int argc, char* argv[]) {
     }; 
 	*/
 	
-		glm::vec3 cubePositions[] = {
-		glm::vec3( 0.0f,  0.0f,  0.0f), 
-		glm::vec3( 2.0f,  5.0f, -15.0f), 
-		glm::vec3(-1.5f, -2.2f, -2.5f),  
-		glm::vec3(-3.8f, -2.0f, -12.3f),  
-		glm::vec3( 2.4f, -0.4f, -3.5f),  
-		glm::vec3(-1.7f,  3.0f, -7.5f),  
-		glm::vec3( 1.3f, -2.0f, -2.5f),  
-		glm::vec3( 1.5f,  2.0f, -2.5f), 
-		glm::vec3( 1.5f,  0.2f, -1.5f), 
-		glm::vec3(-1.3f,  1.0f, -1.5f)  
-	};
-	
-	
-
 	while(openGL.ShouldWindowClose())
 	{		
 
         deltaTime = openGL.deltaTime;
 		openGL.ProcessInput();
 		
-		openGL.FrameBufferFirstCall();
+		//set first camera fbo
+		//cameraFBO1->Use(true);
 		
 		glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-		
-		glm::mat4 model;
+
+		glm::mat4 model;		
         glm::mat4 view = cameraMain->GetViewMatrix();
         glm::mat4 projection = glm::perspective(glm::radians(cameraMain->Zoom), (float)openGL.GetWindowWidth() / (float)openGL.GetWindowHeight(), 0.1f, 100.0f);
 		
+        geometryShader.use();
+		geometryShader.setMat4("projection", projection);
+        geometryShader.setMat4("view", view);
+        geometryShader.setMat4("model", model);
+
+        // add time component to geometry shader in the form of a uniform
+        geometryShader.setFloat("time", glfwGetTime());
+		
+		ourModel.Draw(ourShader);
+		
+		//cameraMain->Use(false);
+		openGL.SwapBuffers(); 
+		
 		/*
+		glm::mat4 model;		
+        glm::mat4 view = cameraMain->GetViewMatrix();
+        glm::mat4 projection = glm::perspective(glm::radians(cameraMain->Zoom), (float)openGL.GetWindowWidth() / (float)openGL.GetWindowHeight(), 0.1f, 100.0f);
+		
+		ourShader.use();
+		ourShader.UpdateMatrix(projection, view);
+		
+		ourShader.use();
+		model = glm::translate(model, pointLightPositions[1]);		
+        ourShader.setMat4("model", model);
+		glBindTexture(GL_TEXTURE_2D, diffuseMap);
+		cube.Draw(ourShader);
+		
 		reflectShader.use();
+		model = glm::translate(model, pointLightPositions[0]);		
         reflectShader.setMat4("model", model);
-        reflectShader.setMat4("view", view);
-        reflectShader.setMat4("projection", projection);
         reflectShader.setVec3("cameraPos", cameraMain->Position);
         // cubes
         glBindTexture(GL_TEXTURE_CUBE_MAP, skybox.GetSkyboxTexture());
 		reflect.Draw(reflectShader);
 		*/
 		
-				ourShader.use();
+		/*
+		ourShader.use();
         ourShader.setMat4("projection", projection);
         ourShader.setMat4("view", view);
 		model = glm::mat4();
         ourShader.setMat4("model", model);
         ourModel.Draw(ourShader);
+		*/
 		
+		/*
 		skyboxShader.use();
 		view = glm::mat4(glm::mat3(cameraMain->GetViewMatrix())); 
 		projection = glm::perspective(glm::radians(45.0f), (float)800 / (float)600, 0.1f, 100.0f);		
 		skyboxShader.setMat4("view", view);
 		skyboxShader.setMat4("projection", projection);
 		skybox.Draw(skyboxShader);
+		*/
 		
-		
+		//cameraFBO1->SetFBOTexture();
+		//cameraFBO2->Use(false);
+		//screenShader.use();
+		//quad.Draw(screenShader);
 
+		//ourModel.ChangeTexture(cameraFBO1->textureColorbuffer);
 		
-
+		//cameraFBO2->SetFBOTexture();
+		//cameraFBO1->Use(false);
+		//greyscaleShader.use();
+		//quad.Draw(greyscaleShader);
+		
+		//cameraFBO1->SetFBOTexture();
+		//cameraFBO2->Use(false);
+		//blurShader.use();
+		//quad.Draw(blurShader);
+		
+		/*
+		cameraFBO1->SetFBOTexture();
+		cameraMain->Use(false);
 		blankScreenShader.use();
-		openGL.FrameBufferSecondCall();
 		quad.Draw(blankScreenShader);
+		
+		
 		
 		
 		openGL.SwapBuffers(); 
