@@ -14,6 +14,6 @@ layout (std140) uniform Matrices
 
 void main()
 {
-    TexCoords = aTexCoords;    
+    TexCoords = aTexCoords; 
     gl_Position = projection * view * model * vec4(aPos, 1.0);
 }

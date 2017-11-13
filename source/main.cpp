@@ -62,18 +62,18 @@ int main(int argc, char* argv[]) {
 	//shaders
 	Shader ourShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs");	
 	ourShader.CreateMatrixBuffer();
-	Shader screenShader("..//source/shaders/postProcShader.vs", "..//source/shaders/postProcShader.fs");
-	Shader greyscaleShader("..//source/shaders/postProcShader.vs", "..//source/shaders/greyscale.fs");
-	Shader blurShader("..//source/shaders/postProcShader.vs", "..//source/shaders/blur.fs");
-	Shader skyboxShader("..//source/shaders/skyboxShader.vs", "..//source/shaders/skyboxShader.fs");
-	Shader reflectShader("..//source/shaders/reflectShader.vs", "..//source/shaders/reflectShader.fs");
-	Shader blankScreenShader("..//source/shaders/blankPostShader.vs", "..//source/shaders/blankPostShader.fs");
+	//Shader screenShader("..//source/shaders/postProcShader.vs", "..//source/shaders/postProcShader.fs");
+	//Shader greyscaleShader("..//source/shaders/postProcShader.vs", "..//source/shaders/greyscale.fs");
+	//Shader blurShader("..//source/shaders/postProcShader.vs", "..//source/shaders/blur.fs");
+	//Shader skyboxShader("..//source/shaders/skyboxShader.vs", "..//source/shaders/skyboxShader.fs");
+	//Shader reflectShader("..//source/shaders/reflectShader.vs", "..//source/shaders/reflectShader.fs");
+	//Shader blankScreenShader("..//source/shaders/blankPostShader.vs", "..//source/shaders/blankPostShader.fs");
 	
 	Shader geometryShader("..//source/shaders/geometryShader/normals/geometryShader.vs", "..//source/shaders/geometryShader/normals/geometryShader.fs", "..//source/shaders/geometryShader/normals/geometryShader.gs");
 	
-	Shader lightingShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs");	
+	//Shader lightingShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs");	
 	
-	Shader instancingShader("..//source/shaders/instancing/basic.vs", "..//source/shaders/instancing/basic.fs");
+	//Shader instancingShader("..//source/shaders/instancing/basic.vs", "..//source/shaders/instancing/basic.fs");
 	
 	//Shader lampShader("..//source/shaders/lampShader.vs", "..//source/shaders/lampShader.fs");	
 
@@ -82,17 +82,21 @@ int main(int argc, char* argv[]) {
 	Model cube(CUBE);
 	Model quad(QUAD);
 	Model reflect(REFLECT_CUBE);
+	Model plane(PLANE);
+	
 	
 	Skybox skybox;
 	skybox.loadCubemap();
 	
 	
-	Model ourModel(MODEL, "..//source/models/nanosuit2/nanosuit.obj");
-	Model planet(MODEL, "..//source/models/planet/planet.obj");
-	Model rock(MODEL, "..//source/models/rock/rock.obj");
+	//Model ourModel(MODEL, "..//source/models/nanosuit2/nanosuit.obj");
+	//Model planet(MODEL, "..//source/models/planet/planet.obj");
+	//Model rock(MODEL, "..//source/models/rock/rock.obj");
 	
 	unsigned int diffuseMap = loadTexture("..//source/textures/container2.png");
 	unsigned int planeTexture = loadTexture("..//source/textures/arrow.jpg");
+	
+	
 	
 	//GRASS
 	/*
@@ -125,6 +129,7 @@ int main(int argc, char* argv[]) {
     }; 
 	*/
 	
+	/*
     unsigned int amount = 100000;
     glm::mat4* modelMatrices;
     modelMatrices = new glm::mat4[amount];
@@ -190,6 +195,7 @@ int main(int argc, char* argv[]) {
 
         glBindVertexArray(0);
     }
+	*/
 	
 	
 	while(openGL.ShouldWindowClose())
@@ -207,17 +213,22 @@ int main(int argc, char* argv[]) {
 		glm::mat4 model = glm::mat4();		
         glm::mat4 view = cameraMain->GetViewMatrix();
         glm::mat4 projection = glm::perspective(glm::radians(cameraMain->Zoom), (float)openGL.GetWindowWidth() / (float)openGL.GetWindowHeight(), 0.1f, 1000.0f);
+		ourShader.UpdateMatrix(projection, view);
 		
 		// draw Planet
 		ourShader.use();
-		model = glm::mat4();
-		model = glm::translate(model, glm::vec3(0.0f, -3.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(4.0f, 4.0f, 4.0f));
-		ourShader.setMat4("model", model);
-		ourShader.UpdateMatrix(projection, view);
-		planet.Draw(ourShader);
-		 
+		cube.ChangeTexture(diffuseMap);
+		cube.Draw(ourShader);
+
 		
+		ourShader.use();
+		plane.ChangeTexture(planeTexture);
+		model = glm::mat4();
+		model = glm::translate(model, glm::vec3(0.0f, -2.75f, 0.0f));
+		ourShader.setMat4("model", model);
+		plane.Draw(ourShader);
+		 
+		/*
         instancingShader.use();
 		instancingShader.setMat4("view", view);
 		instancingShader.setMat4("projection", projection);
@@ -230,7 +241,7 @@ int main(int argc, char* argv[]) {
             glDrawElementsInstanced(GL_TRIANGLES, rock.meshes[i].indices.size(), GL_UNSIGNED_INT, 0, amount);
             glBindVertexArray(0);
         }
-		
+		*/
 
 		//cameraMain->Use(false);
 		openGL.SwapBuffers(); 

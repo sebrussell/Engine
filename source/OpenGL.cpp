@@ -21,6 +21,9 @@ int OpenGL::Setup()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	
+	glfwWindowHint(GLFW_SAMPLES, 4); //multisampling
+	
+	
 	SCR_WIDTH = 800;
 	SCR_HEIGHT = 600;
 	
@@ -52,6 +55,7 @@ int OpenGL::Setup()
 	
 	glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
+	glEnable(GL_MULTISAMPLE);  
 	
 	
 	/*

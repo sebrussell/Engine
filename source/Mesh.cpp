@@ -119,7 +119,7 @@ void Mesh::MakeCube()
 
 void Mesh::MakePlane()
 {
-	float planeVertices[] = {
+    float planeVertices[] = {
         // positions          // texture Coords 
          5.0f, -0.5f,  5.0f,  2.0f, 0.0f,
         -5.0f, -0.5f,  5.0f,  0.0f, 0.0f,
@@ -137,8 +137,8 @@ void Mesh::MakePlane()
     glBufferData(GL_ARRAY_BUFFER, sizeof(planeVertices), &planeVertices, GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(2);
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 	m_amountOfVertices = 6;
 }
 
@@ -323,15 +323,24 @@ void Mesh::Draw(Shader shader)
 	}
 	else
 	{
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+		
+		if(textures.size() > 0)
+		{
+			glBindTexture(GL_TEXTURE_2D, textures[0].id);
+		}
+        
+
 		glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, m_amountOfVertices);
+		glBindVertexArray(0);
+		glActiveTexture(GL_TEXTURE0);
 	}    
 }  
 
 void Mesh::ChangeTexture(unsigned int texture)
 {
-	for(unsigned int i = 0; i < textures.size(); i++)
-    {
-		textures[i].id = texture;
-	}
+	aiString str;
+	textures.push_back(Texture(texture, "texture_diffuse", str));
 }

@@ -26,6 +26,8 @@ struct Vertex {
 };
 
 struct Texture {
+	Texture() {};
+	Texture(unsigned int _id, std::string _type, aiString _path) { id = _id, type = _type, path = _path; }
     unsigned int id;
     std::string type;
 	aiString path;
