@@ -36,11 +36,13 @@ class Model
 		~Model();
 		bool gammaCorrection;
 		void ChangeTexture(unsigned int texture);
+		std::vector<Texture> textures_loaded; 
         void Draw(Shader shader);	
+		std::vector<Mesh> meshes;
     private:
         /*  Model Data  */
-		std::vector<Texture> textures_loaded; 
-        std::vector<Mesh> meshes;
+		
+        
         std::string directory;
 		Mesh _mesh;
         /*  Functions   */

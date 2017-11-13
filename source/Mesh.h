@@ -50,11 +50,11 @@ class Mesh {
         std::vector<unsigned int> indices;
         std::vector<Texture> textures;
 		unsigned int VAO;
-	
+		unsigned int VBO, EBO;
 
     private:
         /*  Render data  */
-        unsigned int VBO, EBO;
+      
 		int m_amountOfVertices;
         /*  Functions    */
         void setupMesh();

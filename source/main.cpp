@@ -69,9 +69,11 @@ int main(int argc, char* argv[]) {
 	Shader reflectShader("..//source/shaders/reflectShader.vs", "..//source/shaders/reflectShader.fs");
 	Shader blankScreenShader("..//source/shaders/blankPostShader.vs", "..//source/shaders/blankPostShader.fs");
 	
-	Shader geometryShader("..//source/shaders/geometryShader/geometryShader.vs", "..//source/shaders/geometryShader/geometryShader.fs", "..//source/shaders/geometryShader/geometryShader.gs");
+	Shader geometryShader("..//source/shaders/geometryShader/normals/geometryShader.vs", "..//source/shaders/geometryShader/normals/geometryShader.fs", "..//source/shaders/geometryShader/normals/geometryShader.gs");
 	
 	Shader lightingShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs");	
+	
+	Shader instancingShader("..//source/shaders/instancing/basic.vs", "..//source/shaders/instancing/basic.fs");
 	
 	//Shader lampShader("..//source/shaders/lampShader.vs", "..//source/shaders/lampShader.fs");	
 
@@ -86,6 +88,8 @@ int main(int argc, char* argv[]) {
 	
 	
 	Model ourModel(MODEL, "..//source/models/nanosuit2/nanosuit.obj");
+	Model planet(MODEL, "..//source/models/planet/planet.obj");
+	Model rock(MODEL, "..//source/models/rock/rock.obj");
 	
 	unsigned int diffuseMap = loadTexture("..//source/textures/container2.png");
 	unsigned int planeTexture = loadTexture("..//source/textures/arrow.jpg");
@@ -121,6 +125,73 @@ int main(int argc, char* argv[]) {
     }; 
 	*/
 	
+    unsigned int amount = 100000;
+    glm::mat4* modelMatrices;
+    modelMatrices = new glm::mat4[amount];
+    srand(glfwGetTime()); // initialize random seed	
+    float radius = 150.0;
+    float offset = 25.0f;
+    for (unsigned int i = 0; i < amount; i++)
+    {
+        glm::mat4 model;
+        // 1. translation: displace along circle with 'radius' in range [-offset, offset]
+        float angle = (float)i / (float)amount * 360.0f;
+        float displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+        float x = sin(angle) * radius + displacement;
+        displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+        float y = displacement * 0.4f; // keep height of asteroid field smaller compared to width of x and z
+        displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+        float z = cos(angle) * radius + displacement;
+        model = glm::translate(model, glm::vec3(x, y, z));
+
+        // 2. scale: Scale between 0.05 and 0.25f
+        float scale = (rand() % 20) / 100.0f + 0.05;
+        model = glm::scale(model, glm::vec3(scale));
+
+        // 3. rotation: add random rotation around a (semi)randomly picked rotation axis vector
+        float rotAngle = (rand() % 360);
+        model = glm::rotate(model, rotAngle, glm::vec3(0.4f, 0.6f, 0.8f));
+
+        // 4. now add to list of matrices
+        modelMatrices[i] = model;
+    }
+	
+	// configure instanced array
+    // -------------------------
+    unsigned int buffer;
+    glGenBuffers(1, &buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, buffer);
+    glBufferData(GL_ARRAY_BUFFER, amount * sizeof(glm::mat4), &modelMatrices[0], GL_STATIC_DRAW);
+
+    // set transformation matrices as an instance vertex attribute (with divisor 1)
+    // note: we're cheating a little by taking the, now publicly declared, VAO of the model's mesh(es) and adding new vertexAttribPointers
+    // normally you'd want to do this in a more organized fashion, but for learning purposes this will do.
+    // -----------------------------------------------------------------------------------------------------------------------------------
+    
+	for (unsigned int i = 0; i < rock.meshes.size(); i++)
+    {
+        unsigned int VAO = rock.meshes[i].VAO;
+        glBindVertexArray(VAO);
+        // set attribute pointers for matrix (4 times vec4)
+        glEnableVertexAttribArray(3);
+        glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), (void*)0);
+        glEnableVertexAttribArray(4);
+        glVertexAttribPointer(4, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), (void*)(sizeof(glm::vec4)));
+        glEnableVertexAttribArray(5);
+        glVertexAttribPointer(5, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), (void*)(2 * sizeof(glm::vec4)));
+        glEnableVertexAttribArray(6);
+        glVertexAttribPointer(6, 4, GL_FLOAT, GL_FALSE, sizeof(glm::mat4), (void*)(3 * sizeof(glm::vec4)));
+
+
+        glVertexAttribDivisor(3, 1);
+        glVertexAttribDivisor(4, 1);
+        glVertexAttribDivisor(5, 1);
+        glVertexAttribDivisor(6, 1);
+
+        glBindVertexArray(0);
+    }
+	
+	
 	while(openGL.ShouldWindowClose())
 	{		
 
@@ -133,20 +204,34 @@ int main(int argc, char* argv[]) {
 		glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
-		glm::mat4 model;		
+		glm::mat4 model = glm::mat4();		
         glm::mat4 view = cameraMain->GetViewMatrix();
-        glm::mat4 projection = glm::perspective(glm::radians(cameraMain->Zoom), (float)openGL.GetWindowWidth() / (float)openGL.GetWindowHeight(), 0.1f, 100.0f);
+        glm::mat4 projection = glm::perspective(glm::radians(cameraMain->Zoom), (float)openGL.GetWindowWidth() / (float)openGL.GetWindowHeight(), 0.1f, 1000.0f);
 		
-        geometryShader.use();
-		geometryShader.setMat4("projection", projection);
-        geometryShader.setMat4("view", view);
-        geometryShader.setMat4("model", model);
+		// draw Planet
+		ourShader.use();
+		model = glm::mat4();
+		model = glm::translate(model, glm::vec3(0.0f, -3.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(4.0f, 4.0f, 4.0f));
+		ourShader.setMat4("model", model);
+		ourShader.UpdateMatrix(projection, view);
+		planet.Draw(ourShader);
+		 
+		
+        instancingShader.use();
+		instancingShader.setMat4("view", view);
+		instancingShader.setMat4("projection", projection);
+        instancingShader.setInt("texture_diffuse1", 0);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, rock.textures_loaded[0].id); // note: we also made the textures_loaded vector public (instead of private) from the model class.
+        for (unsigned int i = 0; i < rock.meshes.size(); i++)
+        {
+            glBindVertexArray(rock.meshes[i].VAO);
+            glDrawElementsInstanced(GL_TRIANGLES, rock.meshes[i].indices.size(), GL_UNSIGNED_INT, 0, amount);
+            glBindVertexArray(0);
+        }
+		
 
-        // add time component to geometry shader in the form of a uniform
-        geometryShader.setFloat("time", glfwGetTime());
-		
-		ourModel.Draw(ourShader);
-		
 		//cameraMain->Use(false);
 		openGL.SwapBuffers(); 
 		
@@ -156,7 +241,7 @@ int main(int argc, char* argv[]) {
         glm::mat4 projection = glm::perspective(glm::radians(cameraMain->Zoom), (float)openGL.GetWindowWidth() / (float)openGL.GetWindowHeight(), 0.1f, 100.0f);
 		
 		ourShader.use();
-		ourShader.UpdateMatrix(projection, view);
+		
 		
 		ourShader.use();
 		model = glm::translate(model, pointLightPositions[1]);		
