@@ -149,6 +149,33 @@ libraries/glad/src/glad.c.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.s
 .PHONY : libraries/glad/src/glad.c.s
 
+source/CameraManager.obj: source/CameraManager.cpp.obj
+
+.PHONY : source/CameraManager.obj
+
+# target to build an object file
+source/CameraManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj
+.PHONY : source/CameraManager.cpp.obj
+
+source/CameraManager.i: source/CameraManager.cpp.i
+
+.PHONY : source/CameraManager.i
+
+# target to preprocess a source file
+source/CameraManager.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/CameraManager.cpp.i
+.PHONY : source/CameraManager.cpp.i
+
+source/CameraManager.s: source/CameraManager.cpp.s
+
+.PHONY : source/CameraManager.s
+
+# target to generate assembly for a file
+source/CameraManager.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/CameraManager.cpp.s
+.PHONY : source/CameraManager.cpp.s
+
 source/GameObject.obj: source/GameObject.cpp.obj
 
 .PHONY : source/GameObject.obj
@@ -257,6 +284,33 @@ source/OpenGL.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/OpenGL.cpp.s
 .PHONY : source/OpenGL.cpp.s
 
+source/SceneManager.obj: source/SceneManager.cpp.obj
+
+.PHONY : source/SceneManager.obj
+
+# target to build an object file
+source/SceneManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj
+.PHONY : source/SceneManager.cpp.obj
+
+source/SceneManager.i: source/SceneManager.cpp.i
+
+.PHONY : source/SceneManager.i
+
+# target to preprocess a source file
+source/SceneManager.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/SceneManager.cpp.i
+.PHONY : source/SceneManager.cpp.i
+
+source/SceneManager.s: source/SceneManager.cpp.s
+
+.PHONY : source/SceneManager.s
+
+# target to generate assembly for a file
+source/SceneManager.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/SceneManager.cpp.s
+.PHONY : source/SceneManager.cpp.s
+
 source/Skybox.obj: source/Skybox.cpp.obj
 
 .PHONY : source/Skybox.obj
@@ -350,6 +404,9 @@ help:
 	@echo ... libraries/glad/src/glad.obj
 	@echo ... libraries/glad/src/glad.i
 	@echo ... libraries/glad/src/glad.s
+	@echo ... source/CameraManager.obj
+	@echo ... source/CameraManager.i
+	@echo ... source/CameraManager.s
 	@echo ... source/GameObject.obj
 	@echo ... source/GameObject.i
 	@echo ... source/GameObject.s
@@ -362,6 +419,9 @@ help:
 	@echo ... source/OpenGL.obj
 	@echo ... source/OpenGL.i
 	@echo ... source/OpenGL.s
+	@echo ... source/SceneManager.obj
+	@echo ... source/SceneManager.i
+	@echo ... source/SceneManager.s
 	@echo ... source/Skybox.obj
 	@echo ... source/Skybox.i
 	@echo ... source/Skybox.s

@@ -51,8 +51,7 @@ int main(int argc, char* argv[]) {
 	
 
 	OpenGL openGL;
-	openGL.Setup();
-	openGL.SetCamera(cameraMain);
+	openGL.Setup(800, 600);
 	
 	cameraFBO1->SetupFrameBuffer(openGL.GetWindowWidth(), openGL.GetWindowHeight());
 	cameraFBO2->SetupFrameBuffer(openGL.GetWindowWidth(), openGL.GetWindowHeight());
@@ -200,8 +199,6 @@ int main(int argc, char* argv[]) {
 	
 	while(openGL.ShouldWindowClose())
 	{		
-
-        deltaTime = openGL.deltaTime;
 		openGL.ProcessInput();
 		
 		//set first camera fbo

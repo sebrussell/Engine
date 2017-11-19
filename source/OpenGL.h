@@ -12,23 +12,21 @@
 #include <iostream>
 #include <memory>
 
-
-
 class OpenGL
 {
 	public:
 		OpenGL();
 		~OpenGL();
-		int Setup();
-		void SetCamera(std::shared_ptr<Camera> _camera) { m_camera = _camera; }
+		int Setup(int _windowWidth, int _windowHeight);		
 		
 		
-		int GetWindowWidth() { return SCR_WIDTH; }
-		int GetWindowHeight() { return SCR_HEIGHT; }
 		
 		bool ShouldWindowClose();
 		void ProcessInput();
 		void SwapBuffers();
+		float GetDeltaTime() { return deltaTime; }
+		int GetWindowWidth() { return m_windowWidth; }
+		int GetWindowHeight() { return m_windowHeight; }
 		
 		//-------- CALLBACK FUNCTIONS ----------//
 		static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
@@ -36,17 +34,15 @@ class OpenGL
 		static void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 		static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 		static void error_callback(int error, const char* description);
-		
-		
-		
-		float deltaTime;	// Time between current frame and last frame
+				
 	private:
 		GLFWwindow* m_window;
-		std::weak_ptr<Camera> m_camera;
-		float lastFrame; // Time of last frame
-		int SCR_WIDTH;
-		int SCR_HEIGHT;
+
+		float lastFrame; // Time of last frame	
+		float deltaTime;
 		
+		int m_windowWidth;
+		int m_windowHeight;
 		
 };
 

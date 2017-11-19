@@ -10,7 +10,7 @@ OpenGL::OpenGL()
 
 }
 
-int OpenGL::Setup()
+int OpenGL::Setup(int _windowWidth, int _windowHeight)
 {
 	//------------------SETUP-------------------------------------------------------------
     if (!glfwInit())
@@ -24,14 +24,15 @@ int OpenGL::Setup()
 	glfwWindowHint(GLFW_SAMPLES, 4); //multisampling
 	
 	
-	SCR_WIDTH = 800;
-	SCR_HEIGHT = 600;
+	m_windowWidth = _windowWidth;
+	m_windowHeight = _windowHeight;
 	
 	#ifdef __APPLE__
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // uncomment this statement to fix compilation on OS X
+		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); 
 	#endif
 	
-	m_window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Game Engine", NULL, NULL);
+	m_window = glfwCreateWindow(m_windowWidth, m_windowHeight, "Game Engine", NULL, NULL);
+	
 	if (m_window == NULL)
 	{
 		std::cout << "Failed to create GLFW window" << std::endl;
@@ -45,13 +46,10 @@ int OpenGL::Setup()
 	}
 	
 	
-	glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
+	glViewport(0, 0, m_windowWidth, m_windowHeight);
 
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //wireframe mode
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); //regular
-	
-	m_camera = std::weak_ptr<Camera>();
-	
 	
 	glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
@@ -92,7 +90,6 @@ void OpenGL::SwapBuffers()
 {
 	glfwSwapBuffers(m_window);
 	glfwPollEvents();
-
 }
 
 bool OpenGL::ShouldWindowClose()
@@ -100,8 +97,7 @@ bool OpenGL::ShouldWindowClose()
 	float currentFrame = glfwGetTime();
     deltaTime = currentFrame - lastFrame;
     lastFrame = currentFrame;
-	return !glfwWindowShouldClose(m_window);
-	
+	return !glfwWindowShouldClose(m_window);	
 }
 void OpenGL::ProcessInput()
 {
@@ -113,30 +109,28 @@ void OpenGL::ProcessInput()
 	}
     if (glfwGetKey(m_window, GLFW_KEY_W) == GLFW_PRESS)
 	{
-        m_camera.lock()->ProcessKeyboard(FORWARD, deltaTime);
+        //m_camera.lock()->ProcessKeyboard(FORWARD, deltaTime);
 	}
     if (glfwGetKey(m_window, GLFW_KEY_S) == GLFW_PRESS)
 	{
-        m_camera.lock()->ProcessKeyboard(BACKWARD, deltaTime);
+        //m_camera.lock()->ProcessKeyboard(BACKWARD, deltaTime);
 	}
     if (glfwGetKey(m_window, GLFW_KEY_A) == GLFW_PRESS)
 	{
-        m_camera.lock()->ProcessKeyboard(LEFT, deltaTime);
+        //m_camera.lock()->ProcessKeyboard(LEFT, deltaTime);
 	}
     if (glfwGetKey(m_window, GLFW_KEY_D) == GLFW_PRESS)
 	{
-        m_camera.lock()->ProcessKeyboard(RIGHT, deltaTime);
-	}
-	
-	
-
-	
+        //m_camera.lock()->ProcessKeyboard(RIGHT, deltaTime);
+	}	
 }
 
 void OpenGL::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
     if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	{
         glfwSetWindowShouldClose(window, true);
+	}
 }
 
 void OpenGL::error_callback(int error, const char* description)

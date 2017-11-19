@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj"
   "CMakeFiles/techdemo.dir/source/GameObject.cpp.obj"
   "CMakeFiles/techdemo.dir/source/Skybox.cpp.obj"
+  "CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj"
+  "CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj"
   "techdemo.pdb"
   "techdemo.exe"
   "techdemo.exe.manifest"

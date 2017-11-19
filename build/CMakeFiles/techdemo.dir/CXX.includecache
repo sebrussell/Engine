@@ -1132,6 +1132,18 @@ vector
 iostream
 -
 
+C:/Users/sebru_000/Desktop/Engine/source/CameraManager.cpp
+CameraManager.h
+C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
+
+C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
+vector
+-
+memory
+-
+Camera.h
+C:/Users/sebru_000/Desktop/Engine/source/Camera.h
+
 C:/Users/sebru_000/Desktop/Engine/source/Component.h
 glm/glm.hpp
 -
@@ -1239,6 +1251,24 @@ Component.h
 C:/Users/sebru_000/Desktop/Engine/source/Component.h
 Shader.h
 C:/Users/sebru_000/Desktop/Engine/source/Shader.h
+
+C:/Users/sebru_000/Desktop/Engine/source/SceneManager.cpp
+SceneManager.h
+C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
+
+C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
+OpenGL.h
+C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
+vector
+-
+memory
+-
+CameraManager.h
+C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
+Skybox.h
+C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
+GameObject.h
+C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
 
 C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 glad/glad.h
