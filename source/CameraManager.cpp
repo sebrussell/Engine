@@ -2,9 +2,7 @@
 
 int CameraManager::Awake()
 {
-	std::shared_ptr<Camera> cameraMain(new Camera);
-	m_cameras.push_back(cameraMain);
-	m_activeCamera = cameraMain;
+	//for every gameobject find camera
 	
 	
 	return 0;	

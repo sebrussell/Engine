@@ -10,3 +10,13 @@ int SceneManager::Awake()
 	return 0;
 }
 
+void SceneManager::Update()
+{
+	//enable main camera
+	//draw gameobjects
+	//draw transparent gameobjects
+	//skybox
+	//draw cameras for mirrors
+	//post processing
+}
+

@@ -5,7 +5,8 @@
 #include <memory>
 
 #include "Component.h"
-#include "Shader.h"
+
+class Shader;
 
 class Renderer : public Component
 {

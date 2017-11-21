@@ -1118,20 +1118,6 @@ detail/type_vec4.hpp
 detail/func_vector_relational.hpp
 ../libraries/glm/glm/detail/func_vector_relational.hpp
 
-C:/Users/sebru_000/Desktop/Engine/source/Camera.h
-glad/glad.h
--
-glm/glm.hpp
--
-glm/gtc/matrix_transform.hpp
--
-OpenGL.h
-C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
-vector
--
-iostream
--
-
 C:/Users/sebru_000/Desktop/Engine/source/CameraManager.cpp
 CameraManager.h
 C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
@@ -1141,8 +1127,6 @@ vector
 -
 memory
 -
-Camera.h
-C:/Users/sebru_000/Desktop/Engine/source/Camera.h
 
 C:/Users/sebru_000/Desktop/Engine/source/Component.h
 glm/glm.hpp
@@ -1163,6 +1147,10 @@ C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
 C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
 Component.h
 C:/Users/sebru_000/Desktop/Engine/source/Component.h
+memory
+-
+vector
+-
 
 C:/Users/sebru_000/Desktop/Engine/source/Mesh.cpp
 Mesh.h
@@ -1225,8 +1213,6 @@ OpenGL.h
 C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
 
 C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
-Camera.h
-C:/Users/sebru_000/Desktop/Engine/source/Camera.h
 glad/glad.h
 -
 GLFW/glfw3.h
@@ -1249,26 +1235,20 @@ memory
 -
 Component.h
 C:/Users/sebru_000/Desktop/Engine/source/Component.h
-Shader.h
-C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 
 C:/Users/sebru_000/Desktop/Engine/source/SceneManager.cpp
 SceneManager.h
 C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
 
 C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
-OpenGL.h
-C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
-vector
--
-memory
--
 CameraManager.h
 C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
 Skybox.h
 C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
-GameObject.h
-C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
+vector
+-
+memory
+-
 
 C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 glad/glad.h

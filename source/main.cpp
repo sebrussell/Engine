@@ -29,9 +29,9 @@ float deltaTime = 0.0f;	// Time between current frame and last frame
 
 
 
-std::shared_ptr<Camera> cameraMain = std::make_shared<Camera>(Camera());
-std::shared_ptr<Camera> cameraFBO1 = std::make_shared<Camera>(Camera());
-std::shared_ptr<Camera> cameraFBO2 = std::make_shared<Camera>(Camera());
+//std::shared_ptr<Camera> cameraMain = std::make_shared<Camera>(Camera());
+//std::shared_ptr<Camera> cameraFBO1 = std::make_shared<Camera>(Camera());
+//std::shared_ptr<Camera> cameraFBO2 = std::make_shared<Camera>(Camera());
 
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
@@ -53,8 +53,8 @@ int main(int argc, char* argv[]) {
 	OpenGL openGL;
 	openGL.Setup(800, 600);
 	
-	cameraFBO1->SetupFrameBuffer(openGL.GetWindowWidth(), openGL.GetWindowHeight());
-	cameraFBO2->SetupFrameBuffer(openGL.GetWindowWidth(), openGL.GetWindowHeight());
+	//cameraFBO1->SetupFrameBuffer(openGL.GetWindowWidth(), openGL.GetWindowHeight());
+	//cameraFBO2->SetupFrameBuffer(openGL.GetWindowWidth(), openGL.GetWindowHeight());
 	
 
 	
@@ -208,8 +208,8 @@ int main(int argc, char* argv[]) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
 		glm::mat4 model = glm::mat4();		
-        glm::mat4 view = cameraMain->GetViewMatrix();
-        glm::mat4 projection = glm::perspective(glm::radians(cameraMain->Zoom), (float)openGL.GetWindowWidth() / (float)openGL.GetWindowHeight(), 0.1f, 1000.0f);
+        glm::mat4 view;// = cameraMain->GetViewMatrix();
+        glm::mat4 projection;// = glm::perspective(glm::radians(cameraMain->Zoom), (float)openGL.GetWindowWidth() / (float)openGL.GetWindowHeight(), 0.1f, 1000.0f);
 		ourShader.UpdateMatrix(projection, view);
 		
 		// draw Planet
