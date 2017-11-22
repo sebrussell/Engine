@@ -2,12 +2,22 @@
 
 int SceneManager::Awake()
 {
+	std::shared_ptr<OpenGL> openGL(new OpenGL);
+	openGL->Setup(800, 600);
+	
 	std::shared_ptr<CameraManager> cameraManager(new CameraManager);
 	m_cameraManager = cameraManager;
 	m_cameraManager->Awake();
 	
 	std::shared_ptr<Skybox> skybox(new Skybox);
 	return 0;
+}
+
+std::weak_ptr<GameObject> CreateGameOject()
+{
+	std::shared_ptr<GameObject> gameObject(new GameObject);
+	m_gameObjects.push_back(gameObject);
+	return gameObject;
 }
 
 void SceneManager::Update()

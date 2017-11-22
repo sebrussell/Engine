@@ -1,6 +1,8 @@
 #ifndef MESH_H
 #define MESH_H
 
+#include "Shader.h"
+
 #include <vector>
 #include <string>
 #include <glad/glad.h>
@@ -14,7 +16,7 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
-#include "Shader.h"
+
 
 
 struct Vertex {

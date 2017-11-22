@@ -6,8 +6,6 @@
 
 #include "Component.h"
 
-class Shader;
-
 class Renderer : public Component
 {
 	public:

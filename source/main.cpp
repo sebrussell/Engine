@@ -1,15 +1,13 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include "Model.h"
+//#include "Model.h"
+//#include "OpenGL.h"
+//#include "Shader.h"
+//#include "stb_image.h"
 
-#include "OpenGL.h"
-
-#include "Shader.h"
-#include "stb_image.h"
-
-#include "Skybox.h"
-//#include "Camera.h"
+#include "SceneManager.h"
+//#include "GameObject.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -18,18 +16,19 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "GameObject.h"
-#include "Renderer.h"
 
+//#include "Renderer.h"
 
-unsigned int loadTexture(char const * path);
+//class Camera;
+
+//unsigned int loadTexture(char const * path);
 
 float deltaTime = 0.0f;	// Time between current frame and last frame
 
 
 
 
-//std::shared_ptr<Camera> cameraMain = std::make_shared<Camera>(Camera());
+//std::shared_ptr<Camera> cameraMain(new Camera);
 //std::shared_ptr<Camera> cameraFBO1 = std::make_shared<Camera>(Camera());
 //std::shared_ptr<Camera> cameraFBO2 = std::make_shared<Camera>(Camera());
 
@@ -37,26 +36,24 @@ glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 int main(int argc, char* argv[]) {	
 
-	//GameObject gameObject;
-	//std::shared_ptr<Renderer> _ren = gameObject.AddComponent<Renderer>();
-	//gameObject.Update();
 
 	
-	glm::vec3 pointLightPositions[] = {
-        glm::vec3( 0.7f,  0.2f,  2.0f),
-        glm::vec3( 2.3f, -3.3f, -4.0f),
-        glm::vec3(-4.0f,  2.0f, -12.0f),
-        glm::vec3( 0.0f,  0.0f, -3.0f)
-    };
-	
 
-	OpenGL openGL;
-	openGL.Setup(800, 600);
+	
+	
+	std::shared_ptr<SceneManager> sceneManager(new SceneManager);
+	
+	//std::weak_ptr<GameObject> cameraMain = sceneManager->CreateGameOject();	
+	//cameraMain.lock()->AddComponent<Camera>();
+	
+	return 0;
+}
+
 	
 	//cameraFBO1->SetupFrameBuffer(openGL.GetWindowWidth(), openGL.GetWindowHeight());
 	//cameraFBO2->SetupFrameBuffer(openGL.GetWindowWidth(), openGL.GetWindowHeight());
 	
-
+	/*
 	
 	//shaders
 	Shader ourShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs");	
@@ -84,8 +81,8 @@ int main(int argc, char* argv[]) {
 	Model plane(PLANE);
 	
 	
-	Skybox skybox;
-	skybox.loadCubemap();
+	//Skybox skybox;
+	//skybox.loadCubemap();
 	
 	
 	//Model ourModel(MODEL, "..//source/models/nanosuit2/nanosuit.obj");
@@ -195,7 +192,7 @@ int main(int argc, char* argv[]) {
         glBindVertexArray(0);
     }
 	*/
-	
+	/*
 	
 	while(openGL.ShouldWindowClose())
 	{		
@@ -241,7 +238,7 @@ int main(int argc, char* argv[]) {
 		*/
 
 		//cameraMain->Use(false);
-		openGL.SwapBuffers(); 
+		//openGL.SwapBuffers(); 
 		
 		/*
 		glm::mat4 model;		
@@ -283,7 +280,7 @@ int main(int argc, char* argv[]) {
 		skyboxShader.setMat4("projection", projection);
 		skybox.Draw(skyboxShader);
 		*/
-		
+		/*
 		//cameraFBO1->SetFBOTexture();
 		//cameraFBO2->Use(false);
 		//screenShader.use();
@@ -300,7 +297,7 @@ int main(int argc, char* argv[]) {
 		//cameraFBO2->Use(false);
 		//blurShader.use();
 		//quad.Draw(blurShader);
-		
+		*/
 		/*
 		cameraFBO1->SetFBOTexture();
 		cameraMain->Use(false);
@@ -311,7 +308,7 @@ int main(int argc, char* argv[]) {
 		
 		
 		openGL.SwapBuffers(); 
-		 
+		 */
 
         /*
 		
@@ -321,7 +318,7 @@ int main(int argc, char* argv[]) {
             float distance = glm::length(cameraMain.Position - vegetation[i]);
             sorted[distance] = vegetation[i];
         }
-
+		*/
 
 		
 		
@@ -374,7 +371,7 @@ int main(int argc, char* argv[]) {
         glBindTexture(GL_TEXTURE_2D, planeTexture);
         ourShader.setMat4("model", glm::mat4());
         glDrawArrays(GL_TRIANGLES, 0, 6);
-		
+		*/
 		/*
 		//outline a box
 		singleColour.use();
@@ -405,6 +402,7 @@ int main(int argc, char* argv[]) {
         model = glm::translate(model, glm::vec3(2.0f, 0.0f, 0.0f));
         ourShader.setMat4("model", model);
         glDrawArrays(GL_TRIANGLES, 0, 36);
+		*/
 		/*
         // 2nd. render pass: now draw slightly scaled versions of the objects, this time disabling stencil writing.
         // Because the stencil buffer is now filled with several 1s. The parts of the buffer that are 1 are not drawn, thus only drawing 
@@ -444,7 +442,7 @@ int main(int argc, char* argv[]) {
             glDrawArrays(GL_TRIANGLES, 0, 6);
         }
 		
-		*/
+		
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
 	}  
@@ -487,7 +485,7 @@ unsigned int loadTexture(char const * path)
 
     return textureID;
 }
-
+*/
 
 
 

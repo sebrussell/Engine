@@ -131,10 +131,35 @@ CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.obj.provides: CMakeFiles/techd
 CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.obj.provides.build: CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.obj
 
 
+CMakeFiles/techdemo.dir/source/Component.cpp.obj: CMakeFiles/techdemo.dir/flags.make
+CMakeFiles/techdemo.dir/source/Component.cpp.obj: CMakeFiles/techdemo.dir/includes_CXX.rsp
+CMakeFiles/techdemo.dir/source/Component.cpp.obj: ../source/Component.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/techdemo.dir/source/Component.cpp.obj"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\techdemo.dir\source\Component.cpp.obj -c C:\Users\sebru_000\Desktop\Engine\source\Component.cpp
+
+CMakeFiles/techdemo.dir/source/Component.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/techdemo.dir/source/Component.cpp.i"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\sebru_000\Desktop\Engine\source\Component.cpp > CMakeFiles\techdemo.dir\source\Component.cpp.i
+
+CMakeFiles/techdemo.dir/source/Component.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/techdemo.dir/source/Component.cpp.s"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\sebru_000\Desktop\Engine\source\Component.cpp -o CMakeFiles\techdemo.dir\source\Component.cpp.s
+
+CMakeFiles/techdemo.dir/source/Component.cpp.obj.requires:
+
+.PHONY : CMakeFiles/techdemo.dir/source/Component.cpp.obj.requires
+
+CMakeFiles/techdemo.dir/source/Component.cpp.obj.provides: CMakeFiles/techdemo.dir/source/Component.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Component.cpp.obj.provides.build
+.PHONY : CMakeFiles/techdemo.dir/source/Component.cpp.obj.provides
+
+CMakeFiles/techdemo.dir/source/Component.cpp.obj.provides.build: CMakeFiles/techdemo.dir/source/Component.cpp.obj
+
+
 CMakeFiles/techdemo.dir/source/Mesh.cpp.obj: CMakeFiles/techdemo.dir/flags.make
 CMakeFiles/techdemo.dir/source/Mesh.cpp.obj: CMakeFiles/techdemo.dir/includes_CXX.rsp
 CMakeFiles/techdemo.dir/source/Mesh.cpp.obj: ../source/Mesh.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/techdemo.dir/source/Mesh.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/techdemo.dir/source/Mesh.cpp.obj"
 	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\techdemo.dir\source\Mesh.cpp.obj -c C:\Users\sebru_000\Desktop\Engine\source\Mesh.cpp
 
 CMakeFiles/techdemo.dir/source/Mesh.cpp.i: cmake_force
@@ -159,7 +184,7 @@ CMakeFiles/techdemo.dir/source/Mesh.cpp.obj.provides.build: CMakeFiles/techdemo.
 CMakeFiles/techdemo.dir/source/Model.cpp.obj: CMakeFiles/techdemo.dir/flags.make
 CMakeFiles/techdemo.dir/source/Model.cpp.obj: CMakeFiles/techdemo.dir/includes_CXX.rsp
 CMakeFiles/techdemo.dir/source/Model.cpp.obj: ../source/Model.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/techdemo.dir/source/Model.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/techdemo.dir/source/Model.cpp.obj"
 	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\techdemo.dir\source\Model.cpp.obj -c C:\Users\sebru_000\Desktop\Engine\source\Model.cpp
 
 CMakeFiles/techdemo.dir/source/Model.cpp.i: cmake_force
@@ -184,7 +209,7 @@ CMakeFiles/techdemo.dir/source/Model.cpp.obj.provides.build: CMakeFiles/techdemo
 CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj: CMakeFiles/techdemo.dir/flags.make
 CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj: CMakeFiles/techdemo.dir/includes_CXX.rsp
 CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj: ../source/OpenGL.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj"
 	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\techdemo.dir\source\OpenGL.cpp.obj -c C:\Users\sebru_000\Desktop\Engine\source\OpenGL.cpp
 
 CMakeFiles/techdemo.dir/source/OpenGL.cpp.i: cmake_force
@@ -209,7 +234,7 @@ CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj.provides.build: CMakeFiles/techdem
 CMakeFiles/techdemo.dir/source/GameObject.cpp.obj: CMakeFiles/techdemo.dir/flags.make
 CMakeFiles/techdemo.dir/source/GameObject.cpp.obj: CMakeFiles/techdemo.dir/includes_CXX.rsp
 CMakeFiles/techdemo.dir/source/GameObject.cpp.obj: ../source/GameObject.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/techdemo.dir/source/GameObject.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/techdemo.dir/source/GameObject.cpp.obj"
 	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\techdemo.dir\source\GameObject.cpp.obj -c C:\Users\sebru_000\Desktop\Engine\source\GameObject.cpp
 
 CMakeFiles/techdemo.dir/source/GameObject.cpp.i: cmake_force
@@ -234,7 +259,7 @@ CMakeFiles/techdemo.dir/source/GameObject.cpp.obj.provides.build: CMakeFiles/tec
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: CMakeFiles/techdemo.dir/flags.make
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: CMakeFiles/techdemo.dir/includes_CXX.rsp
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../source/Skybox.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/techdemo.dir/source/Skybox.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/techdemo.dir/source/Skybox.cpp.obj"
 	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\techdemo.dir\source\Skybox.cpp.obj -c C:\Users\sebru_000\Desktop\Engine\source\Skybox.cpp
 
 CMakeFiles/techdemo.dir/source/Skybox.cpp.i: cmake_force
@@ -254,31 +279,6 @@ CMakeFiles/techdemo.dir/source/Skybox.cpp.obj.provides: CMakeFiles/techdemo.dir/
 .PHONY : CMakeFiles/techdemo.dir/source/Skybox.cpp.obj.provides
 
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj.provides.build: CMakeFiles/techdemo.dir/source/Skybox.cpp.obj
-
-
-CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: CMakeFiles/techdemo.dir/flags.make
-CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: CMakeFiles/techdemo.dir/includes_CXX.rsp
-CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/SceneManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj"
-	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\techdemo.dir\source\SceneManager.cpp.obj -c C:\Users\sebru_000\Desktop\Engine\source\SceneManager.cpp
-
-CMakeFiles/techdemo.dir/source/SceneManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/techdemo.dir/source/SceneManager.cpp.i"
-	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\sebru_000\Desktop\Engine\source\SceneManager.cpp > CMakeFiles\techdemo.dir\source\SceneManager.cpp.i
-
-CMakeFiles/techdemo.dir/source/SceneManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/techdemo.dir/source/SceneManager.cpp.s"
-	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\sebru_000\Desktop\Engine\source\SceneManager.cpp -o CMakeFiles\techdemo.dir\source\SceneManager.cpp.s
-
-CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.requires:
-
-.PHONY : CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.requires
-
-CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.provides: CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.provides.build
-.PHONY : CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.provides
-
-CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.provides.build: CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj
 
 
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: CMakeFiles/techdemo.dir/flags.make
@@ -306,18 +306,96 @@ CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj.provides: CMakeFiles/techde
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj.provides.build: CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj
 
 
+CMakeFiles/techdemo.dir/source/Transform.cpp.obj: CMakeFiles/techdemo.dir/flags.make
+CMakeFiles/techdemo.dir/source/Transform.cpp.obj: CMakeFiles/techdemo.dir/includes_CXX.rsp
+CMakeFiles/techdemo.dir/source/Transform.cpp.obj: ../source/Transform.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/techdemo.dir/source/Transform.cpp.obj"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\techdemo.dir\source\Transform.cpp.obj -c C:\Users\sebru_000\Desktop\Engine\source\Transform.cpp
+
+CMakeFiles/techdemo.dir/source/Transform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/techdemo.dir/source/Transform.cpp.i"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\sebru_000\Desktop\Engine\source\Transform.cpp > CMakeFiles\techdemo.dir\source\Transform.cpp.i
+
+CMakeFiles/techdemo.dir/source/Transform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/techdemo.dir/source/Transform.cpp.s"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\sebru_000\Desktop\Engine\source\Transform.cpp -o CMakeFiles\techdemo.dir\source\Transform.cpp.s
+
+CMakeFiles/techdemo.dir/source/Transform.cpp.obj.requires:
+
+.PHONY : CMakeFiles/techdemo.dir/source/Transform.cpp.obj.requires
+
+CMakeFiles/techdemo.dir/source/Transform.cpp.obj.provides: CMakeFiles/techdemo.dir/source/Transform.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Transform.cpp.obj.provides.build
+.PHONY : CMakeFiles/techdemo.dir/source/Transform.cpp.obj.provides
+
+CMakeFiles/techdemo.dir/source/Transform.cpp.obj.provides.build: CMakeFiles/techdemo.dir/source/Transform.cpp.obj
+
+
+CMakeFiles/techdemo.dir/source/Camera.cpp.obj: CMakeFiles/techdemo.dir/flags.make
+CMakeFiles/techdemo.dir/source/Camera.cpp.obj: CMakeFiles/techdemo.dir/includes_CXX.rsp
+CMakeFiles/techdemo.dir/source/Camera.cpp.obj: ../source/Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/techdemo.dir/source/Camera.cpp.obj"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\techdemo.dir\source\Camera.cpp.obj -c C:\Users\sebru_000\Desktop\Engine\source\Camera.cpp
+
+CMakeFiles/techdemo.dir/source/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/techdemo.dir/source/Camera.cpp.i"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\sebru_000\Desktop\Engine\source\Camera.cpp > CMakeFiles\techdemo.dir\source\Camera.cpp.i
+
+CMakeFiles/techdemo.dir/source/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/techdemo.dir/source/Camera.cpp.s"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\sebru_000\Desktop\Engine\source\Camera.cpp -o CMakeFiles\techdemo.dir\source\Camera.cpp.s
+
+CMakeFiles/techdemo.dir/source/Camera.cpp.obj.requires:
+
+.PHONY : CMakeFiles/techdemo.dir/source/Camera.cpp.obj.requires
+
+CMakeFiles/techdemo.dir/source/Camera.cpp.obj.provides: CMakeFiles/techdemo.dir/source/Camera.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Camera.cpp.obj.provides.build
+.PHONY : CMakeFiles/techdemo.dir/source/Camera.cpp.obj.provides
+
+CMakeFiles/techdemo.dir/source/Camera.cpp.obj.provides.build: CMakeFiles/techdemo.dir/source/Camera.cpp.obj
+
+
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: CMakeFiles/techdemo.dir/flags.make
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: CMakeFiles/techdemo.dir/includes_CXX.rsp
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/SceneManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\techdemo.dir\source\SceneManager.cpp.obj -c C:\Users\sebru_000\Desktop\Engine\source\SceneManager.cpp
+
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/techdemo.dir/source/SceneManager.cpp.i"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\sebru_000\Desktop\Engine\source\SceneManager.cpp > CMakeFiles\techdemo.dir\source\SceneManager.cpp.i
+
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/techdemo.dir/source/SceneManager.cpp.s"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\sebru_000\Desktop\Engine\source\SceneManager.cpp -o CMakeFiles\techdemo.dir\source\SceneManager.cpp.s
+
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.requires:
+
+.PHONY : CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.requires
+
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.provides: CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.provides.build
+.PHONY : CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.provides
+
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.provides.build: CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj
+
+
 # Object files for target techdemo
 techdemo_OBJECTS = \
 "CMakeFiles/techdemo.dir/source/main.cpp.obj" \
 "CMakeFiles/techdemo.dir/source/stb_image.cpp.obj" \
 "CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.obj" \
+"CMakeFiles/techdemo.dir/source/Component.cpp.obj" \
 "CMakeFiles/techdemo.dir/source/Mesh.cpp.obj" \
 "CMakeFiles/techdemo.dir/source/Model.cpp.obj" \
 "CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj" \
 "CMakeFiles/techdemo.dir/source/GameObject.cpp.obj" \
 "CMakeFiles/techdemo.dir/source/Skybox.cpp.obj" \
-"CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj" \
-"CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj"
+"CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj" \
+"CMakeFiles/techdemo.dir/source/Transform.cpp.obj" \
+"CMakeFiles/techdemo.dir/source/Camera.cpp.obj" \
+"CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj"
 
 # External object files for target techdemo
 techdemo_EXTERNAL_OBJECTS =
@@ -325,18 +403,21 @@ techdemo_EXTERNAL_OBJECTS =
 techdemo.exe: CMakeFiles/techdemo.dir/source/main.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/source/stb_image.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.obj
+techdemo.exe: CMakeFiles/techdemo.dir/source/Component.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/source/Mesh.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/source/Model.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/source/GameObject.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/source/Skybox.cpp.obj
-techdemo.exe: CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj
+techdemo.exe: CMakeFiles/techdemo.dir/source/Transform.cpp.obj
+techdemo.exe: CMakeFiles/techdemo.dir/source/Camera.cpp.obj
+techdemo.exe: CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/build.make
 techdemo.exe: CMakeFiles/techdemo.dir/linklibs.rsp
 techdemo.exe: CMakeFiles/techdemo.dir/objects1.rsp
 techdemo.exe: CMakeFiles/techdemo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable techdemo.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable techdemo.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\techdemo.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -347,13 +428,16 @@ CMakeFiles/techdemo.dir/build: techdemo.exe
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/main.cpp.obj.requires
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/stb_image.cpp.obj.requires
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.obj.requires
+CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/Component.cpp.obj.requires
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/Mesh.cpp.obj.requires
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/Model.cpp.obj.requires
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj.requires
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/GameObject.cpp.obj.requires
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/Skybox.cpp.obj.requires
-CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.requires
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj.requires
+CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/Transform.cpp.obj.requires
+CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/Camera.cpp.obj.requires
+CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj.requires
 
 .PHONY : CMakeFiles/techdemo.dir/requires
 

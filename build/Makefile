@@ -149,6 +149,33 @@ libraries/glad/src/glad.c.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.s
 .PHONY : libraries/glad/src/glad.c.s
 
+source/Camera.obj: source/Camera.cpp.obj
+
+.PHONY : source/Camera.obj
+
+# target to build an object file
+source/Camera.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Camera.cpp.obj
+.PHONY : source/Camera.cpp.obj
+
+source/Camera.i: source/Camera.cpp.i
+
+.PHONY : source/Camera.i
+
+# target to preprocess a source file
+source/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Camera.cpp.i
+.PHONY : source/Camera.cpp.i
+
+source/Camera.s: source/Camera.cpp.s
+
+.PHONY : source/Camera.s
+
+# target to generate assembly for a file
+source/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Camera.cpp.s
+.PHONY : source/Camera.cpp.s
+
 source/CameraManager.obj: source/CameraManager.cpp.obj
 
 .PHONY : source/CameraManager.obj
@@ -175,6 +202,33 @@ source/CameraManager.s: source/CameraManager.cpp.s
 source/CameraManager.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/CameraManager.cpp.s
 .PHONY : source/CameraManager.cpp.s
+
+source/Component.obj: source/Component.cpp.obj
+
+.PHONY : source/Component.obj
+
+# target to build an object file
+source/Component.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Component.cpp.obj
+.PHONY : source/Component.cpp.obj
+
+source/Component.i: source/Component.cpp.i
+
+.PHONY : source/Component.i
+
+# target to preprocess a source file
+source/Component.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Component.cpp.i
+.PHONY : source/Component.cpp.i
+
+source/Component.s: source/Component.cpp.s
+
+.PHONY : source/Component.s
+
+# target to generate assembly for a file
+source/Component.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Component.cpp.s
+.PHONY : source/Component.cpp.s
 
 source/GameObject.obj: source/GameObject.cpp.obj
 
@@ -338,6 +392,33 @@ source/Skybox.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Skybox.cpp.s
 .PHONY : source/Skybox.cpp.s
 
+source/Transform.obj: source/Transform.cpp.obj
+
+.PHONY : source/Transform.obj
+
+# target to build an object file
+source/Transform.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Transform.cpp.obj
+.PHONY : source/Transform.cpp.obj
+
+source/Transform.i: source/Transform.cpp.i
+
+.PHONY : source/Transform.i
+
+# target to preprocess a source file
+source/Transform.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Transform.cpp.i
+.PHONY : source/Transform.cpp.i
+
+source/Transform.s: source/Transform.cpp.s
+
+.PHONY : source/Transform.s
+
+# target to generate assembly for a file
+source/Transform.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Transform.cpp.s
+.PHONY : source/Transform.cpp.s
+
 source/main.obj: source/main.cpp.obj
 
 .PHONY : source/main.obj
@@ -404,9 +485,15 @@ help:
 	@echo ... libraries/glad/src/glad.obj
 	@echo ... libraries/glad/src/glad.i
 	@echo ... libraries/glad/src/glad.s
+	@echo ... source/Camera.obj
+	@echo ... source/Camera.i
+	@echo ... source/Camera.s
 	@echo ... source/CameraManager.obj
 	@echo ... source/CameraManager.i
 	@echo ... source/CameraManager.s
+	@echo ... source/Component.obj
+	@echo ... source/Component.i
+	@echo ... source/Component.s
 	@echo ... source/GameObject.obj
 	@echo ... source/GameObject.i
 	@echo ... source/GameObject.s
@@ -425,6 +512,9 @@ help:
 	@echo ... source/Skybox.obj
 	@echo ... source/Skybox.i
 	@echo ... source/Skybox.s
+	@echo ... source/Transform.obj
+	@echo ... source/Transform.i
+	@echo ... source/Transform.s
 	@echo ... source/main.obj
 	@echo ... source/main.i
 	@echo ... source/main.s

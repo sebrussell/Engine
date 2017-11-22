@@ -1,11 +1,16 @@
 #ifndef SKYBOX_H
 #define SKYBOX_H
 
-#include "OpenGL.h"
-#include "Model.h"
+class Model;
+class Shader;
+
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+//#include "stb_image.h"
 
 #include <memory>
-
+#include <vector>
+#include <iostream>
 
 class Skybox
 {
@@ -13,7 +18,7 @@ class Skybox
 		Skybox();
 		~Skybox() {};
 		unsigned int loadCubemap();
-		void Draw(Shader shader);
+		void Draw(std::shared_ptr<Shader> shader);
 		unsigned int GetSkyboxTexture() { return cubemapTexture; }
 	private:
 		std::shared_ptr<Model> skybox;

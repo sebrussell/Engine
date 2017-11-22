@@ -1,6 +1,8 @@
 #ifndef COMPONENT_H
 #define COMPONENT_H
 
+class GameObject;
+
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -8,14 +10,14 @@
 #include <vector>
 #include <memory>
 
-class GameObject;
-
 class Component
 {
 	public:	
 		//Component();
-		virtual ~Component() {};
-		virtual void Update() {};
+		virtual ~Component();
+		virtual void Update();
+		virtual void Awake();
+	protected:
 		std::weak_ptr<GameObject> m_gameObject;
 };
 

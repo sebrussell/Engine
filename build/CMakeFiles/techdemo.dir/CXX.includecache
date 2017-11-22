@@ -1118,6 +1118,32 @@ detail/type_vec4.hpp
 detail/func_vector_relational.hpp
 ../libraries/glm/glm/detail/func_vector_relational.hpp
 
+C:/Users/sebru_000/Desktop/Engine/source/Camera.cpp
+Camera.h
+C:/Users/sebru_000/Desktop/Engine/source/Camera.h
+Transform.h
+C:/Users/sebru_000/Desktop/Engine/source/Transform.h
+GameObject.h
+C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
+OpenGL.h
+C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
+SceneManager.h
+C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
+
+C:/Users/sebru_000/Desktop/Engine/source/Camera.h
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+vector
+-
+iostream
+-
+memory
+-
+Component.h
+C:/Users/sebru_000/Desktop/Engine/source/Component.h
+
 C:/Users/sebru_000/Desktop/Engine/source/CameraManager.cpp
 CameraManager.h
 C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
@@ -1127,6 +1153,10 @@ vector
 -
 memory
 -
+
+C:/Users/sebru_000/Desktop/Engine/source/Component.cpp
+Component.h
+C:/Users/sebru_000/Desktop/Engine/source/Component.h
 
 C:/Users/sebru_000/Desktop/Engine/source/Component.h
 glm/glm.hpp
@@ -1157,6 +1187,8 @@ Mesh.h
 C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
 
 C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
+Shader.h
+C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 vector
 -
 string
@@ -1177,8 +1209,6 @@ assimp/scene.h
 -
 assimp/postprocess.h
 -
-Shader.h
-C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 
 C:/Users/sebru_000/Desktop/Engine/source/Model.cpp
 Model.h
@@ -1228,23 +1258,11 @@ iostream
 memory
 -
 
-C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
-iostream
--
-memory
--
-Component.h
-C:/Users/sebru_000/Desktop/Engine/source/Component.h
-
 C:/Users/sebru_000/Desktop/Engine/source/SceneManager.cpp
 SceneManager.h
 C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
 
 C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
-CameraManager.h
-C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
-Skybox.h
-C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
 vector
 -
 memory
@@ -1273,28 +1291,38 @@ Skybox.h
 C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
 
 C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
-OpenGL.h
-C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
-Model.h
-C:/Users/sebru_000/Desktop/Engine/source/Model.h
+glad/glad.h
+-
+GLFW/glfw3.h
+-
 memory
 -
+vector
+-
+iostream
+-
+
+C:/Users/sebru_000/Desktop/Engine/source/Transform.cpp
+Transform.h
+C:/Users/sebru_000/Desktop/Engine/source/Transform.h
+
+C:/Users/sebru_000/Desktop/Engine/source/Transform.h
+glad/glad.h
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+Component.h
+C:/Users/sebru_000/Desktop/Engine/source/Component.h
 
 C:/Users/sebru_000/Desktop/Engine/source/main.cpp
 glad/glad.h
 -
 GLFW/glfw3.h
 -
-Model.h
-C:/Users/sebru_000/Desktop/Engine/source/Model.h
-OpenGL.h
-C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
-Shader.h
-C:/Users/sebru_000/Desktop/Engine/source/Shader.h
-stb_image.h
-C:/Users/sebru_000/Desktop/Engine/source/stb_image.h
-Skybox.h
-C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
+SceneManager.h
+C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
 glm/glm.hpp
 -
 glm/gtc/matrix_transform.hpp
@@ -1305,10 +1333,6 @@ stdio.h
 -
 math.h
 -
-GameObject.h
-C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
-Renderer.h
-C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
 
 C:/Users/sebru_000/Desktop/Engine/source/stb_image.cpp
 stb_image.h

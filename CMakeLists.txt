@@ -19,14 +19,19 @@ SET(CMAKE_CXX_FLAGS "-std=c++11")
 add_executable(techdemo
 	source/main.cpp
 	source/stb_image.cpp
+	
 	libraries/glad/src/glad.c
+	source/Component.cpp
 	source/Mesh.cpp
 	source/Model.cpp
 	source/OpenGL.cpp
 	source/GameObject.cpp
 	source/Skybox.cpp
-	source/SceneManager.cpp
+	
 	source/CameraManager.cpp
+	source/Transform.cpp
+	source/Camera.cpp
+	source/SceneManager.cpp
 )
 
 target_link_libraries(techdemo assimp glfw3) 
