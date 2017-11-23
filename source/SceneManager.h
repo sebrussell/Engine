@@ -5,6 +5,7 @@ class CameraManager;
 class Skybox;
 class OpenGL;
 class GameObject;
+class Shader;
 
 #include <vector>
 #include <memory>
@@ -21,6 +22,7 @@ class SceneManager : public std::enable_shared_from_this<SceneManager>
 		std::shared_ptr<CameraManager>  m_cameraManager;
 		std::shared_ptr<Skybox> m_skybox;	
 		std::shared_ptr<OpenGL> m_openGL;
+		std::shared_ptr<Shader> m_shaders;
 	private:
 		std::vector<std::shared_ptr<GameObject>> m_gameObjects;
 };

@@ -18,3 +18,28 @@ glm::mat4 Transform::GetLookAt()
 {
 	return glm::lookAt(m_position, m_position + m_front, m_up);
 }
+
+glm::vec3 Transform::GetPosition()
+{
+	glm::vec3 position;
+	while(!m_parent.expired())
+	{
+		position = m_parent.lock()->GetPosition() + m_localPosition;
+	}
+	return position;
+}
+
+glm::vec3 Transform::GetLocalPosition()
+{
+	return m_localPosition;
+}
+
+void Transform::SetLocalPosition(glm::vec3 _position)
+{
+	m_localPosition = _position;
+}
+
+void Transform::SetParent(std::weak_ptr<Transform> _parent)
+{
+	m_parent = _parent;
+}

@@ -12,8 +12,10 @@ class Transform : public Component
 	public:
 		
 		glm::mat4 GetLookAt();
-		glm::vec3 GetWorldPosition();
+		glm::vec3 GetPosition();
 		glm::vec3 GetLocalPosition();
+		void SetLocalPosition(glm::vec3 _position);
+		void SetParent(std::weak_ptr<Transform> _parent);
 		virtual void Update();
 	private:
 		float m_yaw = -90.0f;

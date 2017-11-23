@@ -257,6 +257,33 @@ source/GameObject.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/GameObject.cpp.s
 .PHONY : source/GameObject.cpp.s
 
+source/Material.obj: source/Material.cpp.obj
+
+.PHONY : source/Material.obj
+
+# target to build an object file
+source/Material.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Material.cpp.obj
+.PHONY : source/Material.cpp.obj
+
+source/Material.i: source/Material.cpp.i
+
+.PHONY : source/Material.i
+
+# target to preprocess a source file
+source/Material.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Material.cpp.i
+.PHONY : source/Material.cpp.i
+
+source/Material.s: source/Material.cpp.s
+
+.PHONY : source/Material.s
+
+# target to generate assembly for a file
+source/Material.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Material.cpp.s
+.PHONY : source/Material.cpp.s
+
 source/Mesh.obj: source/Mesh.cpp.obj
 
 .PHONY : source/Mesh.obj
@@ -283,33 +310,6 @@ source/Mesh.s: source/Mesh.cpp.s
 source/Mesh.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Mesh.cpp.s
 .PHONY : source/Mesh.cpp.s
-
-source/Model.obj: source/Model.cpp.obj
-
-.PHONY : source/Model.obj
-
-# target to build an object file
-source/Model.cpp.obj:
-	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Model.cpp.obj
-.PHONY : source/Model.cpp.obj
-
-source/Model.i: source/Model.cpp.i
-
-.PHONY : source/Model.i
-
-# target to preprocess a source file
-source/Model.cpp.i:
-	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Model.cpp.i
-.PHONY : source/Model.cpp.i
-
-source/Model.s: source/Model.cpp.s
-
-.PHONY : source/Model.s
-
-# target to generate assembly for a file
-source/Model.cpp.s:
-	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Model.cpp.s
-.PHONY : source/Model.cpp.s
 
 source/OpenGL.obj: source/OpenGL.cpp.obj
 
@@ -338,6 +338,33 @@ source/OpenGL.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/OpenGL.cpp.s
 .PHONY : source/OpenGL.cpp.s
 
+source/Renderer.obj: source/Renderer.cpp.obj
+
+.PHONY : source/Renderer.obj
+
+# target to build an object file
+source/Renderer.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Renderer.cpp.obj
+.PHONY : source/Renderer.cpp.obj
+
+source/Renderer.i: source/Renderer.cpp.i
+
+.PHONY : source/Renderer.i
+
+# target to preprocess a source file
+source/Renderer.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Renderer.cpp.i
+.PHONY : source/Renderer.cpp.i
+
+source/Renderer.s: source/Renderer.cpp.s
+
+.PHONY : source/Renderer.s
+
+# target to generate assembly for a file
+source/Renderer.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Renderer.cpp.s
+.PHONY : source/Renderer.cpp.s
+
 source/SceneManager.obj: source/SceneManager.cpp.obj
 
 .PHONY : source/SceneManager.obj
@@ -364,6 +391,33 @@ source/SceneManager.s: source/SceneManager.cpp.s
 source/SceneManager.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/SceneManager.cpp.s
 .PHONY : source/SceneManager.cpp.s
+
+source/Shader.obj: source/Shader.cpp.obj
+
+.PHONY : source/Shader.obj
+
+# target to build an object file
+source/Shader.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Shader.cpp.obj
+.PHONY : source/Shader.cpp.obj
+
+source/Shader.i: source/Shader.cpp.i
+
+.PHONY : source/Shader.i
+
+# target to preprocess a source file
+source/Shader.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Shader.cpp.i
+.PHONY : source/Shader.cpp.i
+
+source/Shader.s: source/Shader.cpp.s
+
+.PHONY : source/Shader.s
+
+# target to generate assembly for a file
+source/Shader.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Shader.cpp.s
+.PHONY : source/Shader.cpp.s
 
 source/Skybox.obj: source/Skybox.cpp.obj
 
@@ -497,18 +551,24 @@ help:
 	@echo ... source/GameObject.obj
 	@echo ... source/GameObject.i
 	@echo ... source/GameObject.s
+	@echo ... source/Material.obj
+	@echo ... source/Material.i
+	@echo ... source/Material.s
 	@echo ... source/Mesh.obj
 	@echo ... source/Mesh.i
 	@echo ... source/Mesh.s
-	@echo ... source/Model.obj
-	@echo ... source/Model.i
-	@echo ... source/Model.s
 	@echo ... source/OpenGL.obj
 	@echo ... source/OpenGL.i
 	@echo ... source/OpenGL.s
+	@echo ... source/Renderer.obj
+	@echo ... source/Renderer.i
+	@echo ... source/Renderer.s
 	@echo ... source/SceneManager.obj
 	@echo ... source/SceneManager.i
 	@echo ... source/SceneManager.s
+	@echo ... source/Shader.obj
+	@echo ... source/Shader.i
+	@echo ... source/Shader.s
 	@echo ... source/Skybox.obj
 	@echo ... source/Skybox.i
 	@echo ... source/Skybox.s

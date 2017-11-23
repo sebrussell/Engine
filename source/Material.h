@@ -2,18 +2,32 @@
 #define MATERIAL_H
 
 #include "Component.h"
+#include <memory>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 class Renderer;
-class Lights;
+
+struct Texture {
+	Texture() {};
+	//Texture(unsigned int _id, std::string _type, aiString _path) { id = _id, type = _type, path = _path; }
+    unsigned int id;
+    std::string type;
+	//aiString path;
+};  
 
 class Material : public Component
 {
 	public:
-		virtual void Update() { m_renderer.Update; }
+		Material() {};
+		~Material() {};
+		virtual void Awake();
+		virtual void Update();
 	private:
-		Renderer m_renderer;
-	protected:
-		std::vector<std::weak_ptr<Lights>> m_lights;
+		glm::vec3 m_colour;
+		std::vector<Texture> m_textures;
+		std::weak_ptr<Renderer> m_renderer;
 };
 
-#endif MATERIAL_H
+#endif 

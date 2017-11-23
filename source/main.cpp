@@ -40,6 +40,8 @@ int main(int argc, char* argv[]) {
 	std::weak_ptr<GameObject> cameraMain = sceneManager->CreateGameObject();
 	cameraMain.lock()->AddComponent<Camera>();
 	sceneManager->Awake();
+	
+	
 
 	
 	return 0;
