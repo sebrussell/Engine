@@ -1,5 +1,14 @@
 #include "GameObject.h"
 
+GameObject::GameObject()
+{
+	
+}
+		
+GameObject::~GameObject()
+{
+}
+
 void GameObject::Awake()
 {
 	for(int i = 0; i < m_components.size(); i++)

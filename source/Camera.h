@@ -1,6 +1,7 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
+#include "Component.h"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <vector>
@@ -12,7 +13,7 @@ class GameObject;
 class Transform;
 class SceneManager;
 
-#include "Component.h"
+
 
 
 class Camera : public Component
@@ -26,7 +27,7 @@ class Camera : public Component
 		void SetupFrameBuffer(int _width, int _height);
 		virtual void Update();	
 		void SetFBOTexture();
-	
+		int test = 10;
 	private:
 		std::weak_ptr<OpenGL> m_openGL;
 		std::weak_ptr<Transform> m_transform;

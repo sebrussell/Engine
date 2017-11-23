@@ -7,7 +7,8 @@
 //#include "stb_image.h"
 
 #include "SceneManager.h"
-//#include "GameObject.h"
+#include "GameObject.h"
+#include "Camera.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -19,7 +20,6 @@
 
 //#include "Renderer.h"
 
-//class Camera;
 
 //unsigned int loadTexture(char const * path);
 
@@ -41,10 +41,10 @@ int main(int argc, char* argv[]) {
 
 	
 	
-	std::shared_ptr<SceneManager> sceneManager(new SceneManager);
-	
-	//std::weak_ptr<GameObject> cameraMain = sceneManager->CreateGameOject();	
-	//cameraMain.lock()->AddComponent<Camera>();
+	std::shared_ptr<SceneManager> sceneManager(new SceneManager);	
+	std::weak_ptr<GameObject> cameraMain = sceneManager->CreateGameOject();	
+	cameraMain.lock()->AddComponent<Camera>();
+	cameraMain.lock()->GetComponent<Camera>();
 	
 	return 0;
 }

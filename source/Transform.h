@@ -10,6 +10,7 @@
 class Transform : public Component
 {
 	public:
+		
 		glm::mat4 GetLookAt();
 		glm::vec3 GetWorldPosition();
 		glm::vec3 GetLocalPosition();

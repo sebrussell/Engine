@@ -1,1 +1,1 @@
- -LC:/Users/sebru_000/Desktop/Engine/libraries/assimp/lib  -LC:/Users/sebru_000/Desktop/Engine/libraries/glfw/lib -lassimp -lglfw3 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+ -LW:/C++/Engine/libraries/assimp/lib  -LW:/C++/Engine/libraries/glfw/lib -lassimp -lglfw3 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

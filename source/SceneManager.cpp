@@ -1,4 +1,8 @@
 #include "SceneManager.h"
+#include "OpenGL.h"
+#include "CameraManager.h"
+#include "Skybox.h"
+#include "GameObject.h"
 
 int SceneManager::Awake()
 {
@@ -13,7 +17,7 @@ int SceneManager::Awake()
 	return 0;
 }
 
-std::weak_ptr<GameObject> CreateGameOject()
+std::weak_ptr<GameObject> SceneManager::CreateGameOject()
 {
 	std::shared_ptr<GameObject> gameObject(new GameObject);
 	m_gameObjects.push_back(gameObject);
@@ -23,6 +27,7 @@ std::weak_ptr<GameObject> CreateGameOject()
 void SceneManager::Update()
 {
 	//enable main camera
+	//draw instanced gameobjects
 	//draw gameobjects
 	//draw transparent gameobjects
 	//skybox
