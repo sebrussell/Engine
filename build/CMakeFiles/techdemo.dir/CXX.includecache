@@ -1118,21 +1118,23 @@ detail/type_vec4.hpp
 detail/func_vector_relational.hpp
 ../libraries/glm/glm/detail/func_vector_relational.hpp
 
-W:/C++/Engine/source/Camera.cpp
+C:/Users/sebru_000/Desktop/Engine/source/Camera.cpp
 Camera.h
-W:/C++/Engine/source/Camera.h
+C:/Users/sebru_000/Desktop/Engine/source/Camera.h
 Transform.h
-W:/C++/Engine/source/Transform.h
+C:/Users/sebru_000/Desktop/Engine/source/Transform.h
 GameObject.h
-W:/C++/Engine/source/GameObject.h
+C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
 OpenGL.h
-W:/C++/Engine/source/OpenGL.h
+C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
 SceneManager.h
-W:/C++/Engine/source/SceneManager.h
+C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
+CameraManager.h
+C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
 
-W:/C++/Engine/source/Camera.h
+C:/Users/sebru_000/Desktop/Engine/source/Camera.h
 Component.h
-W:/C++/Engine/source/Component.h
+C:/Users/sebru_000/Desktop/Engine/source/Component.h
 glad/glad.h
 -
 GLFW/glfw3.h
@@ -1144,21 +1146,23 @@ iostream
 memory
 -
 
-W:/C++/Engine/source/CameraManager.cpp
+C:/Users/sebru_000/Desktop/Engine/source/CameraManager.cpp
 CameraManager.h
-W:/C++/Engine/source/CameraManager.h
+C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
 
-W:/C++/Engine/source/CameraManager.h
+C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
 vector
 -
 memory
 -
 
-W:/C++/Engine/source/Component.cpp
+C:/Users/sebru_000/Desktop/Engine/source/Component.cpp
 Component.h
-W:/C++/Engine/source/Component.h
+C:/Users/sebru_000/Desktop/Engine/source/Component.h
+GameObject.h
+C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
 
-W:/C++/Engine/source/Component.h
+C:/Users/sebru_000/Desktop/Engine/source/Component.h
 glm/glm.hpp
 -
 glm/gtc/matrix_transform.hpp
@@ -1169,14 +1173,16 @@ vector
 -
 memory
 -
+iostream
+-
 
-W:/C++/Engine/source/GameObject.cpp
+C:/Users/sebru_000/Desktop/Engine/source/GameObject.cpp
 GameObject.h
-W:/C++/Engine/source/GameObject.h
+C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
 
-W:/C++/Engine/source/GameObject.h
+C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
 Component.h
-W:/C++/Engine/source/Component.h
+C:/Users/sebru_000/Desktop/Engine/source/Component.h
 memory
 -
 vector
@@ -1184,13 +1190,13 @@ vector
 iostream
 -
 
-W:/C++/Engine/source/Mesh.cpp
+C:/Users/sebru_000/Desktop/Engine/source/Mesh.cpp
 Mesh.h
-W:/C++/Engine/source/Mesh.h
+C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
 
-W:/C++/Engine/source/Mesh.h
+C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
 Shader.h
-W:/C++/Engine/source/Shader.h
+C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 vector
 -
 string
@@ -1212,13 +1218,13 @@ assimp/scene.h
 assimp/postprocess.h
 -
 
-W:/C++/Engine/source/Model.cpp
+C:/Users/sebru_000/Desktop/Engine/source/Model.cpp
 Model.h
-W:/C++/Engine/source/Model.h
+C:/Users/sebru_000/Desktop/Engine/source/Model.h
 
-W:/C++/Engine/source/Model.h
+C:/Users/sebru_000/Desktop/Engine/source/Model.h
 stb_image.h
-W:/C++/Engine/source/stb_image.h
+C:/Users/sebru_000/Desktop/Engine/source/stb_image.h
 assimp/Importer.hpp
 -
 assimp/scene.h
@@ -1238,13 +1244,13 @@ map
 vector
 -
 Mesh.h
-W:/C++/Engine/source/Mesh.h
+C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
 
-W:/C++/Engine/source/OpenGL.cpp
+C:/Users/sebru_000/Desktop/Engine/source/OpenGL.cpp
 OpenGL.h
-W:/C++/Engine/source/OpenGL.h
+C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
 
-W:/C++/Engine/source/OpenGL.h
+C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
 glad/glad.h
 -
 GLFW/glfw3.h
@@ -1260,25 +1266,25 @@ iostream
 memory
 -
 
-W:/C++/Engine/source/SceneManager.cpp
+C:/Users/sebru_000/Desktop/Engine/source/SceneManager.cpp
 SceneManager.h
-W:/C++/Engine/source/SceneManager.h
+C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
 OpenGL.h
-W:/C++/Engine/source/OpenGL.h
+C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
 CameraManager.h
-W:/C++/Engine/source/CameraManager.h
+C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
 Skybox.h
-W:/C++/Engine/source/Skybox.h
+C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
 GameObject.h
-W:/C++/Engine/source/GameObject.h
+C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
 
-W:/C++/Engine/source/SceneManager.h
+C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
 vector
 -
 memory
 -
 
-W:/C++/Engine/source/Shader.h
+C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 glad/glad.h
 -
 glm/glm.hpp
@@ -1296,11 +1302,11 @@ sstream
 iostream
 -
 
-W:/C++/Engine/source/Skybox.cpp
+C:/Users/sebru_000/Desktop/Engine/source/Skybox.cpp
 Skybox.h
-W:/C++/Engine/source/Skybox.h
+C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
 
-W:/C++/Engine/source/Skybox.h
+C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
 glad/glad.h
 -
 GLFW/glfw3.h
@@ -1312,11 +1318,11 @@ vector
 iostream
 -
 
-W:/C++/Engine/source/Transform.cpp
+C:/Users/sebru_000/Desktop/Engine/source/Transform.cpp
 Transform.h
-W:/C++/Engine/source/Transform.h
+C:/Users/sebru_000/Desktop/Engine/source/Transform.h
 
-W:/C++/Engine/source/Transform.h
+C:/Users/sebru_000/Desktop/Engine/source/Transform.h
 glad/glad.h
 -
 glm/glm.hpp
@@ -1324,19 +1330,19 @@ glm/glm.hpp
 glm/gtc/matrix_transform.hpp
 -
 Component.h
-W:/C++/Engine/source/Component.h
+C:/Users/sebru_000/Desktop/Engine/source/Component.h
 
-W:/C++/Engine/source/main.cpp
+C:/Users/sebru_000/Desktop/Engine/source/main.cpp
 glad/glad.h
 -
 GLFW/glfw3.h
 -
 SceneManager.h
-W:/C++/Engine/source/SceneManager.h
+C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
 GameObject.h
-W:/C++/Engine/source/GameObject.h
+C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
 Camera.h
-W:/C++/Engine/source/Camera.h
+C:/Users/sebru_000/Desktop/Engine/source/Camera.h
 glm/glm.hpp
 -
 glm/gtc/matrix_transform.hpp
@@ -1348,13 +1354,13 @@ stdio.h
 math.h
 -
 
-W:/C++/Engine/source/stb_image.cpp
+C:/Users/sebru_000/Desktop/Engine/source/stb_image.cpp
 stb_image.h
-W:/C++/Engine/source/stb_image.h
+C:/Users/sebru_000/Desktop/Engine/source/stb_image.h
 
-W:/C++/Engine/source/stb_image.h
+C:/Users/sebru_000/Desktop/Engine/source/stb_image.h
 stb_image.h
-W:/C++/Engine/source/stb_image.h
+C:/Users/sebru_000/Desktop/Engine/source/stb_image.h
 stdio.h
 -
 stdarg.h

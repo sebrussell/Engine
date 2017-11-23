@@ -15,9 +15,10 @@ class CameraManager
 		void PostProcessing();
 		void SetMainCamera(std::weak_ptr<Camera> _camera);
 		void SetActiveCamera(std::weak_ptr<Camera> _camera);
+		void AddCamera(std::weak_ptr<Camera> _camera);
 		std::weak_ptr<Camera> m_activeCamera;
 	private:
-		std::vector<std::shared_ptr<Camera>> m_cameras;
+		std::vector<std::weak_ptr<Camera>> m_cameras;
 		std::weak_ptr<Camera> m_mainCamera;
 };
 

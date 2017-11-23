@@ -12,9 +12,7 @@ class OpenGL;
 class GameObject;
 class Transform;
 class SceneManager;
-
-
-
+class CameraManager;
 
 class Camera : public Component
 {
@@ -27,10 +25,10 @@ class Camera : public Component
 		void SetupFrameBuffer(int _width, int _height);
 		virtual void Update();	
 		void SetFBOTexture();
-		int test = 10;
 	private:
 		std::weak_ptr<OpenGL> m_openGL;
 		std::weak_ptr<Transform> m_transform;
+		std::weak_ptr<CameraManager> m_cameraManager;
 		unsigned int framebuffer = 0;
 		unsigned int textureColorbuffer, rbo;
 		float m_zoom;

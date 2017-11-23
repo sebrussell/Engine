@@ -36,15 +36,11 @@ glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 int main(int argc, char* argv[]) {	
 
-
-	
-
-	
-	
 	std::shared_ptr<SceneManager> sceneManager(new SceneManager);	
-	std::weak_ptr<GameObject> cameraMain = sceneManager->CreateGameOject();	
+	std::weak_ptr<GameObject> cameraMain = sceneManager->CreateGameObject();
 	cameraMain.lock()->AddComponent<Camera>();
-	cameraMain.lock()->GetComponent<Camera>();
+	sceneManager->Awake();
+
 	
 	return 0;
 }

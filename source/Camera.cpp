@@ -3,11 +3,17 @@
 #include "GameObject.h"				//this is wrong
 #include "OpenGL.h"
 #include "SceneManager.h"
+#include "CameraManager.h"
 
 void Camera::Awake()
 {
-	m_openGL = m_gameObject.lock()->m_sceneManager.lock()->m_openGL; 
+	m_openGL = m_gameObject.lock()->m_sceneManager.lock()->m_openGL; 	
+	m_cameraManager = m_gameObject.lock()->m_sceneManager.lock()->m_cameraManager;		
 	m_transform = m_gameObject.lock()->GetComponent<Transform>();
+	if(m_transform.expired())
+	{
+		m_transform = m_gameObject.lock()->AddComponent<Transform>();
+	}
 	m_zoom = m_maxFov;
 }
 

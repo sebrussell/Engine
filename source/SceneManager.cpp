@@ -8,18 +8,25 @@ int SceneManager::Awake()
 {
 	std::shared_ptr<OpenGL> openGL(new OpenGL);
 	openGL->Setup(800, 600);
-	
+		
 	std::shared_ptr<CameraManager> cameraManager(new CameraManager);
 	m_cameraManager = cameraManager;
 	m_cameraManager->Awake();
 	
 	std::shared_ptr<Skybox> skybox(new Skybox);
+	
+	for(int i = 0; i < m_gameObjects.size(); i++)
+	{		
+		m_gameObjects.at(i)->Awake();
+	}
+	
 	return 0;
 }
 
-std::weak_ptr<GameObject> SceneManager::CreateGameOject()
+std::weak_ptr<GameObject> SceneManager::CreateGameObject()
 {
 	std::shared_ptr<GameObject> gameObject(new GameObject);
+	gameObject->m_sceneManager = shared_from_this();
 	m_gameObjects.push_back(gameObject);
 	return gameObject;
 }

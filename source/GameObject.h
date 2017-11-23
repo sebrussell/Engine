@@ -10,7 +10,6 @@ class SceneManager;
 #include <iostream>
 
 class GameObject : public std::enable_shared_from_this<GameObject>
-
 {
 	public:
 		GameObject();
@@ -19,9 +18,8 @@ class GameObject : public std::enable_shared_from_this<GameObject>
 		std::shared_ptr<T> AddComponent()
 		{
 			std::shared_ptr<T> _component(new T());
-			m_components.push_back(_component);
-			_component->SetGameObject(shared_from_this());
-			
+			_component->m_gameObject = shared_from_this();
+			m_components.push_back(_component);			
 			return _component;		
 		}	
 		
@@ -31,12 +29,12 @@ class GameObject : public std::enable_shared_from_this<GameObject>
 		{			
 			for(int i = 0; i < m_components.size(); i++)
 			{
-				//std::shared_ptr<T> t = std::dynamic_pointer_cast<T>(m_components.at(i));
-				if(typeid(m_components.at(i)).name() == typeid(T).name())
+				std::shared_ptr<T> rtn = std::dynamic_pointer_cast<T>(m_components.at(i));
+				if(rtn)
 				{
-					std::cout << typeid(T).name() << std::endl;
+					std::cout << "ADAD";
+					return rtn;
 				}
-				
 			}
 			return std::shared_ptr<T>();
 		}
@@ -44,7 +42,7 @@ class GameObject : public std::enable_shared_from_this<GameObject>
 		void Awake();
 		void Update();		
 		std::weak_ptr<SceneManager> m_sceneManager;
-		int i;
+		int i = 4;
 	private:
 		std::vector<std::shared_ptr<Component>> m_components;
 };

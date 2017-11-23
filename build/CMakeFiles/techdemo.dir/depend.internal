@@ -4,7 +4,7 @@
 CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.obj
  ../libraries/glad/include/KHR/khrplatform.h
  ../libraries/glad/include/glad/glad.h
- W:/C++/Engine/libraries/glad/src/glad.c
+ C:/Users/sebru_000/Desktop/Engine/libraries/glad/src/glad.c
 CMakeFiles/techdemo.dir/source/Camera.cpp.obj
  ../libraries/glad/include/KHR/khrplatform.h
  ../libraries/glad/include/glad/glad.h
@@ -110,16 +110,17 @@ CMakeFiles/techdemo.dir/source/Camera.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- W:/C++/Engine/source/Camera.cpp
- W:/C++/Engine/source/Camera.h
- W:/C++/Engine/source/Component.h
- W:/C++/Engine/source/GameObject.h
- W:/C++/Engine/source/OpenGL.h
- W:/C++/Engine/source/SceneManager.h
- W:/C++/Engine/source/Transform.h
+ C:/Users/sebru_000/Desktop/Engine/source/Camera.cpp
+ C:/Users/sebru_000/Desktop/Engine/source/Camera.h
+ C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
+ C:/Users/sebru_000/Desktop/Engine/source/Component.h
+ C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
+ C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
+ C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
+ C:/Users/sebru_000/Desktop/Engine/source/Transform.h
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj
- W:/C++/Engine/source/CameraManager.cpp
- W:/C++/Engine/source/CameraManager.h
+ C:/Users/sebru_000/Desktop/Engine/source/CameraManager.cpp
+ C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
 CMakeFiles/techdemo.dir/source/Component.cpp.obj
  ../libraries/glm/glm/common.hpp
  ../libraries/glm/glm/detail/_fixes.hpp
@@ -222,8 +223,9 @@ CMakeFiles/techdemo.dir/source/Component.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- W:/C++/Engine/source/Component.cpp
- W:/C++/Engine/source/Component.h
+ C:/Users/sebru_000/Desktop/Engine/source/Component.cpp
+ C:/Users/sebru_000/Desktop/Engine/source/Component.h
+ C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
 CMakeFiles/techdemo.dir/source/GameObject.cpp.obj
  ../libraries/glm/glm/common.hpp
  ../libraries/glm/glm/detail/_fixes.hpp
@@ -326,9 +328,9 @@ CMakeFiles/techdemo.dir/source/GameObject.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- W:/C++/Engine/source/Component.h
- W:/C++/Engine/source/GameObject.cpp
- W:/C++/Engine/source/GameObject.h
+ C:/Users/sebru_000/Desktop/Engine/source/Component.h
+ C:/Users/sebru_000/Desktop/Engine/source/GameObject.cpp
+ C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
 CMakeFiles/techdemo.dir/source/Mesh.cpp.obj
  ../libraries/assimp/include/assimp/./Compiler/poppack1.h
  ../libraries/assimp/include/assimp/./Compiler/pushpack1.h
@@ -462,9 +464,9 @@ CMakeFiles/techdemo.dir/source/Mesh.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- W:/C++/Engine/source/Mesh.cpp
- W:/C++/Engine/source/Mesh.h
- W:/C++/Engine/source/Shader.h
+ C:/Users/sebru_000/Desktop/Engine/source/Mesh.cpp
+ C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
+ C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 CMakeFiles/techdemo.dir/source/Model.cpp.obj
  ../libraries/assimp/include/assimp/./Compiler/poppack1.h
  ../libraries/assimp/include/assimp/./Compiler/pushpack1.h
@@ -597,11 +599,11 @@ CMakeFiles/techdemo.dir/source/Model.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- W:/C++/Engine/source/Mesh.h
- W:/C++/Engine/source/Model.cpp
- W:/C++/Engine/source/Model.h
- W:/C++/Engine/source/Shader.h
- W:/C++/Engine/source/stb_image.h
+ C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
+ C:/Users/sebru_000/Desktop/Engine/source/Model.cpp
+ C:/Users/sebru_000/Desktop/Engine/source/Model.h
+ C:/Users/sebru_000/Desktop/Engine/source/Shader.h
+ C:/Users/sebru_000/Desktop/Engine/source/stb_image.h
 CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj
  ../libraries/glad/include/KHR/khrplatform.h
  ../libraries/glad/include/glad/glad.h
@@ -707,8 +709,8 @@ CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- W:/C++/Engine/source/OpenGL.cpp
- W:/C++/Engine/source/OpenGL.h
+ C:/Users/sebru_000/Desktop/Engine/source/OpenGL.cpp
+ C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj
  ../libraries/glad/include/KHR/khrplatform.h
  ../libraries/glad/include/glad/glad.h
@@ -814,19 +816,19 @@ CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- W:/C++/Engine/source/CameraManager.h
- W:/C++/Engine/source/Component.h
- W:/C++/Engine/source/GameObject.h
- W:/C++/Engine/source/OpenGL.h
- W:/C++/Engine/source/SceneManager.cpp
- W:/C++/Engine/source/SceneManager.h
- W:/C++/Engine/source/Skybox.h
+ C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
+ C:/Users/sebru_000/Desktop/Engine/source/Component.h
+ C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
+ C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
+ C:/Users/sebru_000/Desktop/Engine/source/SceneManager.cpp
+ C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
+ C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj
  ../libraries/glad/include/KHR/khrplatform.h
  ../libraries/glad/include/glad/glad.h
  ../libraries/glfw/include/GLFW/glfw3.h
- W:/C++/Engine/source/Skybox.cpp
- W:/C++/Engine/source/Skybox.h
+ C:/Users/sebru_000/Desktop/Engine/source/Skybox.cpp
+ C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
 CMakeFiles/techdemo.dir/source/Transform.cpp.obj
  ../libraries/glad/include/KHR/khrplatform.h
  ../libraries/glad/include/glad/glad.h
@@ -931,9 +933,9 @@ CMakeFiles/techdemo.dir/source/Transform.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- W:/C++/Engine/source/Component.h
- W:/C++/Engine/source/Transform.cpp
- W:/C++/Engine/source/Transform.h
+ C:/Users/sebru_000/Desktop/Engine/source/Component.h
+ C:/Users/sebru_000/Desktop/Engine/source/Transform.cpp
+ C:/Users/sebru_000/Desktop/Engine/source/Transform.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj
  ../libraries/glad/include/KHR/khrplatform.h
  ../libraries/glad/include/glad/glad.h
@@ -1039,11 +1041,11 @@ CMakeFiles/techdemo.dir/source/main.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
- W:/C++/Engine/source/Camera.h
- W:/C++/Engine/source/Component.h
- W:/C++/Engine/source/GameObject.h
- W:/C++/Engine/source/SceneManager.h
- W:/C++/Engine/source/main.cpp
+ C:/Users/sebru_000/Desktop/Engine/source/Camera.h
+ C:/Users/sebru_000/Desktop/Engine/source/Component.h
+ C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
+ C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
+ C:/Users/sebru_000/Desktop/Engine/source/main.cpp
 CMakeFiles/techdemo.dir/source/stb_image.cpp.obj
- W:/C++/Engine/source/stb_image.cpp
- W:/C++/Engine/source/stb_image.h
+ C:/Users/sebru_000/Desktop/Engine/source/stb_image.cpp
+ C:/Users/sebru_000/Desktop/Engine/source/stb_image.h

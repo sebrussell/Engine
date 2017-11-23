@@ -9,6 +9,7 @@ class GameObject;
 
 #include <vector>
 #include <memory>
+#include <iostream>
 
 class Component
 {
@@ -17,10 +18,7 @@ class Component
 		virtual ~Component();
 		virtual void Update();
 		virtual void Awake();
-		void SetGameObject(std::weak_ptr<GameObject> _gameObject);
-	protected:
 		std::weak_ptr<GameObject> m_gameObject;
-	
 };
 
 #endif

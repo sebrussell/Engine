@@ -10,14 +10,14 @@ class GameObject;
 #include <memory>
 
 
-class SceneManager
+class SceneManager : public std::enable_shared_from_this<SceneManager>
 {
 	public:
 		SceneManager() {};
 		~SceneManager() {};
 		int Awake();
 		void Update();
-		std::weak_ptr<GameObject> CreateGameOject();
+		std::weak_ptr<GameObject> CreateGameObject();
 		std::shared_ptr<CameraManager>  m_cameraManager;
 		std::shared_ptr<Skybox> m_skybox;	
 		std::shared_ptr<OpenGL> m_openGL;

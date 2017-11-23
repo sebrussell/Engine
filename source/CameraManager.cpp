@@ -17,3 +17,8 @@ void CameraManager::SetActiveCamera(std::weak_ptr<Camera> _camera)
 { 
 	m_activeCamera = _camera; 
 }
+
+void CameraManager::AddCamera(std::weak_ptr<Camera> _camera)
+{
+	m_cameras.push_back(_camera);
+}
