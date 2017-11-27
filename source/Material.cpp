@@ -1,22 +1,39 @@
 #include "Material.h"
 #include "Renderer.h"
+#include "stb_image.h"
+#include "Shader.h"
 
-void Material::Awake()
+void Material::Apply()
 {
-	m_colour = glm::vec3(0, 0, 0);
-}
-
-void Material::Update()
-{
+	/*
+	for(int i = 0; i < m_textures.size(); i++)
+	{
+		glActiveTexture(GL_TEXTURE0 + i);
+		glBindTexture(GL_TEXTURE_2D, m_textures.at(i).id);
+	}
+	*/
+	
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, m_textures.at(0).id);
+	
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, m_textures.at(1).id);
+	
+	if(m_textures.size() == 0)
+	{
+		//set colour
+	}
+	
 	
 }
 
-void Material::LoadTexture(char const * path)
+void Material::LoadTexture(char const * _path, std::string _type)
 {
-    glGenTextures(1, &id);
+	Texture texture;
+    glGenTextures(1, &texture.id);
 
     int width, height, nrComponents;
-    unsigned char *data = stbi_load(path, &width, &height, &nrComponents, 0);
+    unsigned char *data = stbi_load(_path, &width, &height, &nrComponents, 0);
     if (data)
     {
         GLenum format;
@@ -27,7 +44,7 @@ void Material::LoadTexture(char const * path)
         else if (nrComponents == 4)
             format = GL_RGBA;
 
-        glBindTexture(GL_TEXTURE_2D, id);
+        glBindTexture(GL_TEXTURE_2D, texture.id);
         glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
 
@@ -40,10 +57,10 @@ void Material::LoadTexture(char const * path)
     }
     else
     {
-        std::cout << "Texture failed to load at path: " << path << std::endl;
+        std::cout << "Texture failed to load at path: " << _path << std::endl;
         stbi_image_free(data);
     }	
-	
 
-    return id;
+	texture.type = _type;
+	m_textures.push_back(texture);
 }

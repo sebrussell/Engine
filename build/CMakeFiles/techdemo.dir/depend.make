@@ -331,6 +331,9 @@ CMakeFiles/techdemo.dir/source/GameObject.cpp.obj: ../source/Component.h
 CMakeFiles/techdemo.dir/source/GameObject.cpp.obj: ../source/GameObject.cpp
 CMakeFiles/techdemo.dir/source/GameObject.cpp.obj: ../source/GameObject.h
 
+CMakeFiles/techdemo.dir/source/Material.cpp.obj: ../libraries/glad/include/KHR/khrplatform.h
+CMakeFiles/techdemo.dir/source/Material.cpp.obj: ../libraries/glad/include/glad/glad.h
+CMakeFiles/techdemo.dir/source/Material.cpp.obj: ../libraries/glfw/include/GLFW/glfw3.h
 CMakeFiles/techdemo.dir/source/Material.cpp.obj: ../libraries/glm/glm/common.hpp
 CMakeFiles/techdemo.dir/source/Material.cpp.obj: ../libraries/glm/glm/detail/_fixes.hpp
 CMakeFiles/techdemo.dir/source/Material.cpp.obj: ../libraries/glm/glm/detail/_swizzle.hpp
@@ -436,6 +439,8 @@ CMakeFiles/techdemo.dir/source/Material.cpp.obj: ../source/Component.h
 CMakeFiles/techdemo.dir/source/Material.cpp.obj: ../source/Material.cpp
 CMakeFiles/techdemo.dir/source/Material.cpp.obj: ../source/Material.h
 CMakeFiles/techdemo.dir/source/Material.cpp.obj: ../source/Renderer.h
+CMakeFiles/techdemo.dir/source/Material.cpp.obj: ../source/Shader.h
+CMakeFiles/techdemo.dir/source/Material.cpp.obj: ../source/stb_image.h
 
 CMakeFiles/techdemo.dir/source/Mesh.cpp.obj: ../libraries/glad/include/KHR/khrplatform.h
 CMakeFiles/techdemo.dir/source/Mesh.cpp.obj: ../libraries/glad/include/glad/glad.h
@@ -658,6 +663,7 @@ CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/Camera.h
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/CameraManager.h
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/Component.h
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/GameObject.h
+CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/Material.h
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/Mesh.h
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/Renderer.cpp
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/Renderer.h
@@ -1214,6 +1220,7 @@ CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Camera.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/CameraManager.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Component.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/GameObject.h
+CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Material.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/OpenGL.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Renderer.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/SceneManager.h

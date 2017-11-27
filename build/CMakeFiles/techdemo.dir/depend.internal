@@ -332,6 +332,9 @@ CMakeFiles/techdemo.dir/source/GameObject.cpp.obj
  C:/Users/sebru_000/Desktop/Engine/source/GameObject.cpp
  C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
 CMakeFiles/techdemo.dir/source/Material.cpp.obj
+ ../libraries/glad/include/KHR/khrplatform.h
+ ../libraries/glad/include/glad/glad.h
+ ../libraries/glfw/include/GLFW/glfw3.h
  ../libraries/glm/glm/common.hpp
  ../libraries/glm/glm/detail/_fixes.hpp
  ../libraries/glm/glm/detail/_swizzle.hpp
@@ -437,6 +440,8 @@ CMakeFiles/techdemo.dir/source/Material.cpp.obj
  C:/Users/sebru_000/Desktop/Engine/source/Material.cpp
  C:/Users/sebru_000/Desktop/Engine/source/Material.h
  C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
+ C:/Users/sebru_000/Desktop/Engine/source/Shader.h
+ C:/Users/sebru_000/Desktop/Engine/source/stb_image.h
 CMakeFiles/techdemo.dir/source/Mesh.cpp.obj
  ../libraries/glad/include/KHR/khrplatform.h
  ../libraries/glad/include/glad/glad.h
@@ -659,6 +664,7 @@ CMakeFiles/techdemo.dir/source/Renderer.cpp.obj
  C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
  C:/Users/sebru_000/Desktop/Engine/source/Component.h
  C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
+ C:/Users/sebru_000/Desktop/Engine/source/Material.h
  C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
  C:/Users/sebru_000/Desktop/Engine/source/Renderer.cpp
  C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
@@ -1215,6 +1221,7 @@ CMakeFiles/techdemo.dir/source/main.cpp.obj
  C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
  C:/Users/sebru_000/Desktop/Engine/source/Component.h
  C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
+ C:/Users/sebru_000/Desktop/Engine/source/Material.h
  C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
  C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
  C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h

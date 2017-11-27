@@ -13,6 +13,7 @@
 #include "Camera.h"
 #include "Transform.h"
 #include "OpenGL.h"
+#include "Material.h"
 
 
 #include <glm/glm.hpp>
@@ -62,8 +63,11 @@ int main(int argc, char* argv[]) {
 	cubeOne.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
 	cubeOne.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs"));
 	cubeOne.lock()->GetComponent<Renderer>()->GetShader().lock()->CreateMatrixBuffer();
-	cubeOne.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 0.0f, -15.0f);
+	cubeOne.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 0.0f, -2.0f);
+	cubeOne.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png", "REGULAR");
+	cubeOne.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/arrow.jpg", "REGULAR");
 	
+
 	
 	while(sceneManager->m_openGL->ShouldWindowClose())
 	{

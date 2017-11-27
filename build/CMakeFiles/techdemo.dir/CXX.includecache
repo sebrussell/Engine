@@ -951,17 +951,25 @@ Material.h
 C:/Users/sebru_000/Desktop/Engine/source/Material.h
 Renderer.h
 C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
+stb_image.h
+C:/Users/sebru_000/Desktop/Engine/source/stb_image.h
+Shader.h
+C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 
 C:/Users/sebru_000/Desktop/Engine/source/Material.h
-Component.h
-C:/Users/sebru_000/Desktop/Engine/source/Component.h
 memory
+-
+vector
 -
 glm/glm.hpp
 -
 glm/gtc/matrix_transform.hpp
 -
 glm/gtc/type_ptr.hpp
+-
+glad/glad.h
+-
+GLFW/glfw3.h
 -
 
 C:/Users/sebru_000/Desktop/Engine/source/Mesh.cpp
@@ -1013,6 +1021,8 @@ Transform.h
 C:/Users/sebru_000/Desktop/Engine/source/Transform.h
 Camera.h
 C:/Users/sebru_000/Desktop/Engine/source/Camera.h
+Material.h
+C:/Users/sebru_000/Desktop/Engine/source/Material.h
 
 C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
 iostream
@@ -1131,6 +1141,8 @@ Transform.h
 C:/Users/sebru_000/Desktop/Engine/source/Transform.h
 OpenGL.h
 C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
+Material.h
+C:/Users/sebru_000/Desktop/Engine/source/Material.h
 glm/glm.hpp
 -
 glm/gtc/matrix_transform.hpp

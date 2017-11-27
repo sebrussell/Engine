@@ -51,20 +51,22 @@ void Renderer::Awake()
 	{
 		m_transform = m_gameObject.lock()->AddComponent<Transform>();
 	}
-	m_material = std::make_shared<Material.h">();
+	m_material = std::make_shared<Material>();
 	m_mesh = std::make_shared<Mesh>();
-
+	
 }
 
 void Renderer::Update()
 {
 	std::shared_ptr<Shader> shader = m_shader.lock();
 	
-	shader->Use();
-	
+	shader->Use();	
+	shader->SetInt("texture_regular1", 0);
+	shader->SetInt("texture_diffuse1", 1);
 	shader->SetMat4("model", m_transform.lock()->GetModelMatrix());
 	shader->UpdateMatrix(m_activeCamera.lock()->GetProjectionMatrix(), m_activeCamera.lock()->GetViewMatrix());
 	//apply shader values
+	m_material->Apply();
 	m_mesh->Draw();
 }
 
