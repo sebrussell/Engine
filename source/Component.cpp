@@ -14,3 +14,7 @@ Component::~Component()
 void Component::Awake() 
 {
 }
+
+void Component::Delete()
+{
+}

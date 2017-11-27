@@ -30,8 +30,10 @@ class Renderer : public Component
 		~Renderer();
 		virtual void Awake();
 		virtual void Update();
+		virtual void Delete();
 		void SetShader(std::weak_ptr<Shader> _shader);
 		void SetMesh(Type _type, std::string _path = "");
+		std::weak_ptr<Shader> GetShader();
 	private:		
 		std::weak_ptr<Shader> m_shader;
 		std::shared_ptr<Mesh> m_mesh;

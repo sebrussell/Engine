@@ -18,6 +18,7 @@ class Component
 		virtual ~Component();
 		virtual void Update();
 		virtual void Awake();
+		virtual void Delete();
 		std::weak_ptr<GameObject> m_gameObject;
 };
 

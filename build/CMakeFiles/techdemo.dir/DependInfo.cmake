@@ -27,6 +27,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/sebru_000/Desktop/Engine/source/Renderer.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Renderer.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/SceneManager.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/Shader.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Shader.cpp.obj"
+  "C:/Users/sebru_000/Desktop/Engine/source/ShaderManager.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/ShaderManager.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/Skybox.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Skybox.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/Transform.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Transform.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/main.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/main.cpp.obj"

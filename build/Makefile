@@ -419,6 +419,33 @@ source/Shader.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Shader.cpp.s
 .PHONY : source/Shader.cpp.s
 
+source/ShaderManager.obj: source/ShaderManager.cpp.obj
+
+.PHONY : source/ShaderManager.obj
+
+# target to build an object file
+source/ShaderManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/ShaderManager.cpp.obj
+.PHONY : source/ShaderManager.cpp.obj
+
+source/ShaderManager.i: source/ShaderManager.cpp.i
+
+.PHONY : source/ShaderManager.i
+
+# target to preprocess a source file
+source/ShaderManager.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/ShaderManager.cpp.i
+.PHONY : source/ShaderManager.cpp.i
+
+source/ShaderManager.s: source/ShaderManager.cpp.s
+
+.PHONY : source/ShaderManager.s
+
+# target to generate assembly for a file
+source/ShaderManager.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/ShaderManager.cpp.s
+.PHONY : source/ShaderManager.cpp.s
+
 source/Skybox.obj: source/Skybox.cpp.obj
 
 .PHONY : source/Skybox.obj
@@ -569,6 +596,9 @@ help:
 	@echo ... source/Shader.obj
 	@echo ... source/Shader.i
 	@echo ... source/Shader.s
+	@echo ... source/ShaderManager.obj
+	@echo ... source/ShaderManager.i
+	@echo ... source/ShaderManager.s
 	@echo ... source/Skybox.obj
 	@echo ... source/Skybox.i
 	@echo ... source/Skybox.s

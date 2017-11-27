@@ -25,3 +25,10 @@ void GameObject::Update()
 	}
 }
 
+void GameObject::Delete()
+{
+	for(int i = 0; i < m_components.size(); i++)
+	{
+		m_components.at(i)->Delete();
+	}
+}

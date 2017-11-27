@@ -74,6 +74,8 @@ int OpenGL::Setup(int _windowWidth, int _windowHeight)
 	//glEnable(GL_PROGRAM_POINT_SIZE);  
 	//glEnable(GL_CULL_FACE);
 	
+	m_aspectRatio = (float)m_windowWidth / (float)m_windowHeight;
+	
 	std::cout << "OpenGL Setup Completed" << std::endl;
 	return 0;
 	

@@ -2,6 +2,8 @@
 #define SHADER_H
 
 #include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -27,7 +29,6 @@ public:
 	void SetVec3(const std::string &name, glm::vec3 value) const;
 	void CreateMatrixBuffer();	
 	void UpdateMatrix(glm::mat4 projection, glm::mat4 view);
-
 private:
 	unsigned int m_uboMatrices;
     void CheckCompileErrors(unsigned int shader, std::string type);

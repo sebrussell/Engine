@@ -32,7 +32,6 @@ class GameObject : public std::enable_shared_from_this<GameObject>
 				std::shared_ptr<T> rtn = std::dynamic_pointer_cast<T>(m_components.at(i));
 				if(rtn)
 				{
-					std::cout << "ADAD";
 					return rtn;
 				}
 			}
@@ -40,7 +39,8 @@ class GameObject : public std::enable_shared_from_this<GameObject>
 		}
 		  
 		void Awake();
-		void Update();		
+		void Update();	
+		void Delete();
 		std::weak_ptr<SceneManager> m_sceneManager;
 		int i = 4;
 	private:

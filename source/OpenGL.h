@@ -19,7 +19,6 @@ class OpenGL
 		int Setup(int _windowWidth, int _windowHeight);		
 		
 		
-		
 		bool ShouldWindowClose();
 		void ProcessInput();
 		void SwapBuffers();
@@ -33,7 +32,8 @@ class OpenGL
 		static void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 		static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 		static void error_callback(int error, const char* description);
-				
+		
+		float m_aspectRatio;
 	private:
 		GLFWwindow* m_window;
 

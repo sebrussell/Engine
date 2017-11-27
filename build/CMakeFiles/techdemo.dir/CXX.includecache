@@ -969,6 +969,12 @@ Mesh.h
 C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
 
 C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+iostream
+-
 
 C:/Users/sebru_000/Desktop/Engine/source/OpenGL.cpp
 OpenGL.h
@@ -1005,6 +1011,8 @@ Shader.h
 C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 Transform.h
 C:/Users/sebru_000/Desktop/Engine/source/Transform.h
+Camera.h
+C:/Users/sebru_000/Desktop/Engine/source/Camera.h
 
 C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
 iostream
@@ -1027,6 +1035,8 @@ Skybox.h
 C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
 GameObject.h
 C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
+ShaderManager.h
+C:/Users/sebru_000/Desktop/Engine/source/ShaderManager.h
 
 C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
 vector
@@ -1041,6 +1051,8 @@ C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 glad/glad.h
 -
+GLFW/glfw3.h
+-
 glm/glm.hpp
 -
 glm/gtc/matrix_transform.hpp
@@ -1054,6 +1066,18 @@ fstream
 sstream
 -
 iostream
+-
+
+C:/Users/sebru_000/Desktop/Engine/source/ShaderManager.cpp
+ShaderManager.h
+C:/Users/sebru_000/Desktop/Engine/source/ShaderManager.h
+Shader.h
+C:/Users/sebru_000/Desktop/Engine/source/Shader.h
+
+C:/Users/sebru_000/Desktop/Engine/source/ShaderManager.h
+vector
+-
+memory
 -
 
 C:/Users/sebru_000/Desktop/Engine/source/Skybox.cpp
@@ -1091,12 +1115,22 @@ glad/glad.h
 -
 GLFW/glfw3.h
 -
+Shader.h
+C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 SceneManager.h
 C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
+CameraManager.h
+C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
+ShaderManager.h
+C:/Users/sebru_000/Desktop/Engine/source/ShaderManager.h
 GameObject.h
 C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
 Camera.h
 C:/Users/sebru_000/Desktop/Engine/source/Camera.h
+Transform.h
+C:/Users/sebru_000/Desktop/Engine/source/Transform.h
+OpenGL.h
+C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
 glm/glm.hpp
 -
 glm/gtc/matrix_transform.hpp
@@ -1107,6 +1141,8 @@ stdio.h
 -
 math.h
 -
+Renderer.h
+C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
 
 C:/Users/sebru_000/Desktop/Engine/source/stb_image.cpp
 stb_image.h

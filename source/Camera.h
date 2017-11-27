@@ -21,6 +21,7 @@ class Camera : public Component
 		~Camera() {};
 		virtual void Awake();
 		glm::mat4 GetViewMatrix();
+		glm::mat4 GetProjectionMatrix();
 		void SetupFrameBuffer();
 		void SetupFrameBuffer(int _width, int _height);
 		virtual void Update();	
@@ -33,6 +34,10 @@ class Camera : public Component
 		unsigned int textureColorbuffer, rbo;
 		float m_zoom;
 		float m_maxFov = 90.0f;
+		
+		float m_aspectRatio;
+		float m_maxViewDistance;
+		float m_minViewDistance;
 };
 
 #endif

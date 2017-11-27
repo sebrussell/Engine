@@ -3,12 +3,17 @@
 
 //#include "Model.h"
 //#include "OpenGL.h"
-//#include "Shader.h"
+#include "Shader.h"
 //#include "stb_image.h"
 
 #include "SceneManager.h"
+#include "CameraManager.h"
+#include "ShaderManager.h"
 #include "GameObject.h"
 #include "Camera.h"
+#include "Transform.h"
+#include "OpenGL.h"
+
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -18,7 +23,7 @@
 #include <math.h>
 
 
-//#include "Renderer.h"
+#include "Renderer.h"
 
 
 //unsigned int loadTexture(char const * path);
@@ -37,13 +42,41 @@ glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 int main(int argc, char* argv[]) {	
 
 	std::shared_ptr<SceneManager> sceneManager(new SceneManager);	
-	std::weak_ptr<GameObject> cameraMain = sceneManager->CreateGameObject();
+
+	
+	
+	std::weak_ptr<GameObject> cameraMain = sceneManager->CreateGameObject();	
 	cameraMain.lock()->AddComponent<Camera>();
+	cameraMain.lock()->AddComponent<Transform>();	
+	cameraMain.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 0.0f, 3.0f);
+	
+	std::weak_ptr<GameObject> cubeOne = sceneManager->CreateGameObject();
+	cubeOne.lock()->AddComponent<Renderer>();
+	
 	sceneManager->Awake();
 	
 	
-
+	sceneManager->m_cameraManager->SetActiveCamera(cameraMain.lock()->GetComponent<Camera>());
 	
+	cubeOne.lock()->GetComponent<Renderer>()->Awake();
+	cubeOne.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
+	cubeOne.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs"));
+	cubeOne.lock()->GetComponent<Renderer>()->GetShader().lock()->CreateMatrixBuffer();
+	cubeOne.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 0.0f, -15.0f);
+	
+	
+	while(sceneManager->m_openGL->ShouldWindowClose())
+	{
+		//Scene Manager Process Input
+		glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+		
+		sceneManager->Update();
+		
+		sceneManager->m_openGL->SwapBuffers(); 
+	}
+	
+	sceneManager->Delete();
 	return 0;
 }
 

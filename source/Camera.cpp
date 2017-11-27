@@ -14,12 +14,20 @@ void Camera::Awake()
 	{
 		m_transform = m_gameObject.lock()->AddComponent<Transform>();
 	}
+	m_maxViewDistance = m_gameObject.lock()->m_sceneManager.lock()->m_maxViewDistance;
+	m_minViewDistance = m_gameObject.lock()->m_sceneManager.lock()->m_minViewDistance;
 	m_zoom = m_maxFov;
+	m_aspectRatio = m_openGL.lock()->m_aspectRatio;
 }
 
 glm::mat4 Camera::GetViewMatrix()
 {
-   m_transform.lock()->GetLookAt();
+	return m_transform.lock()->GetLookAt();   
+}
+
+glm::mat4 Camera::GetProjectionMatrix()
+{
+	return glm::perspective(glm::radians(m_zoom), m_aspectRatio, m_minViewDistance, m_maxViewDistance);
 }
 
 void Camera::SetupFrameBuffer()
@@ -57,13 +65,13 @@ void Camera::Update()
 	if(framebuffer > 0)
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
-		glEnable(GL_DEPTH_TEST);
+		//glEnable(GL_DEPTH_TEST);
 		//glBindTexture(GL_TEXTURE_2D, textureColorbuffer);
 	}		
 	else
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
-		glDisable(GL_DEPTH_TEST);
+		//glDisable(GL_DEPTH_TEST);
 		//glDisable(GL_DEPTH_TEST); // disable depth test so screen-space quad isn't discarded due to depth test.
 	}	
 }
