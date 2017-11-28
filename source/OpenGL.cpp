@@ -54,14 +54,14 @@ int OpenGL::Setup(int _windowWidth, int _windowHeight)
 	glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
 	glEnable(GL_MULTISAMPLE);  
-	
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
 	/*
     glEnable(GL_STENCIL_TEST);
     glStencilFunc(GL_NOTEQUAL, 1, 0xFF);	
     glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
-	glEnable(GL_BLEND);  	
-	glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, GL_ONE, GL_ZERO);
+
 	//glEnable(GL_CULL_FACE); //this SPEEEDS IT UP LOADS - doesnt work with transpare tho
 	*/
    

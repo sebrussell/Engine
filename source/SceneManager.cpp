@@ -6,6 +6,7 @@
 #include "ShaderManager.h"
 #include "MeshManager.h"
 #include "Camera.h"
+#include "Transform.h"
 
 int SceneManager::Awake()
 {
@@ -56,16 +57,27 @@ void SceneManager::Update()
 	
 	for(int i = 0; i < m_gameObjects.size(); i++)
 	{
-		if(m_gameObjects.at(i)->m_shouldUpdate)
+		if(m_gameObjects.at(i)->m_shouldUpdate && !m_gameObjects.at(i)->m_transparent)
 		{
 			m_gameObjects.at(i)->Update();
 		}		
-	}
-	
+		if(m_gameObjects.at(i)->m_transparent)
+		{
+			float distance = glm::length(m_cameraManager->m_mainCamera.lock()->m_transform.lock()->GetPosition() - m_gameObjects.at(i)->m_transform->GetPosition());
+			m_sorted[distance] = m_gameObjects.at(i);
+		}
+	}	
+
 	m_skybox->Draw();
 	
-	m_cameraManager->TransparentCall();
-
+	for(int i = m_sorted.size() - 1; i >= 0; i--)
+	{
+		if(m_sorted.at(i).lock()->m_shouldUpdate && m_sorted.at(i).lock()->m_transparent)
+		{
+			m_sorted.at(i).lock()->Update();
+		}		
+	}
+	
 	//draw instanced gameobjects
 
 	//draw transparent gameobjects

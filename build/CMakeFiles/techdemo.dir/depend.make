@@ -912,6 +912,7 @@ CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/SceneManager.cpp
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/SceneManager.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/ShaderManager.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Skybox.h
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Transform.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/stb_image.h
 
 CMakeFiles/techdemo.dir/source/Shader.cpp.obj: ../libraries/glad/include/KHR/khrplatform.h

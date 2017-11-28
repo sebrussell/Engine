@@ -57,19 +57,15 @@ int main(int argc, char* argv[]) {
 	std::weak_ptr<GameObject> cubeTwo = sceneManager->CreateGameObject();
 	cubeTwo.lock()->AddComponent<Renderer>();	
 	cubeTwo.lock()->GetComponent<Renderer>()->Awake();
-	cubeTwo.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
-	cubeTwo.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/reflectShader.vs", "..//source/shaders/reflectShader.fs"));
+	cubeTwo.lock()->GetComponent<Renderer>()->SetMesh(TRANSPARENT_WINDOW);
+	cubeTwo.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs"));
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->CreateMatrixBuffer();
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("texture_regular1", 0);
-	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("texture_diffuse1", 1);
-	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("texture_environment1", 2);
-	cubeTwo.lock()->GetComponent<Transform>()->m_position = glm::vec3(2.0f, 0.0f, 2.0f);
-	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png");
-	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/arrow.jpg");
-	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_environment.png");
-	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
-	
+	cubeTwo.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 0.0f, -2.0f);
+	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/blending_transparent_window.png");
+	//cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
+	cubeTwo.lock()->m_transparent = true;
 	
 	while(sceneManager->m_openGL->ShouldWindowClose())
 	{
@@ -130,37 +126,7 @@ int main(int argc, char* argv[]) {
 	unsigned int planeTexture = loadTexture("..//source/textures/arrow.jpg");
 	
 	
-	
-	//GRASS
-	/*
-	std::vector<glm::vec3> vegetation;
-	vegetation.push_back(glm::vec3(-1.5f,  0.0f, -0.48f));
-	vegetation.push_back(glm::vec3( 1.5f,  0.0f,  0.51f));
-	vegetation.push_back(glm::vec3( 0.0f,  0.0f,  0.7f));
-	vegetation.push_back(glm::vec3(-0.3f,  0.0f, -2.3f));
-	vegetation.push_back(glm::vec3( 0.5f,  0.0f, -0.6f));
 
-	unsigned int grassTexture = loadTexture("..//source/textures/blending_transparent_window.png");
-	
-	
-	
-	
-	
-	ourShader.use();
-	ourShader.setInt("texture1", 0);
-	
-
-	lightingShader.use(); 
-    lightingShader.setInt("material.diffuse", 0);
-	lightingShader.setInt("material.specular", 1);
-	*/
-	/*
-	float vertices[] = {
-        -0.5f, -0.5f, 0.0f, // left  
-         0.5f, -0.5f, 0.0f, // right 
-         0.0f,  0.5f, 0.0f  // top   
-    }; 
-	*/
 	
 	/*
     unsigned int amount = 100000;
@@ -291,62 +257,15 @@ int main(int argc, char* argv[]) {
 		glBindTexture(GL_TEXTURE_2D, diffuseMap);
 		cube.Draw(ourShader);
 		
-		reflectShader.use();
-		model = glm::translate(model, pointLightPositions[0]);		
-        reflectShader.setMat4("model", model);
-        reflectShader.setVec3("cameraPos", cameraMain->Position);
-        // cubes
-        glBindTexture(GL_TEXTURE_CUBE_MAP, skybox.GetSkyboxTexture());
-		reflect.Draw(reflectShader);
 		*/
 		
 		/*
-		ourShader.use();
-        ourShader.setMat4("projection", projection);
-        ourShader.setMat4("view", view);
-		model = glm::mat4();
-        ourShader.setMat4("model", model);
-        ourModel.Draw(ourShader);
 		*/
 		
 		/*
-		skyboxShader.use();
-		view = glm::mat4(glm::mat3(cameraMain->GetViewMatrix())); 
-		projection = glm::perspective(glm::radians(45.0f), (float)800 / (float)600, 0.1f, 100.0f);		
-		skyboxShader.setMat4("view", view);
-		skyboxShader.setMat4("projection", projection);
-		skybox.Draw(skyboxShader);
 		*/
 		/*
-		//cameraFBO1->SetFBOTexture();
-		//cameraFBO2->Use(false);
-		//screenShader.use();
-		//quad.Draw(screenShader);
-
-		//ourModel.ChangeTexture(cameraFBO1->textureColorbuffer);
 		
-		//cameraFBO2->SetFBOTexture();
-		//cameraFBO1->Use(false);
-		//greyscaleShader.use();
-		//quad.Draw(greyscaleShader);
-		
-		//cameraFBO1->SetFBOTexture();
-		//cameraFBO2->Use(false);
-		//blurShader.use();
-		//quad.Draw(blurShader);
-		*/
-		/*
-		cameraFBO1->SetFBOTexture();
-		cameraMain->Use(false);
-		blankScreenShader.use();
-		quad.Draw(blankScreenShader);
-		
-		
-		
-		
-		openGL.SwapBuffers(); 
-		 */
-
         /*
 		
 		std::map<float, glm::vec3> sorted;

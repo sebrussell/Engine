@@ -22,14 +22,16 @@ class Camera : public Component
 		virtual void Awake();
 		glm::mat4 GetViewMatrix();
 		glm::mat4 GetProjectionMatrix();
+		glm::vec3 GetPosition();
 		void SetupFrameBuffer();
 		void SetupFrameBuffer(int _width, int _height);
 		void Use(bool _depthTest);
 		void Clear();
 		unsigned int GetFBOTexture();
+		std::weak_ptr<Transform> m_transform;
 	private:
 		std::weak_ptr<OpenGL> m_openGL;
-		std::weak_ptr<Transform> m_transform;
+		
 		std::weak_ptr<CameraManager> m_cameraManager;
 		unsigned int framebuffer = 0;
 		unsigned int textureColorbuffer, rbo;

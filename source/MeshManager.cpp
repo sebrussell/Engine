@@ -31,10 +31,15 @@ std::weak_ptr<Mesh> MeshManager::AddMesh(Type _type, std::string _path)
 		case SKYBOX:
 			m_mesh->MakeSkybox();
 			m_meshes.push_back(m_mesh);
+			break;
 		case REFLECT_CUBE:
 			//m_mesh.MakeReflectCube();
 		case MODEL:
 			//load MODEL
+		case TRANSPARENT_WINDOW:
+			m_mesh->MakeTransparent();
+			m_meshes.push_back(m_mesh);
+			break;
 		default:
 			break;			
 	}

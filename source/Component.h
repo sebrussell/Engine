@@ -11,7 +11,7 @@ class GameObject;
 #include <memory>
 #include <iostream>
 
-class Component
+class Component  : public std::enable_shared_from_this<Component>
 {
 	public:	
 		//Component();

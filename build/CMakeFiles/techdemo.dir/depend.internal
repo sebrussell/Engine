@@ -913,6 +913,7 @@ CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj
  C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
  C:/Users/sebru_000/Desktop/Engine/source/ShaderManager.h
  C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
+ C:/Users/sebru_000/Desktop/Engine/source/Transform.h
  C:/Users/sebru_000/Desktop/Engine/source/stb_image.h
 CMakeFiles/techdemo.dir/source/Shader.cpp.obj
  ../libraries/glad/include/KHR/khrplatform.h

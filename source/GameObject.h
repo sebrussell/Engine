@@ -2,6 +2,7 @@
 #define GAMEOBJECT_H
 
 class SceneManager;
+class Transform;
 
 #include "Component.h"
 
@@ -18,6 +19,7 @@ class GameObject : public std::enable_shared_from_this<GameObject>
 		std::shared_ptr<T> AddComponent()
 		{
 			std::shared_ptr<T> _component(new T());
+			m_transform = std::dynamic_pointer_cast<Transform>(_component);
 			_component->m_gameObject = shared_from_this();
 			m_components.push_back(_component);			
 			return _component;		
@@ -43,6 +45,8 @@ class GameObject : public std::enable_shared_from_this<GameObject>
 		void Delete();
 		std::weak_ptr<SceneManager> m_sceneManager;
 		bool m_shouldUpdate = true;
+		bool m_transparent = false;
+		std::shared_ptr<Transform> m_transform;
 	private:
 		std::vector<std::shared_ptr<Component>> m_components;
 };

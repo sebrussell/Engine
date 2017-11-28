@@ -1,6 +1,10 @@
 #ifndef SCENEMANAGER_H
 #define SCENEMANAGER_H
 
+#include <vector>
+#include <memory>
+#include <map>
+
 class CameraManager;
 class Skybox;
 class OpenGL;
@@ -8,8 +12,7 @@ class GameObject;
 class ShaderManager;
 class MeshManager;
 
-#include <vector>
-#include <memory>
+
 
 
 class SceneManager : public std::enable_shared_from_this<SceneManager>
@@ -28,7 +31,8 @@ class SceneManager : public std::enable_shared_from_this<SceneManager>
 		std::shared_ptr<ShaderManager> m_shaderManager;
 		float m_maxViewDistance, m_minViewDistance;
 	private:
-		std::vector<std::shared_ptr<GameObject>> m_gameObjects;		
+		std::vector<std::shared_ptr<GameObject>> m_gameObjects;	
+		std::map<float, std::weak_ptr<GameObject>> m_sorted;		
 };
 
 #endif

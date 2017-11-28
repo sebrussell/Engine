@@ -16,6 +16,7 @@ class Mesh
 		void MakeCube();
 		void MakeSkybox();
 		void MakeQuad();
+		void MakeTransparent();
 		void Draw();
 		void Delete();
 	private:
