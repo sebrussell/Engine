@@ -59,24 +59,36 @@ void Camera::SetupFrameBuffer(int _width, int _height)
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-void Camera::Update()
+void Camera::Clear()
 {
-	// bind to framebuffer and draw scene as we normally would to color texture 
+	glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+}
+
+void Camera::Use(bool _depthTest)
+{
 	if(framebuffer > 0)
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
-		//glEnable(GL_DEPTH_TEST);
-		//glBindTexture(GL_TEXTURE_2D, textureColorbuffer);
 	}		
 	else
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
-		//glDisable(GL_DEPTH_TEST);
-		//glDisable(GL_DEPTH_TEST); // disable depth test so screen-space quad isn't discarded due to depth test.
-	}	
+	}		
+	if(_depthTest)
+	{
+		//glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glEnable(GL_DEPTH_TEST);
+	}
+	else{
+		//glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+		//glClear(GL_COLOR_BUFFER_BIT);
+		glDisable(GL_DEPTH_TEST);
+	}
 }
 
-void Camera::SetFBOTexture()
+unsigned int Camera::GetFBOTexture()
 {
-	glBindTexture(GL_TEXTURE_2D, textureColorbuffer);
+	return textureColorbuffer;
 }

@@ -14,6 +14,8 @@ class Mesh
 		Mesh();
 		~Mesh();
 		void MakeCube();
+		void MakeSkybox();
+		void MakeQuad();
 		void Draw();
 		void Delete();
 	private:

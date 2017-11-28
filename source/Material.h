@@ -11,12 +11,15 @@
 
 class Renderer;
 
+enum TextureType{
+	Texture2D,
+	CubeMap,
+};
+
 struct Texture {
 	Texture() {};
-	//Texture(unsigned int _id, std::string _type, aiString _path) { id = _id, type = _type, path = _path; }
-    unsigned int id;
-    std::string type;
-	//aiString path;
+    unsigned int m_id;
+	TextureType m_type;
 };  
 
 class Material
@@ -25,7 +28,9 @@ class Material
 		Material() {};
 		~Material() {};
 		void Apply();
-		void LoadTexture(char const * _path, std::string _type);
+		void LoadTexture(char const * _path, TextureType _type = Texture2D);
+		void LoadTexture(unsigned int _id, TextureType _type = Texture2D);
+		void SetTexture(unsigned int _id);
 	private:
 		glm::vec3 m_colour = glm::vec3(1.0f, 0.0f, 0.0f);
 		std::vector<Texture> m_textures;

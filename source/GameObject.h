@@ -42,7 +42,7 @@ class GameObject : public std::enable_shared_from_this<GameObject>
 		void Update();	
 		void Delete();
 		std::weak_ptr<SceneManager> m_sceneManager;
-		int i = 4;
+		bool m_shouldUpdate = true;
 	private:
 		std::vector<std::shared_ptr<Component>> m_components;
 };

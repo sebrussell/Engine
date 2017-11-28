@@ -1,12 +1,13 @@
 #ifndef SKYBOX_H
 #define SKYBOX_H
 
-class Model;
+class Mesh;
 class Shader;
+class MeshManager;
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-//#include "stb_image.h"
+#include "stb_image.h"
 
 #include <memory>
 #include <vector>
@@ -15,15 +16,20 @@ class Shader;
 class Skybox
 {
 	public:
-		Skybox();
+		Skybox() {};
 		~Skybox() {};
+		void Awake();
 		unsigned int loadCubemap();
-		void Draw(std::shared_ptr<Shader> shader);
-		unsigned int GetSkyboxTexture() { return cubemapTexture; }
+		void SetShader(std::weak_ptr<Shader> _shader);
+		void SetMeshManager(std::weak_ptr<MeshManager> _manager);
+		void Draw();
+		unsigned int GetSkyboxTexture() { return m_cubemapTexture; }
 	private:
-		std::shared_ptr<Model> skybox;
-		std::vector<std::string> faces;
-		unsigned int cubemapTexture;
+		std::weak_ptr<MeshManager> m_meshManager;
+		std::weak_ptr<Shader> m_shader;
+		std::weak_ptr<Mesh> m_skyboxMesh;
+		std::vector<std::string> m_faces;
+		unsigned int m_cubemapTexture;
 };
 
 #endif

@@ -14,6 +14,8 @@
 #include "Transform.h"
 #include "OpenGL.h"
 #include "Material.h"
+#include "Skybox.h"
+#include "MeshManager.h"
 
 
 #include <glm/glm.hpp>
@@ -26,48 +28,48 @@
 
 #include "Renderer.h"
 
-
-//unsigned int loadTexture(char const * path);
-
 float deltaTime = 0.0f;	// Time between current frame and last frame
-
-
-
-
-//std::shared_ptr<Camera> cameraMain(new Camera);
-//std::shared_ptr<Camera> cameraFBO1 = std::make_shared<Camera>(Camera());
-//std::shared_ptr<Camera> cameraFBO2 = std::make_shared<Camera>(Camera());
 
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 int main(int argc, char* argv[]) {	
 
 	std::shared_ptr<SceneManager> sceneManager(new SceneManager);	
-
-	
-	
-	std::weak_ptr<GameObject> cameraMain = sceneManager->CreateGameObject();	
-	cameraMain.lock()->AddComponent<Camera>();
-	cameraMain.lock()->AddComponent<Transform>();	
-	cameraMain.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 0.0f, 3.0f);
-	
-	std::weak_ptr<GameObject> cubeOne = sceneManager->CreateGameObject();
-	cubeOne.lock()->AddComponent<Renderer>();
-	
 	sceneManager->Awake();
 	
 	
-	sceneManager->m_cameraManager->SetActiveCamera(cameraMain.lock()->GetComponent<Camera>());
-	
+	std::weak_ptr<GameObject> cubeOne = sceneManager->CreateGameObject();
+	cubeOne.lock()->AddComponent<Renderer>();	
 	cubeOne.lock()->GetComponent<Renderer>()->Awake();
 	cubeOne.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
-	cubeOne.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs"));
+	cubeOne.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/reflectShader.vs", "..//source/shaders/reflectShader.fs"));
 	cubeOne.lock()->GetComponent<Renderer>()->GetShader().lock()->CreateMatrixBuffer();
+	cubeOne.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
+	cubeOne.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("texture_regular1", 0);
+	cubeOne.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("texture_diffuse1", 1);
+	cubeOne.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("texture_environment1", 2);
 	cubeOne.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 0.0f, -2.0f);
-	cubeOne.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png", "REGULAR");
-	cubeOne.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/arrow.jpg", "REGULAR");
+	cubeOne.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png");
+	cubeOne.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/arrow.jpg");
+	cubeOne.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_environment.png");
+	cubeOne.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
 	
-
+	std::weak_ptr<GameObject> cubeTwo = sceneManager->CreateGameObject();
+	cubeTwo.lock()->AddComponent<Renderer>();	
+	cubeTwo.lock()->GetComponent<Renderer>()->Awake();
+	cubeTwo.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
+	cubeTwo.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/reflectShader.vs", "..//source/shaders/reflectShader.fs"));
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->CreateMatrixBuffer();
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("texture_regular1", 0);
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("texture_diffuse1", 1);
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("texture_environment1", 2);
+	cubeTwo.lock()->GetComponent<Transform>()->m_position = glm::vec3(2.0f, 0.0f, 2.0f);
+	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png");
+	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/arrow.jpg");
+	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_environment.png");
+	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
+	
 	
 	while(sceneManager->m_openGL->ShouldWindowClose())
 	{

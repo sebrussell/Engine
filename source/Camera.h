@@ -24,8 +24,9 @@ class Camera : public Component
 		glm::mat4 GetProjectionMatrix();
 		void SetupFrameBuffer();
 		void SetupFrameBuffer(int _width, int _height);
-		virtual void Update();	
-		void SetFBOTexture();
+		void Use(bool _depthTest);
+		void Clear();
+		unsigned int GetFBOTexture();
 	private:
 		std::weak_ptr<OpenGL> m_openGL;
 		std::weak_ptr<Transform> m_transform;

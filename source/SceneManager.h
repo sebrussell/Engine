@@ -6,6 +6,7 @@ class Skybox;
 class OpenGL;
 class GameObject;
 class ShaderManager;
+class MeshManager;
 
 #include <vector>
 #include <memory>
@@ -23,6 +24,7 @@ class SceneManager : public std::enable_shared_from_this<SceneManager>
 		std::shared_ptr<CameraManager>  m_cameraManager;
 		std::shared_ptr<Skybox> m_skybox;	
 		std::shared_ptr<OpenGL> m_openGL;
+		std::shared_ptr<MeshManager> m_meshManager;
 		std::shared_ptr<ShaderManager> m_shaderManager;
 		float m_maxViewDistance, m_minViewDistance;
 	private:

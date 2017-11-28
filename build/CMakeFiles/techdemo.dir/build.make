@@ -456,6 +456,56 @@ CMakeFiles/techdemo.dir/source/ShaderManager.cpp.obj.provides: CMakeFiles/techde
 CMakeFiles/techdemo.dir/source/ShaderManager.cpp.obj.provides.build: CMakeFiles/techdemo.dir/source/ShaderManager.cpp.obj
 
 
+CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj: CMakeFiles/techdemo.dir/flags.make
+CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj: CMakeFiles/techdemo.dir/includes_CXX.rsp
+CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj: ../source/MeshManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\techdemo.dir\source\MeshManager.cpp.obj -c C:\Users\sebru_000\Desktop\Engine\source\MeshManager.cpp
+
+CMakeFiles/techdemo.dir/source/MeshManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/techdemo.dir/source/MeshManager.cpp.i"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\sebru_000\Desktop\Engine\source\MeshManager.cpp > CMakeFiles\techdemo.dir\source\MeshManager.cpp.i
+
+CMakeFiles/techdemo.dir/source/MeshManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/techdemo.dir/source/MeshManager.cpp.s"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\sebru_000\Desktop\Engine\source\MeshManager.cpp -o CMakeFiles\techdemo.dir\source\MeshManager.cpp.s
+
+CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj.requires:
+
+.PHONY : CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj.requires
+
+CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj.provides: CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj.provides.build
+.PHONY : CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj.provides
+
+CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj.provides.build: CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj
+
+
+CMakeFiles/techdemo.dir/source/LightManager.cpp.obj: CMakeFiles/techdemo.dir/flags.make
+CMakeFiles/techdemo.dir/source/LightManager.cpp.obj: CMakeFiles/techdemo.dir/includes_CXX.rsp
+CMakeFiles/techdemo.dir/source/LightManager.cpp.obj: ../source/LightManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/techdemo.dir/source/LightManager.cpp.obj"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\techdemo.dir\source\LightManager.cpp.obj -c C:\Users\sebru_000\Desktop\Engine\source\LightManager.cpp
+
+CMakeFiles/techdemo.dir/source/LightManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/techdemo.dir/source/LightManager.cpp.i"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\sebru_000\Desktop\Engine\source\LightManager.cpp > CMakeFiles\techdemo.dir\source\LightManager.cpp.i
+
+CMakeFiles/techdemo.dir/source/LightManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/techdemo.dir/source/LightManager.cpp.s"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\sebru_000\Desktop\Engine\source\LightManager.cpp -o CMakeFiles\techdemo.dir\source\LightManager.cpp.s
+
+CMakeFiles/techdemo.dir/source/LightManager.cpp.obj.requires:
+
+.PHONY : CMakeFiles/techdemo.dir/source/LightManager.cpp.obj.requires
+
+CMakeFiles/techdemo.dir/source/LightManager.cpp.obj.provides: CMakeFiles/techdemo.dir/source/LightManager.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/LightManager.cpp.obj.provides.build
+.PHONY : CMakeFiles/techdemo.dir/source/LightManager.cpp.obj.provides
+
+CMakeFiles/techdemo.dir/source/LightManager.cpp.obj.provides.build: CMakeFiles/techdemo.dir/source/LightManager.cpp.obj
+
+
 # Object files for target techdemo
 techdemo_OBJECTS = \
 "CMakeFiles/techdemo.dir/source/main.cpp.obj" \
@@ -473,7 +523,9 @@ techdemo_OBJECTS = \
 "CMakeFiles/techdemo.dir/source/Renderer.cpp.obj" \
 "CMakeFiles/techdemo.dir/source/Material.cpp.obj" \
 "CMakeFiles/techdemo.dir/source/Mesh.cpp.obj" \
-"CMakeFiles/techdemo.dir/source/ShaderManager.cpp.obj"
+"CMakeFiles/techdemo.dir/source/ShaderManager.cpp.obj" \
+"CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj" \
+"CMakeFiles/techdemo.dir/source/LightManager.cpp.obj"
 
 # External object files for target techdemo
 techdemo_EXTERNAL_OBJECTS =
@@ -494,11 +546,13 @@ techdemo.exe: CMakeFiles/techdemo.dir/source/Renderer.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/source/Material.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/source/Mesh.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/source/ShaderManager.cpp.obj
+techdemo.exe: CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj
+techdemo.exe: CMakeFiles/techdemo.dir/source/LightManager.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/build.make
 techdemo.exe: CMakeFiles/techdemo.dir/linklibs.rsp
 techdemo.exe: CMakeFiles/techdemo.dir/objects1.rsp
 techdemo.exe: CMakeFiles/techdemo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable techdemo.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable techdemo.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\techdemo.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -522,6 +576,8 @@ CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/Renderer.cpp.ob
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/Material.cpp.obj.requires
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/Mesh.cpp.obj.requires
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/ShaderManager.cpp.obj.requires
+CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj.requires
+CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/LightManager.cpp.obj.requires
 
 .PHONY : CMakeFiles/techdemo.dir/requires
 

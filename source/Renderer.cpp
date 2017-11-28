@@ -7,6 +7,7 @@
 #include "Transform.h"
 #include "Camera.h"
 #include "Material.h"
+#include "MeshManager.h"
 
 Renderer::Renderer()
 {
@@ -20,26 +21,7 @@ Renderer::~Renderer()
 
 void Renderer::SetMesh(Type _type, std::string _path)
 {
-	switch(_type)
-	{
-		case CUBE:
-			m_mesh->MakeCube();
-			break;
-		case PLANE:
-			//m_mesh.MakePlane();
-			break;
-		case QUAD:
-			//m_mesh.MakeQuad();
-			break;
-		case SKYBOX:
-			//m_mesh.MakeSkybox();
-		case REFLECT_CUBE:
-			//m_mesh.MakeReflectCube();
-		case MODEL:
-			//load MODEL
-		default:
-			break;			
-	}
+	m_mesh = m_meshManager.lock()->AddMesh(_type, _path);
 }
 
 void Renderer::Awake()
@@ -52,27 +34,23 @@ void Renderer::Awake()
 		m_transform = m_gameObject.lock()->AddComponent<Transform>();
 	}
 	m_material = std::make_shared<Material>();
-	m_mesh = std::make_shared<Mesh>();
-	
+	m_meshManager = m_gameObject.lock()->m_sceneManager.lock()->m_meshManager;	
 }
 
 void Renderer::Update()
 {
-	std::shared_ptr<Shader> shader = m_shader.lock();
-	
+	std::shared_ptr<Shader> shader = m_shader.lock();	
 	shader->Use();	
-	shader->SetInt("texture_regular1", 0);
-	shader->SetInt("texture_diffuse1", 1);
 	shader->SetMat4("model", m_transform.lock()->GetModelMatrix());
 	shader->UpdateMatrix(m_activeCamera.lock()->GetProjectionMatrix(), m_activeCamera.lock()->GetViewMatrix());
 	//apply shader values
 	m_material->Apply();
-	m_mesh->Draw();
+	m_mesh.lock()->Draw();
 }
 
 void Renderer::Delete()
 {
-	m_mesh->Delete();
+	m_mesh.lock()->Delete();
 }
 
 void Renderer::SetShader(std::weak_ptr<Shader> _shader)

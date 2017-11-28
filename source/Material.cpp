@@ -5,19 +5,25 @@
 
 void Material::Apply()
 {
-	/*
 	for(int i = 0; i < m_textures.size(); i++)
 	{
 		glActiveTexture(GL_TEXTURE0 + i);
-		glBindTexture(GL_TEXTURE_2D, m_textures.at(i).id);
+		if(m_textures.at(i).m_type == Texture2D)
+		{
+			glBindTexture(GL_TEXTURE_2D, m_textures.at(i).m_id);
+		}
+		if(m_textures.at(i).m_type == CubeMap)
+		{
+			glBindTexture(GL_TEXTURE_CUBE_MAP, m_textures.at(i).m_id);
+		}		
 	}
-	*/
+
 	
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, m_textures.at(0).id);
+	//glActiveTexture(GL_TEXTURE0);
+	//glBindTexture(GL_TEXTURE_2D, m_textures.at(0).id);
 	
-	glActiveTexture(GL_TEXTURE1);
-	glBindTexture(GL_TEXTURE_2D, m_textures.at(1).id);
+	//glActiveTexture(GL_TEXTURE1);
+	//glBindTexture(GL_TEXTURE_2D, m_textures.at(1).id);
 	
 	if(m_textures.size() == 0)
 	{
@@ -27,10 +33,10 @@ void Material::Apply()
 	
 }
 
-void Material::LoadTexture(char const * _path, std::string _type)
+void Material::LoadTexture(char const * _path, TextureType _type)
 {
 	Texture texture;
-    glGenTextures(1, &texture.id);
+    glGenTextures(1, &texture.m_id);
 
     int width, height, nrComponents;
     unsigned char *data = stbi_load(_path, &width, &height, &nrComponents, 0);
@@ -44,7 +50,7 @@ void Material::LoadTexture(char const * _path, std::string _type)
         else if (nrComponents == 4)
             format = GL_RGBA;
 
-        glBindTexture(GL_TEXTURE_2D, texture.id);
+        glBindTexture(GL_TEXTURE_2D, texture.m_id);
         glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
 
@@ -61,6 +67,25 @@ void Material::LoadTexture(char const * _path, std::string _type)
         stbi_image_free(data);
     }	
 
-	texture.type = _type;
+	texture.m_type = _type;
 	m_textures.push_back(texture);
+}
+
+void Material::LoadTexture(unsigned int _id, TextureType _type)
+{
+	Texture texture;
+	texture.m_id = _id;
+	texture.m_type = _type;
+	m_textures.push_back(texture);
+}
+
+void Material::SetTexture(unsigned int _id)
+{
+	if(m_textures.size() > 0)
+	{
+		m_textures.at(0).m_id = _id;
+	}
+	else{
+		LoadTexture(_id, Texture2D);
+	}
 }

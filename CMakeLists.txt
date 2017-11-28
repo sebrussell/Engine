@@ -33,6 +33,8 @@ add_executable(techdemo
 	source/Material.cpp
 	source/Mesh.cpp
 	source/ShaderManager.cpp
+	source/MeshManager.cpp
+	source/LightManager.cpp
 )
 
 target_link_libraries(techdemo assimp glfw3) 

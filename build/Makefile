@@ -257,6 +257,33 @@ source/GameObject.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/GameObject.cpp.s
 .PHONY : source/GameObject.cpp.s
 
+source/LightManager.obj: source/LightManager.cpp.obj
+
+.PHONY : source/LightManager.obj
+
+# target to build an object file
+source/LightManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/LightManager.cpp.obj
+.PHONY : source/LightManager.cpp.obj
+
+source/LightManager.i: source/LightManager.cpp.i
+
+.PHONY : source/LightManager.i
+
+# target to preprocess a source file
+source/LightManager.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/LightManager.cpp.i
+.PHONY : source/LightManager.cpp.i
+
+source/LightManager.s: source/LightManager.cpp.s
+
+.PHONY : source/LightManager.s
+
+# target to generate assembly for a file
+source/LightManager.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/LightManager.cpp.s
+.PHONY : source/LightManager.cpp.s
+
 source/Material.obj: source/Material.cpp.obj
 
 .PHONY : source/Material.obj
@@ -310,6 +337,33 @@ source/Mesh.s: source/Mesh.cpp.s
 source/Mesh.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Mesh.cpp.s
 .PHONY : source/Mesh.cpp.s
+
+source/MeshManager.obj: source/MeshManager.cpp.obj
+
+.PHONY : source/MeshManager.obj
+
+# target to build an object file
+source/MeshManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj
+.PHONY : source/MeshManager.cpp.obj
+
+source/MeshManager.i: source/MeshManager.cpp.i
+
+.PHONY : source/MeshManager.i
+
+# target to preprocess a source file
+source/MeshManager.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/MeshManager.cpp.i
+.PHONY : source/MeshManager.cpp.i
+
+source/MeshManager.s: source/MeshManager.cpp.s
+
+.PHONY : source/MeshManager.s
+
+# target to generate assembly for a file
+source/MeshManager.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/MeshManager.cpp.s
+.PHONY : source/MeshManager.cpp.s
 
 source/OpenGL.obj: source/OpenGL.cpp.obj
 
@@ -578,12 +632,18 @@ help:
 	@echo ... source/GameObject.obj
 	@echo ... source/GameObject.i
 	@echo ... source/GameObject.s
+	@echo ... source/LightManager.obj
+	@echo ... source/LightManager.i
+	@echo ... source/LightManager.s
 	@echo ... source/Material.obj
 	@echo ... source/Material.i
 	@echo ... source/Material.s
 	@echo ... source/Mesh.obj
 	@echo ... source/Mesh.i
 	@echo ... source/Mesh.s
+	@echo ... source/MeshManager.obj
+	@echo ... source/MeshManager.i
+	@echo ... source/MeshManager.s
 	@echo ... source/OpenGL.obj
 	@echo ... source/OpenGL.i
 	@echo ... source/OpenGL.s

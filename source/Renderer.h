@@ -6,6 +6,7 @@
 #include <string>
 
 #include "Component.h"
+#include "MeshManager.h"
 
 class Shader;
 class Mesh;
@@ -13,15 +14,6 @@ class Camera;
 class Material;
 class Transform;
 
-enum Type
-{
-	CUBE,
-	PLANE,
-	QUAD,
-	SKYBOX,
-	REFLECT_CUBE,
-	MODEL
-};
 
 class Renderer : public Component
 {
@@ -33,13 +25,14 @@ class Renderer : public Component
 		virtual void Delete();
 		void SetShader(std::weak_ptr<Shader> _shader);
 		void SetMesh(Type _type, std::string _path = "");
+		void SetMeshManager(std::weak_ptr<MeshManager> _manager);
+		void SetActiveCamera(std::weak_ptr<Camera> _camera);
 		std::shared_ptr<Material> m_material;
 		std::weak_ptr<Shader> GetShader();
 		std::weak_ptr<Shader> m_shader;
 	private:		
-		
-		std::shared_ptr<Mesh> m_mesh;
-		
+		std::weak_ptr<MeshManager> m_meshManager;
+		std::weak_ptr<Mesh> m_mesh;		
 		std::weak_ptr<Camera> m_activeCamera;
 		std::weak_ptr<Transform> m_transform;
 };
