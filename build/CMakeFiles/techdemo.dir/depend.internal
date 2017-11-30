@@ -1126,8 +1126,10 @@ CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj
  C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
  C:/Users/sebru_000/Desktop/Engine/source/MeshManager.h
  C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
+ C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
  C:/Users/sebru_000/Desktop/Engine/source/SceneManager.cpp
  C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
+ C:/Users/sebru_000/Desktop/Engine/source/Shader.h
  C:/Users/sebru_000/Desktop/Engine/source/ShaderManager.h
  C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
  C:/Users/sebru_000/Desktop/Engine/source/Transform.h

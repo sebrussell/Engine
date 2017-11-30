@@ -3,6 +3,7 @@
 
 class SceneManager;
 class Transform;
+class Renderer;
 
 #include "Component.h"
 
@@ -47,6 +48,7 @@ class GameObject : public std::enable_shared_from_this<GameObject>
 		bool m_shouldUpdate = true;
 		bool m_transparent = false;
 		std::shared_ptr<Transform> m_transform;
+		std::shared_ptr<Renderer> m_renderer;
 	private:
 		std::vector<std::shared_ptr<Component>> m_components;
 };

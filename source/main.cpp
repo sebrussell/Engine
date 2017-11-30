@@ -72,7 +72,6 @@ int main(int argc, char* argv[]) {
 	dirLight.lock()->AddComponent<DirectionalLight>();	
 	dirLight.lock()->GetComponent<DirectionalLight>()->Awake();
 	dirLight.lock()->GetComponent<DirectionalLight>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs"));
-
 	dirLight.lock()->GetComponent<DirectionalLight>()->GetShader();
 	
 	
@@ -89,9 +88,9 @@ int main(int argc, char* argv[]) {
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("skybox", 3);
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("material.shininess", 64.0f);
 	cubeTwo.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 0.0f, -4.0f);
-	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/blending_transparent_window.png");
-	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg");
-	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_environment.png");
+	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/blending_transparent_window.png", false);
+	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg", false);
+	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_environment.png", false);
 	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
 	cubeTwo.lock()->m_transparent = true;
 	
@@ -104,11 +103,25 @@ int main(int argc, char* argv[]) {
 	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
 	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("material.shininess", 30.0f);
 	cubeThree.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 0.0f, -6.0f);
-	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png");
-	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg");
-	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg");
+	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png", false);
+	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg", false);
+	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg", false);
 	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
 	cubeThree.lock()->m_transparent = false;
+	
+	std::weak_ptr<GameObject> plane = sceneManager->CreateGameObject();
+	plane.lock()->AddComponent<Renderer>();	
+	plane.lock()->GetComponent<Renderer>()->Awake();
+	plane.lock()->GetComponent<Renderer>()->SetMesh(PLANE);
+	plane.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs"));
+	plane.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
+	plane.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("material.shininess", 30.0f);
+	plane.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, -0.2f, 0.0f);
+	plane.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/wood.jpg", false);
+	plane.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/white.jpg", false);
+	plane.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/black.jpg", false);
+	plane.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
+	
 	
 	while(sceneManager->m_openGL->ShouldWindowClose())
 	{
@@ -117,17 +130,23 @@ int main(int argc, char* argv[]) {
 		glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		
+		
 		sceneManager->Update();
+		
 		
 		light.lock()->GetComponent<Transform>()->ChangePosition(glm::vec3(-0.01f, 0.0f, 0.0f));
 		
-		//cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
-		//cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("light.direction", glm::vec3(-0.2f, -1.0f, -0.3f)); 
-        //cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("viewPos", sceneManager->m_cameraManager->m_mainCamera.lock()->GetPosition());
+		plane.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
+        plane.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("viewPos", sceneManager->m_cameraManager->m_mainCamera.lock()->GetPosition());
+        plane.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("pointLights[0].position", light.lock()->GetComponent<Transform>()->m_position);
+        plane.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("pointLights[0].ambient", glm::vec3(0.05f, 0.05f, 0.05f));
+        plane.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("pointLights[0].diffuse", glm::vec3(0.8f, 0.8f, 0.8f));
+        plane.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("pointLights[0].specular", glm::vec3(1.0f, 1.0f, 1.0f));
+        plane.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("pointLights[0].constant", 1.0f);
+        plane.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("pointLights[0].linear", 0.09);
+        plane.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("pointLights[0].quadratic", 0.032);
 		
-		cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
-		cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("light.direction", glm::vec3(-0.2f, -1.0f, -0.3f)); 
-        cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("viewPos", sceneManager->m_cameraManager->m_mainCamera.lock()->GetPosition());
+		
 		
 		sceneManager->m_openGL->SwapBuffers(); 
 	}

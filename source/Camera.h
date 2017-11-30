@@ -25,6 +25,9 @@ class Camera : public Component
 		glm::vec3 GetPosition();
 		void SetupFrameBuffer();
 		void SetupFrameBuffer(int _width, int _height);
+		void SetupShadowBuffer(int _width, int _height);
+		void DrawShadowBuffer();
+		void ResetFBO();
 		void Use(bool _depthTest);
 		void Clear();
 		unsigned int GetFBOTexture();
@@ -37,6 +40,8 @@ class Camera : public Component
 		unsigned int textureColorbuffer, rbo;
 		float m_zoom;
 		float m_maxFov = 90.0f;
+		
+		int m_shadowWidth, m_shadowHeight;
 		
 		float m_aspectRatio;
 		float m_maxViewDistance;

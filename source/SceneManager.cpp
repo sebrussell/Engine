@@ -8,6 +8,8 @@
 #include "Camera.h"
 #include "Transform.h"
 #include "Camera.h"
+#include "Renderer.h"
+#include "Shader.h"
 
 int SceneManager::Awake()
 {
@@ -55,7 +57,23 @@ std::weak_ptr<GameObject> SceneManager::CreateGameObject()
 
 void SceneManager::Update()
 {
+	//m_cameraManager->ShadowPass();
+	
+	/*
+	for(int i = 0; i < m_gameObjects.size(); i++)
+	{
+		if(m_gameObjects.at(i)->m_renderer)
+		{
+			m_gameObjects.at(i)->m_renderer->ShadowDraw(m_cameraManager->m_shadowShader);
+		}		
+	}	
+	*/
+	//// DRAW NORMALLY
+	
+		
 	m_cameraManager->PostProcessingCall1();
+	
+	//m_cameraManager->m_mainCamera.lock()->Use(true);
 	
 	for(int i = 0; i < m_gameObjects.size(); i++)
 	{
@@ -89,8 +107,8 @@ void SceneManager::Update()
 	//draw cameras for mirrors
 	//post processing
 	//enable main camera
-	m_cameraManager->PostProcessingCall2();
 	
+	m_cameraManager->PostProcessingCall2();
 }
 
 void SceneManager::Delete()

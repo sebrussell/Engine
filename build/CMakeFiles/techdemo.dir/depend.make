@@ -1125,8 +1125,10 @@ CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Component.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/GameObject.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/MeshManager.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/OpenGL.h
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Renderer.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/SceneManager.cpp
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/SceneManager.h
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Shader.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/ShaderManager.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Skybox.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Transform.h

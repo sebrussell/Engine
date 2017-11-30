@@ -57,6 +57,7 @@ int OpenGL::Setup(int _windowWidth, int _windowHeight)
 	glEnable(GL_MULTISAMPLE);  
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_FRAMEBUFFER_SRGB); 
 	
 	/*
     glEnable(GL_STENCIL_TEST);
@@ -87,6 +88,12 @@ OpenGL::~OpenGL()
 {
 	glBindVertexArray(0);
 	glfwTerminate();
+}
+
+void OpenGL::SetViewPort()
+{
+	glViewport(0, 0, m_windowWidth, m_windowHeight);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void OpenGL::SwapBuffers()

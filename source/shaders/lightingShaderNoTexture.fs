@@ -32,7 +32,7 @@ struct PointLight {
     vec3 diffuse;
     vec3 specular;
 };  
-#define NR_POINT_LIGHTS 1 
+#define NR_POINT_LIGHTS 4  
 
 
 
@@ -56,10 +56,10 @@ void main()
 	
 	vec4 result = CalculateDirectionalLight(dirLight, norm, viewDir);
 	
-	for(int i = 0; i < NR_POINT_LIGHTS; i++)
-	{
-        result += CalculatePointLight(pointLights[i], norm, FragPos, viewDir);  
-	}
+	//for(int i = 0; i < NR_POINT_LIGHTS; i++)
+	//{
+    //    result += CalculatePointLight(pointLights[i], norm, FragPos, viewDir);  
+	//}
 	
 	FragColor = result;
 	//FragColor = vec4(dirLight.specular, 1.0);
@@ -70,8 +70,8 @@ vec4 CalculateDirectionalLight(DirectionalLight light, vec3 normal, vec3 viewDir
     vec3 lightDir = normalize(-light.direction);
     float diff = max(dot(normal, lightDir), 0.0);
 
-    vec3 halfwayDir = normalize(lightDir + viewDir);  
-    float spec = pow(max(dot(normal, halfwayDir), 0.0), material.shininess);
+    vec3 reflectDir = reflect(-lightDir, normal);
+    float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
 
 	vec4 ambient = vec4(light.ambient, 1.0) * vec4(texture(material.diffuseTexture, TexCoords));
     vec4 diffuse = vec4(light.diffuse, 1.0) * diff * vec4(texture(material.diffuseTexture, TexCoords));  
@@ -85,8 +85,8 @@ vec4 CalculatePointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewD
     vec3 lightDir = normalize(light.position - fragPos);
 
     float diff = max(dot(normal, lightDir), 0.0);
-    vec3 halfwayDir = normalize(lightDir + viewDir);  
-    float spec = pow(max(dot(normal, halfwayDir), 0.0), material.shininess);
+    vec3 reflectDir = reflect(-lightDir, normal);
+    float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
 
     float distance    = length(light.position - fragPos);
     float attenuation = 1.0 / (light.constant + light.linear * distance + light.quadratic * (distance * distance));   

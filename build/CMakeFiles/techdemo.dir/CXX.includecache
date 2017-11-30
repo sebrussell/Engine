@@ -927,6 +927,12 @@ vector
 -
 memory
 -
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
 
 C:/Users/sebru_000/Desktop/Engine/source/Component.cpp
 Component.h
@@ -1137,6 +1143,10 @@ Transform.h
 C:/Users/sebru_000/Desktop/Engine/source/Transform.h
 Camera.h
 C:/Users/sebru_000/Desktop/Engine/source/Camera.h
+Renderer.h
+C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
+Shader.h
+C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 
 C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
 vector

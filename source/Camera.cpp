@@ -41,7 +41,7 @@ void Camera::SetupFrameBuffer()
 }
 
 void Camera::SetupFrameBuffer(int _width, int _height)
-{
+{	
 	glGenFramebuffers(1, &framebuffer);
 	glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
 		// create a color attachment texture
@@ -64,10 +64,50 @@ void Camera::SetupFrameBuffer(int _width, int _height)
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
+void Camera::SetupShadowBuffer(int _width, int _height)
+{
+	m_shadowWidth = _width; 
+	m_shadowHeight = _height;
+	
+    glGenFramebuffers(1, &framebuffer);
+    // create depth texture
+    glGenTextures(1, &textureColorbuffer);
+    glBindTexture(GL_TEXTURE_2D, textureColorbuffer);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, m_shadowWidth, m_shadowHeight, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    // attach depth texture as FBO's depth buffer
+    glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, textureColorbuffer, 0);
+    glDrawBuffer(GL_NONE);
+    glReadBuffer(GL_NONE);
+	
+	// now that we actually created the framebuffer and added all attachments we want to check if it is actually complete now
+	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+	{
+		std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;
+	}
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+}
+
+void Camera::DrawShadowBuffer()
+{
+	glViewport(0, 0, m_shadowWidth, m_shadowHeight);
+	glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+	//glClear(GL_DEPTH_BUFFER_BIT);
+}
+
 void Camera::Clear()
 {
 	glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+}
+
+void Camera::ResetFBO()
+{
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
 void Camera::Use(bool _depthTest)

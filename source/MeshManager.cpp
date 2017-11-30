@@ -27,7 +27,12 @@ std::weak_ptr<Mesh> MeshManager::AddMesh(Type _type, std::string _path)
 			m_returnMesh = m_meshes["CUBE"];
 			break;
 		case PLANE:
-			//m_mesh.MakePlane();
+			if(!m_meshes["PLANE"])
+			{		
+				m_mesh->MakePlane();	
+				m_meshes["PLANE"] = m_mesh;				
+			}	
+			m_returnMesh = m_meshes["PLANE"];
 			break;
 		case QUAD:
 			if(!m_meshes["QUAD"])

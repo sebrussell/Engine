@@ -23,6 +23,7 @@ class Renderer : public Component
 		virtual void Awake();
 		virtual void Update();
 		virtual void Delete();
+		void ShadowDraw(std::weak_ptr<Shader> _shader);
 		void SetShader(std::weak_ptr<Shader> _shader);
 		void SetMesh(Type _type, std::string _path = "");
 		void SetMeshManager(std::weak_ptr<MeshManager> _manager);

@@ -28,6 +28,7 @@ class OpenGL
 		int GetWindowWidth() { return m_windowWidth; }
 		int GetWindowHeight() { return m_windowHeight; }
 		void SetCameraMainTransform(std::weak_ptr<Transform> _transform);
+		void SetViewPort();
 		
 		//-------- CALLBACK FUNCTIONS ----------//
 		static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);

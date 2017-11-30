@@ -17,6 +17,7 @@ class Mesh
 		void MakeSkybox();
 		void MakeQuad();
 		void MakeTransparent();
+		void MakePlane();
 		void Draw();
 		void Delete();
 		int test = 7;

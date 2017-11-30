@@ -29,7 +29,7 @@ class Material
 		Material() {};
 		~Material() {};
 		void Apply();
-		void LoadTexture(char const * _path, TextureType _type = Texture2D);
+		void LoadTexture(char const * _path, bool _gammaCorrect, TextureType _type = Texture2D);
 		void LoadTexture(unsigned int _id, TextureType _type = Texture2D);
 		void SetTexture(unsigned int _id);
 		void SetShader(std::weak_ptr<Shader> _shader);

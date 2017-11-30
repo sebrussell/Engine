@@ -35,6 +35,13 @@ void Renderer::Awake()
 	}
 	m_material = std::make_shared<Material>();
 	m_meshManager = m_gameObject.lock()->m_sceneManager.lock()->m_meshManager;	
+	m_gameObject.lock()->m_renderer = m_gameObject.lock()->GetComponent<Renderer>();
+}
+
+void Renderer::ShadowDraw(std::weak_ptr<Shader> _shader)
+{
+	_shader.lock()->SetMat4("model", m_transform.lock()->GetModelMatrix());
+	m_mesh.lock()->Draw();
 }
 
 void Renderer::Update()

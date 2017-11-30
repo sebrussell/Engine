@@ -17,7 +17,6 @@ class Shader
 {
 public:
     unsigned int m_ID;	
-
     Shader(const char* vertexPath, const char* fragmentPath, const char* geometryPath = nullptr);
 	~Shader();
 
