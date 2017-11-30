@@ -61,7 +61,7 @@ void main()
     //    result += CalculatePointLight(pointLights[i], norm, FragPos, viewDir);  
 	//}
 	
-	//FragColor = result;
+	FragColor = result;
 	//FragColor = vec4(dirLight.specular, 1.0);
 }
 

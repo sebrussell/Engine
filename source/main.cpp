@@ -72,13 +72,13 @@ int main(int argc, char* argv[]) {
 	dirLight.lock()->GetComponent<DirectionalLight>()->Awake();
 	dirLight.lock()->GetComponent<DirectionalLight>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs"));
 
-	
+	dirLight.lock()->GetComponent<DirectionalLight>()->GetShader();
 	
 	std::weak_ptr<GameObject> cubeTwo = sceneManager->CreateGameObject();
 	cubeTwo.lock()->AddComponent<Renderer>();	
 	cubeTwo.lock()->GetComponent<Renderer>()->Awake();
 	cubeTwo.lock()->GetComponent<Renderer>()->SetMesh(TRANSPARENT_WINDOW);
-	cubeTwo.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs"));
+	cubeTwo.lock()->GetComponent<Renderer>()->SetShader(dirLight.lock()->GetComponent<DirectionalLight>()->GetShader());
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->CreateMatrixBuffer();
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("material.diffuseTexture", 0);
@@ -97,13 +97,8 @@ int main(int argc, char* argv[]) {
 	cubeThree.lock()->AddComponent<Renderer>();	
 	cubeThree.lock()->GetComponent<Renderer>()->Awake();
 	cubeThree.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
-	cubeThree.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs"));
-	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->CreateMatrixBuffer();
+	cubeThree.lock()->GetComponent<Renderer>()->SetShader(dirLight.lock()->GetComponent<DirectionalLight>()->GetShader());
 	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
-	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("material.diffuseTexture", 0);
-	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("material.specularTexture", 1);
-	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("material.environmentTexture", 2);
-	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("skybox", 3);
 	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("material.shininess", 30.0f);
 	cubeThree.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 0.0f, -6.0f);
 	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png");

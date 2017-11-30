@@ -31,6 +31,7 @@ class Light : public Component
 		virtual void Awake();
 		virtual void Update();
 		void SetShader(std::weak_ptr<Shader> _shader);
+		std::weak_ptr<Shader> GetShader();
 	protected:
 		std::weak_ptr<Transform> m_transform;	
 		std::weak_ptr<Shader> m_shader;
