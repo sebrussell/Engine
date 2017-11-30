@@ -10,6 +10,7 @@
 #include <GLFW/glfw3.h>
 
 class Renderer;
+class Shader;
 
 enum TextureType{
 	Texture2D,
@@ -31,10 +32,15 @@ class Material
 		void LoadTexture(char const * _path, TextureType _type = Texture2D);
 		void LoadTexture(unsigned int _id, TextureType _type = Texture2D);
 		void SetTexture(unsigned int _id);
+		void SetShader(std::weak_ptr<Shader> _shader);
+		void SetColour(glm::vec3 _colour);
 	private:
-		glm::vec3 m_colour = glm::vec3(1.0f, 0.0f, 0.0f);
+		glm::vec3 m_colour = glm::vec3(0.19f, 0.67f, 0.15f);
+		float m_shininess = 0.5f;
 		std::vector<Texture> m_textures;
 		std::weak_ptr<Renderer> m_renderer;
+		std::weak_ptr<Shader> m_shader;
+		
 };
 
 #endif 

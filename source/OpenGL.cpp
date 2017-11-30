@@ -1,4 +1,5 @@
 #include "OpenGL.h"
+#include "Transform.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
@@ -94,6 +95,11 @@ void OpenGL::SwapBuffers()
 	glfwPollEvents();
 }
 
+void OpenGL::SetCameraMainTransform(std::weak_ptr<Transform> _transform)
+{
+	m_cameraMain = _transform;
+}
+
 bool OpenGL::ShouldWindowClose()
 {  
 	float currentFrame = glfwGetTime();
@@ -111,19 +117,19 @@ void OpenGL::ProcessInput()
 	}
     if (glfwGetKey(m_window, GLFW_KEY_W) == GLFW_PRESS)
 	{
-        //m_camera.lock()->ProcessKeyboard(FORWARD, deltaTime);
+        m_cameraMain.lock()->ChangePosition(glm::vec3(0.0f, 0.0f, 0.1f));
 	}
     if (glfwGetKey(m_window, GLFW_KEY_S) == GLFW_PRESS)
 	{
-        //m_camera.lock()->ProcessKeyboard(BACKWARD, deltaTime);
+         m_cameraMain.lock()->ChangePosition(glm::vec3(0.0f, 0.0f, -0.1f));
 	}
     if (glfwGetKey(m_window, GLFW_KEY_A) == GLFW_PRESS)
 	{
-        //m_camera.lock()->ProcessKeyboard(LEFT, deltaTime);
+        m_cameraMain.lock()->ChangePosition(glm::vec3(0.1f, 0.0f, 0.0f));
 	}
     if (glfwGetKey(m_window, GLFW_KEY_D) == GLFW_PRESS)
 	{
-        //m_camera.lock()->ProcessKeyboard(RIGHT, deltaTime);
+        m_cameraMain.lock()->ChangePosition(glm::vec3(-0.1f, 0.0f, 0.0f));
 	}	
 }
 

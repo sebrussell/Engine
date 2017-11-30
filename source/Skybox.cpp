@@ -2,6 +2,7 @@
 #include "Mesh.h"
 #include "Shader.h"
 #include "MeshManager.h"
+#include "Transform.h"
 
 void Skybox::Awake()
 {
@@ -28,9 +29,16 @@ void Skybox::SetMeshManager(std::weak_ptr<MeshManager> _manager)
 	m_meshManager = _manager;
 }
 
+void Skybox::SetCameraTransform(std::weak_ptr<Transform> _transform)
+{
+	m_cameraTransform = _transform;
+}
+
 void Skybox::Draw()
 {
 	m_shader.lock()->Use();	
+	m_shader.lock()->SetVec3("aPos", m_cameraTransform.lock()->GetPosition());
+	m_shader.lock()->SetMat4("skyboxView", glm::mat4(glm::mat3(m_cameraTransform.lock()->GetLookAt())));
 	glDepthFunc(GL_LEQUAL);
 	glBindTexture(GL_TEXTURE_CUBE_MAP, m_cubemapTexture);	
 	m_skyboxMesh.lock()->Draw();

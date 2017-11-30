@@ -16,6 +16,8 @@
 #include "Material.h"
 #include "Skybox.h"
 #include "MeshManager.h"
+#include "DirectionalLight.h"
+#include "Light.h"
 
 
 #include <glm/glm.hpp>
@@ -37,7 +39,7 @@ int main(int argc, char* argv[]) {
 	std::shared_ptr<SceneManager> sceneManager(new SceneManager);	
 	sceneManager->Awake();
 	
-	
+	/*
 	std::weak_ptr<GameObject> cubeOne = sceneManager->CreateGameObject();
 	cubeOne.lock()->AddComponent<Renderer>();	
 	cubeOne.lock()->GetComponent<Renderer>()->Awake();
@@ -53,27 +55,81 @@ int main(int argc, char* argv[]) {
 	cubeOne.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/arrow.jpg");
 	cubeOne.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_environment.png");
 	cubeOne.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
+	*/
+	
+	std::weak_ptr<GameObject> light = sceneManager->CreateGameObject();
+	light.lock()->AddComponent<Renderer>();	
+	light.lock()->GetComponent<Renderer>()->Awake();
+	light.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
+	light.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs"));
+	light.lock()->GetComponent<Renderer>()->GetShader().lock()->CreateMatrixBuffer();
+	light.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
+	light.lock()->GetComponent<Renderer>()->m_material->SetColour(glm::vec3(1.0, 1.0, 1.0));
+	light.lock()->GetComponent<Transform>()->m_position = glm::vec3(5.0f, 0.0f, -2.0f);
+	
+	std::weak_ptr<GameObject> dirLight = sceneManager->CreateGameObject();
+	dirLight.lock()->AddComponent<DirectionalLight>();	
+	dirLight.lock()->GetComponent<DirectionalLight>()->Awake();
+	dirLight.lock()->GetComponent<DirectionalLight>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs"));
+
+	
 	
 	std::weak_ptr<GameObject> cubeTwo = sceneManager->CreateGameObject();
 	cubeTwo.lock()->AddComponent<Renderer>();	
 	cubeTwo.lock()->GetComponent<Renderer>()->Awake();
 	cubeTwo.lock()->GetComponent<Renderer>()->SetMesh(TRANSPARENT_WINDOW);
-	cubeTwo.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs"));
+	cubeTwo.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs"));
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->CreateMatrixBuffer();
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
-	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("texture_regular1", 0);
-	cubeTwo.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 0.0f, -2.0f);
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("material.diffuseTexture", 0);
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("material.specularTexture", 1);
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("material.environmentTexture", 2);
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("skybox", 3);
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("material.shininess", 64.0f);
+	cubeTwo.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 0.0f, -4.0f);
 	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/blending_transparent_window.png");
-	//cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
+	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg");
+	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_environment.png");
+	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
 	cubeTwo.lock()->m_transparent = true;
+	
+	std::weak_ptr<GameObject> cubeThree = sceneManager->CreateGameObject();
+	cubeThree.lock()->AddComponent<Renderer>();	
+	cubeThree.lock()->GetComponent<Renderer>()->Awake();
+	cubeThree.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
+	cubeThree.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs"));
+	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->CreateMatrixBuffer();
+	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
+	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("material.diffuseTexture", 0);
+	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("material.specularTexture", 1);
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("material.environmentTexture", 2);
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("skybox", 3);
+	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("material.shininess", 30.0f);
+	cubeThree.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 0.0f, -6.0f);
+	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png");
+	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg");
+	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg");
+	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
+	cubeThree.lock()->m_transparent = false;
 	
 	while(sceneManager->m_openGL->ShouldWindowClose())
 	{
+		sceneManager->m_openGL->ProcessInput();
 		//Scene Manager Process Input
 		glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		
 		sceneManager->Update();
+		
+		light.lock()->GetComponent<Transform>()->ChangePosition(glm::vec3(-0.01f, 0.0f, 0.0f));
+		
+		cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
+		cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("light.direction", glm::vec3(-0.2f, -1.0f, -0.3f)); 
+        cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("viewPos", sceneManager->m_cameraManager->m_mainCamera.lock()->GetPosition());
+		
+		cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
+		cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("light.direction", glm::vec3(-0.2f, -1.0f, -0.3f)); 
+        cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("viewPos", sceneManager->m_cameraManager->m_mainCamera.lock()->GetPosition());
 		
 		sceneManager->m_openGL->SwapBuffers(); 
 	}

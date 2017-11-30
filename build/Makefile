@@ -230,6 +230,33 @@ source/Component.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Component.cpp.s
 .PHONY : source/Component.cpp.s
 
+source/DirectionalLight.obj: source/DirectionalLight.cpp.obj
+
+.PHONY : source/DirectionalLight.obj
+
+# target to build an object file
+source/DirectionalLight.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/DirectionalLight.cpp.obj
+.PHONY : source/DirectionalLight.cpp.obj
+
+source/DirectionalLight.i: source/DirectionalLight.cpp.i
+
+.PHONY : source/DirectionalLight.i
+
+# target to preprocess a source file
+source/DirectionalLight.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/DirectionalLight.cpp.i
+.PHONY : source/DirectionalLight.cpp.i
+
+source/DirectionalLight.s: source/DirectionalLight.cpp.s
+
+.PHONY : source/DirectionalLight.s
+
+# target to generate assembly for a file
+source/DirectionalLight.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/DirectionalLight.cpp.s
+.PHONY : source/DirectionalLight.cpp.s
+
 source/GameObject.obj: source/GameObject.cpp.obj
 
 .PHONY : source/GameObject.obj
@@ -256,6 +283,33 @@ source/GameObject.s: source/GameObject.cpp.s
 source/GameObject.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/GameObject.cpp.s
 .PHONY : source/GameObject.cpp.s
+
+source/Light.obj: source/Light.cpp.obj
+
+.PHONY : source/Light.obj
+
+# target to build an object file
+source/Light.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Light.cpp.obj
+.PHONY : source/Light.cpp.obj
+
+source/Light.i: source/Light.cpp.i
+
+.PHONY : source/Light.i
+
+# target to preprocess a source file
+source/Light.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Light.cpp.i
+.PHONY : source/Light.cpp.i
+
+source/Light.s: source/Light.cpp.s
+
+.PHONY : source/Light.s
+
+# target to generate assembly for a file
+source/Light.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Light.cpp.s
+.PHONY : source/Light.cpp.s
 
 source/LightManager.obj: source/LightManager.cpp.obj
 
@@ -629,9 +683,15 @@ help:
 	@echo ... source/Component.obj
 	@echo ... source/Component.i
 	@echo ... source/Component.s
+	@echo ... source/DirectionalLight.obj
+	@echo ... source/DirectionalLight.i
+	@echo ... source/DirectionalLight.s
 	@echo ... source/GameObject.obj
 	@echo ... source/GameObject.i
 	@echo ... source/GameObject.s
+	@echo ... source/Light.obj
+	@echo ... source/Light.i
+	@echo ... source/Light.s
 	@echo ... source/LightManager.obj
 	@echo ... source/LightManager.i
 	@echo ... source/LightManager.s

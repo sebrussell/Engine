@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/techdemo.dir/source/ShaderManager.cpp.obj"
   "CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj"
   "CMakeFiles/techdemo.dir/source/LightManager.cpp.obj"
+  "CMakeFiles/techdemo.dir/source/Light.cpp.obj"
+  "CMakeFiles/techdemo.dir/source/DirectionalLight.cpp.obj"
   "techdemo.pdb"
   "techdemo.exe"
   "techdemo.exe.manifest"

@@ -948,6 +948,22 @@ memory
 iostream
 -
 
+C:/Users/sebru_000/Desktop/Engine/source/DirectionalLight.cpp
+DirectionalLight.h
+C:/Users/sebru_000/Desktop/Engine/source/DirectionalLight.h
+Shader.h
+C:/Users/sebru_000/Desktop/Engine/source/Shader.h
+
+C:/Users/sebru_000/Desktop/Engine/source/DirectionalLight.h
+Light.h
+C:/Users/sebru_000/Desktop/Engine/source/Light.h
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+
 C:/Users/sebru_000/Desktop/Engine/source/GameObject.cpp
 GameObject.h
 C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
@@ -960,6 +976,22 @@ memory
 vector
 -
 iostream
+-
+
+C:/Users/sebru_000/Desktop/Engine/source/Light.cpp
+Light.h
+C:/Users/sebru_000/Desktop/Engine/source/Light.h
+
+C:/Users/sebru_000/Desktop/Engine/source/Light.h
+Component.h
+C:/Users/sebru_000/Desktop/Engine/source/Component.h
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+memory
 -
 
 C:/Users/sebru_000/Desktop/Engine/source/LightManager.cpp
@@ -1027,6 +1059,8 @@ memory
 C:/Users/sebru_000/Desktop/Engine/source/OpenGL.cpp
 OpenGL.h
 C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
+Transform.h
+C:/Users/sebru_000/Desktop/Engine/source/Transform.h
 
 C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
 glad/glad.h
@@ -1097,6 +1131,8 @@ Camera.h
 C:/Users/sebru_000/Desktop/Engine/source/Camera.h
 Transform.h
 C:/Users/sebru_000/Desktop/Engine/source/Transform.h
+Camera.h
+C:/Users/sebru_000/Desktop/Engine/source/Camera.h
 
 C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
 vector
@@ -1151,6 +1187,8 @@ Shader.h
 C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 MeshManager.h
 C:/Users/sebru_000/Desktop/Engine/source/MeshManager.h
+Transform.h
+C:/Users/sebru_000/Desktop/Engine/source/Transform.h
 
 C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
 glad/glad.h
@@ -1207,6 +1245,10 @@ Skybox.h
 C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
 MeshManager.h
 C:/Users/sebru_000/Desktop/Engine/source/MeshManager.h
+DirectionalLight.h
+C:/Users/sebru_000/Desktop/Engine/source/DirectionalLight.h
+Light.h
+C:/Users/sebru_000/Desktop/Engine/source/Light.h
 glm/glm.hpp
 -
 glm/gtc/matrix_transform.hpp

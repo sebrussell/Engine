@@ -25,6 +25,11 @@ glm::mat4 Camera::GetViewMatrix()
 	return m_transform.lock()->GetLookAt();   
 }
 
+glm::vec3 Camera::GetPosition()
+{
+	return m_transform.lock()->m_position; 
+}
+
 glm::mat4 Camera::GetProjectionMatrix()
 {
 	return glm::perspective(glm::radians(m_zoom), m_aspectRatio, m_minViewDistance, m_maxViewDistance);

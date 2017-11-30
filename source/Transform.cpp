@@ -53,6 +53,11 @@ void Transform::SetLocalPosition(glm::vec3 _position)
 	m_localPosition = _position;
 }
 
+void Transform::ChangePosition(glm::vec3 _position)
+{
+	m_position += _position;
+}
+
 void Transform::SetParent(std::weak_ptr<Transform> _parent)
 {
 	m_parent = _parent;

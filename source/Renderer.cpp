@@ -56,7 +56,7 @@ void Renderer::Delete()
 void Renderer::SetShader(std::weak_ptr<Shader> _shader)
 {
 	m_shader = _shader;
-	
+	m_material->SetShader(m_shader);
 }
 
 std::weak_ptr<Shader> Renderer::GetShader()

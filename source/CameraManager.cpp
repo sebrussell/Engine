@@ -13,7 +13,7 @@ int CameraManager::Awake()
 	std::weak_ptr<GameObject> m_gameObject = m_sceneManager.lock()->CreateGameObject();	
 	m_activeCamera = m_gameObject.lock()->AddComponent<Camera>();
 	m_gameObject.lock()->AddComponent<Transform>();	
-	m_gameObject.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 0.0f, 3.0f);
+	m_gameObject.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 0.0f, 15.0f);
 	m_mainCamera = m_activeCamera;
 	
 	std::weak_ptr<GameObject> m_rendererQuad = m_sceneManager.lock()->CreateGameObject();	

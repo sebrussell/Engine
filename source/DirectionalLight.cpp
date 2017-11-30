@@ -1,4 +1,5 @@
 #include "DirectionalLight.h"
+#include "Shader.h"
 
 DirectionalLight::DirectionalLight()
 {
@@ -19,3 +20,12 @@ DirectionalLight::DirectionalLight(glm::vec3 _direction, glm::vec3 _ambient, glm
 DirectionalLight::~DirectionalLight()
 {
 };
+
+void DirectionalLight::Update()
+{
+	m_shader.lock()->Use();
+	m_shader.lock()->SetVec3("dirLight.direction", m_direction);
+	m_shader.lock()->SetVec3("dirLight.ambient", m_ambient);
+	m_shader.lock()->SetVec3("dirLight.specular", m_specular);
+	m_shader.lock()->SetVec3("dirLight.diffuse", m_diffuse);
+}

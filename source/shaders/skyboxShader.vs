@@ -9,9 +9,11 @@ layout (std140) uniform Matrices
     mat4 view;
 };
 
+uniform mat4 skyboxView;
+
 void main()
 {
     TexCoords = aPos;
-    vec4 pos = projection * view * vec4(aPos, 1.0);
+    vec4 pos = projection * skyboxView * vec4(aPos, 1.0);
     gl_Position = pos.xyww;
 }  

@@ -18,19 +18,32 @@ void Material::Apply()
 		}		
 	}
 
-	
 	//glActiveTexture(GL_TEXTURE0);
 	//glBindTexture(GL_TEXTURE_2D, m_textures.at(0).id);
 	
 	//glActiveTexture(GL_TEXTURE1);
 	//glBindTexture(GL_TEXTURE_2D, m_textures.at(1).id);
-	
+
 	if(m_textures.size() == 0)
 	{
+		m_shader.lock()->SetBool("useColour", true);
+		m_shader.lock()->SetVec3("objectColour", m_colour);
+		m_shader.lock()->SetVec3("lightColour", glm::vec3(1.0f, 1.0f, 1.0f));
+		//m_shader.lock()->SetVec3("lightPos", glm::vec3(0.0f, 0.0f, -2.0f));
+		m_shader.lock()->SetVec3("viewPos", glm::vec3(0.0f, 0.0f, 0.0f));
 		//set colour
 	}
 	
-	
+}
+
+void Material::SetColour(glm::vec3 _colour)
+{
+	m_colour = _colour;
+}
+
+void Material::SetShader(std::weak_ptr<Shader> _shader)
+{
+	m_shader = _shader;
 }
 
 void Material::LoadTexture(char const * _path, TextureType _type)

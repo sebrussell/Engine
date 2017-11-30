@@ -35,6 +35,8 @@ add_executable(techdemo
 	source/ShaderManager.cpp
 	source/MeshManager.cpp
 	source/LightManager.cpp
+	source/Light.cpp
+	source/DirectionalLight.cpp
 )
 
 target_link_libraries(techdemo assimp glfw3) 

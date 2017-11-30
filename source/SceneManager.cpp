@@ -7,6 +7,7 @@
 #include "MeshManager.h"
 #include "Camera.h"
 #include "Transform.h"
+#include "Camera.h"
 
 int SceneManager::Awake()
 {
@@ -20,7 +21,7 @@ int SceneManager::Awake()
 	m_cameraManager = std::make_shared<CameraManager>();	
 	m_cameraManager->SetSceneManager(shared_from_this());
 	m_cameraManager->Awake();
-
+	
 	
 	m_meshManager = std::make_shared<MeshManager>();
 	
@@ -31,13 +32,14 @@ int SceneManager::Awake()
 	m_skybox->SetMeshManager(m_meshManager);
 	m_skybox->Awake();
 	m_skybox->SetShader(m_shaderManager->AddShader("..//source/shaders/skyboxShader.vs", "..//source/shaders/skyboxShader.fs"));
-
+	
 	
 	for(int i = 0; i < m_gameObjects.size(); i++)
 	{		
 		m_gameObjects.at(i)->Awake();
 	}
-	
+	m_skybox->SetCameraTransform(m_cameraManager->m_mainCamera.lock()->m_transform);
+	m_openGL->SetCameraMainTransform(m_cameraManager->m_mainCamera.lock()->m_transform);
 	m_cameraManager->SetupPostProcessing();
 
 	return 0;
@@ -69,7 +71,7 @@ void SceneManager::Update()
 	}	
 
 	m_skybox->Draw();
-	
+
 	for(int i = m_sorted.size() - 1; i >= 0; i--)
 	{
 		if(m_sorted.at(i).lock()->m_shouldUpdate && m_sorted.at(i).lock()->m_transparent)
@@ -77,7 +79,7 @@ void SceneManager::Update()
 			m_sorted.at(i).lock()->Update();
 		}		
 	}
-	
+
 	//draw instanced gameobjects
 
 	//draw transparent gameobjects

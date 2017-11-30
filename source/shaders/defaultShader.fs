@@ -5,11 +5,23 @@ in vec2 TexCoords;
 
 uniform sampler2D texture_regular1;
 uniform sampler2D texture_diffuse1;
+uniform vec3 objectColour;
+uniform bool useColour;
 
 void main()
 {    	
-	//FragColor =  mix(texture(texture_regular1, TexCoords), texture(texture_diffuse1, TexCoords), 0.2);
-	vec4 texColor = texture(texture_regular1, TexCoords);
-	FragColor = texColor;
-	//FragColor = vec4(TexCoords, 0.0, 0.0);
+	vec4 texColour;
+	if(useColour)
+	{
+		texColour = vec4(objectColour, 1.0);
+	}
+	else
+	{
+		//FragColor =  mix(texture(texture_regular1, TexCoords), texture(texture_diffuse1, TexCoords), 0.2);
+		texColour = texture(texture_regular1, TexCoords);
+	}
+	
+	FragColor = texColour;
+	
+	
 }

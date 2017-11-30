@@ -14,6 +14,7 @@ class Transform : public Component
 		glm::mat4 GetLookAt();
 		glm::vec3 GetPosition();
 		glm::vec3 GetLocalPosition();
+		void ChangePosition(glm::vec3 _position);
 		void SetLocalPosition(glm::vec3 _position);
 		void SetParent(std::weak_ptr<Transform> _parent);
 		virtual void Update();

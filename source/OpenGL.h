@@ -11,6 +11,8 @@
 #include <iostream>
 #include <memory>
 
+class Transform;
+
 class OpenGL
 {
 	public:
@@ -25,6 +27,7 @@ class OpenGL
 		float GetDeltaTime() { return deltaTime; }
 		int GetWindowWidth() { return m_windowWidth; }
 		int GetWindowHeight() { return m_windowHeight; }
+		void SetCameraMainTransform(std::weak_ptr<Transform> _transform);
 		
 		//-------- CALLBACK FUNCTIONS ----------//
 		static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
@@ -42,6 +45,8 @@ class OpenGL
 		
 		int m_windowWidth;
 		int m_windowHeight;
+		
+		std::weak_ptr<Transform> m_cameraMain;
 		
 };
 
