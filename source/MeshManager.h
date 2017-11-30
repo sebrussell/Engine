@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <memory>
+#include <map>
+#include <string>
 
 class SceneManager;
 class Mesh;
@@ -28,7 +30,7 @@ class MeshManager
 		std::weak_ptr<Mesh> AddMesh(Type _type, std::string _path = "");
 	private:
 		std::weak_ptr<SceneManager> m_sceneManager;
-		std::vector<std::shared_ptr<Mesh>> m_meshes;
+		std::map<std::string, std::shared_ptr<Mesh>> m_meshes;
 };
 
 #endif

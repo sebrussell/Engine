@@ -19,6 +19,7 @@ class Mesh
 		void MakeTransparent();
 		void Draw();
 		void Delete();
+		int test = 7;
 	private:
 		int m_amountOfVertices;
 		unsigned int VAO, VBO, EBO;

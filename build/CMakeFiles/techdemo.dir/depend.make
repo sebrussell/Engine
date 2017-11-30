@@ -1678,6 +1678,7 @@ CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/DirectionalLight.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/GameObject.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Light.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Material.h
+CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Mesh.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/MeshManager.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/OpenGL.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Renderer.h

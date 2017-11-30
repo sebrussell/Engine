@@ -18,6 +18,7 @@
 #include "MeshManager.h"
 #include "DirectionalLight.h"
 #include "Light.h"
+#include "Mesh.h"
 
 
 #include <glm/glm.hpp>
@@ -74,11 +75,12 @@ int main(int argc, char* argv[]) {
 
 	dirLight.lock()->GetComponent<DirectionalLight>()->GetShader();
 	
+	
 	std::weak_ptr<GameObject> cubeTwo = sceneManager->CreateGameObject();
 	cubeTwo.lock()->AddComponent<Renderer>();	
 	cubeTwo.lock()->GetComponent<Renderer>()->Awake();
 	cubeTwo.lock()->GetComponent<Renderer>()->SetMesh(TRANSPARENT_WINDOW);
-	cubeTwo.lock()->GetComponent<Renderer>()->SetShader(dirLight.lock()->GetComponent<DirectionalLight>()->GetShader());
+	cubeTwo.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs"));
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->CreateMatrixBuffer();
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("material.diffuseTexture", 0);
@@ -93,11 +95,12 @@ int main(int argc, char* argv[]) {
 	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
 	cubeTwo.lock()->m_transparent = true;
 	
+	
 	std::weak_ptr<GameObject> cubeThree = sceneManager->CreateGameObject();
 	cubeThree.lock()->AddComponent<Renderer>();	
 	cubeThree.lock()->GetComponent<Renderer>()->Awake();
 	cubeThree.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
-	cubeThree.lock()->GetComponent<Renderer>()->SetShader(dirLight.lock()->GetComponent<DirectionalLight>()->GetShader());
+	cubeThree.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs"));
 	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
 	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("material.shininess", 30.0f);
 	cubeThree.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 0.0f, -6.0f);
@@ -118,9 +121,9 @@ int main(int argc, char* argv[]) {
 		
 		light.lock()->GetComponent<Transform>()->ChangePosition(glm::vec3(-0.01f, 0.0f, 0.0f));
 		
-		cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
-		cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("light.direction", glm::vec3(-0.2f, -1.0f, -0.3f)); 
-        cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("viewPos", sceneManager->m_cameraManager->m_mainCamera.lock()->GetPosition());
+		//cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
+		//cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("light.direction", glm::vec3(-0.2f, -1.0f, -0.3f)); 
+        //cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("viewPos", sceneManager->m_cameraManager->m_mainCamera.lock()->GetPosition());
 		
 		cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
 		cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("light.direction", glm::vec3(-0.2f, -1.0f, -0.3f)); 
