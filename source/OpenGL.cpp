@@ -93,7 +93,6 @@ OpenGL::~OpenGL()
 void OpenGL::SetViewPort()
 {
 	glViewport(0, 0, m_windowWidth, m_windowHeight);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void OpenGL::SwapBuffers()

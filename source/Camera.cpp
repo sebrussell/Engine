@@ -94,9 +94,11 @@ void Camera::SetupShadowBuffer(int _width, int _height)
 
 void Camera::DrawShadowBuffer()
 {
-	glViewport(0, 0, m_shadowWidth, m_shadowHeight);
+	glViewport(0, 0, m_shadowWidth, m_shadowHeight);	
+	glEnable(GL_DEPTH_TEST);
 	glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
-	//glClear(GL_DEPTH_BUFFER_BIT);
+	glClear(GL_DEPTH_BUFFER_BIT);
+	
 }
 
 void Camera::Clear()

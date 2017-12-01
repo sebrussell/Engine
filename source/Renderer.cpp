@@ -41,6 +41,7 @@ void Renderer::Awake()
 void Renderer::ShadowDraw(std::weak_ptr<Shader> _shader)
 {
 	_shader.lock()->SetMat4("model", m_transform.lock()->GetModelMatrix());
+	//m_material->Apply();
 	m_mesh.lock()->Draw();
 }
 

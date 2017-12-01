@@ -66,7 +66,7 @@ int main(int argc, char* argv[]) {
 	light.lock()->GetComponent<Renderer>()->GetShader().lock()->CreateMatrixBuffer();
 	light.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
 	light.lock()->GetComponent<Renderer>()->m_material->SetColour(glm::vec3(1.0, 1.0, 1.0));
-	light.lock()->GetComponent<Transform>()->m_position = glm::vec3(5.0f, 0.0f, -2.0f);
+	light.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 0.0f, -1.0f);
 	
 	std::weak_ptr<GameObject> dirLight = sceneManager->CreateGameObject();
 	dirLight.lock()->AddComponent<DirectionalLight>();	
@@ -87,7 +87,7 @@ int main(int argc, char* argv[]) {
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("material.environmentTexture", 2);
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("skybox", 3);
 	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("material.shininess", 64.0f);
-	cubeTwo.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 0.0f, -4.0f);
+	cubeTwo.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 0.0f, 1.0f);
 	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/blending_transparent_window.png", false);
 	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg", false);
 	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_environment.png", false);
@@ -102,7 +102,7 @@ int main(int argc, char* argv[]) {
 	cubeThree.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/lightingShader.vs", "..//source/shaders/lightingShader.fs"));
 	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
 	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("material.shininess", 30.0f);
-	cubeThree.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 0.0f, -6.0f);
+	cubeThree.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 0.0f, 0.0f);
 	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png", false);
 	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg", false);
 	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg", false);

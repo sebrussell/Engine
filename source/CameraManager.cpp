@@ -13,7 +13,7 @@ int CameraManager::Awake()
 	std::weak_ptr<GameObject> m_gameObject = m_sceneManager.lock()->CreateGameObject();	
 	m_activeCamera = m_gameObject.lock()->AddComponent<Camera>();
 	m_gameObject.lock()->AddComponent<Transform>();	
-	m_gameObject.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 0.0f, 15.0f);
+	m_gameObject.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 0.0f, 3.0f);
 	m_mainCamera = m_activeCamera;
 	m_gameObject.lock()->m_shouldUpdate = false;
 	
@@ -83,24 +83,15 @@ void CameraManager::SetupPostProcessing()
 	m_gammaShader.lock()->Use();
 	m_gammaShader.lock()->SetInt("screenTexture", 0);
 	m_gammaShader.lock()->SetFloat("gamma", m_gamma);
-	/*
+	
 	
 	m_shadowShader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/shadowShader.vs", "..//source/shaders/shadowShader.fs");
-		float near_plane = -10.0f, far_plane = 3.5f;
-	glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);  
-	glm::mat4 lightView = glm::lookAt(glm::vec3(-2.0f, 4.0f, -1.0f), 
-                                  glm::vec3( 0.0f, 0.0f,  0.0f), 
-                                  glm::vec3( 0.0f, 1.0f,  0.0f));  
-	glm::mat4 lightSpaceMatrix = lightProjection * lightView; 
-	m_shadowShader.lock()->Use();
-	m_shadowShader.lock()->SetMat4("lightSpaceMatrix", lightSpaceMatrix);
-
-	m_depthShader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/blankPostShader.vs", "..//source/shaders/depthViewer.fs");
+	
+	m_depthShader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/depthViewer.vs", "..//source/shaders/depthViewer.fs");
 	m_depthShader.lock()->Use();
 	m_depthShader.lock()->SetInt("depthMap", 0);
-	m_depthShader.lock()->SetFloat("near_plane", 1.0f);
-	m_depthShader.lock()->SetFloat("far_plane", 7.5f);
-	*/
+
+	
 }
 
 void CameraManager::PostProcessingCall1()
@@ -140,8 +131,8 @@ void CameraManager::GammaCorrection()
 	
 		
 	m_mainCamera.lock()->Use(false);
-	m_postProcessingQuad.lock()->SetShader(m_defaultShader);
-	m_postProcessingQuad.lock()->m_material->SetTexture(m_gammaCamera.lock()->GetFBOTexture());
+	m_postProcessingQuad.lock()->SetShader(m_depthShader);
+	m_postProcessingQuad.lock()->m_material->SetTexture(m_shadowCamera.lock()->GetFBOTexture());
 	m_postProcessingQuad.lock()->Update();
 }
 
@@ -149,5 +140,18 @@ void CameraManager::GammaCorrection()
 void CameraManager::ShadowPass()
 {	
 	m_shadowCamera.lock()->DrawShadowBuffer();
+
+		float near_plane = 1.0f, far_plane = 7.5f;
+	glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);  
+	glm::mat4 lightView = glm::lookAt(glm::vec3(-2.0f, 4.0f, -1.0f), 
+                                  glm::vec3( 0.0f, 0.0f,  0.0f), 
+                                  glm::vec3( 0.0f, 1.0f,  0.0f));  
+	glm::mat4 lightSpaceMatrix = lightProjection * lightView; 
+	m_shadowShader.lock()->Use();
+	m_shadowShader.lock()->SetMat4("lightSpaceMatrix", lightSpaceMatrix);
+	m_shadowShader.lock()->SetFloat("near_plane", near_plane);
+	m_shadowShader.lock()->SetFloat("far_plane", far_plane);
+
+	
 
 }
