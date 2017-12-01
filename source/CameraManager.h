@@ -6,6 +6,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <string>
 
 class Camera;
 class SceneManager;
@@ -34,6 +35,7 @@ class CameraManager
 		std::weak_ptr<Shader> m_shadowShader;
 		std::weak_ptr<Camera> m_shadowCamera;
 		glm::mat4 lightSpaceMatrix;
+		glm::vec3 lightPos = glm::vec3(0.0f, 4.0f, 0.0f);
 	private:
 		std::vector<std::weak_ptr<Camera>> m_cameras;
 		
@@ -47,6 +49,13 @@ class CameraManager
 		
 		std::weak_ptr<Camera> m_postProcessing1, m_postProcessing2, m_gammaCamera;
 		std::weak_ptr<Renderer> m_postProcessingQuad;
+		
+		std::vector<glm::mat4> shadowTransforms;
+		
+		
+		
+		float near_plane = 1.0f;
+        float far_plane  = 25.0f;
 };
 
 #endif

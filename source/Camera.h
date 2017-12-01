@@ -26,12 +26,14 @@ class Camera : public Component
 		void SetupFrameBuffer();
 		void SetupFrameBuffer(int _width, int _height);
 		void SetupShadowBuffer(int _width, int _height);
+		void CreateDepthMap(int _width, int _height);
 		void DrawShadowBuffer();
 		void ResetFBO();
 		void Use(bool _depthTest);
 		void Clear();
 		unsigned int GetFBOTexture();
 		std::weak_ptr<Transform> m_transform;
+		unsigned int depthCubemap;
 	private:
 		std::weak_ptr<OpenGL> m_openGL;
 		
@@ -46,6 +48,8 @@ class Camera : public Component
 		float m_aspectRatio;
 		float m_maxViewDistance;
 		float m_minViewDistance;
+		
+		
 };
 
 #endif

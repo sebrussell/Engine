@@ -68,7 +68,16 @@ void CameraManager::SetupPostProcessing()
 	m_postProcessing1.lock()->SetupFrameBuffer();
 	m_postProcessing2.lock()->SetupFrameBuffer();
 	m_gammaCamera.lock()->SetupFrameBuffer();
-	m_shadowCamera.lock()->SetupShadowBuffer(1024, 1024);
+	m_shadowCamera.lock()->CreateDepthMap(1024, 1024);
+	
+
+        glm::mat4 shadowProj = glm::perspective(glm::radians(90.0f), (float)1024 / (float)1024, near_plane, far_plane);
+        shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 1.0f,  0.0f,  0.0f), glm::vec3(0.0f, -1.0f,  0.0f)));
+        shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(-1.0f,  0.0f,  0.0f), glm::vec3(0.0f, -1.0f,  0.0f)));
+        shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0f,  1.0f,  0.0f), glm::vec3(0.0f,  0.0f,  1.0f)));
+        shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0f, -1.0f,  0.0f), glm::vec3(0.0f,  0.0f, -1.0f)));
+        shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0f,  0.0f,  1.0f), glm::vec3(0.0f, -1.0f,  0.0f)));
+        shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0f,  0.0f, -1.0f), glm::vec3(0.0f, -1.0f,  0.0f)));
 
 	m_blurShader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/postProcShader.vs", "..//source/shaders/blankPostShader.fs");
 	m_blurShader.lock()->Use();
@@ -85,7 +94,7 @@ void CameraManager::SetupPostProcessing()
 	m_gammaShader.lock()->SetFloat("gamma", m_gamma);
 	
 	
-	m_shadowShader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/shadowShader.vs", "..//source/shaders/shadowShader.fs");
+	m_shadowShader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/pointShadow/depthShader.vs", "..//source/shaders/pointShadow/depthShader.fs", "..//source/shaders/pointShadow/depthShader.gs");
 	
 	m_depthShader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/depthViewer.vs", "..//source/shaders/depthViewer.fs");
 	m_depthShader.lock()->Use();
@@ -141,17 +150,16 @@ void CameraManager::ShadowPass()
 {	
 	m_shadowCamera.lock()->DrawShadowBuffer();
 
-		float near_plane = 1.0f, far_plane = 7.5f;
-	glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);  
-	glm::mat4 lightView = glm::lookAt(glm::vec3(-2.0f, 4.0f, -1.0f), 
-                                  glm::vec3( 0.0f, 0.0f,  0.0f), 
-                                  glm::vec3( 0.0f, 1.0f,  0.0f));  
-	lightSpaceMatrix = lightProjection * lightView; 
-	m_shadowShader.lock()->Use();
-	m_shadowShader.lock()->SetMat4("lightSpaceMatrix", lightSpaceMatrix);
-	m_shadowShader.lock()->SetFloat("near_plane", near_plane);
-	m_shadowShader.lock()->SetFloat("far_plane", far_plane);
 
+	m_shadowShader.lock()->Use();
+	
+    for (unsigned int i = 0; i < shadowTransforms.size(); i++)
+	{
+        m_shadowShader.lock()->SetMat4("shadowMatrices[" + std::to_string(i) + "]", shadowTransforms[i]);
+	}
+
+    m_shadowShader.lock()->SetFloat("far_plane", far_plane);    
+	m_shadowShader.lock()->SetVec3("lightPos", lightPos);
 	
 
 }
