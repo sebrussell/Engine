@@ -32,6 +32,8 @@ class CameraManager
 		std::weak_ptr<Camera> m_activeCamera;
 		std::weak_ptr<Camera> m_mainCamera;
 		std::weak_ptr<Shader> m_shadowShader;
+		std::weak_ptr<Camera> m_shadowCamera;
+		glm::mat4 lightSpaceMatrix;
 	private:
 		std::vector<std::weak_ptr<Camera>> m_cameras;
 		
@@ -43,7 +45,7 @@ class CameraManager
 		std::weak_ptr<Shader> m_defaultShader;
 		std::weak_ptr<Shader> m_depthShader;			
 		
-		std::weak_ptr<Camera> m_postProcessing1, m_postProcessing2, m_gammaCamera, m_shadowCamera;
+		std::weak_ptr<Camera> m_postProcessing1, m_postProcessing2, m_gammaCamera;
 		std::weak_ptr<Renderer> m_postProcessingQuad;
 };
 
