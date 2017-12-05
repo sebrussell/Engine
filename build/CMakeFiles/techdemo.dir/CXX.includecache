@@ -921,6 +921,8 @@ ShaderManager.h
 C:/Users/sebru_000/Desktop/Engine/source/ShaderManager.h
 Shader.h
 C:/Users/sebru_000/Desktop/Engine/source/Shader.h
+InputHandlerScript.h
+C:/Users/sebru_000/Desktop/Engine/source/InputHandlerScript.h
 
 C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
 vector
@@ -1005,6 +1007,28 @@ iostream
 -
 vector
 -
+
+C:/Users/sebru_000/Desktop/Engine/source/InputHandlerScript.cpp
+InputHandlerScript.h
+C:/Users/sebru_000/Desktop/Engine/source/InputHandlerScript.h
+Input.h
+C:/Users/sebru_000/Desktop/Engine/source/Input.h
+Transform.h
+C:/Users/sebru_000/Desktop/Engine/source/Transform.h
+GameObject.h
+C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
+SceneManager.h
+C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
+
+C:/Users/sebru_000/Desktop/Engine/source/InputHandlerScript.h
+glad/glad.h
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+Component.h
+C:/Users/sebru_000/Desktop/Engine/source/Component.h
 
 C:/Users/sebru_000/Desktop/Engine/source/Light.cpp
 Light.h
@@ -1297,6 +1321,8 @@ Light.h
 C:/Users/sebru_000/Desktop/Engine/source/Light.h
 Mesh.h
 C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
+InputHandlerScript.h
+C:/Users/sebru_000/Desktop/Engine/source/InputHandlerScript.h
 glm/glm.hpp
 -
 glm/gtc/matrix_transform.hpp

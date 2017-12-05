@@ -20,6 +20,7 @@ class Transform : public Component
 		virtual void Update();
 		virtual void Awake();
 		glm::vec3 m_position;
+		void SetYawAndPitch(float _yaw, float _pitch);
 	private:		
 		float m_pitch =  0.0f;
 		float m_roll =  0.0f;

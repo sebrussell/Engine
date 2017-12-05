@@ -68,7 +68,6 @@ int OpenGL::Setup(int _windowWidth, int _windowHeight)
    
 	glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);  
    
-	glfwSetKeyCallback(m_window, KeyCallBack);
 	glfwSetFramebufferSizeCallback(m_window, FrameBufferSizeCallBack);
 	glfwSetCursorPosCallback(m_window, MouseCallBack);  //register mouse callback function
 	glfwSetScrollCallback(m_window, ScrollCallBack);
@@ -131,14 +130,6 @@ void OpenGL::ProcessInput()
 void OpenGL::MouseCallBack(GLFWwindow* window, double xpos, double ypos)
 {	
 	g_input->ProcessMouse(xpos, ypos);
-}
-
-void OpenGL::KeyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods)
-{	
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-	{
-        glfwSetWindowShouldClose(window, true);
-	}
 }
 
 void OpenGL::ErrorCallBack(int error, const char* description)

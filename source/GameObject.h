@@ -22,7 +22,7 @@ class GameObject : public std::enable_shared_from_this<GameObject>
 			std::shared_ptr<T> _component(new T());
 			m_transform = std::dynamic_pointer_cast<Transform>(_component);
 			_component->m_gameObject = shared_from_this();
-			m_components.push_back(_component);			
+			m_components.push_back(_component);		
 			return _component;		
 		}	
 		

@@ -7,6 +7,7 @@
 #include "Material.h"
 #include "ShaderManager.h"
 #include "Shader.h"
+#include "InputHandlerScript.h"
 
 int CameraManager::Awake()
 {
@@ -14,6 +15,7 @@ int CameraManager::Awake()
 	m_activeCamera = m_gameObject.lock()->AddComponent<Camera>();
 	m_gameObject.lock()->AddComponent<Transform>();	
 	m_gameObject.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 0.0f, 3.0f);
+	m_gameObject.lock()->AddComponent<InputHandler>();
 	m_mainCamera = m_activeCamera;
 	m_gameObject.lock()->m_shouldUpdate = false;
 	

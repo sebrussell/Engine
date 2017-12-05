@@ -36,6 +36,8 @@ class Input
 		
 		double m_scrollX, m_scrollY;
 	
+		KeyPress GetCurrentKey() { return m_keysPressed.at(0); }
+		std::vector<KeyPress> GetKeysPressed() { return m_keysPressed; }
 		
 	private:
 		std::weak_ptr<SceneManager> m_sceneManager;

@@ -311,6 +311,33 @@ source/Input.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Input.cpp.s
 .PHONY : source/Input.cpp.s
 
+source/InputHandlerScript.obj: source/InputHandlerScript.cpp.obj
+
+.PHONY : source/InputHandlerScript.obj
+
+# target to build an object file
+source/InputHandlerScript.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/InputHandlerScript.cpp.obj
+.PHONY : source/InputHandlerScript.cpp.obj
+
+source/InputHandlerScript.i: source/InputHandlerScript.cpp.i
+
+.PHONY : source/InputHandlerScript.i
+
+# target to preprocess a source file
+source/InputHandlerScript.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/InputHandlerScript.cpp.i
+.PHONY : source/InputHandlerScript.cpp.i
+
+source/InputHandlerScript.s: source/InputHandlerScript.cpp.s
+
+.PHONY : source/InputHandlerScript.s
+
+# target to generate assembly for a file
+source/InputHandlerScript.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/InputHandlerScript.cpp.s
+.PHONY : source/InputHandlerScript.cpp.s
+
 source/Light.obj: source/Light.cpp.obj
 
 .PHONY : source/Light.obj
@@ -719,6 +746,9 @@ help:
 	@echo ... source/Input.obj
 	@echo ... source/Input.i
 	@echo ... source/Input.s
+	@echo ... source/InputHandlerScript.obj
+	@echo ... source/InputHandlerScript.i
+	@echo ... source/InputHandlerScript.s
 	@echo ... source/Light.obj
 	@echo ... source/Light.i
 	@echo ... source/Light.s

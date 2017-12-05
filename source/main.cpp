@@ -19,6 +19,7 @@
 #include "DirectionalLight.h"
 #include "Light.h"
 #include "Mesh.h"
+#include "InputHandlerScript.h"
 
 
 #include <glm/glm.hpp>

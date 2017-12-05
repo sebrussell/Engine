@@ -39,7 +39,7 @@ void Input::ProcessMouse(double _xpos, double _ypos)
 	m_mouseY = _ypos;
 	
 	m_mouseMovementX = m_mouseX - m_oldMouseX;
-	m_mouseMovementY = m_mouseY - m_oldMouseY;
+	m_mouseMovementY = m_oldMouseY - m_mouseY; // reversed since y-coordinates range from bottom to top
 	
 	m_oldMouseX = m_mouseX;
 	m_oldMouseY = m_mouseY;

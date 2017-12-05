@@ -35,7 +35,6 @@ class OpenGL
 		GLFWwindow* GetWindow() { return m_window; }
 		
 		//-------- CALLBACK FUNCTIONS ----------//
-		static void KeyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods);
 		static void FrameBufferSizeCallBack(GLFWwindow* window, int width, int height);
 		static void MouseCallBack(GLFWwindow* window, double xpos, double ypos);
 		static void ScrollCallBack(GLFWwindow* window, double xoffset, double yoffset);
