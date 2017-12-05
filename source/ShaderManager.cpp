@@ -19,6 +19,7 @@ std::weak_ptr<Shader> ShaderManager::AddShader(const char* vertexPath, const cha
 	if(!m_shaders[buffer])
 	{		
 		std::shared_ptr<Shader> shader(new Shader(vertexPath, fragmentPath, geometryPath));	
+		shader->CreateMatrixBuffer();
 		m_shaders[buffer] = shader;			
 	}
 	m_returnShader = m_shaders[buffer];

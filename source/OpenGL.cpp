@@ -1,10 +1,12 @@
 #include "OpenGL.h"
 #include "Transform.h"
+#include "Input.h"
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void mouse_callback(GLFWwindow* window, double xpos, double ypos);
-void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+void FrameBufferSizeCallBack(GLFWwindow* window, int width, int height);
+void MouseCallBack(GLFWwindow* window, double xpos, double ypos);
+void ScrollCallBack(GLFWwindow* window, double xoffset, double yoffset);
 
+std::shared_ptr<Input> g_input;
 
 OpenGL::OpenGL()
 {
@@ -67,16 +69,19 @@ int OpenGL::Setup(int _windowWidth, int _windowHeight)
 	//glEnable(GL_CULL_FACE); //this SPEEEDS IT UP LOADS - doesnt work with transpare tho
 	*/
    
-	glfwSetKeyCallback(m_window, key_callback);
-	glfwSetFramebufferSizeCallback(m_window, framebuffer_size_callback);
-	glfwSetCursorPosCallback(m_window, mouse_callback);  //register mouse callback function
-	glfwSetScrollCallback(m_window, scroll_callback);
-	glfwSetErrorCallback(error_callback);
+	glfwSetKeyCallback(m_window, KeyCallBack);
+	glfwSetFramebufferSizeCallback(m_window, FrameBufferSizeCallBack);
+	glfwSetCursorPosCallback(m_window, MouseCallBack);  //register mouse callback function
+	glfwSetScrollCallback(m_window, ScrollCallBack);
+	glfwSetErrorCallback(ErrorCallBack);
 	
 	//glEnable(GL_PROGRAM_POINT_SIZE);  
 	//glEnable(GL_CULL_FACE);
 	
 	m_aspectRatio = (float)m_windowWidth / (float)m_windowHeight;
+	
+	g_input = std::make_shared<Input>();
+	g_input->Awake();
 	
 	std::cout << "OpenGL Setup Completed" << std::endl;
 	return 0;
@@ -90,9 +95,9 @@ OpenGL::~OpenGL()
 	glfwTerminate();
 }
 
-void OpenGL::SetViewPort()
+void OpenGL::SetViewPort(int _width, int _height)
 {
-	glViewport(0, 0, m_windowWidth, m_windowHeight);
+	glViewport(0, 0, _width, _height);
 }
 
 void OpenGL::SwapBuffers()
@@ -139,32 +144,34 @@ void OpenGL::ProcessInput()
 	}	
 }
 
-void OpenGL::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
-{
+void OpenGL::MouseCallBack(GLFWwindow* window, double xpos, double ypos)
+{	
+	g_input->ProcessMouse(xpos, ypos);
+}
+
+void OpenGL::KeyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods)
+{	
     if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 	{
         glfwSetWindowShouldClose(window, true);
 	}
 }
 
-void OpenGL::error_callback(int error, const char* description)
+void OpenGL::ErrorCallBack(int error, const char* description)
 {
     fprintf(stderr, "Error: %s\n", description);
 }
 
 
-void OpenGL::framebuffer_size_callback(GLFWwindow* window, int width, int height)
+void OpenGL::FrameBufferSizeCallBack(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 }
 
-void OpenGL::mouse_callback(GLFWwindow* window, double xpos, double ypos)
-{	
-	//cameraMain.ProcessMouseMovement(xpos, ypos);
+void OpenGL::ScrollCallBack(GLFWwindow* window, double xoffset, double yoffset)
+{
+	g_input->ProcessScroll(xoffset, yoffset);
 }
 
-void OpenGL::scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
-{
-	//cameraMain.ProcessMouseScroll(yoffset);
-}
+
 

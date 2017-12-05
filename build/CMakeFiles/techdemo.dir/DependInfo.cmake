@@ -22,6 +22,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/sebru_000/Desktop/Engine/source/Component.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Component.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/DirectionalLight.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/DirectionalLight.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/GameObject.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/GameObject.cpp.obj"
+  "C:/Users/sebru_000/Desktop/Engine/source/Input.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Input.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/Light.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Light.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/LightManager.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/LightManager.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/Material.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Material.cpp.obj"

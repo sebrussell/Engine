@@ -10,13 +10,14 @@
 #include "Camera.h"
 #include "Renderer.h"
 #include "Shader.h"
+#include "Input.h"
+
 
 int SceneManager::Awake()
 {
 	m_openGL = std::make_shared<OpenGL>();
 	m_openGL->Setup(800, 600);
 	
-
 	m_maxViewDistance = 500.0f;
 	m_minViewDistance = 0.1f;
 		
@@ -57,15 +58,20 @@ std::weak_ptr<GameObject> SceneManager::CreateGameObject()
 
 void SceneManager::Update()
 {
-	m_cameraManager->ShadowPass();
+	m_cameraManager->m_shadowCamera.lock()->DrawShadowBuffer();
 	
-	
-	for(int i = 0; i < m_gameObjects.size(); i++)
+	for(int i = 0; i < m_cameraManager->GetSpotLightSize(); i++)
 	{
-		if(m_gameObjects.at(i)->m_renderer)
+		m_cameraManager->ShadowPass(i);
+	
+	
+		for(int i = 0; i < m_gameObjects.size(); i++)
 		{
-			m_gameObjects.at(i)->m_renderer->ShadowDraw(m_cameraManager->m_shadowShader);
-		}		
+			if(m_gameObjects.at(i)->m_renderer && !m_gameObjects.at(i)->m_transparent)
+			{
+				m_gameObjects.at(i)->m_renderer->ShadowDraw(m_cameraManager->m_shadowShader);
+			}		
+		}
 	}	
 	
 	//// DRAW NORMALLY

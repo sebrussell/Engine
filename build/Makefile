@@ -284,6 +284,33 @@ source/GameObject.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/GameObject.cpp.s
 .PHONY : source/GameObject.cpp.s
 
+source/Input.obj: source/Input.cpp.obj
+
+.PHONY : source/Input.obj
+
+# target to build an object file
+source/Input.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Input.cpp.obj
+.PHONY : source/Input.cpp.obj
+
+source/Input.i: source/Input.cpp.i
+
+.PHONY : source/Input.i
+
+# target to preprocess a source file
+source/Input.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Input.cpp.i
+.PHONY : source/Input.cpp.i
+
+source/Input.s: source/Input.cpp.s
+
+.PHONY : source/Input.s
+
+# target to generate assembly for a file
+source/Input.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Input.cpp.s
+.PHONY : source/Input.cpp.s
+
 source/Light.obj: source/Light.cpp.obj
 
 .PHONY : source/Light.obj
@@ -689,6 +716,9 @@ help:
 	@echo ... source/GameObject.obj
 	@echo ... source/GameObject.i
 	@echo ... source/GameObject.s
+	@echo ... source/Input.obj
+	@echo ... source/Input.i
+	@echo ... source/Input.s
 	@echo ... source/Light.obj
 	@echo ... source/Light.i
 	@echo ... source/Light.s

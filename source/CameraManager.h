@@ -13,6 +13,7 @@ class SceneManager;
 class GameObject;
 class Renderer;
 class Shader;
+class Transform;
 
 class CameraManager
 {
@@ -23,19 +24,20 @@ class CameraManager
 		void SetupPostProcessing();
 		void PostProcessingCall1();
 		void PostProcessingCall2();
-		void ShadowPass();
+		void ShadowPass(int i);
 		void GammaCorrection();
 		void TransparentCall();
 		void SetSceneManager(std::weak_ptr<SceneManager> _sceneManager);
 		void SetMainCamera(std::weak_ptr<Camera> _camera);
 		void SetActiveCamera(std::weak_ptr<Camera> _camera);
 		void AddCamera(std::weak_ptr<Camera> _camera);
+		void AddSpotLight(std::weak_ptr<Transform> _transform);
 		std::weak_ptr<Camera> m_activeCamera;
 		std::weak_ptr<Camera> m_mainCamera;
 		std::weak_ptr<Shader> m_shadowShader;
 		std::weak_ptr<Camera> m_shadowCamera;
 		glm::mat4 lightSpaceMatrix;
-		glm::vec3 lightPos = glm::vec3(0.0f, 4.0f, 0.0f);
+		int GetSpotLightSize();
 	private:
 		std::vector<std::weak_ptr<Camera>> m_cameras;
 		
@@ -52,7 +54,7 @@ class CameraManager
 		
 		std::vector<glm::mat4> shadowTransforms;
 		
-		
+		std::vector<std::weak_ptr<Transform>> m_spotLightTransform;
 		
 		float near_plane = 1.0f;
         float far_plane  = 25.0f;

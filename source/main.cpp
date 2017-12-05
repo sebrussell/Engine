@@ -64,16 +64,27 @@ int main(int argc, char* argv[]) {
 	light.lock()->GetComponent<Renderer>()->Awake();
 	light.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
 	light.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs"));
-	light.lock()->GetComponent<Renderer>()->GetShader().lock()->CreateMatrixBuffer();
-	light.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
 	light.lock()->GetComponent<Renderer>()->m_material->SetColour(glm::vec3(1.0, 1.0, 1.0));
-	light.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 15.0f, -1.0f);
+	light.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 4.0f, 0.0f);
+	sceneManager->m_cameraManager->AddSpotLight(light.lock()->GetComponent<Transform>());
+	light.lock()->m_transparent = true;
+	
+	std::weak_ptr<GameObject> light2 = sceneManager->CreateGameObject();
+	light2.lock()->AddComponent<Renderer>();	
+	light2.lock()->GetComponent<Renderer>()->Awake();
+	light2.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
+	light2.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs"));
+	light2.lock()->GetComponent<Renderer>()->m_material->SetColour(glm::vec3(0.0, 1.0, 1.0));
+	light2.lock()->GetComponent<Transform>()->m_position = glm::vec3(2.0f, 5.0f, 0.0f);
+	sceneManager->m_cameraManager->AddSpotLight(light2.lock()->GetComponent<Transform>());
+	light2.lock()->m_transparent = true;
 	
 	std::weak_ptr<GameObject> dirLight = sceneManager->CreateGameObject();
 	dirLight.lock()->AddComponent<DirectionalLight>();	
 	dirLight.lock()->GetComponent<DirectionalLight>()->Awake();
 	dirLight.lock()->GetComponent<DirectionalLight>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/shadowLightingShader.vs", "..//source/shaders/shadowLightingShader.fs"));
 	dirLight.lock()->GetComponent<DirectionalLight>()->GetShader();
+
 	
 	
 	std::weak_ptr<GameObject> plane = sceneManager->CreateGameObject();
@@ -99,38 +110,49 @@ int main(int argc, char* argv[]) {
 	cubeTwo.lock()->GetComponent<Renderer>()->Awake();
 	cubeTwo.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
 	cubeTwo.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/pointShadow/pointShadowShader.vs", "..//source/shaders/pointShadow/pointShadowShader.fs"));
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("diffuseTexture", 0);
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("depthMap", 1);
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("lightPos", glm::vec3(0.0f, 4.0f, 0.0f));	
+	cubeTwo.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("far_plane", 25.0f);
 	cubeTwo.lock()->GetComponent<Transform>()->m_position = glm::vec3(2.0f, -0.5f, -4.0f);
 	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/wood.jpg", false);
 	cubeTwo.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_cameraManager->m_shadowCamera.lock()->GetFBOTexture(), CubeMap);
 	cubeTwo.lock()->m_transparent = false;
-	/*
+	
 	
 	std::weak_ptr<GameObject> cubeThree = sceneManager->CreateGameObject();
 	cubeThree.lock()->AddComponent<Renderer>();	
 	cubeThree.lock()->GetComponent<Renderer>()->Awake();
 	cubeThree.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
-	cubeThree.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/shadowLightingShader.vs", "..//source/shaders/shadowLightingShader.fs"));
-	cubeThree.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 0.0f, -2.0f);
+	cubeThree.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/pointShadow/pointShadowShader.vs", "..//source/shaders/pointShadow/pointShadowShader.fs"));
+	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
+	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("diffuseTexture", 0);
+	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("depthMap", 1);
+	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("lightPos", glm::vec3(0.0f, 4.0f, 0.0f));	
+	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("far_plane", 25.0f);
+	cubeThree.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 2.0f, -2.0f);
 	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png", false);
-	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg", false);
-	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg", false);
-	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
-	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_cameraManager->m_shadowCamera.lock()->GetFBOTexture());
+	cubeThree.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_cameraManager->m_shadowCamera.lock()->GetFBOTexture(), CubeMap);
 	cubeThree.lock()->m_transparent = false;
+	
 	
 	std::weak_ptr<GameObject> cubeFour = sceneManager->CreateGameObject();
 	cubeFour.lock()->AddComponent<Renderer>();	
 	cubeFour.lock()->GetComponent<Renderer>()->Awake();
 	cubeFour.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
-	cubeFour.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/shadowLightingShader.vs", "..//source/shaders/shadowLightingShader.fs"));
+	cubeFour.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/pointShadow/pointShadowShader.vs", "..//source/shaders/pointShadow/pointShadowShader.fs"));
+	cubeFour.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
+	cubeFour.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("diffuseTexture", 0);
+	cubeFour.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("depthMap", 1);
+	cubeFour.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("lightPos", glm::vec3(0.0f, 4.0f, 0.0f));	
+	cubeFour.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("far_plane", 25.0f);
 	cubeFour.lock()->GetComponent<Transform>()->m_position = glm::vec3(-3.0f, 0.0f, -2.0f);
 	cubeFour.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png", false);
-	cubeFour.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg", false);
-	cubeFour.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg", false);
-	cubeFour.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
-	cubeFour.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_cameraManager->m_shadowCamera.lock()->GetFBOTexture());
+	cubeFour.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_cameraManager->m_shadowCamera.lock()->GetFBOTexture(), CubeMap);
 	cubeFour.lock()->m_transparent = false;
 	
+	/*
 	std::weak_ptr<GameObject> cubeFive = sceneManager->CreateGameObject();
 	cubeFive.lock()->AddComponent<Renderer>();	
 	cubeFive.lock()->GetComponent<Renderer>()->Awake();
@@ -158,7 +180,10 @@ int main(int argc, char* argv[]) {
 		
 		
 		
-		//light.lock()->GetComponent<Transform>()->ChangePosition(glm::vec3(0.00f, 0.001f, 0.0f));
+		light.lock()->GetComponent<Transform>()->ChangePosition(glm::vec3(0.00f, 0.001f, 0.0f));
+		light2.lock()->GetComponent<Transform>()->ChangePosition(glm::vec3(0.001f, 0.000f, 0.0f));
+		
+		cubeFour.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("lightPos", light.lock()->GetComponent<Transform>()->m_position);	
 		//sceneManager->m_cameraManager->lightPos = light.lock()->GetComponent<Transform>()->m_position;
 		
 		//plane.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();

@@ -37,6 +37,7 @@ add_executable(techdemo
 	source/LightManager.cpp
 	source/Light.cpp
 	source/DirectionalLight.cpp
+	source/Input.cpp
 )
 
 target_link_libraries(techdemo assimp glfw3) 

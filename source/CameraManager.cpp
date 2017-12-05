@@ -37,8 +37,17 @@ int CameraManager::Awake()
 	m_shadowCamera = camera4.lock()->AddComponent<Camera>();
 	camera4.lock()->m_shouldUpdate = false;
 
-
 	return 0;	
+}
+
+void CameraManager::AddSpotLight(std::weak_ptr<Transform> _transform)
+{
+	m_spotLightTransform.push_back(_transform);
+}
+
+int CameraManager::GetSpotLightSize()
+{
+	return m_spotLightTransform.size();
 }
 
 void CameraManager::SetSceneManager(std::weak_ptr<SceneManager> _sceneManager)
@@ -71,13 +80,7 @@ void CameraManager::SetupPostProcessing()
 	m_shadowCamera.lock()->CreateDepthMap(1024, 1024);
 	
 
-        glm::mat4 shadowProj = glm::perspective(glm::radians(90.0f), (float)1024 / (float)1024, near_plane, far_plane);
-        shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 1.0f,  0.0f,  0.0f), glm::vec3(0.0f, -1.0f,  0.0f)));
-        shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(-1.0f,  0.0f,  0.0f), glm::vec3(0.0f, -1.0f,  0.0f)));
-        shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0f,  1.0f,  0.0f), glm::vec3(0.0f,  0.0f,  1.0f)));
-        shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0f, -1.0f,  0.0f), glm::vec3(0.0f,  0.0f, -1.0f)));
-        shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0f,  0.0f,  1.0f), glm::vec3(0.0f, -1.0f,  0.0f)));
-        shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0f,  0.0f, -1.0f), glm::vec3(0.0f, -1.0f,  0.0f)));
+
 
 	m_blurShader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/postProcShader.vs", "..//source/shaders/blankPostShader.fs");
 	m_blurShader.lock()->Use();
@@ -146,11 +149,19 @@ void CameraManager::GammaCorrection()
 }
 
 
-void CameraManager::ShadowPass()
+void CameraManager::ShadowPass(int i)
 {	
-	m_shadowCamera.lock()->DrawShadowBuffer();
-
-
+	glm::vec3 lightPos = m_spotLightTransform.at(i).lock()->m_position;
+	
+	shadowTransforms.clear();
+	glm::mat4 shadowProj = glm::perspective(glm::radians(90.0f), (float)1024 / (float)1024, near_plane, far_plane);
+    shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 1.0f,  0.0f,  0.0f), glm::vec3(0.0f, -1.0f,  0.0f)));
+    shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(-1.0f,  0.0f,  0.0f), glm::vec3(0.0f, -1.0f,  0.0f)));
+    shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0f,  1.0f,  0.0f), glm::vec3(0.0f,  0.0f,  1.0f)));
+    shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0f, -1.0f,  0.0f), glm::vec3(0.0f,  0.0f, -1.0f)));
+    shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0f,  0.0f,  1.0f), glm::vec3(0.0f, -1.0f,  0.0f)));
+    shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0f,  0.0f, -1.0f), glm::vec3(0.0f, -1.0f,  0.0f)));
+	
 	m_shadowShader.lock()->Use();
 	
     for (unsigned int i = 0; i < shadowTransforms.size(); i++)

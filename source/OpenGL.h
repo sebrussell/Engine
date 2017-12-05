@@ -12,6 +12,7 @@
 #include <memory>
 
 class Transform;
+class Input;
 
 class OpenGL
 {
@@ -28,14 +29,15 @@ class OpenGL
 		int GetWindowWidth() { return m_windowWidth; }
 		int GetWindowHeight() { return m_windowHeight; }
 		void SetCameraMainTransform(std::weak_ptr<Transform> _transform);
-		void SetViewPort();
+		void SetViewPort(int _width = m_defaultWindowWidth, int _height = m_defaultWindowHeight);
+		GLFWwindow* GetWindow() { return m_window; }
 		
 		//-------- CALLBACK FUNCTIONS ----------//
-		static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
-		static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-		static void mouse_callback(GLFWwindow* window, double xpos, double ypos);
-		static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
-		static void error_callback(int error, const char* description);
+		static void KeyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods);
+		static void FrameBufferSizeCallBack(GLFWwindow* window, int width, int height);
+		static void MouseCallBack(GLFWwindow* window, double xpos, double ypos);
+		static void ScrollCallBack(GLFWwindow* window, double xoffset, double yoffset);
+		static void ErrorCallBack(int error, const char* description);
 		
 		float m_aspectRatio;
 	private:
@@ -47,7 +49,11 @@ class OpenGL
 		int m_windowWidth;
 		int m_windowHeight;
 		
+		static const int m_defaultWindowWidth = 800;
+		static const int m_defaultWindowHeight = 600;
+		
 		std::weak_ptr<Transform> m_cameraMain;
+		std::weak_ptr<Input> m_input;
 		
 };
 
