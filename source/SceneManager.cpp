@@ -16,6 +16,7 @@
 int SceneManager::Awake()
 {
 	m_openGL = std::make_shared<OpenGL>();
+	m_openGL->SetSceneManager(shared_from_this());
 	m_openGL->Setup(800, 600);
 	
 	m_maxViewDistance = 500.0f;

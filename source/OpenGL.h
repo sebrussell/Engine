@@ -13,6 +13,7 @@
 
 class Transform;
 class Input;
+class SceneManager;
 
 class OpenGL
 {
@@ -30,6 +31,7 @@ class OpenGL
 		int GetWindowHeight() { return m_windowHeight; }
 		void SetCameraMainTransform(std::weak_ptr<Transform> _transform);
 		void SetViewPort(int _width = m_defaultWindowWidth, int _height = m_defaultWindowHeight);
+		void SetSceneManager(std::weak_ptr<SceneManager> _manager);
 		GLFWwindow* GetWindow() { return m_window; }
 		
 		//-------- CALLBACK FUNCTIONS ----------//
@@ -53,7 +55,7 @@ class OpenGL
 		static const int m_defaultWindowHeight = 600;
 		
 		std::weak_ptr<Transform> m_cameraMain;
-		std::weak_ptr<Input> m_input;
+		std::weak_ptr<SceneManager> m_sceneManager;
 		
 };
 

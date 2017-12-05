@@ -1006,6 +1006,7 @@ CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj: ../source/Component.h
 CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj: ../source/Input.h
 CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj: ../source/OpenGL.cpp
 CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj: ../source/OpenGL.h
+CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj: ../source/SceneManager.h
 CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj: ../source/Transform.h
 
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../libraries/glad/include/KHR/khrplatform.h

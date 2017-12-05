@@ -1007,6 +1007,7 @@ CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj
  C:/Users/sebru_000/Desktop/Engine/source/Input.h
  C:/Users/sebru_000/Desktop/Engine/source/OpenGL.cpp
  C:/Users/sebru_000/Desktop/Engine/source/OpenGL.h
+ C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
  C:/Users/sebru_000/Desktop/Engine/source/Transform.h
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj
  ../libraries/glad/include/KHR/khrplatform.h

@@ -19,6 +19,13 @@ void Input::Awake()
 	m_mouseY = 0;
 	m_oldMouseX = 0;
 	m_oldMouseY = 0;
+	
+	m_keysPressed.push_back(NoInput);
+	m_keysPressed.push_back(NoInput);
+	m_keysPressed.push_back(NoInput);
+	m_keysPressed.push_back(NoInput);
+	m_keysPressed.push_back(NoInput);
+	
 }
 
 void Input::SetSceneManager(std::weak_ptr<SceneManager> _sceneManager)
@@ -44,6 +51,40 @@ void Input::ProcessScroll(double _xOffset, double _yOffset)
 	m_scrollY = _yOffset;
 	
 	std::cout << m_scrollY << std::endl;
+}
+
+void Input::ProcessKey(GLFWwindow* m_window)
+{
+	m_keysPressed.at(4) = m_keysPressed.at(3);
+	m_keysPressed.at(3) = m_keysPressed.at(2);
+	m_keysPressed.at(2) = m_keysPressed.at(1);	
+	m_keysPressed.at(1) = m_keysPressed.at(0);	
+	
+	if(glfwGetKey(m_window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	{
+        glfwSetWindowShouldClose(m_window, true);	
+		m_keysPressed.at(0) = ESC;
+	}
+	else if (glfwGetKey(m_window, GLFW_KEY_W) == GLFW_PRESS)
+	{
+        m_keysPressed.at(0) = W;
+	}
+    else if (glfwGetKey(m_window, GLFW_KEY_S) == GLFW_PRESS)
+	{
+         m_keysPressed.at(0) = S;
+	}
+    else if (glfwGetKey(m_window, GLFW_KEY_A) == GLFW_PRESS)
+	{
+        m_keysPressed.at(0) = A;
+	}
+    else if (glfwGetKey(m_window, GLFW_KEY_D) == GLFW_PRESS)
+	{
+        m_keysPressed.at(0) = D;
+	}	
+	else
+	{
+		m_keysPressed.at(0) = NoInput;
+	}
 }
 
 

@@ -1,10 +1,7 @@
 #include "OpenGL.h"
 #include "Transform.h"
 #include "Input.h"
-
-void FrameBufferSizeCallBack(GLFWwindow* window, int width, int height);
-void MouseCallBack(GLFWwindow* window, double xpos, double ypos);
-void ScrollCallBack(GLFWwindow* window, double xoffset, double yoffset);
+#include "SceneManager.h"
 
 std::shared_ptr<Input> g_input;
 
@@ -69,6 +66,8 @@ int OpenGL::Setup(int _windowWidth, int _windowHeight)
 	//glEnable(GL_CULL_FACE); //this SPEEEDS IT UP LOADS - doesnt work with transpare tho
 	*/
    
+	glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);  
+   
 	glfwSetKeyCallback(m_window, KeyCallBack);
 	glfwSetFramebufferSizeCallback(m_window, FrameBufferSizeCallBack);
 	glfwSetCursorPosCallback(m_window, MouseCallBack);  //register mouse callback function
@@ -82,6 +81,7 @@ int OpenGL::Setup(int _windowWidth, int _windowHeight)
 	
 	g_input = std::make_shared<Input>();
 	g_input->Awake();
+	m_sceneManager.lock()->m_input = g_input;
 	
 	std::cout << "OpenGL Setup Completed" << std::endl;
 	return 0;
@@ -111,6 +111,11 @@ void OpenGL::SetCameraMainTransform(std::weak_ptr<Transform> _transform)
 	m_cameraMain = _transform;
 }
 
+void OpenGL::SetSceneManager(std::weak_ptr<SceneManager> _manager)
+{
+	m_sceneManager = _manager;
+}
+
 bool OpenGL::ShouldWindowClose()
 {  
 	float currentFrame = glfwGetTime();
@@ -119,29 +124,8 @@ bool OpenGL::ShouldWindowClose()
 	return !glfwWindowShouldClose(m_window);	
 }
 void OpenGL::ProcessInput()
-{
-	float cameraSpeed = 2.5f * deltaTime; // adjust accordingly
-	
-    if(glfwGetKey(m_window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-	{
-        glfwSetWindowShouldClose(m_window, true);	
-	}
-    if (glfwGetKey(m_window, GLFW_KEY_W) == GLFW_PRESS)
-	{
-        m_cameraMain.lock()->ChangePosition(glm::vec3(0.0f, 0.0f, 0.1f));
-	}
-    if (glfwGetKey(m_window, GLFW_KEY_S) == GLFW_PRESS)
-	{
-         m_cameraMain.lock()->ChangePosition(glm::vec3(0.0f, 0.0f, -0.1f));
-	}
-    if (glfwGetKey(m_window, GLFW_KEY_A) == GLFW_PRESS)
-	{
-        m_cameraMain.lock()->ChangePosition(glm::vec3(0.1f, 0.0f, 0.0f));
-	}
-    if (glfwGetKey(m_window, GLFW_KEY_D) == GLFW_PRESS)
-	{
-        m_cameraMain.lock()->ChangePosition(glm::vec3(-0.1f, 0.0f, 0.0f));
-	}	
+{	
+	g_input->ProcessKey(m_window);
 }
 
 void OpenGL::MouseCallBack(GLFWwindow* window, double xpos, double ypos)
