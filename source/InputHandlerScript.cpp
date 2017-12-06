@@ -16,19 +16,20 @@ void InputHandler::Awake()
 
 void InputHandler::Update()
 {
+	float amount = m_speed; //*delta time
 	switch (m_input.lock()->GetCurrentKey())
 	{
 		case W:
-			m_transform.lock()->ChangePosition(glm::vec3(0.0f, 0.0f, 0.1f));
+			m_transform.lock()->ChangePosition(glm::vec3(amount, 0.0f, 0.0f));
 			break;
 		case S:
-			m_transform.lock()->ChangePosition(glm::vec3(0.0f, 0.0f, -0.1f));
+			m_transform.lock()->ChangePosition(glm::vec3(-amount, 0.0f, 0.0f));
 			break;
 		case D:
-			m_transform.lock()->ChangePosition(glm::vec3(-0.1f, 0.0f, 0.0f));
+			m_transform.lock()->ChangePosition(glm::vec3(0.0f, 0.0f, -amount));
 			break;
 		case A:
-			m_transform.lock()->ChangePosition(glm::vec3(0.1f, 0.0f, 0.0f));
+			m_transform.lock()->ChangePosition(glm::vec3(0.0f, 0.0f, amount));
 			break;
 		default:
 			break;

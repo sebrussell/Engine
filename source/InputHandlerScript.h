@@ -19,7 +19,7 @@ class InputHandler : public Component
 		std::weak_ptr<Transform> m_transform;
 		std::weak_ptr<Input> m_input;
 		float m_mouseSensitivty = 0.1f;
-		
+		float m_speed = 0.1f;
 		double m_mouseXOffset, m_mouseYOffset;
 };
 

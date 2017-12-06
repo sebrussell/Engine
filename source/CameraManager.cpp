@@ -15,9 +15,10 @@ int CameraManager::Awake()
 	m_activeCamera = m_gameObject.lock()->AddComponent<Camera>();
 	m_gameObject.lock()->AddComponent<Transform>();	
 	m_gameObject.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 0.0f, 3.0f);
-	m_gameObject.lock()->AddComponent<InputHandler>();
 	m_mainCamera = m_activeCamera;
-	m_gameObject.lock()->m_shouldUpdate = false;
+	m_gameObject.lock()->AddComponent<InputHandler>();
+	
+	//m_gameObject.lock()->m_shouldUpdate = false;
 	
 	std::weak_ptr<GameObject> m_rendererQuad = m_sceneManager.lock()->CreateGameObject();	
 	m_postProcessingQuad = m_rendererQuad.lock()->AddComponent<Renderer>();	
@@ -84,7 +85,7 @@ void CameraManager::SetupPostProcessing()
 
 
 
-	m_blurShader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/postProcShader.vs", "..//source/shaders/blankPostShader.fs");
+	m_blurShader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/bloomBlur.vs", "..//source/shaders/bloomBlur.fs");
 	m_blurShader.lock()->Use();
 	m_blurShader.lock()->SetInt("screenTexture", 0);
 	
@@ -98,6 +99,14 @@ void CameraManager::SetupPostProcessing()
 	m_gammaShader.lock()->SetInt("screenTexture", 0);
 	m_gammaShader.lock()->SetFloat("gamma", m_gamma);
 	
+	m_bloomShader1 = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/bloomStep1.vs", "..//source/shaders/bloomStep1.fs");
+	m_bloomShader1.lock()->Use();
+	m_bloomShader1.lock()->SetInt("screenTexture", 0);
+	
+	m_bloomShader2 = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/bloomStep2.vs", "..//source/shaders/bloomStep2.fs");
+	m_bloomShader2.lock()->Use();
+	m_bloomShader2.lock()->SetInt("scene", 0);
+	m_bloomShader2.lock()->SetInt("bloomBlur", 1);
 	
 	m_shadowShader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/pointShadow/depthShader.vs", "..//source/shaders/pointShadow/depthShader.fs", "..//source/shaders/pointShadow/depthShader.gs");
 	
@@ -121,18 +130,65 @@ void CameraManager::TransparentCall()
 
 
 void CameraManager::PostProcessingCall2()
-{
-	//m_postProcessing2.lock()->Use(false);
-	//m_postProcessingQuad.lock()->SetShader(m_defaultShader);
-	//m_postProcessingQuad.lock()->m_material->SetTexture(m_postProcessing1.lock()->GetFBOTexture());	
-	//m_postProcessingQuad.lock()->Update();
+{	
+	GammaCorrection();
+	
+	m_postProcessing2.lock()->Use(false);
+	m_postProcessingQuad.lock()->SetShader(m_bloomShader1);
+	m_postProcessingQuad.lock()->m_material->SetTexture(m_gammaCamera.lock()->GetFBOTexture());	
+	m_postProcessingQuad.lock()->Update();
+	
+	bool horizontal = true;
+	int amount = 10;
 
+	for (unsigned int i = 0; i < amount; i++)
+	{
+		if(horizontal)
+		{
+			m_postProcessing1.lock()->Use(false);
+			m_postProcessingQuad.lock()->SetShader(m_blurShader);
+			m_postProcessingQuad.lock()->m_material->SetTexture(m_postProcessing2.lock()->GetFBOTexture());	
+			m_blurShader.lock()->SetInt("horizontal", horizontal);
+			m_postProcessingQuad.lock()->Update();
+		}
+		else
+		{
+			m_postProcessing2.lock()->Use(false);
+			m_postProcessingQuad.lock()->SetShader(m_blurShader);
+			m_postProcessingQuad.lock()->m_material->SetTexture(m_postProcessing1.lock()->GetFBOTexture());	
+			m_blurShader.lock()->SetInt("horizontal", horizontal);
+			m_postProcessingQuad.lock()->Update();
+		}
+
+		horizontal = !horizontal;
+	}
+
+	m_postProcessing1.lock()->Use(false);
+	m_postProcessingQuad.lock()->SetShader(m_blurShader);
+	m_postProcessingQuad.lock()->m_material->SetTexture(m_postProcessing2.lock()->GetFBOTexture());	
+	m_postProcessingQuad.lock()->Update();
+	
+	m_postProcessing2.lock()->Use(false);
+	m_postProcessingQuad.lock()->SetShader(m_bloomShader2);
+	m_postProcessingQuad.lock()->m_material->SetTexture(m_gammaCamera.lock()->GetFBOTexture());
+	m_postProcessingQuad.lock()->m_material->SetTexture(m_postProcessing1.lock()->GetFBOTexture(), 1);		
+	m_postProcessingQuad.lock()->Update();
+	
+	//exposure -= 0.001;
+	
+	m_bloomShader2.lock()->SetFloat("exposure", exposure);
+	
+
+	m_mainCamera.lock()->Use(false);
+	m_postProcessingQuad.lock()->SetShader(m_defaultShader);
+	m_postProcessingQuad.lock()->m_material->SetTexture(m_postProcessing2.lock()->GetFBOTexture());
+	m_postProcessingQuad.lock()->Update();
 	
 	//set main camera
 	//set blank screen shader
 	//set material
 	//draw
-	GammaCorrection();
+	
 }
 
 void CameraManager::GammaCorrection()
@@ -144,10 +200,7 @@ void CameraManager::GammaCorrection()
 	
 	
 		
-	m_mainCamera.lock()->Use(false);
-	m_postProcessingQuad.lock()->SetShader(m_defaultShader);
-	m_postProcessingQuad.lock()->m_material->SetTexture(m_gammaCamera.lock()->GetFBOTexture());
-	m_postProcessingQuad.lock()->Update();
+
 }
 
 

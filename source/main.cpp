@@ -65,20 +65,23 @@ int main(int argc, char* argv[]) {
 	light.lock()->GetComponent<Renderer>()->Awake();
 	light.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
 	light.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs"));
-	light.lock()->GetComponent<Renderer>()->m_material->SetColour(glm::vec3(1.0, 1.0, 1.0));
-	light.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 4.0f, 0.0f);
+	light.lock()->GetComponent<Renderer>()->m_material->SetColour(glm::vec3(0.0, 1.0, 0.0));
+	light.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 3.0f, 1.0f);
+	light.lock()->GetComponent<Transform>()->Awake();
 	sceneManager->m_cameraManager->AddSpotLight(light.lock()->GetComponent<Transform>());
 	light.lock()->m_transparent = true;
+	
 	
 	std::weak_ptr<GameObject> light2 = sceneManager->CreateGameObject();
 	light2.lock()->AddComponent<Renderer>();	
 	light2.lock()->GetComponent<Renderer>()->Awake();
 	light2.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
 	light2.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs"));
-	light2.lock()->GetComponent<Renderer>()->m_material->SetColour(glm::vec3(0.0, 1.0, 1.0));
+	light2.lock()->GetComponent<Renderer>()->m_material->SetColour(glm::vec3(1.0, 1.0, 1.0));
 	light2.lock()->GetComponent<Transform>()->m_position = glm::vec3(2.0f, 5.0f, 0.0f);
 	sceneManager->m_cameraManager->AddSpotLight(light2.lock()->GetComponent<Transform>());
 	light2.lock()->m_transparent = true;
+	
 	
 	std::weak_ptr<GameObject> dirLight = sceneManager->CreateGameObject();
 	dirLight.lock()->AddComponent<DirectionalLight>();	
@@ -88,7 +91,7 @@ int main(int argc, char* argv[]) {
 
 	
 	
-	std::weak_ptr<GameObject> plane = sceneManager->CreateGameObject();
+	std::weak_ptr<GameObject> plane = sceneManager->CreateGameObject();	
 	plane.lock()->AddComponent<Renderer>();	
 	plane.lock()->GetComponent<Renderer>()->Awake();
 	plane.lock()->GetComponent<Renderer>()->SetMesh(PLANE);
@@ -122,6 +125,8 @@ int main(int argc, char* argv[]) {
 	cubeTwo.lock()->m_transparent = false;
 	
 	
+	
+	
 	std::weak_ptr<GameObject> cubeThree = sceneManager->CreateGameObject();
 	cubeThree.lock()->AddComponent<Renderer>();	
 	cubeThree.lock()->GetComponent<Renderer>()->Awake();
@@ -138,6 +143,9 @@ int main(int argc, char* argv[]) {
 	cubeThree.lock()->m_transparent = false;
 	
 	
+	plane.lock()->GetComponent<Transform>()->SetParent(cubeThree.lock()->GetComponent<Transform>());
+	//sceneManager->m_cameraManager->m_mainCamera.lock()->m_transform.lock()->SetParent(cubeThree.lock()->GetComponent<Transform>());
+	
 	std::weak_ptr<GameObject> cubeFour = sceneManager->CreateGameObject();
 	cubeFour.lock()->AddComponent<Renderer>();	
 	cubeFour.lock()->GetComponent<Renderer>()->Awake();
@@ -152,6 +160,8 @@ int main(int argc, char* argv[]) {
 	cubeFour.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png", false);
 	cubeFour.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_cameraManager->m_shadowCamera.lock()->GetFBOTexture(), CubeMap);
 	cubeFour.lock()->m_transparent = false;
+	
+	cubeFour.lock()->GetComponent<Transform>()->SetParent(plane.lock()->GetComponent<Transform>());
 	
 	/*
 	std::weak_ptr<GameObject> cubeFive = sceneManager->CreateGameObject();
@@ -181,17 +191,14 @@ int main(int argc, char* argv[]) {
 		
 		
 		
-		light.lock()->GetComponent<Transform>()->ChangePosition(glm::vec3(0.00f, 0.001f, 0.0f));
-		light2.lock()->GetComponent<Transform>()->ChangePosition(glm::vec3(0.001f, 0.000f, 0.0f));
+		light.lock()->GetComponent<Transform>()->ChangePosition(glm::vec3(0, 0.001f, 0));
+		//light2.lock()->GetComponent<Transform>()->ChangePosition(glm::vec3(0.000f, 0.000f, 0.0f));
 		
 		cubeFour.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("lightPos", light.lock()->GetComponent<Transform>()->m_position);	
 		//sceneManager->m_cameraManager->lightPos = light.lock()->GetComponent<Transform>()->m_position;
 		
 		//plane.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
         //plane.lock()->GetComponent<Renderer>()->GetShader().lock()->SetVec3("viewPos", sceneManager->m_cameraManager->m_mainCamera.lock()->GetPosition());
-		
-		
-		
 		
 		sceneManager->Update();
 		

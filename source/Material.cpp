@@ -114,11 +114,11 @@ void Material::LoadTexture(unsigned int _id, TextureType _type)
 	m_textures.push_back(texture);
 }
 
-void Material::SetTexture(unsigned int _id)
+void Material::SetTexture(unsigned int _id, int _manualID)
 {
-	if(m_textures.size() > 0)
+	if(m_textures.size() > _manualID + 1)
 	{
-		m_textures.at(0).m_id = _id;
+		m_textures.at(_manualID).m_id = _id;
 	}
 	else{
 		LoadTexture(_id, Texture2D);

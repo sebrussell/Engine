@@ -82,6 +82,7 @@ void SceneManager::Update()
 	
 	//m_cameraManager->m_mainCamera.lock()->Use(true);
 	
+	
 	for(int i = 0; i < m_gameObjects.size(); i++)
 	{
 		if(m_gameObjects.at(i)->m_shouldUpdate && !m_gameObjects.at(i)->m_transparent)
@@ -97,13 +98,18 @@ void SceneManager::Update()
 
 	m_skybox->Draw();
 
-	for(int i = m_sorted.size() - 1; i >= 0; i--)
+	
+	if(m_sorted.size() > 0)
 	{
-		if(m_sorted.at(i).lock()->m_shouldUpdate && m_sorted.at(i).lock()->m_transparent)
-		{
-			m_sorted.at(i).lock()->Update();
-		}		
+		for(int i = m_sorted.size() - 1; i >= 0; i--)
+		{		
+			if(m_sorted.at(i).lock()->m_shouldUpdate && m_sorted.at(i).lock()->m_transparent)
+			{				
+				m_sorted.at(i).lock()->Update();
+			}		
+		}
 	}
+	
 
 	//draw instanced gameobjects
 

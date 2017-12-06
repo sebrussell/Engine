@@ -47,7 +47,9 @@ class CameraManager
 		std::weak_ptr<Shader> m_gammaShader;
 		std::weak_ptr<Shader> m_blurShader;
 		std::weak_ptr<Shader> m_defaultShader;
-		std::weak_ptr<Shader> m_depthShader;			
+		std::weak_ptr<Shader> m_depthShader;
+		std::weak_ptr<Shader> m_bloomShader1;		
+		std::weak_ptr<Shader> m_bloomShader2;
 		
 		std::weak_ptr<Camera> m_postProcessing1, m_postProcessing2, m_gammaCamera;
 		std::weak_ptr<Renderer> m_postProcessingQuad;
@@ -58,6 +60,8 @@ class CameraManager
 		
 		float near_plane = 1.0f;
         float far_plane  = 25.0f;
+		
+		float exposure = 1.0f;
 };
 
 #endif

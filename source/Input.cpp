@@ -37,20 +37,12 @@ void Input::ProcessMouse(double _xpos, double _ypos)
 {
 	m_mouseX = _xpos;
 	m_mouseY = _ypos;
-	
-	m_mouseMovementX = m_mouseX - m_oldMouseX;
-	m_mouseMovementY = m_oldMouseY - m_mouseY; // reversed since y-coordinates range from bottom to top
-	
-	m_oldMouseX = m_mouseX;
-	m_oldMouseY = m_mouseY;
 }
 
 void Input::ProcessScroll(double _xOffset, double _yOffset)
 {
 	m_scrollX = _xOffset;
 	m_scrollY = _yOffset;
-	
-	std::cout << m_scrollY << std::endl;
 }
 
 void Input::ProcessKey(GLFWwindow* m_window)
@@ -85,6 +77,12 @@ void Input::ProcessKey(GLFWwindow* m_window)
 	{
 		m_keysPressed.at(0) = NoInput;
 	}
+	
+	m_mouseMovementX = m_mouseX - m_oldMouseX;
+	m_mouseMovementY = m_oldMouseY - m_mouseY; // reversed since y-coordinates range from bottom to top
+	
+	m_oldMouseX = m_mouseX;
+	m_oldMouseY = m_mouseY;
 }
 
 

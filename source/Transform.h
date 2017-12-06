@@ -14,17 +14,17 @@ class Transform : public Component
 		glm::mat4 GetLookAt();
 		glm::vec3 GetPosition();
 		glm::vec3 GetLocalPosition();
+		glm::vec3 GetTransformFront() { return m_front; }
 		void ChangePosition(glm::vec3 _position);
 		void SetLocalPosition(glm::vec3 _position);
 		void SetParent(std::weak_ptr<Transform> _parent);
+		void UpdatePosition(glm::vec3& _position);
 		virtual void Update();
 		virtual void Awake();
 		glm::vec3 m_position;
 		void SetYawAndPitch(float _yaw, float _pitch);
 	private:		
-		float m_pitch =  0.0f;
-		float m_roll =  0.0f;
-		float m_yaw = -90.0f;
+		glm::vec3 m_rotation;
 		
 		glm::vec3 m_localPosition;
 		glm::vec3 m_front;
