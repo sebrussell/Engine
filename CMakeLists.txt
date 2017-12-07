@@ -7,11 +7,13 @@ include_directories(
 	${PROJECT_SOURCE_DIR}/libraries/glfw/include
 	${PROJECT_SOURCE_DIR}/libraries/glad/include
 	${PROJECT_SOURCE_DIR}/libraries/assimp/include
+	${PROJECT_SOURCE_DIR}/libraries/freetype/include
 )
 
 link_directories(
 	${PROJECT_SOURCE_DIR}/libraries/assimp/lib
 	${PROJECT_SOURCE_DIR}/libraries/glfw/lib
+	${PROJECT_SOURCE_DIR}/libraries/freetype/lib
 )
 
 SET(CMAKE_CXX_FLAGS "-std=c++11")
@@ -39,9 +41,10 @@ add_executable(techdemo
 	source/DirectionalLight.cpp
 	source/Input.cpp
 	source/InputHandlerScript.cpp
+	source/TextWriter.cpp
 )
 
-target_link_libraries(techdemo assimp glfw3) 
+target_link_libraries(techdemo assimp glfw3 libfreetype) 
 
 
 

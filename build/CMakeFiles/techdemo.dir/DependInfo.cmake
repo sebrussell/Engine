@@ -15,6 +15,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../libraries/glfw/include"
   "../libraries/glad/include"
   "../libraries/assimp/include"
+  "../libraries/freetype/include"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/sebru_000/Desktop/Engine/source/Camera.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Camera.cpp.obj"
@@ -35,6 +36,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/sebru_000/Desktop/Engine/source/Shader.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Shader.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/ShaderManager.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/ShaderManager.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/Skybox.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Skybox.cpp.obj"
+  "C:/Users/sebru_000/Desktop/Engine/source/TextWriter.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/Transform.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Transform.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/main.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/main.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/stb_image.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/stb_image.cpp.obj"
@@ -47,6 +49,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../libraries/glfw/include"
   "../libraries/glad/include"
   "../libraries/assimp/include"
+  "../libraries/freetype/include"
   )
 
 # Targets to which this target links.

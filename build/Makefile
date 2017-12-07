@@ -635,6 +635,33 @@ source/Skybox.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Skybox.cpp.s
 .PHONY : source/Skybox.cpp.s
 
+source/TextWriter.obj: source/TextWriter.cpp.obj
+
+.PHONY : source/TextWriter.obj
+
+# target to build an object file
+source/TextWriter.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj
+.PHONY : source/TextWriter.cpp.obj
+
+source/TextWriter.i: source/TextWriter.cpp.i
+
+.PHONY : source/TextWriter.i
+
+# target to preprocess a source file
+source/TextWriter.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/TextWriter.cpp.i
+.PHONY : source/TextWriter.cpp.i
+
+source/TextWriter.s: source/TextWriter.cpp.s
+
+.PHONY : source/TextWriter.s
+
+# target to generate assembly for a file
+source/TextWriter.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/TextWriter.cpp.s
+.PHONY : source/TextWriter.cpp.s
+
 source/Transform.obj: source/Transform.cpp.obj
 
 .PHONY : source/Transform.obj
@@ -782,6 +809,9 @@ help:
 	@echo ... source/Skybox.obj
 	@echo ... source/Skybox.i
 	@echo ... source/Skybox.s
+	@echo ... source/TextWriter.obj
+	@echo ... source/TextWriter.i
+	@echo ... source/TextWriter.s
 	@echo ... source/Transform.obj
 	@echo ... source/Transform.i
 	@echo ... source/Transform.s

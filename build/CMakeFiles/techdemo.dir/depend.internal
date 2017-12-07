@@ -1687,6 +1687,11 @@ CMakeFiles/techdemo.dir/source/Skybox.cpp.obj
  C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
  C:/Users/sebru_000/Desktop/Engine/source/Transform.h
  C:/Users/sebru_000/Desktop/Engine/source/stb_image.h
+CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj
+ ../libraries/freetype/include/freetype/config/ftheader.h
+ ../libraries/freetype/include/ft2build.h
+ C:/Users/sebru_000/Desktop/Engine/source/TextWriter.cpp
+ C:/Users/sebru_000/Desktop/Engine/source/TextWriter.h
 CMakeFiles/techdemo.dir/source/Transform.cpp.obj
  ../libraries/glad/include/KHR/khrplatform.h
  ../libraries/glad/include/glad/glad.h

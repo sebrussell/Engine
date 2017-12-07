@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+../libraries/freetype/include/freetype/config/ftheader.h
+
+../libraries/freetype/include/ft2build.h
+freetype/config/ftheader.h
+-
+
 ../libraries/glad/include/KHR/khrplatform.h
 stdint.h
 -
@@ -1270,6 +1276,16 @@ C:/Users/sebru_000/Desktop/Engine/source/stb_image.h
 memory
 -
 vector
+-
+iostream
+-
+
+C:/Users/sebru_000/Desktop/Engine/source/TextWriter.cpp
+TextWriter.h
+C:/Users/sebru_000/Desktop/Engine/source/TextWriter.h
+
+C:/Users/sebru_000/Desktop/Engine/source/TextWriter.h
+ft2build.h
 -
 iostream
 -

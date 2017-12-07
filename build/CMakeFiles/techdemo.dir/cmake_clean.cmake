@@ -21,6 +21,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/techdemo.dir/source/DirectionalLight.cpp.obj"
   "CMakeFiles/techdemo.dir/source/Input.cpp.obj"
   "CMakeFiles/techdemo.dir/source/InputHandlerScript.cpp.obj"
+  "CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj"
   "techdemo.pdb"
   "techdemo.exe"
   "techdemo.exe.manifest"
