@@ -11,6 +11,7 @@
 #include "Renderer.h"
 #include "Shader.h"
 #include "Input.h"
+#include "TextWriter.h"
 
 
 int SceneManager::Awake()
@@ -37,6 +38,8 @@ int SceneManager::Awake()
 	m_skybox->Awake();
 	m_skybox->SetShader(m_shaderManager->AddShader("..//source/shaders/skyboxShader.vs", "..//source/shaders/skyboxShader.fs"));
 	
+	m_textWriter = std::make_shared<Text>();
+	m_textWriter->Awake();
 	
 	for(int i = 0; i < m_gameObjects.size(); i++)
 	{		

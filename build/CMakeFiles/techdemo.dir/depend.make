@@ -1343,6 +1343,7 @@ CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../libraries/glm/glm/vec2.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../libraries/glm/glm/vec3.hpp
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../libraries/glm/glm/vec4.hpp
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../libraries/glm/glm/vector_relational.hpp
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../libraries/stb/stb_truetype.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Camera.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/CameraManager.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Component.h
@@ -1356,6 +1357,7 @@ CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/SceneManager.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Shader.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/ShaderManager.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Skybox.h
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/TextWriter.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Transform.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/stb_image.h
 
@@ -1687,8 +1689,10 @@ CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../source/Skybox.h
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../source/Transform.h
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../source/stb_image.h
 
-CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../libraries/freetype/include/freetype/config/ftheader.h
-CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../libraries/freetype/include/ft2build.h
+CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../libraries/glad/include/KHR/khrplatform.h
+CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../libraries/glad/include/glad/glad.h
+CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../libraries/glfw/include/GLFW/glfw3.h
+CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../libraries/stb/stb_truetype.h
 CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../source/TextWriter.cpp
 CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../source/TextWriter.h
 

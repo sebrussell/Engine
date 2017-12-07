@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/sebru_000/Desktop/Engine/libraries/glad/src/glad.c" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.obj"
+  "W:/C++/Engine/libraries/glad/src/glad.c" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/libraries/glad/src/glad.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -15,31 +15,31 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../libraries/glfw/include"
   "../libraries/glad/include"
   "../libraries/assimp/include"
-  "../libraries/freetype/include"
+  "../libraries/stb"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/sebru_000/Desktop/Engine/source/Camera.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Camera.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/CameraManager.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/Component.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Component.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/DirectionalLight.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/DirectionalLight.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/GameObject.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/GameObject.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/Input.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Input.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/InputHandlerScript.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/InputHandlerScript.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/Light.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Light.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/LightManager.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/LightManager.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/Material.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Material.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/Mesh.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Mesh.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/MeshManager.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/OpenGL.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/Renderer.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Renderer.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/SceneManager.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/Shader.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Shader.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/ShaderManager.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/ShaderManager.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/Skybox.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Skybox.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/TextWriter.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/Transform.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Transform.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/main.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/main.cpp.obj"
-  "C:/Users/sebru_000/Desktop/Engine/source/stb_image.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/stb_image.cpp.obj"
+  "W:/C++/Engine/source/Camera.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/Camera.cpp.obj"
+  "W:/C++/Engine/source/CameraManager.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj"
+  "W:/C++/Engine/source/Component.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/Component.cpp.obj"
+  "W:/C++/Engine/source/DirectionalLight.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/DirectionalLight.cpp.obj"
+  "W:/C++/Engine/source/GameObject.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/GameObject.cpp.obj"
+  "W:/C++/Engine/source/Input.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/Input.cpp.obj"
+  "W:/C++/Engine/source/InputHandlerScript.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/InputHandlerScript.cpp.obj"
+  "W:/C++/Engine/source/Light.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/Light.cpp.obj"
+  "W:/C++/Engine/source/LightManager.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/LightManager.cpp.obj"
+  "W:/C++/Engine/source/Material.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/Material.cpp.obj"
+  "W:/C++/Engine/source/Mesh.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/Mesh.cpp.obj"
+  "W:/C++/Engine/source/MeshManager.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj"
+  "W:/C++/Engine/source/OpenGL.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj"
+  "W:/C++/Engine/source/Renderer.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/Renderer.cpp.obj"
+  "W:/C++/Engine/source/SceneManager.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj"
+  "W:/C++/Engine/source/Shader.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/Shader.cpp.obj"
+  "W:/C++/Engine/source/ShaderManager.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/ShaderManager.cpp.obj"
+  "W:/C++/Engine/source/Skybox.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/Skybox.cpp.obj"
+  "W:/C++/Engine/source/TextWriter.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj"
+  "W:/C++/Engine/source/Transform.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/Transform.cpp.obj"
+  "W:/C++/Engine/source/main.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/main.cpp.obj"
+  "W:/C++/Engine/source/stb_image.cpp" "W:/C++/Engine/build/CMakeFiles/techdemo.dir/source/stb_image.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -49,7 +49,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../libraries/glfw/include"
   "../libraries/glad/include"
   "../libraries/assimp/include"
-  "../libraries/freetype/include"
+  "../libraries/stb"
   )
 
 # Targets to which this target links.

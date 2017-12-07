@@ -12,6 +12,7 @@ class GameObject;
 class ShaderManager;
 class MeshManager;
 class Input;
+class Text;
 
 
 
@@ -30,6 +31,7 @@ class SceneManager : public std::enable_shared_from_this<SceneManager>
 		std::shared_ptr<OpenGL> m_openGL;
 		std::shared_ptr<MeshManager> m_meshManager;
 		std::shared_ptr<ShaderManager> m_shaderManager;
+		std::shared_ptr<Text> m_textWriter;
 		std::shared_ptr<Input> m_input;
 		float m_maxViewDistance, m_minViewDistance;
 	private:
