@@ -54,5 +54,5 @@ void Text::Write(float x, float y, char *text)
       }
       ++text;
    }
-   glEnd();
+   //glEnd();
 }

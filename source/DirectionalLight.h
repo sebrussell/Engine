@@ -1,4 +1,5 @@
 #include "Light.h"
+#include "Component.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -11,6 +12,11 @@ class DirectionalLight : public Light
 		DirectionalLight(glm::vec3 _direction, glm::vec3 _ambient, glm::vec3 _diffuse, glm::vec3 _specular);
 		~DirectionalLight();
 		virtual void Update();
+		virtual void Awake();
 	private:	
-		glm::vec3 m_ambient, m_diffuse, m_specular, m_direction;
+		glm::vec3 m_direction;
+  
+		glm::vec3 m_ambient;
+		glm::vec3 m_diffuse;
+		glm::vec3 m_specular;
 };

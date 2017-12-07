@@ -26,10 +26,10 @@ void InputHandler::Update()
 			m_transform.lock()->ChangePosition(glm::vec3(-amount, 0.0f, 0.0f));
 			break;
 		case D:
-			m_transform.lock()->ChangePosition(glm::vec3(0.0f, 0.0f, -amount));
+			m_transform.lock()->ChangePosition(glm::vec3(0.0f, 0.0f, amount));
 			break;
 		case A:
-			m_transform.lock()->ChangePosition(glm::vec3(0.0f, 0.0f, amount));
+			m_transform.lock()->ChangePosition(glm::vec3(0.0f, 0.0f, -amount));
 			break;
 		default:
 			break;

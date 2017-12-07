@@ -12,6 +12,7 @@
 #include "Shader.h"
 #include "Input.h"
 #include "TextWriter.h"
+#include "LightManager.h"
 
 
 int SceneManager::Awake()
@@ -27,6 +28,7 @@ int SceneManager::Awake()
 	m_cameraManager->SetSceneManager(shared_from_this());
 	m_cameraManager->Awake();
 	
+	m_lightManager = std::make_shared<LightManager>();
 	
 	m_meshManager = std::make_shared<MeshManager>();
 	

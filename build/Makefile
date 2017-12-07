@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = W:\Compilers\cmake\bin\cmake.exe
+CMAKE_COMMAND = C:\Users\sebru_000\Desktop\Compilers\cmake\bin\cmake.exe
 
 # The command to remove a file.
-RM = W:\Compilers\cmake\bin\cmake.exe -E remove -f
+RM = C:\Users\sebru_000\Desktop\Compilers\cmake\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = W:\C++\Engine
+CMAKE_SOURCE_DIR = C:\Users\sebru_000\Desktop\Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = W:\C++\Engine\build
+CMAKE_BINARY_DIR = C:\Users\sebru_000\Desktop\Engine\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = W:\C++\Engine\build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	W:\Compilers\cmake\bin\cmake-gui.exe -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:\Users\sebru_000\Desktop\Compilers\cmake\bin\cmake-gui.exe -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	W:\Compilers\cmake\bin\cmake.exe -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:\Users\sebru_000\Desktop\Compilers\cmake\bin\cmake.exe -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start W:\C++\Engine\build\CMakeFiles W:\C++\Engine\build\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start W:\C++\Engine\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -500,6 +500,33 @@ source/OpenGL.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/OpenGL.cpp.s
 .PHONY : source/OpenGL.cpp.s
 
+source/PointLight.obj: source/PointLight.cpp.obj
+
+.PHONY : source/PointLight.obj
+
+# target to build an object file
+source/PointLight.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/PointLight.cpp.obj
+.PHONY : source/PointLight.cpp.obj
+
+source/PointLight.i: source/PointLight.cpp.i
+
+.PHONY : source/PointLight.i
+
+# target to preprocess a source file
+source/PointLight.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/PointLight.cpp.i
+.PHONY : source/PointLight.cpp.i
+
+source/PointLight.s: source/PointLight.cpp.s
+
+.PHONY : source/PointLight.s
+
+# target to generate assembly for a file
+source/PointLight.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/PointLight.cpp.s
+.PHONY : source/PointLight.cpp.s
+
 source/Renderer.obj: source/Renderer.cpp.obj
 
 .PHONY : source/Renderer.obj
@@ -794,6 +821,9 @@ help:
 	@echo ... source/OpenGL.obj
 	@echo ... source/OpenGL.i
 	@echo ... source/OpenGL.s
+	@echo ... source/PointLight.obj
+	@echo ... source/PointLight.i
+	@echo ... source/PointLight.s
 	@echo ... source/Renderer.obj
 	@echo ... source/Renderer.i
 	@echo ... source/Renderer.s

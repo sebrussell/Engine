@@ -1,5 +1,8 @@
 #include "DirectionalLight.h"
 #include "Shader.h"
+#include "GameObject.h"
+#include "LightManager.h"
+#include "SceneManager.h"
 
 DirectionalLight::DirectionalLight()
 {
@@ -20,6 +23,11 @@ DirectionalLight::DirectionalLight(glm::vec3 _direction, glm::vec3 _ambient, glm
 DirectionalLight::~DirectionalLight()
 {
 };
+
+void DirectionalLight::Awake()
+{
+	m_gameObject.lock()->m_sceneManager.lock()->m_lightManager->SetDirectionalLight(m_gameObject);
+}
 
 void DirectionalLight::Update()
 {

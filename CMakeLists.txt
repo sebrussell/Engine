@@ -41,6 +41,9 @@ add_executable(techdemo
 	source/Input.cpp
 	source/InputHandlerScript.cpp
 	source/TextWriter.cpp
+	source/LightManager.cpp
+	source/DirectionalLight.cpp
+	source/PointLight.cpp
 )
 
 target_link_libraries(techdemo assimp glfw3)
