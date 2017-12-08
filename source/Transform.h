@@ -32,6 +32,7 @@ class Transform : public Component
 		glm::vec3 m_right;
 		glm::vec3 m_worldUp;	
 		std::weak_ptr<Transform> m_parent;
+		bool m_hasParent;
 };
 
 #endif

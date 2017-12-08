@@ -7,6 +7,8 @@ void Transform::Awake()
 	m_front = glm::vec3(0.0f, 0.0f, -1.0f);
 	m_up    = glm::vec3(0.0f, 1.0f,  0.0f);	
 	m_worldUp = m_up;
+	m_parent = std::weak_ptr<Transform>();
+	m_hasParent = false;
 }
 
 void Transform::Update()
@@ -50,13 +52,8 @@ glm::mat4 Transform::GetLookAt()
 }
 
 glm::vec3 Transform::GetPosition()
-{
-	glm::vec3 position;
-	while(!m_parent.expired())
-	{
-		position = m_parent.lock()->GetPosition() + m_localPosition;
-	}
-	return position;
+{		
+	return m_position;	
 }
 
 void Transform::UpdatePosition(glm::vec3& _position)
@@ -89,6 +86,7 @@ void Transform::ChangePosition(glm::vec3 _position)
 
 void Transform::SetParent(std::weak_ptr<Transform> _parent)
 {
+	m_hasParent = true;
 	m_localPosition = m_position - _parent.lock()->m_position;
 	m_parent = _parent;
 }

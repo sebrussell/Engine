@@ -222,18 +222,23 @@ CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../libraries/glm/glm/vec2.
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../libraries/glm/glm/vec3.hpp
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../libraries/glm/glm/vec4.hpp
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../libraries/glm/glm/vector_relational.hpp
+CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../libraries/stb/stb_truetype.h
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/Camera.h
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/CameraManager.cpp
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/CameraManager.h
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/Component.h
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/GameObject.h
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/InputHandlerScript.h
+CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/Light.h
+CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/LightManager.h
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/Material.h
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/MeshManager.h
+CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/PointLight.h
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/Renderer.h
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/SceneManager.h
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/Shader.h
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/ShaderManager.h
+CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/TextWriter.h
 CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj: ../source/Transform.h
 
 CMakeFiles/techdemo.dir/source/Component.cpp.obj: ../libraries/glm/glm/common.hpp
@@ -1572,9 +1577,11 @@ CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/CameraManager.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Component.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/GameObject.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Input.h
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Light.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/LightManager.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/MeshManager.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/OpenGL.h
+CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/PointLight.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/Renderer.h
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/SceneManager.cpp
 CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj: ../source/SceneManager.h
@@ -2018,6 +2025,9 @@ CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../libraries/glm/glm/vec3.hpp
 CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../libraries/glm/glm/vec4.hpp
 CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../libraries/glm/glm/vector_relational.hpp
 CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../libraries/stb/stb_truetype.h
+CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../source/SceneManager.h
+CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../source/Shader.h
+CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../source/ShaderManager.h
 CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../source/TextWriter.cpp
 CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj: ../source/TextWriter.h
 

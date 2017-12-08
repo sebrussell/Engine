@@ -949,6 +949,12 @@ Shader.h
 C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 InputHandlerScript.h
 C:/Users/sebru_000/Desktop/Engine/source/InputHandlerScript.h
+LightManager.h
+C:/Users/sebru_000/Desktop/Engine/source/LightManager.h
+PointLight.h
+C:/Users/sebru_000/Desktop/Engine/source/PointLight.h
+TextWriter.h
+C:/Users/sebru_000/Desktop/Engine/source/TextWriter.h
 
 C:/Users/sebru_000/Desktop/Engine/source/CameraManager.h
 vector
@@ -1271,6 +1277,8 @@ TextWriter.h
 C:/Users/sebru_000/Desktop/Engine/source/TextWriter.h
 LightManager.h
 C:/Users/sebru_000/Desktop/Engine/source/LightManager.h
+PointLight.h
+C:/Users/sebru_000/Desktop/Engine/source/PointLight.h
 
 C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
 vector
@@ -1349,6 +1357,12 @@ iostream
 C:/Users/sebru_000/Desktop/Engine/source/TextWriter.cpp
 TextWriter.h
 C:/Users/sebru_000/Desktop/Engine/source/TextWriter.h
+SceneManager.h
+C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
+ShaderManager.h
+C:/Users/sebru_000/Desktop/Engine/source/ShaderManager.h
+Shader.h
+C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 
 C:/Users/sebru_000/Desktop/Engine/source/TextWriter.h
 stb_truetype.h
@@ -1358,6 +1372,8 @@ iostream
 stdio.h
 -
 vector
+-
+memory
 -
 glad/glad.h
 -

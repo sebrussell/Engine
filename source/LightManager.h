@@ -19,6 +19,7 @@ class LightManager
 		int Awake();
 		void AddPointLight(std::weak_ptr<GameObject> _light);
 		void SetDirectionalLight(std::weak_ptr<GameObject> _light);
+		std::vector<std::weak_ptr<PointLight>> GetPointLights();
 	private:
 		std::weak_ptr<SceneManager> m_sceneManager;
 		std::vector<std::weak_ptr<PointLight>> m_pointLights;		

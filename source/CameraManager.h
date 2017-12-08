@@ -31,13 +31,12 @@ class CameraManager
 		void SetMainCamera(std::weak_ptr<Camera> _camera);
 		void SetActiveCamera(std::weak_ptr<Camera> _camera);
 		void AddCamera(std::weak_ptr<Camera> _camera);
-		void AddSpotLight(std::weak_ptr<Transform> _transform);
 		std::weak_ptr<Camera> m_activeCamera;
 		std::weak_ptr<Camera> m_mainCamera;
 		std::weak_ptr<Shader> m_shadowShader;
 		std::weak_ptr<Camera> m_shadowCamera;
 		glm::mat4 lightSpaceMatrix;
-		int GetSpotLightSize();
+
 	private:
 		std::vector<std::weak_ptr<Camera>> m_cameras;
 		
@@ -55,8 +54,6 @@ class CameraManager
 		std::weak_ptr<Renderer> m_postProcessingQuad;
 		
 		std::vector<glm::mat4> shadowTransforms;
-		
-		std::vector<std::weak_ptr<Transform>> m_spotLightTransform;
 		
 		float near_plane = 1.0f;
         float far_plane  = 25.0f;

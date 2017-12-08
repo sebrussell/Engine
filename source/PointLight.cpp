@@ -58,6 +58,6 @@ void PointLight::Awake()
     m_diffuse = glm::vec3(0.8f, 0.8f, 0.8f);
     m_specular = glm::vec3(1.0f, 1.0f, 1.0f);
     m_constant = 1.0f;
-    m_linear = 0.09;
+    m_linear = 0.02;
     m_quadratic = 0.032;
 }

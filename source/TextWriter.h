@@ -7,6 +7,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <vector>
+#include <memory>
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -15,10 +16,14 @@
 #include <glm/gtc/type_ptr.hpp>
 
 class GameObject;
+class Shader;
+class SceneManager;
+
 
 struct TextQuadCoordinates
 {
-	glm::vec3 position, texCoordinate;
+	float position[3];
+	float texCoordinate[2];
 };
 
 
@@ -27,15 +32,24 @@ class Text
 	public:
 		Text();
 		~Text();
+		void SetSceneManager(std::weak_ptr<SceneManager> _sceneManager);
 		void Awake();
 		void Write(float x, float y, char *text);
-	
+		unsigned int GetTexture() { return ftex; }	
+		void Draw();
 	private:
 		unsigned char ttf_buffer[1<<20];
 		unsigned char temp_bitmap[512*512];
 		stbtt_bakedchar cdata[96]; // ASCII 32..126 is 95 glyphs
-		GLuint ftex;
+		unsigned int ftex;
 		std::vector<TextQuadCoordinates> m_position;
+		std::weak_ptr<Shader> m_shader;
+		std::weak_ptr<SceneManager> m_sceneManager;
+		void MakeQuad(std::vector<TextQuadCoordinates> m_position, int amount);
+		
+		//testing
+		int m_amountOfVertices;
+		unsigned int VAO, VBO, EBO;
 };
 
 #endif

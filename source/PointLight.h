@@ -19,6 +19,7 @@ class PointLight : public Light
 		virtual void Awake();
 		virtual void Update();
 		void SetLightNumber(int _number) { m_lightNumber = _number; }
+		std::weak_ptr<Transform> m_transform;
 	private:
     
 		float m_constant;
@@ -29,7 +30,7 @@ class PointLight : public Light
 		glm::vec3 m_diffuse;
 		glm::vec3 m_specular;
 		
-		std::weak_ptr<Transform> m_transform;
+		
 
 		int m_lightNumber = 0;
 };

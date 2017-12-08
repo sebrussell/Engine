@@ -8,6 +8,9 @@
 #include "ShaderManager.h"
 #include "Shader.h"
 #include "InputHandlerScript.h"
+#include "LightManager.h"
+#include "PointLight.h"
+#include "TextWriter.h"
 
 int CameraManager::Awake()
 {
@@ -41,16 +44,6 @@ int CameraManager::Awake()
 	camera4.lock()->m_shouldUpdate = false;
 
 	return 0;	
-}
-
-void CameraManager::AddSpotLight(std::weak_ptr<Transform> _transform)
-{
-	m_spotLightTransform.push_back(_transform);
-}
-
-int CameraManager::GetSpotLightSize()
-{
-	return m_spotLightTransform.size();
 }
 
 void CameraManager::SetSceneManager(std::weak_ptr<SceneManager> _sceneManager)
@@ -206,7 +199,7 @@ void CameraManager::GammaCorrection()
 
 void CameraManager::ShadowPass(int i)
 {	
-	glm::vec3 lightPos = m_spotLightTransform.at(i).lock()->m_position;
+	glm::vec3 lightPos = m_sceneManager.lock()->m_lightManager->GetPointLights().at(i).lock()->m_transform.lock()->GetPosition();
 	
 	shadowTransforms.clear();
 	glm::mat4 shadowProj = glm::perspective(glm::radians(90.0f), (float)1024 / (float)1024, near_plane, far_plane);

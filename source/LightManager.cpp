@@ -24,3 +24,8 @@ void LightManager::SetDirectionalLight(std::weak_ptr<GameObject> _light)
 	m_directionalLight = _light.lock()->GetComponent<DirectionalLight>();
 }
 
+std::vector<std::weak_ptr<PointLight>> LightManager::GetPointLights()
+{
+	return m_pointLights;
+}
+

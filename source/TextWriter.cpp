@@ -1,4 +1,7 @@
 #include "TextWriter.h"
+#include "SceneManager.h"
+#include "ShaderManager.h"
+#include "Shader.h"
 
 Text::Text()
 {
@@ -8,6 +11,11 @@ Text::Text()
 Text::~Text()
 {
 	
+}
+
+void Text::SetSceneManager(std::weak_ptr<SceneManager> _sceneManager)
+{
+	m_sceneManager = _sceneManager;
 }
 
 void Text::Awake()
@@ -20,6 +28,10 @@ void Text::Awake()
    glTexImage2D(GL_TEXTURE_2D, 0, GL_ALPHA, 512,512, 0, GL_ALPHA, GL_UNSIGNED_BYTE, temp_bitmap);
    // can free temp_bitmap at this point
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+   
+   m_shader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/blankPostShader.vs", "..//source/shaders/blankPostShader.fs");
+   m_shader.lock()->Use();
+   m_shader.lock()->SetInt("screenTexture", 0);
 }
 
 void Text::Write(float x, float y, char *text)
@@ -27,32 +39,71 @@ void Text::Write(float x, float y, char *text)
    // assume orthographic projection with units = screen pixels, origin at top left
    glEnable(GL_TEXTURE_2D);
    glBindTexture(GL_TEXTURE_2D, ftex);
+   
+   int count = 0;
 
    while (*text) {
       if (*text >= 32 && *text < 128) {
          stbtt_aligned_quad q;
          stbtt_GetBakedQuad(cdata, 512,512, *text-32, &x,&y,&q,1);//1=opengl & d3d10+,0=d3d9
+		 
 		 TextQuadCoordinates temp;
 		 
-		 temp.position = glm::vec3(q.x0, q.y0, 0.0f);
-		 temp.texCoordinate = glm::vec3(q.s0,q.t1, 0.0f);
+		 temp.position[0] = q.x0;
+		 temp.position[1] = q.y0;
+		 temp.position[2] = 0.0f;
+		 
+		 temp.texCoordinate[0] = q.s0;
+		 temp.texCoordinate[1] = q.t1;
+
 		 m_position.push_back(temp);
 
 		 
 		 temp.position = glm::vec3(q.x1, q.y0, 0.0f);
-		 temp.texCoordinate = glm::vec3(q.s1,q.t1, 0.0f);
+		 temp.texCoordinate = glm::vec2(q.s1,q.t1);
 		 m_position.push_back(temp);
 		 
 		 temp.position = glm::vec3(q.x1, q.y1, 0.0f);
-		 temp.texCoordinate = glm::vec3(q.s1,q.t0, 0.0f);
+		 temp.texCoordinate = glm::vec2(q.s1,q.t0);
 		 m_position.push_back(temp);
 		 
 		 temp.position = glm::vec3(q.x0, q.y1, 0.0f);
-		 temp.texCoordinate = glm::vec3(q.s0,q.t0, 0.0f);
+		 temp.texCoordinate = glm::vec2(q.s0,q.t0);
 		 m_position.push_back(temp);
+		 
+		 count += 4;
 
       }
       ++text;
    }
-   //glEnd();
+   
+   MakeQuad(m_position, count); 
+}
+
+void Text::MakeQuad(std::vector<TextQuadCoordinates> m_position, int amount)
+{
+	float* cubeVertices = &m_position[0].position.x;
+	
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    glBindVertexArray(VAO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), &cubeVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+	
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+	
+	m_amountOfVertices = amount;
+}
+
+void Text::Draw()
+{
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, ftex);
+	glBindVertexArray(VAO);
+    glDrawArrays(GL_TRIANGLES, 0, m_amountOfVertices);	
+	glBindVertexArray(0);
+	glActiveTexture(GL_TEXTURE0);
 }

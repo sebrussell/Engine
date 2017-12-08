@@ -12,7 +12,6 @@ uniform sampler2D specularTexture;
 uniform samplerCube depthMap;
 float shininess = 64.0;
 
-uniform vec3 lightPos;
 uniform vec3 viewPos;
 
 uniform float far_plane;
@@ -29,7 +28,7 @@ struct PointLight {
     vec3 diffuse;
     vec3 specular;
 };  
-#define NR_POINT_LIGHTS 1 
+#define NR_POINT_LIGHTS 2 
 uniform PointLight pointLights[NR_POINT_LIGHTS];
 
 struct DirectionalLight {
@@ -52,7 +51,7 @@ vec3 gridSamplingDisk[20] = vec3[]
    vec3(0, 1,  1), vec3( 0, -1,  1), vec3( 0, -1, -1), vec3( 0, 1, -1)
 );
 
-float ShadowCalculation(vec3 fragPos)
+float ShadowCalculation(vec3 fragPos, vec3 lightPos)
 {
     // get vector between fragment position and light position
     vec3 fragToLight = fragPos - lightPos;
@@ -89,32 +88,38 @@ vec4 CalculatePointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewD
 
     float distance    = length(light.position - fragPos);
     float attenuation = 1.0 / (light.constant + light.linear * distance + light.quadratic * (distance * distance));   
+	attenuation = 1.0f;
 	
-
     vec4 ambient = vec4(light.ambient, 1.0) * vec4(texture(diffuseTexture, fs_in.TexCoords));
     vec4 diffuse = vec4(light.diffuse, 1.0) * diff * vec4(texture(diffuseTexture, fs_in.TexCoords));  
 	vec4 specular = vec4(light.specular, 1.0) * spec * (texture(specularTexture, fs_in.TexCoords));
+	
     ambient  *= attenuation;	
     diffuse  *= attenuation * shadow;
-    specular *= attenuation;
-    return (ambient + diffuse + specular);
-	//return ambient;
+    specular *= attenuation * shadow;
+	
+	return (ambient + diffuse + specular);
+	//return (ambient + ((diffuse + specular) * shadow));
+	//return vec4(shadow, shadow, shadow, 1.0);
 } 
 
 void main()
 {    
     vec3 norm = normalize(fs_in.Normal);
 	vec3 viewDir = normalize(viewPos - fs_in.FragPos);
-	float shadow = shadows ? ShadowCalculation(fs_in.FragPos) : 0.0; 
-	shadow = 1.0 - shadow;
+	
+
 	
 	vec4 result;
 	
 	for(int i = 0; i < NR_POINT_LIGHTS; i++)
 	{
-        result += CalculatePointLight(pointLights[i], norm, fs_in.FragPos, viewDir, shadow);  
+		float shadow = shadows ? ShadowCalculation(fs_in.FragPos, pointLights[i].position) : 0.0; 
+		shadow = 1.0 - shadow;
+        result += CalculatePointLight(pointLights[i], norm, fs_in.FragPos, viewDir, shadow); 
+		//result += vec4(shadow, shadow, shadow, 1.0);
 	}
-	
+	result.w = 1.0;
     FragColor = result;
 }
 
