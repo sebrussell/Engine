@@ -1,1 +1,1 @@
--IC:/Users/sebru_000/Desktop/Engine/libraries/glm -IC:/Users/sebru_000/Desktop/Engine/libraries/glfw/include -IC:/Users/sebru_000/Desktop/Engine/libraries/glad/include -IC:/Users/sebru_000/Desktop/Engine/libraries/assimp/include -IC:/Users/sebru_000/Desktop/Engine/libraries/stb 
+-IW:/Engine/libraries/glm -IW:/Engine/libraries/glfw/include -IW:/Engine/libraries/glad/include -IW:/Engine/libraries/assimp/include -IW:/Engine/libraries/stb 

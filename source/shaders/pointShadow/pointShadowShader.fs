@@ -28,7 +28,7 @@ struct PointLight {
     vec3 diffuse;
     vec3 specular;
 };  
-#define NR_POINT_LIGHTS 2 
+#define NR_POINT_LIGHTS 1 
 uniform PointLight pointLights[NR_POINT_LIGHTS];
 
 struct DirectionalLight {
@@ -88,7 +88,6 @@ vec4 CalculatePointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewD
 
     float distance    = length(light.position - fragPos);
     float attenuation = 1.0 / (light.constant + light.linear * distance + light.quadratic * (distance * distance));   
-	attenuation = 1.0f;
 	
     vec4 ambient = vec4(light.ambient, 1.0) * vec4(texture(diffuseTexture, fs_in.TexCoords));
     vec4 diffuse = vec4(light.diffuse, 1.0) * diff * vec4(texture(diffuseTexture, fs_in.TexCoords));  
@@ -98,9 +97,9 @@ vec4 CalculatePointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewD
     diffuse  *= attenuation * shadow;
     specular *= attenuation * shadow;
 	
-	return (ambient + diffuse + specular);
-	//return (ambient + ((diffuse + specular) * shadow));
-	//return vec4(shadow, shadow, shadow, 1.0);
+	//return (ambient + diffuse + specular);
+	
+	return (ambient + ((diffuse + specular) * shadow));
 } 
 
 void main()
@@ -110,14 +109,13 @@ void main()
 	
 
 	
-	vec4 result;
+	vec4 result = vec4(0.0);
 	
 	for(int i = 0; i < NR_POINT_LIGHTS; i++)
 	{
 		float shadow = shadows ? ShadowCalculation(fs_in.FragPos, pointLights[i].position) : 0.0; 
 		shadow = 1.0 - shadow;
         result += CalculatePointLight(pointLights[i], norm, fs_in.FragPos, viewDir, shadow); 
-		//result += vec4(shadow, shadow, shadow, 1.0);
 	}
 	result.w = 1.0;
     FragColor = result;

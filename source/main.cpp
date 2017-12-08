@@ -59,20 +59,21 @@ int main(int argc, char* argv[]) {
 	cubeOne.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_environment.png");
 	cubeOne.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
 	*/
-	
 	/*
+	
 	std::weak_ptr<GameObject> light = sceneManager->CreateGameObject();
 	light.lock()->AddComponent<Renderer>();	
 	light.lock()->GetComponent<Renderer>()->Awake();
 	light.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
 	light.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/defaultShader.vs", "..//source/shaders/defaultShader.fs"));
-	light.lock()->GetComponent<Renderer>()->m_material->SetColour(glm::vec3(0.0, 1.0, 0.0));
+	light.lock()->GetComponent<Renderer>()->m_material->SetColour(glm::vec3(1.0, 1.0, 1.0));
 	light.lock()->GetComponent<Transform>()->Awake();
 	light.lock()->GetComponent<Transform>()->m_position = glm::vec3(1.0f, 1.0f, 1.0f);	
 	light.lock()->AddComponent<PointLight>();
 	light.lock()->GetComponent<PointLight>()->Awake();	
 	light.lock()->m_transparent = true;
 	*/
+	
 
 	std::weak_ptr<GameObject> light2 = sceneManager->CreateGameObject();
 	light2.lock()->AddComponent<Renderer>();	
@@ -85,6 +86,7 @@ int main(int argc, char* argv[]) {
 	light2.lock()->AddComponent<PointLight>();
 	light2.lock()->GetComponent<PointLight>()->Awake();
 	light2.lock()->m_transparent = true;
+	
 
 	//std::weak_ptr<GameObject> dirLight = sceneManager->CreateGameObject();
 	//dirLight.lock()->AddComponent<DirectionalLight>();	
