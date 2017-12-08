@@ -1,7 +1,7 @@
 #ifndef SKYBOX_H
 #define SKYBOX_H
 
-class Mesh;
+class Model;
 class Shader;
 class MeshManager;
 class Transform;
@@ -30,7 +30,7 @@ class Skybox
 	private:
 		std::weak_ptr<MeshManager> m_meshManager;
 		std::weak_ptr<Shader> m_shader;
-		std::weak_ptr<Mesh> m_skyboxMesh;
+		std::weak_ptr<Model> m_skyboxMesh;
 		std::vector<std::string> m_faces;
 		unsigned int m_cubemapTexture;
 		std::weak_ptr<Transform> m_cameraTransform;

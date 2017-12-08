@@ -1123,7 +1123,15 @@ CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj: ../libraries/glfw/include/GL
 CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj: ../source/Mesh.h
 CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj: ../source/MeshManager.cpp
 CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj: ../source/MeshManager.h
+CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj: ../source/Model.h
 CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj: ../source/SceneManager.h
+
+CMakeFiles/techdemo.dir/source/Model.cpp.obj: ../libraries/glad/include/KHR/khrplatform.h
+CMakeFiles/techdemo.dir/source/Model.cpp.obj: ../libraries/glad/include/glad/glad.h
+CMakeFiles/techdemo.dir/source/Model.cpp.obj: ../libraries/glfw/include/GLFW/glfw3.h
+CMakeFiles/techdemo.dir/source/Model.cpp.obj: ../source/Mesh.h
+CMakeFiles/techdemo.dir/source/Model.cpp.obj: ../source/Model.cpp
+CMakeFiles/techdemo.dir/source/Model.cpp.obj: ../source/Model.h
 
 CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj: ../libraries/glad/include/KHR/khrplatform.h
 CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj: ../libraries/glad/include/glad/glad.h
@@ -1459,8 +1467,8 @@ CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/CameraManager.h
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/Component.h
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/GameObject.h
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/Material.h
-CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/Mesh.h
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/MeshManager.h
+CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/Model.h
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/Renderer.cpp
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/Renderer.h
 CMakeFiles/techdemo.dir/source/Renderer.cpp.obj: ../source/SceneManager.h
@@ -1912,8 +1920,8 @@ CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/glm/glm/vec3.hpp
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/glm/glm/vec4.hpp
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../libraries/glm/glm/vector_relational.hpp
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../source/Component.h
-CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../source/Mesh.h
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../source/MeshManager.h
+CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../source/Model.h
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../source/Shader.h
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../source/Skybox.cpp
 CMakeFiles/techdemo.dir/source/Skybox.cpp.obj: ../source/Skybox.h

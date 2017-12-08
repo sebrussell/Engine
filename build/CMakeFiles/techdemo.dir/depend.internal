@@ -1124,7 +1124,15 @@ CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj
  C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
  C:/Users/sebru_000/Desktop/Engine/source/MeshManager.cpp
  C:/Users/sebru_000/Desktop/Engine/source/MeshManager.h
+ C:/Users/sebru_000/Desktop/Engine/source/Model.h
  C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
+CMakeFiles/techdemo.dir/source/Model.cpp.obj
+ ../libraries/glad/include/KHR/khrplatform.h
+ ../libraries/glad/include/glad/glad.h
+ ../libraries/glfw/include/GLFW/glfw3.h
+ C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
+ C:/Users/sebru_000/Desktop/Engine/source/Model.cpp
+ C:/Users/sebru_000/Desktop/Engine/source/Model.h
 CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj
  ../libraries/glad/include/KHR/khrplatform.h
  ../libraries/glad/include/glad/glad.h
@@ -1460,8 +1468,8 @@ CMakeFiles/techdemo.dir/source/Renderer.cpp.obj
  C:/Users/sebru_000/Desktop/Engine/source/Component.h
  C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
  C:/Users/sebru_000/Desktop/Engine/source/Material.h
- C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
  C:/Users/sebru_000/Desktop/Engine/source/MeshManager.h
+ C:/Users/sebru_000/Desktop/Engine/source/Model.h
  C:/Users/sebru_000/Desktop/Engine/source/Renderer.cpp
  C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
  C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
@@ -1913,8 +1921,8 @@ CMakeFiles/techdemo.dir/source/Skybox.cpp.obj
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
  C:/Users/sebru_000/Desktop/Engine/source/Component.h
- C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
  C:/Users/sebru_000/Desktop/Engine/source/MeshManager.h
+ C:/Users/sebru_000/Desktop/Engine/source/Model.h
  C:/Users/sebru_000/Desktop/Engine/source/Shader.h
  C:/Users/sebru_000/Desktop/Engine/source/Skybox.cpp
  C:/Users/sebru_000/Desktop/Engine/source/Skybox.h

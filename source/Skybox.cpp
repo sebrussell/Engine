@@ -1,12 +1,12 @@
 #include "Skybox.h"
-#include "Mesh.h"
 #include "Shader.h"
 #include "MeshManager.h"
 #include "Transform.h"
+#include "Model.h"
 
 void Skybox::Awake()
 {
-	m_skyboxMesh = m_meshManager.lock()->AddMesh(SKYBOX);
+	m_skyboxMesh = m_meshManager.lock()->AddModel(SKYBOX);
 	m_faces.push_back("..//source/textures/skybox/right.jpg");
 	m_faces.push_back("..//source/textures/skybox/left.jpg");
 	m_faces.push_back("..//source/textures/skybox/top.jpg");

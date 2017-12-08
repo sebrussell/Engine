@@ -30,6 +30,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/sebru_000/Desktop/Engine/source/Material.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Material.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/Mesh.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Mesh.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/MeshManager.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj"
+  "C:/Users/sebru_000/Desktop/Engine/source/Model.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Model.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/OpenGL.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/PointLight.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/PointLight.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/Renderer.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Renderer.cpp.obj"

@@ -473,6 +473,33 @@ source/MeshManager.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/MeshManager.cpp.s
 .PHONY : source/MeshManager.cpp.s
 
+source/Model.obj: source/Model.cpp.obj
+
+.PHONY : source/Model.obj
+
+# target to build an object file
+source/Model.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Model.cpp.obj
+.PHONY : source/Model.cpp.obj
+
+source/Model.i: source/Model.cpp.i
+
+.PHONY : source/Model.i
+
+# target to preprocess a source file
+source/Model.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Model.cpp.i
+.PHONY : source/Model.cpp.i
+
+source/Model.s: source/Model.cpp.s
+
+.PHONY : source/Model.s
+
+# target to generate assembly for a file
+source/Model.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Model.cpp.s
+.PHONY : source/Model.cpp.s
+
 source/OpenGL.obj: source/OpenGL.cpp.obj
 
 .PHONY : source/OpenGL.obj
@@ -818,6 +845,9 @@ help:
 	@echo ... source/MeshManager.obj
 	@echo ... source/MeshManager.i
 	@echo ... source/MeshManager.s
+	@echo ... source/Model.obj
+	@echo ... source/Model.i
+	@echo ... source/Model.s
 	@echo ... source/OpenGL.obj
 	@echo ... source/OpenGL.i
 	@echo ... source/OpenGL.s

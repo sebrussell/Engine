@@ -1,5 +1,5 @@
 #include "Renderer.h"
-#include "Mesh.h"
+#include "Model.h"
 #include "GameObject.h"
 #include "SceneManager.h"
 #include "CameraManager.h"
@@ -21,7 +21,7 @@ Renderer::~Renderer()
 
 void Renderer::SetMesh(Type _type, std::string _path)
 {
-	m_mesh = m_meshManager.lock()->AddMesh(_type, _path);
+	m_model = m_meshManager.lock()->AddModel(_type, _path);
 }
 
 void Renderer::Awake()
@@ -42,7 +42,7 @@ void Renderer::ShadowDraw(std::weak_ptr<Shader> _shader)
 {
 	_shader.lock()->SetMat4("model", m_transform.lock()->GetModelMatrix());
 	//m_material->Apply();
-	m_mesh.lock()->Draw();
+	m_model.lock()->Draw();
 }
 
 void Renderer::Update()
@@ -53,12 +53,7 @@ void Renderer::Update()
 	shader->UpdateMatrix(m_activeCamera.lock()->GetProjectionMatrix(), m_activeCamera.lock()->GetViewMatrix());
 	//apply shader values
 	m_material->Apply();
-	m_mesh.lock()->Draw();
-}
-
-void Renderer::Delete()
-{
-	m_mesh.lock()->Delete();
+	m_model.lock()->Draw();
 }
 
 void Renderer::SetShader(std::weak_ptr<Shader> _shader)

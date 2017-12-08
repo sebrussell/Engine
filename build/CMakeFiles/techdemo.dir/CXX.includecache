@@ -1147,6 +1147,8 @@ MeshManager.h
 C:/Users/sebru_000/Desktop/Engine/source/MeshManager.h
 Mesh.h
 C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
+Model.h
+C:/Users/sebru_000/Desktop/Engine/source/Model.h
 
 C:/Users/sebru_000/Desktop/Engine/source/MeshManager.h
 vector
@@ -1154,6 +1156,20 @@ vector
 memory
 -
 map
+-
+string
+-
+
+C:/Users/sebru_000/Desktop/Engine/source/Model.cpp
+Model.h
+C:/Users/sebru_000/Desktop/Engine/source/Model.h
+Mesh.h
+C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
+
+C:/Users/sebru_000/Desktop/Engine/source/Model.h
+vector
+-
+memory
 -
 string
 -
@@ -1215,8 +1231,8 @@ memory
 C:/Users/sebru_000/Desktop/Engine/source/Renderer.cpp
 Renderer.h
 C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
-Mesh.h
-C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
+Model.h
+C:/Users/sebru_000/Desktop/Engine/source/Model.h
 GameObject.h
 C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
 SceneManager.h
@@ -1331,14 +1347,14 @@ string
 C:/Users/sebru_000/Desktop/Engine/source/Skybox.cpp
 Skybox.h
 C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
-Mesh.h
-C:/Users/sebru_000/Desktop/Engine/source/Mesh.h
 Shader.h
 C:/Users/sebru_000/Desktop/Engine/source/Shader.h
 MeshManager.h
 C:/Users/sebru_000/Desktop/Engine/source/MeshManager.h
 Transform.h
 C:/Users/sebru_000/Desktop/Engine/source/Transform.h
+Model.h
+C:/Users/sebru_000/Desktop/Engine/source/Model.h
 
 C:/Users/sebru_000/Desktop/Engine/source/Skybox.h
 glad/glad.h

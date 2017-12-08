@@ -7,7 +7,7 @@
 #include <string>
 
 class SceneManager;
-class Mesh;
+class Model;
 
 enum Type
 {
@@ -27,10 +27,10 @@ class MeshManager
 		~MeshManager() {};
 		int Awake();
 		void SetSceneManager(std::weak_ptr<SceneManager> _sceneManager);
-		std::weak_ptr<Mesh> AddMesh(Type _type, std::string _path = "");
+		std::weak_ptr<Model> AddModel(Type _type, std::string _path = "");
 	private:
 		std::weak_ptr<SceneManager> m_sceneManager;
-		std::map<std::string, std::shared_ptr<Mesh>> m_meshes;
+		std::map<std::string, std::shared_ptr<Model>> m_models;
 };
 
 #endif

@@ -9,7 +9,7 @@
 #include "MeshManager.h"
 
 class Shader;
-class Mesh;
+class Model;
 class Camera;
 class Material;
 class Transform;
@@ -22,7 +22,6 @@ class Renderer : public Component
 		~Renderer();
 		virtual void Awake();
 		virtual void Update();
-		virtual void Delete();
 		void ShadowDraw(std::weak_ptr<Shader> _shader);
 		void SetShader(std::weak_ptr<Shader> _shader);
 		void SetMesh(Type _type, std::string _path = "");
@@ -31,7 +30,7 @@ class Renderer : public Component
 		std::shared_ptr<Material> m_material;
 		std::weak_ptr<Shader> GetShader();
 		std::weak_ptr<Shader> m_shader;
-		std::weak_ptr<Mesh> m_mesh;	
+		std::weak_ptr<Model> m_model;	
 	private:		
 		std::weak_ptr<MeshManager> m_meshManager;
 			

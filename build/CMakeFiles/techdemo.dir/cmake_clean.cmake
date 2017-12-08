@@ -23,6 +23,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/techdemo.dir/source/InputHandlerScript.cpp.obj"
   "CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj"
   "CMakeFiles/techdemo.dir/source/PointLight.cpp.obj"
+  "CMakeFiles/techdemo.dir/source/Model.cpp.obj"
   "techdemo.pdb"
   "techdemo.exe"
   "techdemo.exe.manifest"
