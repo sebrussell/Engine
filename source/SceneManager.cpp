@@ -93,8 +93,6 @@ void SceneManager::Update()
 	
 	//m_cameraManager->m_mainCamera.lock()->Use(true);
 	
-	m_textWriter->Draw();
-	
 	for(int i = 0; i < m_gameObjects.size(); i++)
 	{
 		if(m_gameObjects.at(i)->m_shouldUpdate && !m_gameObjects.at(i)->m_transparent)
@@ -121,7 +119,9 @@ void SceneManager::Update()
 			it->second.lock()->Update();
 		}
 	}
-	
+
+	m_textWriter->Draw();
+
 
 	//draw instanced gameobjects
 
@@ -133,6 +133,7 @@ void SceneManager::Update()
 	//post processing
 	//enable main camera
 	
+		
 	m_cameraManager->PostProcessingCall2();
 }
 

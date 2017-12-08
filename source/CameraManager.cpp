@@ -170,11 +170,13 @@ void CameraManager::PostProcessingCall2()
 	//exposure -= 0.001;
 	
 	m_bloomShader2.lock()->SetFloat("exposure", exposure);
-	
+
+	//m_sceneManager.lock()->m_textWriter->Draw();
 
 	m_mainCamera.lock()->Use(false);
 	m_postProcessingQuad.lock()->SetShader(m_defaultShader);
 	m_postProcessingQuad.lock()->m_material->SetTexture(m_postProcessing2.lock()->GetFBOTexture());
+	//m_postProcessingQuad.lock()->m_material->SetTexture(m_sceneManager.lock()->m_textWriter->GetTexture());
 	m_postProcessingQuad.lock()->Update();
 	
 	//set main camera

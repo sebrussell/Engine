@@ -2242,6 +2242,7 @@ CMakeFiles/techdemo.dir/source/main.cpp.obj: ../libraries/glm/glm/vec2.hpp
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../libraries/glm/glm/vec3.hpp
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../libraries/glm/glm/vec4.hpp
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../libraries/glm/glm/vector_relational.hpp
+CMakeFiles/techdemo.dir/source/main.cpp.obj: ../libraries/stb/stb_truetype.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Camera.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/CameraManager.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Component.h
@@ -2259,6 +2260,7 @@ CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/SceneManager.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Shader.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/ShaderManager.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Skybox.h
+CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/TextWriter.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/Transform.h
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/main.cpp
 CMakeFiles/techdemo.dir/source/main.cpp.obj: ../source/stb_image.h

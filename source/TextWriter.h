@@ -35,13 +35,13 @@ class Text
 		void SetSceneManager(std::weak_ptr<SceneManager> _sceneManager);
 		void Awake();
 		void Write(float x, float y, char *text);
-		unsigned int GetTexture() { return ftex; }	
+		GLuint GetTexture() { return ftex; }	
 		void Draw();
 	private:
 		unsigned char ttf_buffer[1<<20];
 		unsigned char temp_bitmap[512*512];
 		stbtt_bakedchar cdata[96]; // ASCII 32..126 is 95 glyphs
-		unsigned int ftex;
+		GLuint ftex;
 		std::vector<TextQuadCoordinates> m_position;
 		std::weak_ptr<Shader> m_shader;
 		std::weak_ptr<SceneManager> m_sceneManager;

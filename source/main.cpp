@@ -21,6 +21,7 @@
 #include "Mesh.h"
 #include "InputHandlerScript.h"
 #include "PointLight.h"
+#include "TextWriter.h"
 
 
 #include <glm/glm.hpp>
@@ -174,20 +175,8 @@ int main(int argc, char* argv[]) {
 	
 	cubeFour.lock()->GetComponent<Transform>()->SetParent(plane.lock()->GetComponent<Transform>());
 	
-	/*
-	std::weak_ptr<GameObject> cubeFive = sceneManager->CreateGameObject();
-	cubeFive.lock()->AddComponent<Renderer>();	
-	cubeFive.lock()->GetComponent<Renderer>()->Awake();
-	cubeFive.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
-	cubeFive.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/shadowLightingShader.vs", "..//source/shaders/shadowLightingShader.fs"));
-	cubeFive.lock()->GetComponent<Transform>()->m_position = glm::vec3(-5.0f, 0.0f, -3.0f);
-	cubeFive.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png", false);
-	cubeFive.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg", false);
-	cubeFive.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg", false);
-	cubeFive.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_skybox->GetSkyboxTexture(), CubeMap);
-	cubeFive.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_cameraManager->m_shadowCamera.lock()->GetFBOTexture());
-	cubeFive.lock()->m_transparent = false;
-	*/
+	
+
 	
 	
 	

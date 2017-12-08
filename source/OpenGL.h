@@ -32,6 +32,8 @@ class OpenGL
 		void SetCameraMainTransform(std::weak_ptr<Transform> _transform);
 		void SetViewPort(int _width = m_defaultWindowWidth, int _height = m_defaultWindowHeight);
 		void SetSceneManager(std::weak_ptr<SceneManager> _manager);
+		void SetAlphaFunction();
+		void ResetAlphaFunction();
 		GLFWwindow* GetWindow() { return m_window; }
 		
 		//-------- CALLBACK FUNCTIONS ----------//

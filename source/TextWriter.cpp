@@ -20,7 +20,8 @@ void Text::SetSceneManager(std::weak_ptr<SceneManager> _sceneManager)
 
 void Text::Awake()
 {
-   fread(ttf_buffer, 1, 1<<20, fopen("c:/windows/fonts/times.ttf", "rb"));
+	/*
+   fread(ttf_buffer, 1, 1<<20, fopen("..//source/fonts/Crimson-Bold.ttf", "rb"));
    stbtt_BakeFontBitmap(ttf_buffer,0, 32.0, temp_bitmap,512,512, 32,96, cdata); // no guarantee this fits!
    // can free ttf_buffer at this point
    glGenTextures(1, &ftex);
@@ -28,8 +29,19 @@ void Text::Awake()
    glTexImage2D(GL_TEXTURE_2D, 0, GL_ALPHA, 512,512, 0, GL_ALPHA, GL_UNSIGNED_BYTE, temp_bitmap);
    // can free temp_bitmap at this point
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+   */
    
-   m_shader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/blankPostShader.vs", "..//source/shaders/blankPostShader.fs");
+   fread(ttf_buffer, 1, 1<<20, fopen("c:/windows/fonts/times.ttf", "rb"));
+   stbtt_BakeFontBitmap(ttf_buffer,0, 32.0, temp_bitmap,512,512, 32,96, cdata); // no guarantee this fits!
+   // can free ttf_buffer at this point
+   glGenTextures(1, &ftex);
+   glBindTexture(GL_TEXTURE_2D, ftex);
+   glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, 512,512, 0, GL_RED, GL_UNSIGNED_BYTE, temp_bitmap);
+
+   // can free temp_bitmap at this point
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+   
+   m_shader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/textShaderUI.vs", "..//source/shaders/textShaderUI.fs");
    m_shader.lock()->Use();
    m_shader.lock()->SetInt("screenTexture", 0);
 }
@@ -50,38 +62,122 @@ void Text::Write(float x, float y, char *text)
 		 
 		 TextQuadCoordinates temp;
 		 
+		 float width = q.x1 - q.x0;
+		 float height = q.y1 - q.y0;
+		 
+		 //0
+		 /*
 		 temp.position[0] = q.x0;
 		 temp.position[1] = q.y0;
 		 temp.position[2] = 0.0f;		 
 		 temp.texCoordinate[0] = q.s0;
 		 temp.texCoordinate[1] = q.t1;
 		 m_position.push_back(temp);
+		 */
 		 
 		 
+		 temp.position[0] = q.x0;
+		 temp.position[1] = 0.0f;
+		 temp.position[2] = 0.0f;		 
+		 temp.texCoordinate[0] = q.s0;
+		 temp.texCoordinate[1] = q.t1;
+		 m_position.push_back(temp);
+		 
+		 
+		 
+		 //1
+		 /*
 		 temp.position[0] = q.x1;
 		 temp.position[1] = q.y0;
 		 temp.position[2] = 0.0f;		 
 		 temp.texCoordinate[0] = q.s1;
 		 temp.texCoordinate[1] = q.t1;		 
 		 m_position.push_back(temp);
+		 */
 		 
-
+		 temp.position[0] = q.x1;
+		 temp.position[1] = 0.0f;
+		 temp.position[2] = 0.0f;		 
+		 temp.texCoordinate[0] = q.s1;
+		 temp.texCoordinate[1] = q.t1;		 
+		 m_position.push_back(temp);
+		 
+		 
+		 
+		//2
+		/*
 		 temp.position[0] = q.x1;
 		 temp.position[1] = q.y1;
 		 temp.position[2] = 0.0f;		 
 		 temp.texCoordinate[0] = q.s1;
 		 temp.texCoordinate[1] = q.t0;
 		 m_position.push_back(temp);
+		 */
+		 
+		 temp.position[0] = q.x1;
+		 temp.position[1] = height;
+		 temp.position[2] = 0.0f;		 
+		 temp.texCoordinate[0] = q.s1;
+		 temp.texCoordinate[1] = q.t0;
+		 m_position.push_back(temp);
+		 
+		 
+		 //3
+		 /*
+		 temp.position[0] = q.x0;
+		 temp.position[1] = q.y0;
+		 temp.position[2] = 0.0f;		 
+		 temp.texCoordinate[0] = q.s0;
+		 temp.texCoordinate[1] = q.t1;
+		 m_position.push_back(temp);
+		 */
+		 
+		 temp.position[0] = q.x0;
+		 temp.position[1] = 0.0f;
+		 temp.position[2] = 0.0f;		 
+		 temp.texCoordinate[0] = q.s0;
+		 temp.texCoordinate[1] = q.t1;
+		 m_position.push_back(temp);
 		 
 
+		 //4
+		 /*
 		 temp.position[0] = q.x0;
 		 temp.position[1] = q.y1;
 		 temp.position[2] = 0.0f;		 
 		 temp.texCoordinate[0] = q.s0;
 		 temp.texCoordinate[1] = q.t0;
 		 m_position.push_back(temp);
+		 */
 		 
-		 count += 4;
+		 temp.position[0] = q.x0;
+		 temp.position[1] = height;
+		 temp.position[2] = 0.0f;		 
+		 temp.texCoordinate[0] = q.s0;
+		 temp.texCoordinate[1] = q.t0;
+		 m_position.push_back(temp);
+		 
+		 
+		 
+		 //5
+		 /*
+		 temp.position[0] = q.x1;
+		 temp.position[1] = q.y1;
+		 temp.position[2] = 0.0f;		 
+		 temp.texCoordinate[0] = q.s1;
+		 temp.texCoordinate[1] = q.t0;
+		 m_position.push_back(temp);
+		 */
+		 
+		 temp.position[0] = q.x1;
+		 temp.position[1] = height;
+		 temp.position[2] = 0.0f;		 
+		 temp.texCoordinate[0] = q.s1;
+		 temp.texCoordinate[1] = q.t0;
+		 m_position.push_back(temp);
+		 
+		 
+		 count += 6;
 
       }
       ++text;
@@ -91,9 +187,9 @@ void Text::Write(float x, float y, char *text)
    
    for(int i = 0; i < m_position.size(); i++)
    {
-	   vertices[i * 5] = m_position.at(i).position[0];
-	   vertices[(i * 5) + 1] = m_position.at(i).position[1];
-	   vertices[(i * 5) + 2] = m_position.at(i).position[2];
+	   vertices[i * 5] = m_position.at(i).position[0] / 140;
+	   vertices[(i * 5) + 1] = m_position.at(i).position[1] / 140;
+	   vertices[(i * 5) + 2] = m_position.at(i).position[2] / 140;
 	   vertices[(i * 5) + 3] = m_position.at(i).texCoordinate[0];
 	   vertices[(i * 5) + 4] = m_position.at(i).texCoordinate[1];
 	   
@@ -137,6 +233,7 @@ void Text::MakeQuad(std::vector<TextQuadCoordinates> m_position, int amount)
 void Text::Draw()
 {
 	m_shader.lock()->Use();
+	glEnable(GL_TEXTURE_2D);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, ftex);
 	glBindVertexArray(VAO);

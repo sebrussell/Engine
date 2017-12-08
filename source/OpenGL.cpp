@@ -58,6 +58,7 @@ int OpenGL::Setup(int _windowWidth, int _windowHeight)
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_FRAMEBUFFER_SRGB); 
 	
+	
 	/*
     glEnable(GL_STENCIL_TEST);
     glStencilFunc(GL_NOTEQUAL, 1, 0xFF);	
@@ -146,6 +147,18 @@ void OpenGL::FrameBufferSizeCallBack(GLFWwindow* window, int width, int height)
 void OpenGL::ScrollCallBack(GLFWwindow* window, double xoffset, double yoffset)
 {
 	g_input->ProcessScroll(xoffset, yoffset);
+}
+
+void OpenGL::SetAlphaFunction()
+{
+	glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+}
+
+void OpenGL::ResetAlphaFunction()
+{
+	glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 
