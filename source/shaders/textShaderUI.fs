@@ -4,6 +4,7 @@ out vec4 FragColor;
 in vec2 TexCoords;
 
 uniform sampler2D screenTexture;
+uniform vec3 textColour;
 
 void main()
 { 
@@ -14,6 +15,6 @@ void main()
 	}
 	else
 	{
-		FragColor = vec4(1.0, 1.0, 0.0, colour.r);
+		FragColor = vec4(textColour, colour.r);
 	}
 }

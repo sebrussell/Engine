@@ -124,6 +124,11 @@ void Shader::SetVec3(const std::string &name, glm::vec3 value) const
     glUniform3fv(glGetUniformLocation(m_ID, name.c_str()), 1, glm::value_ptr(value));
 }
 
+void Shader::SetVec2(const std::string &name, glm::vec2 value) const
+{ 
+    glUniform2fv(glGetUniformLocation(m_ID, name.c_str()), 1, glm::value_ptr(value));
+}
+
 void Shader::CreateMatrixBuffer()
 {
 	unsigned int uniformBlockIndex = glGetUniformBlockIndex(m_ID, "Matrices");

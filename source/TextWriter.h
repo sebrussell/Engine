@@ -35,6 +35,7 @@ class Text
 		void SetSceneManager(std::weak_ptr<SceneManager> _sceneManager);
 		void Awake();
 		void Write(float x, float y, char *text);
+		void SetTextColour(glm::vec3 _colour) { m_colour = _colour; }
 		GLuint GetTexture() { return ftex; }	
 		void Draw();
 	private:
@@ -50,6 +51,10 @@ class Text
 		//testing
 		int m_amountOfVertices;
 		unsigned int VAO, VBO, EBO;
+		glm::vec2 m_screenPosition;
+		float m_scale;
+		glm::vec3 m_colour;
+		float m_textureSpacing = 0.5f;
 };
 
 #endif

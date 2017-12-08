@@ -45,7 +45,7 @@ int SceneManager::Awake()
 	m_textWriter = std::make_shared<Text>();
 	m_textWriter->SetSceneManager(shared_from_this());
 	m_textWriter->Awake();
-	m_textWriter->Write(0, 0, "hello world");
+	m_textWriter->Write(-0.9f, 0.9f, "sebrussell.co.uk");
 	
 	for(int i = 0; i < m_gameObjects.size(); i++)
 	{		

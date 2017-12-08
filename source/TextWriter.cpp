@@ -44,6 +44,9 @@ void Text::Awake()
    m_shader = m_sceneManager.lock()->m_shaderManager->AddShader("..//source/shaders/textShaderUI.vs", "..//source/shaders/textShaderUI.fs");
    m_shader.lock()->Use();
    m_shader.lock()->SetInt("screenTexture", 0);
+   
+   m_scale = 0.2f;
+   m_colour = glm::vec3(0.0f, 1.0f, 0.0f);
 }
 
 void Text::Write(float x, float y, char *text)
@@ -54,6 +57,8 @@ void Text::Write(float x, float y, char *text)
    
    int count = 0;
 
+   m_screenPosition.x = x;
+   m_screenPosition.y = y;
    
    while (*text) {
       if (*text >= 32 && *text < 128) {
@@ -62,20 +67,10 @@ void Text::Write(float x, float y, char *text)
 		 
 		 TextQuadCoordinates temp;
 		 
-		 float width = q.x1 - q.x0;
+		 float width = q.x1 - q.x0 + m_textureSpacing;
 		 float height = q.y1 - q.y0;
 		 
-		 //0
-		 /*
-		 temp.position[0] = q.x0;
-		 temp.position[1] = q.y0;
-		 temp.position[2] = 0.0f;		 
-		 temp.texCoordinate[0] = q.s0;
-		 temp.texCoordinate[1] = q.t1;
-		 m_position.push_back(temp);
-		 */
-		 
-		 
+		 //0		 
 		 temp.position[0] = q.x0;
 		 temp.position[1] = 0.0f;
 		 temp.position[2] = 0.0f;		 
@@ -85,16 +80,7 @@ void Text::Write(float x, float y, char *text)
 		 
 		 
 		 
-		 //1
-		 /*
-		 temp.position[0] = q.x1;
-		 temp.position[1] = q.y0;
-		 temp.position[2] = 0.0f;		 
-		 temp.texCoordinate[0] = q.s1;
-		 temp.texCoordinate[1] = q.t1;		 
-		 m_position.push_back(temp);
-		 */
-		 
+		 //1	 
 		 temp.position[0] = q.x1;
 		 temp.position[1] = 0.0f;
 		 temp.position[2] = 0.0f;		 
@@ -105,15 +91,6 @@ void Text::Write(float x, float y, char *text)
 		 
 		 
 		//2
-		/*
-		 temp.position[0] = q.x1;
-		 temp.position[1] = q.y1;
-		 temp.position[2] = 0.0f;		 
-		 temp.texCoordinate[0] = q.s1;
-		 temp.texCoordinate[1] = q.t0;
-		 m_position.push_back(temp);
-		 */
-		 
 		 temp.position[0] = q.x1;
 		 temp.position[1] = height;
 		 temp.position[2] = 0.0f;		 
@@ -123,15 +100,6 @@ void Text::Write(float x, float y, char *text)
 		 
 		 
 		 //3
-		 /*
-		 temp.position[0] = q.x0;
-		 temp.position[1] = q.y0;
-		 temp.position[2] = 0.0f;		 
-		 temp.texCoordinate[0] = q.s0;
-		 temp.texCoordinate[1] = q.t1;
-		 m_position.push_back(temp);
-		 */
-		 
 		 temp.position[0] = q.x0;
 		 temp.position[1] = 0.0f;
 		 temp.position[2] = 0.0f;		 
@@ -140,16 +108,7 @@ void Text::Write(float x, float y, char *text)
 		 m_position.push_back(temp);
 		 
 
-		 //4
-		 /*
-		 temp.position[0] = q.x0;
-		 temp.position[1] = q.y1;
-		 temp.position[2] = 0.0f;		 
-		 temp.texCoordinate[0] = q.s0;
-		 temp.texCoordinate[1] = q.t0;
-		 m_position.push_back(temp);
-		 */
-		 
+		 //4		 
 		 temp.position[0] = q.x0;
 		 temp.position[1] = height;
 		 temp.position[2] = 0.0f;		 
@@ -159,16 +118,7 @@ void Text::Write(float x, float y, char *text)
 		 
 		 
 		 
-		 //5
-		 /*
-		 temp.position[0] = q.x1;
-		 temp.position[1] = q.y1;
-		 temp.position[2] = 0.0f;		 
-		 temp.texCoordinate[0] = q.s1;
-		 temp.texCoordinate[1] = q.t0;
-		 m_position.push_back(temp);
-		 */
-		 
+		 //5 
 		 temp.position[0] = q.x1;
 		 temp.position[1] = height;
 		 temp.position[2] = 0.0f;		 
@@ -236,6 +186,9 @@ void Text::Draw()
 	glEnable(GL_TEXTURE_2D);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, ftex);
+	m_shader.lock()->SetVec2("screenPosition", m_screenPosition);
+	m_shader.lock()->SetVec3("textColour", m_colour);
+	m_shader.lock()->SetFloat("scale", m_scale);
 	glBindVertexArray(VAO);
     glDrawArrays(GL_TRIANGLES, 0, m_amountOfVertices);	
 	glBindVertexArray(0);
