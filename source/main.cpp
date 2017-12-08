@@ -140,7 +140,7 @@ int main(int argc, char* argv[]) {
 	std::weak_ptr<GameObject> cubeThree = sceneManager->CreateGameObject();
 	cubeThree.lock()->AddComponent<Renderer>();	
 	cubeThree.lock()->GetComponent<Renderer>()->Awake();
-	cubeThree.lock()->GetComponent<Renderer>()->SetMesh(CUBE);
+	cubeThree.lock()->GetComponent<Renderer>()->SetMesh(MODEL, "..//source/models/nanosuit2/nanosuit.obj");
 	cubeThree.lock()->GetComponent<Renderer>()->SetShader(sceneManager->m_shaderManager->AddShader("..//source/shaders/pointShadow/pointShadowShader.vs", "..//source/shaders/pointShadow/pointShadowShader.fs"));
 	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->Use();
 	cubeThree.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("diffuseTexture", 0);
