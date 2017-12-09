@@ -109,6 +109,9 @@ int main(int argc, char* argv[]) {
 	plane.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/wood.jpg", false);
 	plane.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_cameraManager->m_shadowCamera.lock()->depthCubemap, CubeMap);
 	plane.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg", false);
+	plane.lock()->AddComponent<Rigidbody>();	
+	plane.lock()->GetComponent<Rigidbody>()->Awake();
+	plane.lock()->GetComponent<Rigidbody>()->SetStatic();
 	plane.lock()->m_transparent = false;
 	
 	
@@ -157,7 +160,7 @@ int main(int argc, char* argv[]) {
 	cubeThree.lock()->m_transparent = false;
 	
 	
-	plane.lock()->GetComponent<Transform>()->SetParent(cubeThree.lock()->GetComponent<Transform>());
+	//plane.lock()->GetComponent<Transform>()->SetParent(cubeThree.lock()->GetComponent<Transform>());
 	//sceneManager->m_cameraManager->m_mainCamera.lock()->m_transform.lock()->SetParent(cubeThree.lock()->GetComponent<Transform>());
 	
 	std::weak_ptr<GameObject> cubeFour = sceneManager->CreateGameObject();
@@ -170,7 +173,7 @@ int main(int argc, char* argv[]) {
 	cubeFour.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("depthMap", 1);
 	cubeFour.lock()->GetComponent<Renderer>()->GetShader().lock()->SetInt("specularTexture", 2);
 	cubeFour.lock()->GetComponent<Renderer>()->GetShader().lock()->SetFloat("far_plane", 25.0f);
-	cubeFour.lock()->GetComponent<Transform>()->m_position = glm::vec3(-3.0f, 100.0f, -2.0f);
+	cubeFour.lock()->GetComponent<Transform>()->m_position = glm::vec3(-1.0f, 1.0f, -1.0f);
 	cubeFour.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2.png", false);
 	cubeFour.lock()->GetComponent<Renderer>()->m_material->LoadTexture(sceneManager->m_cameraManager->m_shadowCamera.lock()->depthCubemap, CubeMap);
 	cubeFour.lock()->GetComponent<Renderer>()->m_material->LoadTexture("..//source/textures/container2_specular.jpg", false);

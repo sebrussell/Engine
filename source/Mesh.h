@@ -30,6 +30,7 @@ class Mesh
 		void SetupMesh();
 		void Draw();
 		void Delete();
+		std::vector<Vertex> GetVertices() { return m_vertices; }
 		int test = 7;
 	private:
 		int m_amountOfVertices = 0;

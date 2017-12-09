@@ -3,6 +3,8 @@
 #include "GameObject.h"
 #include "SceneManager.h"
 #include "Physics.h"
+#include "Renderer.h"
+#include "Model.h"
 
 Rigidbody::Rigidbody()
 {
@@ -11,6 +13,7 @@ Rigidbody::Rigidbody()
 
 Rigidbody::~Rigidbody()
 {
+
 }
 
 void Rigidbody::Awake()
@@ -28,13 +31,37 @@ void Rigidbody::Awake()
 	rp3d::Quaternion initOrientation = rp3d::Quaternion::identity();
 	rp3d::Transform transform(initPosition, initOrientation);
 	
-	std::shared_ptr<rp3d::RigidBody> temp(m_world.lock()->createRigidBody(transform));
 	
-	m_body = temp;
+	
+	m_body = std::shared_ptr<rp3d::RigidBody>(m_world.lock()->createRigidBody(transform));
+	
+	//m_body->setType(rp3d::KINEMATIC);
 	
 	rp3d::Material& material = m_body->getMaterial();
 	
-	//m_body->setType(KINEMATIC);
+	
+	glm::vec3 dimensions = m_gameObject.lock()->GetComponent<Renderer>()->m_model.lock()->GetModelDimensions();
+	rp3d::Vector3 halfDimension;
+	halfDimension.x = dimensions.x * 0.5;
+	halfDimension.y = dimensions.y * 0.5;
+	halfDimension.z = dimensions.z * 0.5;
+
+	
+	boxShape = std::make_shared<rp3d::BoxShape>(halfDimension);
+	
+	
+	glm::vec3 m_pos = m_transform.lock()->GetLocalPosition();
+	rp3d::Vector3 initPos(m_pos.x, m_pos.y, m_pos.z) ;
+	rp3d::Transform m_localSpace(initPosition, initOrientation);
+	
+	m_mass = rp3d::decimal(4.0);
+	
+	//std::shared_ptr<rp3d::ProxyShape> proxyTemp();
+	//m_shape = proxyTemp;	
+
+	m_body->addCollisionShape(boxShape.get(), m_localSpace, m_mass);
+	
+	std::cout << halfDimension.x << halfDimension.z << std::endl;
 	
 }
 
@@ -50,4 +77,9 @@ void Rigidbody::Update()
 void Rigidbody::GravityProperty(bool _on)
 {
 	m_body->enableGravity(_on);
+}
+
+void Rigidbody::SetStatic()
+{
+	m_body->setType(rp3d::STATIC);
 }

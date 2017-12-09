@@ -33,7 +33,7 @@ void Physics::Update()
 	while(m_accumulator >= m_timeStep)
 	{
 		m_world->update(m_timeStep);
-		
+
 		m_accumulator -= m_timeStep;
 	}
 	

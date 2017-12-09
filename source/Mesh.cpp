@@ -78,6 +78,15 @@ void Mesh::MakeCube()
     glEnableVertexAttribArray(2);
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
 	m_amountOfVertices = 36;
+	
+	for(int i = 0; i < 36; i++)
+	{
+		Vertex temp;
+		temp.Position.x = cubeVertices[i * 8];
+		temp.Position.y = cubeVertices[(i * 8) + 1];
+		temp.Position.z = cubeVertices[(i * 8) + 2];
+		m_vertices.push_back(temp);
+	}
 }
 
 void Mesh::MakePlane()
@@ -106,6 +115,15 @@ void Mesh::MakePlane()
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
     glBindVertexArray(0);
 	m_amountOfVertices = 6;
+	
+	for(int i = 0; i < 6; i++)
+	{
+		Vertex temp;
+		temp.Position.x = planeVertices[i * 8];
+		temp.Position.y = planeVertices[(i * 8) + 1];
+		temp.Position.z = planeVertices[(i * 8) + 2];
+		m_vertices.push_back(temp);
+	}
 }
 
 void Mesh::MakeQuad()
@@ -131,6 +149,15 @@ void Mesh::MakeQuad()
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
 	m_amountOfVertices = 6;
+	
+	for(int i = 0; i < 6; i++)
+	{
+		Vertex temp;
+		temp.Position.x = quadVertices[i * 4];
+		temp.Position.y = quadVertices[(i * 4) + 1];
+		temp.Position.z = 0.0f;
+		m_vertices.push_back(temp);
+	}
 }
 
 void Mesh::MakeTransparent()
@@ -156,6 +183,15 @@ void Mesh::MakeTransparent()
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
     glBindVertexArray(0);
 	m_amountOfVertices = 6;
+	
+	for(int i = 0; i < 6; i++)
+	{
+		Vertex temp;
+		temp.Position.x = transparentVertices[i * 5];
+		temp.Position.y = transparentVertices[(i * 5) + 1];
+		temp.Position.z = transparentVertices[(i * 5) + 2];
+		m_vertices.push_back(temp);
+	}
 }
 
 
@@ -214,6 +250,15 @@ void Mesh::MakeSkybox()
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	m_amountOfVertices = 36;
+	
+	for(int i = 0; i < 36; i++)
+	{
+		Vertex temp;
+		temp.Position.x = skyboxVertices[i * 3];
+		temp.Position.y = skyboxVertices[(i * 3) + 1];
+		temp.Position.z = skyboxVertices[(i * 3) + 2];
+		m_vertices.push_back(temp);
+	}
 }
 
 void Mesh::Draw()
@@ -239,8 +284,6 @@ void Mesh::MakeModel(std::vector<Vertex> _vertices, std::vector<unsigned int> _i
 {
 	m_vertices = _vertices;
     m_indices = _indices;
-	
-	std::cout << _indices.size() << std::endl;
 
     SetupMesh();
 }

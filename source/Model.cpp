@@ -16,6 +16,7 @@ void Model::MakeCube()
 	std::shared_ptr<Mesh> m_mesh(new Mesh);
 	m_mesh->MakeCube();
 	m_meshes.push_back(m_mesh);
+	CalculateDimensions();
 }
 
 void Model::MakeSkybox()
@@ -23,6 +24,7 @@ void Model::MakeSkybox()
 	std::shared_ptr<Mesh> m_mesh(new Mesh);
 	m_mesh->MakeSkybox();
 	m_meshes.push_back(m_mesh);
+	CalculateDimensions();
 }
 
 void Model::MakeQuad()
@@ -30,6 +32,7 @@ void Model::MakeQuad()
 	std::shared_ptr<Mesh> m_mesh(new Mesh);
 	m_mesh->MakeQuad();
 	m_meshes.push_back(m_mesh);
+	CalculateDimensions();
 }
 
 void Model::MakeTransparent()
@@ -37,6 +40,7 @@ void Model::MakeTransparent()
 	std::shared_ptr<Mesh> m_mesh(new Mesh);
 	m_mesh->MakeTransparent();
 	m_meshes.push_back(m_mesh);
+	CalculateDimensions();
 }
 
 void Model::MakePlane()
@@ -44,6 +48,7 @@ void Model::MakePlane()
 	std::shared_ptr<Mesh> m_mesh(new Mesh);
 	m_mesh->MakePlane();
 	m_meshes.push_back(m_mesh);
+	CalculateDimensions();
 }
 
 void Model::Draw()
@@ -51,7 +56,60 @@ void Model::Draw()
 	for(int i = 0; i < m_meshes.size(); i++)
 	{
 		m_meshes.at(i)->Draw();
+	}	
+}
+
+glm::vec3 Model::GetModelDimensions()
+{
+	return m_dimensions;
+}
+
+void Model::CalculateDimensions()
+{
+	double maxX, maxY, maxZ, minX, minY, minZ;
+	
+	maxX = 0;
+	maxY = 0;
+	maxZ = 0;
+	minX = 0;
+	minY = 0;
+	minZ = 0;
+	
+	for(int i = 0; i < m_meshes.size(); i++)
+	{
+		std::vector<Vertex> m_vertices = m_meshes.at(i)->GetVertices();		
+		for(int n = 0; n < m_vertices.size(); n++)
+		{
+			if(m_vertices.at(n).Position.x < minX)
+			{
+				minX = m_vertices.at(n).Position.x;
+			}
+			if(m_vertices.at(n).Position.x > maxX)
+			{
+				maxX = m_vertices.at(n).Position.x;
+			}
+			
+			if(m_vertices.at(n).Position.y < minY)
+			{
+				minY = m_vertices.at(n).Position.y;
+			}
+			if(m_vertices.at(n).Position.y > maxY)
+			{
+				maxY = m_vertices.at(n).Position.y;
+			}
+			
+			if(m_vertices.at(n).Position.z < minZ)
+			{
+				minZ = m_vertices.at(n).Position.z;
+			}
+			if(m_vertices.at(n).Position.z > maxZ)
+			{
+				maxZ = m_vertices.at(n).Position.z;
+			}
+		}
 	}
+
+	m_dimensions = glm::vec3(maxX - minX, maxY - minY, maxZ - minZ);
 }
 
 void Model::MakeModel(std::string _path)
@@ -66,6 +124,8 @@ void Model::MakeModel(std::string _path)
     }
 	
 	ProcessNode(scene->mRootNode, scene);
+
+	CalculateDimensions();	
 }
 
 void Model::ProcessNode(aiNode *node, const aiScene *scene)
@@ -81,7 +141,6 @@ void Model::ProcessNode(aiNode *node, const aiScene *scene)
         ProcessNode(node->mChildren[i], scene);
     }
 } 
-
 
 std::shared_ptr<Mesh> Model::ProcessMesh(aiMesh *mesh, const aiScene *scene)
 {

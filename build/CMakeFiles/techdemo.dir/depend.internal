@@ -1933,6 +1933,35 @@ CMakeFiles/techdemo.dir/source/Renderer.cpp.obj
  C:/Users/sebru_000/Desktop/Engine/source/Shader.h
  C:/Users/sebru_000/Desktop/Engine/source/Transform.h
 CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj
+ ../libraries/assimp/include/assimp/./Compiler/poppack1.h
+ ../libraries/assimp/include/assimp/./Compiler/pushpack1.h
+ ../libraries/assimp/include/assimp/Compiler/pstdint.h
+ ../libraries/assimp/include/assimp/Importer.hpp
+ ../libraries/assimp/include/assimp/anim.h
+ ../libraries/assimp/include/assimp/camera.h
+ ../libraries/assimp/include/assimp/color4.h
+ ../libraries/assimp/include/assimp/color4.inl
+ ../libraries/assimp/include/assimp/config.h
+ ../libraries/assimp/include/assimp/defs.h
+ ../libraries/assimp/include/assimp/light.h
+ ../libraries/assimp/include/assimp/material.h
+ ../libraries/assimp/include/assimp/material.inl
+ ../libraries/assimp/include/assimp/matrix3x3.h
+ ../libraries/assimp/include/assimp/matrix3x3.inl
+ ../libraries/assimp/include/assimp/matrix4x4.h
+ ../libraries/assimp/include/assimp/matrix4x4.inl
+ ../libraries/assimp/include/assimp/mesh.h
+ ../libraries/assimp/include/assimp/metadata.h
+ ../libraries/assimp/include/assimp/postprocess.h
+ ../libraries/assimp/include/assimp/quaternion.h
+ ../libraries/assimp/include/assimp/quaternion.inl
+ ../libraries/assimp/include/assimp/scene.h
+ ../libraries/assimp/include/assimp/texture.h
+ ../libraries/assimp/include/assimp/types.h
+ ../libraries/assimp/include/assimp/vector2.h
+ ../libraries/assimp/include/assimp/vector2.inl
+ ../libraries/assimp/include/assimp/vector3.h
+ ../libraries/assimp/include/assimp/vector3.inl
  ../libraries/glad/include/KHR/khrplatform.h
  ../libraries/glad/include/glad/glad.h
  ../libraries/glfw/include/GLFW/glfw3.h
@@ -2010,8 +2039,6 @@ CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj
  ../libraries/glm/glm/gtc/matrix_transform.hpp
  ../libraries/glm/glm/gtc/matrix_transform.inl
  ../libraries/glm/glm/gtc/quaternion.hpp
- ../libraries/glm/glm/gtc/quaternion.inl
- ../libraries/glm/glm/gtc/quaternion_simd.inl
  ../libraries/glm/glm/gtc/type_ptr.hpp
  ../libraries/glm/glm/gtc/type_ptr.inl
  ../libraries/glm/glm/integer.hpp
@@ -2105,7 +2132,10 @@ CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj
  ../libraries/physics/src/reactphysics3d.h
  C:/Users/sebru_000/Desktop/Engine/source/Component.h
  C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
+ C:/Users/sebru_000/Desktop/Engine/source/MeshManager.h
+ C:/Users/sebru_000/Desktop/Engine/source/Model.h
  C:/Users/sebru_000/Desktop/Engine/source/Physics.h
+ C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
  C:/Users/sebru_000/Desktop/Engine/source/RigidBody.cpp
  C:/Users/sebru_000/Desktop/Engine/source/Rigidbody.h
  C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h

@@ -2115,6 +2115,12 @@ assimp/scene.h
 -
 assimp/postprocess.h
 -
+glad/glad.h
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
 
 C:/Users/sebru_000/Desktop/Engine/source/OpenGL.cpp
 OpenGL.h
@@ -2233,6 +2239,10 @@ SceneManager.h
 C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
 Physics.h
 C:/Users/sebru_000/Desktop/Engine/source/Physics.h
+Renderer.h
+C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
+Model.h
+C:/Users/sebru_000/Desktop/Engine/source/Model.h
 
 C:/Users/sebru_000/Desktop/Engine/source/Rigidbody.h
 Component.h
