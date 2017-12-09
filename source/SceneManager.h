@@ -14,6 +14,7 @@ class MeshManager;
 class Input;
 class Text;
 class LightManager;
+class Physics;
 
 
 
@@ -35,6 +36,7 @@ class SceneManager : public std::enable_shared_from_this<SceneManager>
 		std::shared_ptr<Text> m_textWriter;
 		std::shared_ptr<Input> m_input;
 		std::shared_ptr<LightManager> m_lightManager;
+		std::shared_ptr<Physics> m_physics;
 		float m_maxViewDistance, m_minViewDistance;
 	private:
 		std::vector<std::shared_ptr<GameObject>> m_gameObjects;	

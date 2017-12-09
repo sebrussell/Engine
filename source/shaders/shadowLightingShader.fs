@@ -111,7 +111,7 @@ vec4 CalculateDirectionalLight(DirectionalLight light, vec3 normal, vec3 viewDir
     vec4 diffuse = vec4(light.diffuse, 1.0) * diff * vec4(texture(material.diffuseTexture, fs_in.TexCoords));  
 	vec4 specular = vec4(light.specular, 1.0) * spec * (texture(material.specularTexture, fs_in.TexCoords));
 
-    return (ambient + (1.0 - shadow) * (diffuse + specular));
+    return (ambient + ((1.0 - shadow) * (diffuse + specular)));
 }  
 
 vec4 CalculatePointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir, float shadow)

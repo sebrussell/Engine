@@ -14,6 +14,7 @@
 #include "TextWriter.h"
 #include "LightManager.h"
 #include "PointLight.h"
+#include "Physics.h"
 
 
 int SceneManager::Awake()
@@ -21,6 +22,9 @@ int SceneManager::Awake()
 	m_openGL = std::make_shared<OpenGL>();
 	m_openGL->SetSceneManager(shared_from_this());
 	m_openGL->Setup(800, 600);
+	
+	m_physics = std::make_shared<Physics>();
+	m_physics->Awake();
 	
 	m_maxViewDistance = 500.0f;
 	m_minViewDistance = 0.1f;
@@ -68,6 +72,8 @@ std::weak_ptr<GameObject> SceneManager::CreateGameObject()
 
 void SceneManager::Update()
 {
+	m_physics->Update();
+	
 	m_cameraManager->m_shadowCamera.lock()->DrawShadowBuffer();
 	
 	for(int i = 0; i < m_lightManager->GetPointLights().size(); i++)

@@ -8,11 +8,13 @@ include_directories(
 	${PROJECT_SOURCE_DIR}/libraries/glad/include
 	${PROJECT_SOURCE_DIR}/libraries/assimp/include
 	${PROJECT_SOURCE_DIR}/libraries/stb
+	${PROJECT_SOURCE_DIR}/libraries/physics/src
 )
 
 link_directories(
 	${PROJECT_SOURCE_DIR}/libraries/assimp/lib
 	${PROJECT_SOURCE_DIR}/libraries/glfw/lib
+	${PROJECT_SOURCE_DIR}/libraries/physics/lib
 )
 
 SET(CMAKE_CXX_FLAGS "-std=c++11")
@@ -45,9 +47,11 @@ add_executable(techdemo
 	source/DirectionalLight.cpp
 	source/PointLight.cpp
 	source/Model.cpp
+	source/Physics.cpp
+	source/RigidBody.cpp
 )
 
-target_link_libraries(techdemo assimp glfw3)
+target_link_libraries(techdemo assimp glfw3 libreactphysics3d.a)
 
 
 

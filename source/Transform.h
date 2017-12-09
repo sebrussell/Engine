@@ -19,6 +19,7 @@ class Transform : public Component
 		void SetLocalPosition(glm::vec3 _position);
 		void SetParent(std::weak_ptr<Transform> _parent);
 		void UpdatePosition(glm::vec3& _position);
+		void SetPosition(glm::vec3& _position);
 		virtual void Update();
 		virtual void Awake();
 		glm::vec3 m_position;

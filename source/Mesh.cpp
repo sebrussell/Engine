@@ -240,7 +240,7 @@ void Mesh::MakeModel(std::vector<Vertex> _vertices, std::vector<unsigned int> _i
 	m_vertices = _vertices;
     m_indices = _indices;
 	
-	std::cout << m_vertices.size() << std::endl;
+	std::cout << _indices.size() << std::endl;
 
     SetupMesh();
 }
@@ -257,7 +257,7 @@ void Mesh::SetupMesh()
     glBufferData(GL_ARRAY_BUFFER, m_vertices.size() * sizeof(Vertex), &m_vertices[0], GL_STATIC_DRAW);  
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indices.size() * sizeof(unsigned int), &m_vertices[0], GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indices.size() * sizeof(unsigned int), &m_indices[0], GL_STATIC_DRAW);
 
     // vertex positions
     glEnableVertexAttribArray(0);	

@@ -77,6 +77,11 @@ void Transform::SetLocalPosition(glm::vec3 _position)
 	m_localPosition = _position;
 }
 
+void Transform::SetPosition(glm::vec3& _position)
+{
+	m_position = _position;
+}
+
 void Transform::ChangePosition(glm::vec3 _position)
 {
 	m_position += m_front * _position.x;

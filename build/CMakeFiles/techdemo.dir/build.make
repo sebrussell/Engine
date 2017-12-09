@@ -681,6 +681,56 @@ CMakeFiles/techdemo.dir/source/Model.cpp.obj.provides: CMakeFiles/techdemo.dir/s
 CMakeFiles/techdemo.dir/source/Model.cpp.obj.provides.build: CMakeFiles/techdemo.dir/source/Model.cpp.obj
 
 
+CMakeFiles/techdemo.dir/source/Physics.cpp.obj: CMakeFiles/techdemo.dir/flags.make
+CMakeFiles/techdemo.dir/source/Physics.cpp.obj: CMakeFiles/techdemo.dir/includes_CXX.rsp
+CMakeFiles/techdemo.dir/source/Physics.cpp.obj: ../source/Physics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/techdemo.dir/source/Physics.cpp.obj"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\techdemo.dir\source\Physics.cpp.obj -c C:\Users\sebru_000\Desktop\Engine\source\Physics.cpp
+
+CMakeFiles/techdemo.dir/source/Physics.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/techdemo.dir/source/Physics.cpp.i"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\sebru_000\Desktop\Engine\source\Physics.cpp > CMakeFiles\techdemo.dir\source\Physics.cpp.i
+
+CMakeFiles/techdemo.dir/source/Physics.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/techdemo.dir/source/Physics.cpp.s"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\sebru_000\Desktop\Engine\source\Physics.cpp -o CMakeFiles\techdemo.dir\source\Physics.cpp.s
+
+CMakeFiles/techdemo.dir/source/Physics.cpp.obj.requires:
+
+.PHONY : CMakeFiles/techdemo.dir/source/Physics.cpp.obj.requires
+
+CMakeFiles/techdemo.dir/source/Physics.cpp.obj.provides: CMakeFiles/techdemo.dir/source/Physics.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Physics.cpp.obj.provides.build
+.PHONY : CMakeFiles/techdemo.dir/source/Physics.cpp.obj.provides
+
+CMakeFiles/techdemo.dir/source/Physics.cpp.obj.provides.build: CMakeFiles/techdemo.dir/source/Physics.cpp.obj
+
+
+CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj: CMakeFiles/techdemo.dir/flags.make
+CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj: CMakeFiles/techdemo.dir/includes_CXX.rsp
+CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj: ../source/RigidBody.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\techdemo.dir\source\RigidBody.cpp.obj -c C:\Users\sebru_000\Desktop\Engine\source\RigidBody.cpp
+
+CMakeFiles/techdemo.dir/source/RigidBody.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/techdemo.dir/source/RigidBody.cpp.i"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\sebru_000\Desktop\Engine\source\RigidBody.cpp > CMakeFiles\techdemo.dir\source\RigidBody.cpp.i
+
+CMakeFiles/techdemo.dir/source/RigidBody.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/techdemo.dir/source/RigidBody.cpp.s"
+	C:\Users\sebru_000\Desktop\Compilers\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\sebru_000\Desktop\Engine\source\RigidBody.cpp -o CMakeFiles\techdemo.dir\source\RigidBody.cpp.s
+
+CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj.requires:
+
+.PHONY : CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj.requires
+
+CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj.provides: CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj.provides.build
+.PHONY : CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj.provides
+
+CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj.provides.build: CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj
+
+
 # Object files for target techdemo
 techdemo_OBJECTS = \
 "CMakeFiles/techdemo.dir/source/main.cpp.obj" \
@@ -707,7 +757,9 @@ techdemo_OBJECTS = \
 "CMakeFiles/techdemo.dir/source/InputHandlerScript.cpp.obj" \
 "CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj" \
 "CMakeFiles/techdemo.dir/source/PointLight.cpp.obj" \
-"CMakeFiles/techdemo.dir/source/Model.cpp.obj"
+"CMakeFiles/techdemo.dir/source/Model.cpp.obj" \
+"CMakeFiles/techdemo.dir/source/Physics.cpp.obj" \
+"CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj"
 
 # External object files for target techdemo
 techdemo_EXTERNAL_OBJECTS =
@@ -737,11 +789,13 @@ techdemo.exe: CMakeFiles/techdemo.dir/source/InputHandlerScript.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/source/PointLight.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/source/Model.cpp.obj
+techdemo.exe: CMakeFiles/techdemo.dir/source/Physics.cpp.obj
+techdemo.exe: CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj
 techdemo.exe: CMakeFiles/techdemo.dir/build.make
 techdemo.exe: CMakeFiles/techdemo.dir/linklibs.rsp
 techdemo.exe: CMakeFiles/techdemo.dir/objects1.rsp
 techdemo.exe: CMakeFiles/techdemo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable techdemo.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\sebru_000\Desktop\Engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable techdemo.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\techdemo.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -774,6 +828,8 @@ CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/InputHandlerScr
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/TextWriter.cpp.obj.requires
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/PointLight.cpp.obj.requires
 CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/Model.cpp.obj.requires
+CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/Physics.cpp.obj.requires
+CMakeFiles/techdemo.dir/requires: CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj.requires
 
 .PHONY : CMakeFiles/techdemo.dir/requires
 

@@ -527,6 +527,33 @@ source/OpenGL.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/OpenGL.cpp.s
 .PHONY : source/OpenGL.cpp.s
 
+source/Physics.obj: source/Physics.cpp.obj
+
+.PHONY : source/Physics.obj
+
+# target to build an object file
+source/Physics.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Physics.cpp.obj
+.PHONY : source/Physics.cpp.obj
+
+source/Physics.i: source/Physics.cpp.i
+
+.PHONY : source/Physics.i
+
+# target to preprocess a source file
+source/Physics.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Physics.cpp.i
+.PHONY : source/Physics.cpp.i
+
+source/Physics.s: source/Physics.cpp.s
+
+.PHONY : source/Physics.s
+
+# target to generate assembly for a file
+source/Physics.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Physics.cpp.s
+.PHONY : source/Physics.cpp.s
+
 source/PointLight.obj: source/PointLight.cpp.obj
 
 .PHONY : source/PointLight.obj
@@ -580,6 +607,33 @@ source/Renderer.s: source/Renderer.cpp.s
 source/Renderer.cpp.s:
 	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/Renderer.cpp.s
 .PHONY : source/Renderer.cpp.s
+
+source/RigidBody.obj: source/RigidBody.cpp.obj
+
+.PHONY : source/RigidBody.obj
+
+# target to build an object file
+source/RigidBody.cpp.obj:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj
+.PHONY : source/RigidBody.cpp.obj
+
+source/RigidBody.i: source/RigidBody.cpp.i
+
+.PHONY : source/RigidBody.i
+
+# target to preprocess a source file
+source/RigidBody.cpp.i:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/RigidBody.cpp.i
+.PHONY : source/RigidBody.cpp.i
+
+source/RigidBody.s: source/RigidBody.cpp.s
+
+.PHONY : source/RigidBody.s
+
+# target to generate assembly for a file
+source/RigidBody.cpp.s:
+	$(MAKE) -f CMakeFiles\techdemo.dir\build.make CMakeFiles/techdemo.dir/source/RigidBody.cpp.s
+.PHONY : source/RigidBody.cpp.s
 
 source/SceneManager.obj: source/SceneManager.cpp.obj
 
@@ -851,12 +905,18 @@ help:
 	@echo ... source/OpenGL.obj
 	@echo ... source/OpenGL.i
 	@echo ... source/OpenGL.s
+	@echo ... source/Physics.obj
+	@echo ... source/Physics.i
+	@echo ... source/Physics.s
 	@echo ... source/PointLight.obj
 	@echo ... source/PointLight.i
 	@echo ... source/PointLight.s
 	@echo ... source/Renderer.obj
 	@echo ... source/Renderer.i
 	@echo ... source/Renderer.s
+	@echo ... source/RigidBody.obj
+	@echo ... source/RigidBody.i
+	@echo ... source/RigidBody.s
 	@echo ... source/SceneManager.obj
 	@echo ... source/SceneManager.i
 	@echo ... source/SceneManager.s

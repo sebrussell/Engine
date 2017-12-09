@@ -1,6 +1,6 @@
 #include "Camera.h"
 #include "Transform.h"
-#include "GameObject.h"				//this is wrong
+#include "GameObject.h"				
 #include "OpenGL.h"
 #include "SceneManager.h"
 #include "CameraManager.h"

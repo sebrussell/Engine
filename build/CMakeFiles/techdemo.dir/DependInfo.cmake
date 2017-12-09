@@ -16,6 +16,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../libraries/glad/include"
   "../libraries/assimp/include"
   "../libraries/stb"
+  "../libraries/physics/src"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/sebru_000/Desktop/Engine/source/Camera.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Camera.cpp.obj"
@@ -32,8 +33,10 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/sebru_000/Desktop/Engine/source/MeshManager.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/MeshManager.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/Model.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Model.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/OpenGL.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/OpenGL.cpp.obj"
+  "C:/Users/sebru_000/Desktop/Engine/source/Physics.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Physics.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/PointLight.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/PointLight.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/Renderer.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Renderer.cpp.obj"
+  "C:/Users/sebru_000/Desktop/Engine/source/RigidBody.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/RigidBody.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/SceneManager.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/SceneManager.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/Shader.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/Shader.cpp.obj"
   "C:/Users/sebru_000/Desktop/Engine/source/ShaderManager.cpp" "C:/Users/sebru_000/Desktop/Engine/build/CMakeFiles/techdemo.dir/source/ShaderManager.cpp.obj"
@@ -52,6 +55,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../libraries/glad/include"
   "../libraries/assimp/include"
   "../libraries/stb"
+  "../libraries/physics/src"
   )
 
 # Targets to which this target links.
