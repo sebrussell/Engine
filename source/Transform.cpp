@@ -31,6 +31,7 @@ glm::mat4 Transform::GetModelMatrix()
 	model = glm::translate(model, m_position);
 	model = glm::rotate(model, glm::radians(m_rotation.x), glm::vec3(1.0, 0.0, 0.0));
 	model = glm::rotate(model, glm::radians(m_rotation.y), glm::vec3(0.0, 1.0, 0.0));
+	model = glm::rotate(model, glm::radians(m_rotation.z), glm::vec3(0.0, 0.0, 1.0));
 	return model;
 }
 
@@ -75,6 +76,11 @@ glm::vec3 Transform::GetLocalPosition()
 void Transform::SetLocalPosition(glm::vec3 _position)
 {
 	m_localPosition = _position;
+}
+
+void Transform::SetRotation(glm::vec3 _rotation)
+{
+	m_rotation = _rotation;
 }
 
 void Transform::SetPosition(glm::vec3& _position)

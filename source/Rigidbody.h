@@ -21,6 +21,7 @@ class Rigidbody : public Component
 		virtual void Awake();
 		void GravityProperty(bool _on);
 		void SetStatic();
+		void SetPosition(glm::vec3 _position);
 	private:	
 		std::weak_ptr<Physics> m_physics;
 		std::weak_ptr<rp3d::DynamicsWorld> m_world;
@@ -32,7 +33,7 @@ class Rigidbody : public Component
 		rp3d::Transform m_physicsTransform;
 		glm::vec3 m_position;
 		rp3d::decimal m_mass;
-		
+		rp3d::Vector3 halfDimension;
 		std::shared_ptr<rp3d::BoxShape> boxShape;
 		
 };

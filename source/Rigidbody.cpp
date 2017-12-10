@@ -38,39 +38,56 @@ void Rigidbody::Awake()
 	//m_body->setType(rp3d::KINEMATIC);
 	
 	rp3d::Material& material = m_body->getMaterial();
-	
+	material.setBounciness(rp3d::decimal(0.0)); 
 	
 	glm::vec3 dimensions = m_gameObject.lock()->GetComponent<Renderer>()->m_model.lock()->GetModelDimensions();
-	rp3d::Vector3 halfDimension;
-	halfDimension.x = dimensions.x * 0.5;
-	halfDimension.y = dimensions.y * 0.5;
-	halfDimension.z = dimensions.z * 0.5;
+	dimensions.x *= 0.5;
+	dimensions.y *= 0.5;
+	dimensions.z *= 0.5;
+	
+	
+	halfDimension.x = dimensions.x;
+	halfDimension.y = dimensions.y;
+	halfDimension.z = dimensions.z;
 
 	
 	boxShape = std::make_shared<rp3d::BoxShape>(halfDimension);
 	
 	
-	glm::vec3 m_pos = m_transform.lock()->GetLocalPosition();
-	rp3d::Vector3 initPos(m_pos.x, m_pos.y, m_pos.z) ;
-	rp3d::Transform m_localSpace(initPosition, initOrientation);
 	
-	m_mass = rp3d::decimal(4.0);
+	glm::vec3 m_pos = m_transform.lock()->GetLocalPosition();
+	//m_pos -= dimensions;
+	
+	//std::cout << m_pos.x << " " << m_pos.y << " " << m_pos.z << std::endl;
+	
+	rp3d::Vector3 initPos(m_pos.x, m_pos.y, m_pos.z) ;
+	m_pos = m_transform.lock()->GetRotation();
+	initOrientation = rp3d::Quaternion(m_pos.x, m_pos.y, m_pos.z);
+	std::cout << m_pos.x << " " << m_pos.y << " " << m_pos.z << std::endl;
+	rp3d::Transform m_localSpace(initPos, initOrientation);
+	
+	m_mass = rp3d::decimal(40.0);
 	
 	//std::shared_ptr<rp3d::ProxyShape> proxyTemp();
 	//m_shape = proxyTemp;	
 
 	m_body->addCollisionShape(boxShape.get(), m_localSpace, m_mass);
 	
-	std::cout << halfDimension.x << halfDimension.z << std::endl;
-	
 }
 
 void Rigidbody::Update()
 {
 	m_physicsTransform = m_body->getTransform();
-	m_position.x = m_physicsTransform.getPosition().x;
-	m_position.y = m_physicsTransform.getPosition().y;
-	m_position.z = m_physicsTransform.getPosition().z;
+	
+	rp3d::Vector3 m_pos =  m_physicsTransform.getPosition();
+	m_position.x = m_pos.x;
+	m_position.y = m_pos.y - halfDimension.y;
+	m_position.z = m_pos.z;
+	
+	//std::cout << m_position.x << " " << m_position.y << " " << m_position.z << std::endl;
+	
+	rp3d::Quaternion rotation = m_body->getTransform().getOrientation();
+	
 	m_transform.lock()->SetPosition(m_position);
 }
 
@@ -82,4 +99,11 @@ void Rigidbody::GravityProperty(bool _on)
 void Rigidbody::SetStatic()
 {
 	m_body->setType(rp3d::STATIC);
+}
+
+void Rigidbody::SetPosition(glm::vec3 _position)
+{
+	//rp3d::Vector3 position(_position.x, _position.y, _position.z); 
+	//m_physicsTransform = m_body->getTransform();
+	//m_physicsTransform.setPosition(position);
 }

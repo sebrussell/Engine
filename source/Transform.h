@@ -15,11 +15,13 @@ class Transform : public Component
 		glm::vec3 GetPosition();
 		glm::vec3 GetLocalPosition();
 		glm::vec3 GetTransformFront() { return m_front; }
+		glm::vec3 GetRotation() { return m_rotation; }
 		void ChangePosition(glm::vec3 _position);
 		void SetLocalPosition(glm::vec3 _position);
 		void SetParent(std::weak_ptr<Transform> _parent);
 		void UpdatePosition(glm::vec3& _position);
 		void SetPosition(glm::vec3& _position);
+		void SetRotation(glm::vec3 _rotation);
 		virtual void Update();
 		virtual void Awake();
 		glm::vec3 m_position;

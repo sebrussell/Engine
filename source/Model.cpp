@@ -68,12 +68,16 @@ void Model::CalculateDimensions()
 {
 	double maxX, maxY, maxZ, minX, minY, minZ;
 	
-	maxX = 0;
-	maxY = 0;
-	maxZ = 0;
-	minX = 0;
-	minY = 0;
-	minZ = 0;
+	if(m_meshes.size() > 0)
+	{
+		std::vector<Vertex> m_vertices = m_meshes.at(0)->GetVertices();	
+		maxX = m_vertices.at(0).Position.x;
+		maxY = m_vertices.at(0).Position.y;
+		maxZ = m_vertices.at(0).Position.z;
+		minX = m_vertices.at(0).Position.x;
+		minY = m_vertices.at(0).Position.y;
+		minZ = m_vertices.at(0).Position.z;
+	}
 	
 	for(int i = 0; i < m_meshes.size(); i++)
 	{

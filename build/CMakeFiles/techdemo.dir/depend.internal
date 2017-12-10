@@ -223,6 +223,72 @@ CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
+ ../libraries/physics/src/body/Body.h
+ ../libraries/physics/src/body/CollisionBody.h
+ ../libraries/physics/src/body/RigidBody.h
+ ../libraries/physics/src/collision/CollisionDetection.h
+ ../libraries/physics/src/collision/CollisionShapeInfo.h
+ ../libraries/physics/src/collision/ContactManifold.h
+ ../libraries/physics/src/collision/ContactManifoldSet.h
+ ../libraries/physics/src/collision/ProxyShape.h
+ ../libraries/physics/src/collision/RaycastInfo.h
+ ../libraries/physics/src/collision/TriangleMesh.h
+ ../libraries/physics/src/collision/TriangleVertexArray.h
+ ../libraries/physics/src/collision/broadphase/BroadPhaseAlgorithm.h
+ ../libraries/physics/src/collision/broadphase/DynamicAABBTree.h
+ ../libraries/physics/src/collision/narrowphase/CollisionDispatch.h
+ ../libraries/physics/src/collision/narrowphase/ConcaveVsConvexAlgorithm.h
+ ../libraries/physics/src/collision/narrowphase/DefaultCollisionDispatch.h
+ ../libraries/physics/src/collision/narrowphase/EPA/EPAAlgorithm.h
+ ../libraries/physics/src/collision/narrowphase/EPA/EdgeEPA.h
+ ../libraries/physics/src/collision/narrowphase/EPA/TriangleEPA.h
+ ../libraries/physics/src/collision/narrowphase/GJK/GJKAlgorithm.h
+ ../libraries/physics/src/collision/narrowphase/GJK/Simplex.h
+ ../libraries/physics/src/collision/narrowphase/NarrowPhaseAlgorithm.h
+ ../libraries/physics/src/collision/narrowphase/SphereVsSphereAlgorithm.h
+ ../libraries/physics/src/collision/shapes/AABB.h
+ ../libraries/physics/src/collision/shapes/BoxShape.h
+ ../libraries/physics/src/collision/shapes/CapsuleShape.h
+ ../libraries/physics/src/collision/shapes/CollisionShape.h
+ ../libraries/physics/src/collision/shapes/ConcaveMeshShape.h
+ ../libraries/physics/src/collision/shapes/ConcaveShape.h
+ ../libraries/physics/src/collision/shapes/ConeShape.h
+ ../libraries/physics/src/collision/shapes/ConvexMeshShape.h
+ ../libraries/physics/src/collision/shapes/ConvexShape.h
+ ../libraries/physics/src/collision/shapes/CylinderShape.h
+ ../libraries/physics/src/collision/shapes/HeightFieldShape.h
+ ../libraries/physics/src/collision/shapes/SphereShape.h
+ ../libraries/physics/src/collision/shapes/TriangleShape.h
+ ../libraries/physics/src/configuration.h
+ ../libraries/physics/src/constraint/BallAndSocketJoint.h
+ ../libraries/physics/src/constraint/ContactPoint.h
+ ../libraries/physics/src/constraint/FixedJoint.h
+ ../libraries/physics/src/constraint/HingeJoint.h
+ ../libraries/physics/src/constraint/Joint.h
+ ../libraries/physics/src/constraint/SliderJoint.h
+ ../libraries/physics/src/decimal.h
+ ../libraries/physics/src/engine/CollisionWorld.h
+ ../libraries/physics/src/engine/ConstraintSolver.h
+ ../libraries/physics/src/engine/ContactSolver.h
+ ../libraries/physics/src/engine/DynamicsWorld.h
+ ../libraries/physics/src/engine/EventListener.h
+ ../libraries/physics/src/engine/Impulse.h
+ ../libraries/physics/src/engine/Island.h
+ ../libraries/physics/src/engine/Material.h
+ ../libraries/physics/src/engine/OverlappingPair.h
+ ../libraries/physics/src/engine/Profiler.h
+ ../libraries/physics/src/engine/Timer.h
+ ../libraries/physics/src/mathematics/Matrix2x2.h
+ ../libraries/physics/src/mathematics/Matrix3x3.h
+ ../libraries/physics/src/mathematics/Quaternion.h
+ ../libraries/physics/src/mathematics/Ray.h
+ ../libraries/physics/src/mathematics/Transform.h
+ ../libraries/physics/src/mathematics/Vector2.h
+ ../libraries/physics/src/mathematics/Vector3.h
+ ../libraries/physics/src/mathematics/mathematics.h
+ ../libraries/physics/src/mathematics/mathematics_functions.h
+ ../libraries/physics/src/memory/MemoryAllocator.h
+ ../libraries/physics/src/reactphysics3d.h
  ../libraries/stb/stb_truetype.h
  C:/Users/sebru_000/Desktop/Engine/source/Camera.h
  C:/Users/sebru_000/Desktop/Engine/source/CameraManager.cpp
@@ -236,6 +302,7 @@ CMakeFiles/techdemo.dir/source/CameraManager.cpp.obj
  C:/Users/sebru_000/Desktop/Engine/source/MeshManager.h
  C:/Users/sebru_000/Desktop/Engine/source/PointLight.h
  C:/Users/sebru_000/Desktop/Engine/source/Renderer.h
+ C:/Users/sebru_000/Desktop/Engine/source/Rigidbody.h
  C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
  C:/Users/sebru_000/Desktop/Engine/source/Shader.h
  C:/Users/sebru_000/Desktop/Engine/source/ShaderManager.h
@@ -778,11 +845,78 @@ CMakeFiles/techdemo.dir/source/InputHandlerScript.cpp.obj
  ../libraries/glm/glm/vec3.hpp
  ../libraries/glm/glm/vec4.hpp
  ../libraries/glm/glm/vector_relational.hpp
+ ../libraries/physics/src/body/Body.h
+ ../libraries/physics/src/body/CollisionBody.h
+ ../libraries/physics/src/body/RigidBody.h
+ ../libraries/physics/src/collision/CollisionDetection.h
+ ../libraries/physics/src/collision/CollisionShapeInfo.h
+ ../libraries/physics/src/collision/ContactManifold.h
+ ../libraries/physics/src/collision/ContactManifoldSet.h
+ ../libraries/physics/src/collision/ProxyShape.h
+ ../libraries/physics/src/collision/RaycastInfo.h
+ ../libraries/physics/src/collision/TriangleMesh.h
+ ../libraries/physics/src/collision/TriangleVertexArray.h
+ ../libraries/physics/src/collision/broadphase/BroadPhaseAlgorithm.h
+ ../libraries/physics/src/collision/broadphase/DynamicAABBTree.h
+ ../libraries/physics/src/collision/narrowphase/CollisionDispatch.h
+ ../libraries/physics/src/collision/narrowphase/ConcaveVsConvexAlgorithm.h
+ ../libraries/physics/src/collision/narrowphase/DefaultCollisionDispatch.h
+ ../libraries/physics/src/collision/narrowphase/EPA/EPAAlgorithm.h
+ ../libraries/physics/src/collision/narrowphase/EPA/EdgeEPA.h
+ ../libraries/physics/src/collision/narrowphase/EPA/TriangleEPA.h
+ ../libraries/physics/src/collision/narrowphase/GJK/GJKAlgorithm.h
+ ../libraries/physics/src/collision/narrowphase/GJK/Simplex.h
+ ../libraries/physics/src/collision/narrowphase/NarrowPhaseAlgorithm.h
+ ../libraries/physics/src/collision/narrowphase/SphereVsSphereAlgorithm.h
+ ../libraries/physics/src/collision/shapes/AABB.h
+ ../libraries/physics/src/collision/shapes/BoxShape.h
+ ../libraries/physics/src/collision/shapes/CapsuleShape.h
+ ../libraries/physics/src/collision/shapes/CollisionShape.h
+ ../libraries/physics/src/collision/shapes/ConcaveMeshShape.h
+ ../libraries/physics/src/collision/shapes/ConcaveShape.h
+ ../libraries/physics/src/collision/shapes/ConeShape.h
+ ../libraries/physics/src/collision/shapes/ConvexMeshShape.h
+ ../libraries/physics/src/collision/shapes/ConvexShape.h
+ ../libraries/physics/src/collision/shapes/CylinderShape.h
+ ../libraries/physics/src/collision/shapes/HeightFieldShape.h
+ ../libraries/physics/src/collision/shapes/SphereShape.h
+ ../libraries/physics/src/collision/shapes/TriangleShape.h
+ ../libraries/physics/src/configuration.h
+ ../libraries/physics/src/constraint/BallAndSocketJoint.h
+ ../libraries/physics/src/constraint/ContactPoint.h
+ ../libraries/physics/src/constraint/FixedJoint.h
+ ../libraries/physics/src/constraint/HingeJoint.h
+ ../libraries/physics/src/constraint/Joint.h
+ ../libraries/physics/src/constraint/SliderJoint.h
+ ../libraries/physics/src/decimal.h
+ ../libraries/physics/src/engine/CollisionWorld.h
+ ../libraries/physics/src/engine/ConstraintSolver.h
+ ../libraries/physics/src/engine/ContactSolver.h
+ ../libraries/physics/src/engine/DynamicsWorld.h
+ ../libraries/physics/src/engine/EventListener.h
+ ../libraries/physics/src/engine/Impulse.h
+ ../libraries/physics/src/engine/Island.h
+ ../libraries/physics/src/engine/Material.h
+ ../libraries/physics/src/engine/OverlappingPair.h
+ ../libraries/physics/src/engine/Profiler.h
+ ../libraries/physics/src/engine/Timer.h
+ ../libraries/physics/src/mathematics/Matrix2x2.h
+ ../libraries/physics/src/mathematics/Matrix3x3.h
+ ../libraries/physics/src/mathematics/Quaternion.h
+ ../libraries/physics/src/mathematics/Ray.h
+ ../libraries/physics/src/mathematics/Transform.h
+ ../libraries/physics/src/mathematics/Vector2.h
+ ../libraries/physics/src/mathematics/Vector3.h
+ ../libraries/physics/src/mathematics/mathematics.h
+ ../libraries/physics/src/mathematics/mathematics_functions.h
+ ../libraries/physics/src/memory/MemoryAllocator.h
+ ../libraries/physics/src/reactphysics3d.h
  C:/Users/sebru_000/Desktop/Engine/source/Component.h
  C:/Users/sebru_000/Desktop/Engine/source/GameObject.h
  C:/Users/sebru_000/Desktop/Engine/source/Input.h
  C:/Users/sebru_000/Desktop/Engine/source/InputHandlerScript.cpp
  C:/Users/sebru_000/Desktop/Engine/source/InputHandlerScript.h
+ C:/Users/sebru_000/Desktop/Engine/source/Rigidbody.h
  C:/Users/sebru_000/Desktop/Engine/source/SceneManager.h
  C:/Users/sebru_000/Desktop/Engine/source/Transform.h
 CMakeFiles/techdemo.dir/source/Light.cpp.obj

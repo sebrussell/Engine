@@ -60,6 +60,7 @@ std::weak_ptr<Model> MeshManager::AddModel(Type _type, std::string _path)
 				m_models[_path] = m_model;				
 			}
 			m_returnModel = m_models[_path];
+			break;
 		case TRANSPARENT_WINDOW:
 			if(!m_models["WINDOW"])
 			{		

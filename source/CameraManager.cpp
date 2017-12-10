@@ -11,6 +11,7 @@
 #include "LightManager.h"
 #include "PointLight.h"
 #include "TextWriter.h"
+#include "Rigidbody.h"
 
 int CameraManager::Awake()
 {
@@ -20,6 +21,7 @@ int CameraManager::Awake()
 	m_gameObject.lock()->GetComponent<Transform>()->m_position = glm::vec3(0.0f, 0.0f, 3.0f);
 	m_mainCamera = m_activeCamera;
 	m_gameObject.lock()->AddComponent<InputHandler>();
+	//m_gameObject.lock()->AddComponent<Rigidbody>();
 	
 	//m_gameObject.lock()->m_shouldUpdate = false;
 	
